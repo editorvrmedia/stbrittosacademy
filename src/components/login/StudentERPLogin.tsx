@@ -1,0 +1,97 @@
+import React, { useState } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
+
+const StudentERPLogin = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle login logic here
+    console.log('Email:', email);
+    console.log('Password:', password);
+    console.log('Remember Me:', rememberMe);
+    alert('Login functionality to be implemented.');
+  };
+
+  return (
+    <div 
+      className="min-h-screen flex items-center justify-center bg-cover bg-center p-4"
+      style={{ backgroundImage: 'url("/SBA Building.jpg")' }}
+    >
+      <div className="w-full max-w-md bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col justify-center p-8">
+        <div className="text-center mb-8">
+          <img src="/SBA.png" alt="SBA Logo" className="h-20 w-auto mx-auto mb-3" />
+          <h2 className="text-3xl font-revue font-bold text-[#003262] mb-2">ST BRITTO'S ACADEMY</h2>
+          <p className="text-blue-700 text-sm font-semibold mb-2">eVarsity ERP for Education</p>
+          <h3 className="text-xl font-bold text-gray-800 mb-1">Student Login</h3>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Username</label>
+            <input
+              type="text"
+              id="email"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="Enter your username"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <div className="relative">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                id="password"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 pr-10"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
+              >
+                {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+              </button>
+            </div>
+            <p className="mt-2 text-xs text-gray-500">
+              If you are a first login, you must use your Son / Daughter Admission number as your User ID, with your Son / Daughter date of birth [Format ddmmyyyy E.g. 03121990] as your password.
+            </p>
+          </div>
+
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center">
+              <input
+                id="remember-me"
+                name="remember-me"
+                type="checkbox"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+              />
+              <label htmlFor="remember-me" className="ml-2 block text-gray-700">Remember me</label>
+            </div>
+            <a href="#" className="font-medium text-gray-600 hover:text-gray-800">Forgot Password</a>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default StudentERPLogin; 

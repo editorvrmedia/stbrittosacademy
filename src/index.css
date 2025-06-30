@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Revue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 10s linear infinite;
+}
+
+.font-revue {
+  font-family: 'Revue', sans-serif;
+  color: #003262 !important;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+html, body {
+  overflow-x: hidden;
+}
