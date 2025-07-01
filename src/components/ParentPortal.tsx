@@ -115,6 +115,7 @@ const ParentPortal = () => {
                       required
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                       placeholder="Enter your username or email"
+                      autoComplete="username"
                     />
                   </div>
                 </div>
@@ -134,6 +135,7 @@ const ParentPortal = () => {
                       required
                       className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-slate-500"
                       placeholder="Enter your password"
+                      autoComplete="current-password"
                     />
                     <button
                       type="button"

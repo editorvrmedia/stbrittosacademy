@@ -237,6 +237,7 @@ const Admissions = () => {
                   value={formData.parentName}
                   onChange={handleInputChange}
                   required
+                  autoComplete="name"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 />
               </div>
@@ -251,6 +252,7 @@ const Admissions = () => {
                   value={formData.studentName}
                   onChange={handleInputChange}
                   required
+                  autoComplete="given-name"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 />
               </div>
@@ -267,6 +269,7 @@ const Admissions = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
+                  autoComplete="email"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 />
               </div>
@@ -281,6 +284,7 @@ const Admissions = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
+                  autoComplete="tel"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                 />
               </div>

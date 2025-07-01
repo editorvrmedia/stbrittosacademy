@@ -116,6 +116,7 @@ const ApplyForPost = () => {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                       placeholder="Enter your full name"
+                      autoComplete="name"
                     />
                   </div>
                   <div>
@@ -130,6 +131,7 @@ const ApplyForPost = () => {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                      autoComplete="bday"
                     />
                   </div>
                   <div>
@@ -145,6 +147,7 @@ const ApplyForPost = () => {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                       placeholder="e.g., M.Sc., B.Ed."
+                      autoComplete="organization-title"
                     />
                   </div>
                   <div>
@@ -160,6 +163,7 @@ const ApplyForPost = () => {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                       placeholder="e.g., 5"
+                      autoComplete="off"
                     />
                   </div>
                   <div>
@@ -175,6 +179,7 @@ const ApplyForPost = () => {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                       placeholder="+91 98765 43210"
+                      autoComplete="tel"
                     />
                   </div>
                   <div>
@@ -190,6 +195,7 @@ const ApplyForPost = () => {
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
                       placeholder="your.email@example.com"
+                      autoComplete="email"
                     />
                   </div>
                   <div className="md:col-span-2">

@@ -71,6 +71,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 required
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                 placeholder="Your Name"
+                autoComplete="name"
               />
             </div>
             <div>
@@ -82,6 +83,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 required
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                 placeholder="Your Contact Number"
+                autoComplete="tel"
               />
             </div>
             <div>

@@ -63,19 +63,19 @@ const AdmissionsProcedure = () => {
           </div>
           <div className="flex items-center justify-between">
             <label className="font-semibold">Name of the Applicant (As per valid ID Proof)<span className="text-red-500">*</span></label>
-            <input name="name" value={form.name} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" />
+            <input name="name" value={form.name} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="name" />
           </div>
           <div className="flex items-center justify-between">
             <label className="font-semibold">Date of Birth<span className="text-red-500">[DD-MM-YYYY]</span> *</label>
-            <input name="dob" type="date" value={form.dob} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" />
+            <input name="dob" type="date" value={form.dob} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="bday" />
           </div>
           <div className="flex items-center justify-between">
             <label className="font-semibold">Father/Mother/Guardian Mobile No.<span className="text-red-500">*</span></label>
-            <input name="mobile" value={form.mobile} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" />
+            <input name="mobile" value={form.mobile} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="tel" />
           </div>
           <div className="flex items-center justify-between">
             <label className="font-semibold">Father/Mother/Guardian Email-Id<span className="text-red-500">*</span></label>
-            <input name="email" value={form.email} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" />
+            <input name="email" value={form.email} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="email" />
           </div>
           <div className="flex justify-center gap-4 pt-4">
             <button type="button" className="bg-blue-900 text-white px-6 py-2 rounded" onClick={() => alert('Application submitted!')}>Apply</button>
