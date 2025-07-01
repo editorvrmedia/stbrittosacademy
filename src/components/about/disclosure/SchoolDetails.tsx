@@ -21,10 +21,10 @@ const SchoolDetails = () => (
           <tr className="border-b"><td className="font-semibold p-2">ii) Issuing Authority</td><td className="p-2">Director of School Education, Tamil Nadu</td></tr>
           <tr className="border-b"><td className="font-semibold p-2">iii) Whether the school is recognized</td><td className="p-2">Yes RC CODE NO: 004-01-S0008-0219 RC NO: 46758/G1-S1/2018 dated 02.11.2018 VALID FROM 03.02.2016 - 02.02.2019 Director of School Education, Tamil Nadu</td></tr>
           <tr className="border-b"><td className="font-semibold p-2">3. Year of Establishment</td><td className="p-2">1997</td></tr>
-          <tr className="border-b"><td className="font-semibold p-2">4. Year of First Affiliation with CBSE</td><td className="p-2"></td></tr>
+          <tr className="border-b"><td className="font-semibold p-2">4. Year of First Affiliation with CBSE</td><td className="p-2">2003</td></tr>
           <tr className="border-b"><td className="font-semibold p-2">i) Affiliation No.</td><td className="p-2">1930174</td></tr>
           <tr className="border-b"><td className="font-semibold p-2">ii) Year till which the affiliation has been granted / extended Affiliated to the Board since</td><td className="p-2">2003 vide O. No 19493dt 8.12.02</td></tr>
-          <tr className="border-b"><td className="font-semibold p-2">iii) Status of Affiliation</td><td className="p-2">Provisional up to 2023</td></tr>
+          <tr className="border-b"><td className="font-semibold p-2">iii) Status of Affiliation</td><td className="p-2">Provisional up to 2028</td></tr>
         </tbody>
       </table>
                   </div>

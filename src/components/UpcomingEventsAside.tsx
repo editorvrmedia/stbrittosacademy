@@ -13,6 +13,21 @@ const UpcomingEventsAside = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     { date: '27.06.2025', description: 'Responsible', classInfo: 'UKG B' },
   ];
 
+  // Filter and sort events based on today's date
+  const today = new Date();
+  const filteredSortedEvents = events
+    .map(event => ({
+      ...event,
+      dateObj: new Date(event.date.split('.').reverse().join('-')),
+    }))
+    .filter(event => {
+      // Remove time part for comparison
+      const eventDate = new Date(event.dateObj.getFullYear(), event.dateObj.getMonth(), event.dateObj.getDate());
+      const now = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      return eventDate >= now;
+    })
+    .sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
+
   const [isLocalOpen, setIsLocalOpen] = React.useState(isOpen);
   const [minimized, setMinimized] = React.useState(false);
 
@@ -55,7 +70,7 @@ const UpcomingEventsAside = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {events.map((event, index) => (
+                {filteredSortedEvents.map((event, index) => (
                   <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
                     <td className="px-1 py-1 whitespace-nowrap font-medium text-gray-900 align-top">{event.date}</td>
                     <td className="px-1 py-1 break-words text-gray-800 align-top leading-snug max-w-[110px] sm:max-w-[160px]">{event.description}</td>
