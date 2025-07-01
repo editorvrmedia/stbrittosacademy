@@ -20,27 +20,21 @@ const HeroSection = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         {/* Responsive Banner Video Background */}
-        <div
-          className="w-full bg-black flex items-center justify-center overflow-hidden"
-          style={{
-            marginTop: 0,
-            minHeight: '40vw', // Ensures a good height on all screens
-            height: '40vw',
-            maxHeight: '80vh',
-          }}
-        >
+        <div className="relative w-full bg-black overflow-hidden" style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}>
           <video
             src="/videointro.mp4"
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-contain bg-black pointer-events-none"
+            className="absolute top-0 left-0 w-full h-full object-cover bg-black pointer-events-none"
             style={{
               border: 0,
               background: 'black',
-              maxHeight: '80vh',
-              minHeight: '200px',
+              minWidth: '100vw',
+              minHeight: '100%',
+              maxHeight: '100%',
+              maxWidth: '100%',
             }}
           />
         </div>
@@ -56,6 +50,21 @@ const HeroSection = () => {
              }}>
           Latest News: Applications for admission 2025-2026 to Play Group, Pre-KG, LKG, UKG, Classes I to IX, and XI will be issued from 11th November 2024 onwards.
         </div>
+      </div>
+
+      <div className="w-full flex justify-center">
+        <h3
+          className="font-revue text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-1 text-center uppercase tracking-wide leading-tight whitespace-nowrap"
+          style={{
+            lineHeight: 1.1,
+            margin: 0,
+            maxWidth: '100%',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }}
+        >
+          ST. BRITTO'S ACADEMY
+        </h3>
       </div>
     </>
   );

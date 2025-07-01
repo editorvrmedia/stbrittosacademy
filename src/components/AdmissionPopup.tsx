@@ -51,11 +51,19 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
           <img 
             src="/SBA.png" 
             alt="St. Britto's Academy Logo" 
-            className="h-[90px] sm:h-[120px] md:h-[160px] lg:h-[190px] w-auto object-contain mb-0"
+            className="h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] w-auto object-contain mb-0"
           />
-          <h3 className="font-revue whitespace-nowrap text-2xl font-bold text-white mb-1 text-center w-full overflow-hidden">
-            ST. BRITTO'S ACADEMY
-          </h3>
+          <div className="w-full overflow-x-auto">
+            <h3
+              className="font-revue text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 text-center w-full uppercase tracking-wide leading-tight whitespace-nowrap px-2"
+              style={{
+                lineHeight: 1.1,
+                margin: 0
+              }}
+            >
+              ST. BRITTO'S ACADEMY
+            </h3>
+          </div>
         </div>
 
         {/* Right Section - Admission Form */}

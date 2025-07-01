@@ -55,7 +55,7 @@ const Footer = () => {
               <img 
                 src="/SBA.png" 
                 alt="St. Britto's Academy Logo" 
-                className="h-20 sm:h-28 mb-2 sm:mb-4"
+                className="h-28 sm:h-36 mb-2 sm:mb-4"
               />
             </Link>
             <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
