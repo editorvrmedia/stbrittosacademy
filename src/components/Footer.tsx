@@ -53,9 +53,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4 sm:mb-6">
               <img 
-                src="/sba-logo.png" 
+                src="/SBA.png" 
                 alt="St. Britto's Academy Logo" 
-                className="h-12 sm:h-16 mb-2 sm:mb-4"
+                className="h-20 sm:h-28 mb-2 sm:mb-4"
               />
             </Link>
             <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">

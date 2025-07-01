@@ -49,7 +49,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
             <X className="h-6 w-6" />
           </button>
           <img 
-            src="/sba-logo.png" 
+            src="/SBA.png" 
             alt="St. Britto's Academy Logo" 
             className="h-[90px] sm:h-[120px] md:h-[160px] lg:h-[190px] w-auto object-contain mb-0"
           />
