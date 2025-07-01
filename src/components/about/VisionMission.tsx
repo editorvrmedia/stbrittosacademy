@@ -38,11 +38,10 @@ const VisionMission = () => {
   return (
     <div className="pt-20">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Revue&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
         .revue-font {
-          font-family: 'Revue', serif;
+          font-family: 'Playfair Display', serif;
         }
         
         .inter-font {

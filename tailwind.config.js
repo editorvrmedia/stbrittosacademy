@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        stbritosacademy: ['Revue', 'serif'],
+        stbritosacademy: ['Playfair Display', 'serif'],
       },
       screens: {
         'xs': '475px',
