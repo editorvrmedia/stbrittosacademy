@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div className="block sm:hidden">
             <div className="relative w-full aspect-[16/9] bg-black">
               <video
-                src="/Website Video Final.mp4"
+                src="/intro.mp4"
                 autoPlay
                 loop
                 muted
@@ -48,7 +48,7 @@ const HeroSection = () => {
           <div className="hidden sm:block">
             <div className="relative w-full aspect-[21/9] bg-black">
               <video
-                src="/Website Video Final.mp4"
+                src="/intro.mp4"
                 autoPlay
                 loop
                 muted
