@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, Sun, Moon, Bell, Search, User } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa';
@@ -24,6 +25,16 @@ const Header = () => {
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
+
+  // Add Escape key support for closing mobile menu
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -174,7 +185,7 @@ const Header = () => {
               </button>
             </div>
             {/* Mobile menu button: always visible on mobile, right-aligned */}
-            <div className="flex-shrink-0 flex items-center justify-center xl:hidden ml-2">
+            <div className="flex-shrink-0 flex items-center justify-center ml-2">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -353,178 +364,196 @@ const Header = () => {
           </div>
 
           {/* Mobile Navigation: overlays content, slides down */}
-          {isMenuOpen && (
-            <div className="xl:hidden fixed inset-0 top-[76px] bg-white z-[2100] border-t border-gray-200 transition-all duration-300 ease-in-out animate-fade-in-down overflow-y-auto">
-              <div className="py-4 space-y-1 max-h-[70vh] overflow-y-auto px-3">
-                {navigation.map((item) => (
-                  <div key={item.name}>
-                    {item.hasDropdown ? (
-                      <div>
-                        <button
-                          onClick={() => {
-                            if (item.name === 'About') setIsAboutDropdownOpen(!isAboutDropdownOpen);
-                            if (item.name === 'Academics') setIsAcademicsDropdownOpen(!isAcademicsDropdownOpen);
-                            if (item.name === 'Activities') setIsActivitiesDropdownOpen(!isActivitiesDropdownOpen);
-                            if (item.name === 'Achievements') setIsAchievementsDropdownOpen(!isAchievementsDropdownOpen);
-                            if (item.name === 'Admissions') setIsAdmissionsDropdownOpen(!isAdmissionsDropdownOpen);
-                            if (item.name === 'Gallery') setIsGalleryDropdownOpen(!isGalleryDropdownOpen);
-                            if (item.name === 'Careers') setIsCareersDropdownOpen(!isCareersDropdownOpen);
-                            if (item.name === 'Blog') setIsBlogDropdownOpen(!isBlogDropdownOpen);
-                            if (item.name === 'Login') setIsLoginDropdownOpen(!isLoginDropdownOpen);
-                          }}
-                          className={`w-full text-left flex items-center justify-between px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                            (item.name === 'About' && isAboutActive()) || 
-                            (item.name === 'Academics' && isAcademicsActive()) ||
-                            (item.name === 'Activities' && isActivitiesActive()) ||
-                            (item.name === 'Achievements' && isAchievementsActive()) ||
-                            (item.name === 'Admissions' && isAdmissionsActive()) ||
-                            (item.name === 'Gallery' && isGalleryActive()) ||
-                            (item.name === 'Careers' && isCareersActive()) ||
-                            (item.name === 'Blog' && isBlogActive()) ||
-                            (item.name === 'Login' && location.pathname.startsWith('/login'))
+          {isMenuOpen && ReactDOM.createPortal(
+            <>
+              {/* Overlay */}
+              <div
+                className="fixed inset-0 bg-black bg-opacity-40 z-[9998] transition-opacity duration-300"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu overlay"
+              />
+              {/* Menu Panel */}
+              <div className="xl:hidden fixed inset-0 top-[76px] bg-white z-[9999] border-t border-gray-200 transition-all duration-300 ease-in-out animate-fade-in-down overflow-y-auto">
+                {/* X Close Button */}
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="absolute top-4 right-4 p-2 rounded-full text-gray-700 hover:text-blue-700 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 z-[10000]"
+                  aria-label="Close menu"
+                >
+                  <X className="h-7 w-7" />
+                </button>
+                <div className="py-4 space-y-1 max-h-[70vh] overflow-y-auto px-3">
+                  {navigation.map((item) => (
+                    <div key={item.name}>
+                      {item.hasDropdown ? (
+                        <div>
+                          <button
+                            onClick={() => {
+                              if (item.name === 'About') setIsAboutDropdownOpen(!isAboutDropdownOpen);
+                              if (item.name === 'Academics') setIsAcademicsDropdownOpen(!isAcademicsDropdownOpen);
+                              if (item.name === 'Activities') setIsActivitiesDropdownOpen(!isActivitiesDropdownOpen);
+                              if (item.name === 'Achievements') setIsAchievementsDropdownOpen(!isAchievementsDropdownOpen);
+                              if (item.name === 'Admissions') setIsAdmissionsDropdownOpen(!isAdmissionsDropdownOpen);
+                              if (item.name === 'Gallery') setIsGalleryDropdownOpen(!isGalleryDropdownOpen);
+                              if (item.name === 'Careers') setIsCareersDropdownOpen(!isCareersDropdownOpen);
+                              if (item.name === 'Blog') setIsBlogDropdownOpen(!isBlogDropdownOpen);
+                              if (item.name === 'Login') setIsLoginDropdownOpen(!isLoginDropdownOpen);
+                            }}
+                            className={`w-full text-left flex items-center justify-between px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                              (item.name === 'About' && isAboutActive()) || 
+                              (item.name === 'Academics' && isAcademicsActive()) ||
+                              (item.name === 'Activities' && isActivitiesActive()) ||
+                              (item.name === 'Achievements' && isAchievementsActive()) ||
+                              (item.name === 'Admissions' && isAdmissionsActive()) ||
+                              (item.name === 'Gallery' && isGalleryActive()) ||
+                              (item.name === 'Careers' && isCareersActive()) ||
+                              (item.name === 'Blog' && isBlogActive()) ||
+                              (item.name === 'Login' && location.pathname.startsWith('/login'))
+                                ? 'text-blue-700 bg-blue-50'
+                                : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                            }`}
+                            aria-expanded={
+                              (item.name === 'About' && isAboutDropdownOpen) ||
+                              (item.name === 'Academics' && isAcademicsDropdownOpen) ||
+                              (item.name === 'Activities' && isActivitiesDropdownOpen) ||
+                              (item.name === 'Achievements' && isAchievementsDropdownOpen) ||
+                              (item.name === 'Admissions' && isAdmissionsDropdownOpen) ||
+                              (item.name === 'Gallery' && isGalleryDropdownOpen) ||
+                              (item.name === 'Careers' && isCareersDropdownOpen) ||
+                              (item.name === 'Blog' && isBlogDropdownOpen) ||
+                              (item.name === 'Login' && isLoginDropdownOpen)
+                            }
+                            aria-controls={`mobile-dropdown-${item.name}`}
+                          >
+                            {item.name}
+                            <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
+                              (item.name === 'About' && isAboutDropdownOpen) || 
+                              (item.name === 'Academics' && isAcademicsDropdownOpen) ||
+                              (item.name === 'Activities' && isActivitiesDropdownOpen) ||
+                              (item.name === 'Achievements' && isAchievementsDropdownOpen) ||
+                              (item.name === 'Admissions' && isAdmissionsDropdownOpen) ||
+                              (item.name === 'Gallery' && isGalleryDropdownOpen) ||
+                              (item.name === 'Careers' && isCareersDropdownOpen) ||
+                              (item.name === 'Blog' && isBlogDropdownOpen) ||
+                              (item.name === 'Login' && isLoginDropdownOpen) ? 'rotate-180' : ''
+                            }`} />
+                          </button>
+                          {((item.name === 'About' && isAboutDropdownOpen) || 
+                            (item.name === 'Academics' && isAcademicsDropdownOpen) ||
+                            (item.name === 'Activities' && isActivitiesDropdownOpen) ||
+                            (item.name === 'Achievements' && isAchievementsDropdownOpen) ||
+                            (item.name === 'Admissions' && isAdmissionsDropdownOpen) ||
+                            (item.name === 'Gallery' && isGalleryDropdownOpen) ||
+                            (item.name === 'Careers' && isCareersDropdownOpen) ||
+                            (item.name === 'Blog' && isBlogDropdownOpen) ||
+                            (item.name === 'Login' && isLoginDropdownOpen)) && (
+                            <div id={`mobile-dropdown-${item.name}`} className="ml-4 mt-2 space-y-1 transition-all duration-300 ease-in-out animate-fade-in-down">
+                              {item.subPages?.map((subPage) => (
+                                <React.Fragment key={subPage.name}>
+                                  {subPage.hasSubDropdown ? (
+                                    <div>
+                                      <button
+                                        onClick={() => {
+                                          if (subPage.name === 'Mandatory Disclosure') setIsMandatoryDropdownOpen(!isMandatoryDropdownOpen);
+                                        }}
+                                        className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                                          isActive(subPage.href) || (subPage.name === 'Mandatory Disclosure' && isMandatoryActive())
+                                            ? 'text-blue-700 bg-blue-50'
+                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                        }`}
+                                      >
+                                        {subPage.name}
+                                        <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${
+                                          subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen ? 'rotate-180' : ''
+                                        }`} />
+                                      </button>
+                                      {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
+                                        <div className="ml-4 mt-2 space-y-1">
+                                          {subPage.subPages?.map((nestedSubPage) => (
+                                            <Link
+                                              key={nestedSubPage.name}
+                                              to={nestedSubPage.href}
+                                              className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
+                                                isActive(nestedSubPage.href)
+                                                  ? 'text-blue-700 bg-blue-50'
+                                                  : 'text-gray-500 hover:text-blue-700 hover:bg-blue-50'
+                                              }`}
+                                            >
+                                              {nestedSubPage.name}
+                                            </Link>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </div>
+                                  ) : (
+                                    subPage.name === 'Student ERP Login' ? (
+                                      <a
+                                        href="/student-login"
+                                        onClick={e => {
+                                          e.preventDefault();
+                                          window.open('/student-login', '_blank');
+                                        }}
+                                        className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
+                                          isActive('/student-login')
+                                            ? 'text-blue-700 bg-blue-50'
+                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                        }`}
+                                      >
+                                        Student Login
+                                      </a>
+                                    ) : subPage.name === 'Teacher ERP Login' ? (
+                                      <a
+                                        href="/teacher-login"
+                                        onClick={e => {
+                                          e.preventDefault();
+                                          window.open('/teacher-login', '_blank');
+                                        }}
+                                        className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
+                                          isActive('/teacher-login')
+                                            ? 'text-blue-700 bg-blue-50'
+                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                        }`}
+                                      >
+                                        Teacher Login
+                                      </a>
+                                    ) : (
+                                      <Link
+                                        to={subPage.href}
+                                        className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
+                                          isActive(subPage.href)
+                                            ? 'text-blue-700 bg-blue-50'
+                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                        }`}
+                                      >
+                                        {subPage.name}
+                                      </Link>
+                                    )
+                                  )}
+                                </React.Fragment>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          to={item.href}
+                          className={`block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                            isActive(item.href)
                               ? 'text-blue-700 bg-blue-50'
                               : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
                           }`}
-                          aria-expanded={
-                            (item.name === 'About' && isAboutDropdownOpen) ||
-                            (item.name === 'Academics' && isAcademicsDropdownOpen) ||
-                            (item.name === 'Activities' && isActivitiesDropdownOpen) ||
-                            (item.name === 'Achievements' && isAchievementsDropdownOpen) ||
-                            (item.name === 'Admissions' && isAdmissionsDropdownOpen) ||
-                            (item.name === 'Gallery' && isGalleryDropdownOpen) ||
-                            (item.name === 'Careers' && isCareersDropdownOpen) ||
-                            (item.name === 'Blog' && isBlogDropdownOpen) ||
-                            (item.name === 'Login' && isLoginDropdownOpen)
-                          }
-                          aria-controls={`mobile-dropdown-${item.name}`}
+                          role="menuitem"
+                          tabIndex={0}
                         >
                           {item.name}
-                          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
-                            (item.name === 'About' && isAboutDropdownOpen) || 
-                            (item.name === 'Academics' && isAcademicsDropdownOpen) ||
-                            (item.name === 'Activities' && isActivitiesDropdownOpen) ||
-                            (item.name === 'Achievements' && isAchievementsDropdownOpen) ||
-                            (item.name === 'Admissions' && isAdmissionsDropdownOpen) ||
-                            (item.name === 'Gallery' && isGalleryDropdownOpen) ||
-                            (item.name === 'Careers' && isCareersDropdownOpen) ||
-                            (item.name === 'Blog' && isBlogDropdownOpen) ||
-                            (item.name === 'Login' && isLoginDropdownOpen) ? 'rotate-180' : ''
-                          }`} />
-                        </button>
-                        {((item.name === 'About' && isAboutDropdownOpen) || 
-                          (item.name === 'Academics' && isAcademicsDropdownOpen) ||
-                          (item.name === 'Activities' && isActivitiesDropdownOpen) ||
-                          (item.name === 'Achievements' && isAchievementsDropdownOpen) ||
-                          (item.name === 'Admissions' && isAdmissionsDropdownOpen) ||
-                          (item.name === 'Gallery' && isGalleryDropdownOpen) ||
-                          (item.name === 'Careers' && isCareersDropdownOpen) ||
-                          (item.name === 'Blog' && isBlogDropdownOpen) ||
-                          (item.name === 'Login' && isLoginDropdownOpen)) && (
-                          <div id={`mobile-dropdown-${item.name}`} className="ml-4 mt-2 space-y-1 transition-all duration-300 ease-in-out animate-fade-in-down">
-                            {item.subPages?.map((subPage) => (
-                              <React.Fragment key={subPage.name}>
-                                {subPage.hasSubDropdown ? (
-                                  <div>
-                                    <button
-                                      onClick={() => {
-                                        if (subPage.name === 'Mandatory Disclosure') setIsMandatoryDropdownOpen(!isMandatoryDropdownOpen);
-                                      }}
-                                      className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                                        isActive(subPage.href) || (subPage.name === 'Mandatory Disclosure' && isMandatoryActive())
-                                          ? 'text-blue-700 bg-blue-50'
-                                          : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
-                                      }`}
-                                    >
-                                      {subPage.name}
-                                      <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${
-                                        subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen ? 'rotate-180' : ''
-                                      }`} />
-                                    </button>
-                                    {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
-                                      <div className="ml-4 mt-2 space-y-1">
-                                        {subPage.subPages?.map((nestedSubPage) => (
-                                          <Link
-                                            key={nestedSubPage.name}
-                                            to={nestedSubPage.href}
-                                            className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
-                                              isActive(nestedSubPage.href)
-                                                ? 'text-blue-700 bg-blue-50'
-                                                : 'text-gray-500 hover:text-blue-700 hover:bg-blue-50'
-                                            }`}
-                                          >
-                                            {nestedSubPage.name}
-                                          </Link>
-                                        ))}
-                                      </div>
-                                    )}
-                                  </div>
-                                ) : (
-                                  subPage.name === 'Student ERP Login' ? (
-                                    <a
-                                      href="/student-login"
-                                      onClick={e => {
-                                        e.preventDefault();
-                                        window.open('/student-login', '_blank');
-                                      }}
-                                      className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
-                                        isActive('/student-login')
-                                          ? 'text-blue-700 bg-blue-50'
-                                          : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
-                                      }`}
-                                    >
-                                      Student Login
-                                    </a>
-                                  ) : subPage.name === 'Teacher ERP Login' ? (
-                                    <a
-                                      href="/teacher-login"
-                                      onClick={e => {
-                                        e.preventDefault();
-                                        window.open('/teacher-login', '_blank');
-                                      }}
-                                      className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
-                                        isActive('/teacher-login')
-                                          ? 'text-blue-700 bg-blue-50'
-                                          : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
-                                      }`}
-                                    >
-                                      Teacher Login
-                                    </a>
-                                  ) : (
-                                    <Link
-                                      to={subPage.href}
-                                      className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
-                                        isActive(subPage.href)
-                                          ? 'text-blue-700 bg-blue-50'
-                                          : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
-                                      }`}
-                                    >
-                                      {subPage.name}
-                                    </Link>
-                                  )
-                                )}
-                              </React.Fragment>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <Link
-                        to={item.href}
-                        className={`block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                          isActive(item.href)
-                            ? 'text-blue-700 bg-blue-50'
-                            : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
-                        }`}
-                        role="menuitem"
-                        tabIndex={0}
-                      >
-                        {item.name}
-                      </Link>
-                    )}
-                  </div>
-                ))}
+                        </Link>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            </>,
+            document.body
           )}
         </div>
       </header>

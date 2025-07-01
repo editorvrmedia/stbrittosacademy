@@ -21,7 +21,7 @@ const HeroSection = () => {
       >
         {/* Responsive Banner Video Background */}
         <div
-          className="relative w-full bg-black z-0 flex items-center justify-center overflow-hidden"
+          className="w-full bg-black flex items-center justify-center overflow-hidden"
           style={{
             marginTop: 0,
             minHeight: '40vw', // Ensures a good height on all screens
@@ -35,7 +35,7 @@ const HeroSection = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-contain bg-black z-0 pointer-events-none"
+            className="w-full h-full object-contain bg-black pointer-events-none"
             style={{
               border: 0,
               background: 'black',
