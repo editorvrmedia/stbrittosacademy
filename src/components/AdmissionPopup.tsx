@@ -12,13 +12,9 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    // Auto-close after 5 seconds
-    const timer = setTimeout(() => {
-      onClose();
-    }, 5000);
+    // Removed auto-close timer
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      clearTimeout(timer);
     };
   }, [isOpen, onClose]);
 
