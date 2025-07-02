@@ -3,6 +3,7 @@ import { X } from 'lucide-react';
 
 const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [selectedGrade, setSelectedGrade] = useState('Pre School');
+  const [hasTyped, setHasTyped] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -12,11 +13,21 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    // Removed auto-close timer
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    if (!hasTyped) {
+      timer = setTimeout(() => {
+        onClose();
+      }, 10000);
+    }
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      if (timer) clearTimeout(timer);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, hasTyped]);
+
+  const handleInput = () => {
+    setHasTyped(true);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +62,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
           />
           <div className="w-full overflow-x-auto">
             <h3
-              className="font-revue text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 text-center w-full uppercase tracking-wide leading-tight whitespace-nowrap px-2"
+              className="font-revue text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 text-center w-full uppercase tracking-wide leading-tight whitespace-nowrap px-2"
               style={{
                 lineHeight: 1.1,
                 margin: 0
@@ -76,6 +87,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                 placeholder="Your Name"
                 autoComplete="name"
+                onInput={handleInput}
               />
             </div>
             <div>
@@ -88,6 +100,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                 placeholder="Your Contact Number"
                 autoComplete="tel"
+                onInput={handleInput}
               />
             </div>
             <div>
@@ -97,7 +110,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 name="grade" 
                 required
                 value={selectedGrade}
-                onChange={(e) => setSelectedGrade(e.target.value)}
+                onChange={(e) => { setSelectedGrade(e.target.value); handleInput(); }}
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white focus:ring-2 focus:ring-blue-400 focus:border-transparent"
               >
                 <option value="Pre School">Pre School</option>
