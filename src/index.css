@@ -22,10 +22,29 @@
   color: #003262 !important;
 }
 
-/* html {
+html {
   scroll-behavior: smooth;
-} */
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: none;
+}
 
 html, body {
+  scroll-snap-type: none;
   overflow-x: hidden;
+}
+
+/* Hide all scrollbars for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  scroll-snap-type: none;
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.section {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }

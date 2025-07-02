@@ -3,6 +3,14 @@ import { Users, Shield, Award, Target, Heart, BookOpen, Star, CheckCircle } from
 
 const Governance = () => (
   <div className="pt-36 pb-16 bg-gray-50 min-h-screen">
+    <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 className="text-5xl font-bold mb-6">School Governance</h1>
+        <p className="text-xl max-w-3xl mx-auto">
+          Our governance structure ensures transparency, accountability, and excellence in all aspects of school management and educational delivery.
+        </p>
+      </div>
+    </section>
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 className="text-4xl md:text-5xl font-bold text-blue-900 mb-6">Governance at St. Britto's Academy</h1>
       <p className="text-lg text-gray-700 mb-8">

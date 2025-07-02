@@ -127,7 +127,7 @@ const SeniorSecondary = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Senior Secondary (Grades 11-12)</h1>
           <p className="text-xl max-w-3xl mx-auto">
@@ -266,18 +266,18 @@ const SeniorSecondary = () => {
       </section>
 
       {/* Senior Secondary Main Content - Replaces Stream Options */}
-      <section className="py-4 bg-blue-100">
+      <section className="py-4 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">
+            <h2 className="text-4xl font-bold text-blue-900 mb-2">
               Comprehensive Senior Secondary Curriculum
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-blue-700">
               Preparing students for diverse career paths with a robust curriculum.
             </p>
           </div>
           
-          <div className="text-lg text-gray-700 leading-relaxed mb-4">
+          <div className="text-lg text-blue-800 leading-relaxed mb-4">
             <p className="mb-4">
               Our Senior Secondary program offers a comprehensive CBSE curriculum designed to nurture intellectual growth, critical thinking, and career readiness. Students can choose from a range of academic streams, each providing a strong foundation for higher education and future success.
             </p>
@@ -449,7 +449,7 @@ const SeniorSecondary = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-indigo-700 text-white">
+      <section className="py-16 bg-blue-900 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">Shape Your Future</h2>
           <p className="text-xl mb-8">
@@ -458,13 +458,13 @@ const SeniorSecondary = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/admissions"
-              className="bg-white text-indigo-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+              className="bg-white text-blue-900 hover:bg-sky-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Apply for Admission
             </a>
             <a
               href="/contact"
-              className="border-2 border-white text-white hover:bg-white hover:text-indigo-700 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Contact Us
             </a>

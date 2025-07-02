@@ -2,8 +2,9 @@ import React from 'react';
 import Header from './components/Header';
 
 const SchoolDetails = () => (
-  <div className="max-w-4xl mx-auto py-12 px-4 mt-24">
-    <h1 className="text-2xl font-bold text-blue-900 mb-6">School Details</h1>
+  <div className="max-w-4xl mx-auto py-12 px-4 mt-24 space-y-12">
+    <h1 className="text-3xl font-extrabold text-blue-900 mb-8 text-center drop-shadow">School Details</h1>
+    <div className="bg-white/80 rounded-xl shadow-lg p-6 border border-blue-100">
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
         <tbody>
@@ -28,10 +29,12 @@ const SchoolDetails = () => (
         </tbody>
       </table>
                   </div>
-    <div className="mt-8">
+      <div className="mt-6 text-center">
       <a href="https://drive.google.com/file/d/1nc5gWAwdt4mfGlh0m-w1lBL6RPKzPgxQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">View/Download PDF</a>
                   </div>
-    <h2 className="text-xl font-bold text-blue-900 mt-12 mb-4">Management Details</h2>
+    </div>
+    <div className="bg-blue-50 rounded-xl shadow p-6 border border-blue-100">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Management Details</h2>
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
         <tbody>
@@ -41,10 +44,12 @@ const SchoolDetails = () => (
         </tbody>
       </table>
                   </div>
-    <div className="mt-8">
+      <div className="mt-6 text-center">
       <a href="https://drive.google.com/file/d/19y_BhfWFcoPbKHv8kGSWNRcOJQ7zf2c2/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">View/Download Certificate</a>
                   </div>
-    <h2 className="text-xl font-bold text-blue-900 mt-12 mb-4">School Managing Committee Details</h2>
+    </div>
+    <div className="bg-white/80 rounded-xl shadow-lg p-6 border border-blue-100">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">School Managing Committee Details</h2>
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
         <thead>
@@ -73,7 +78,9 @@ const SchoolDetails = () => (
         </tbody>
       </table>
                 </div>
-    <h2 className="text-xl font-bold text-blue-900 mt-12 mb-4">Principal's Official Address</h2>
+    </div>
+    <div className="bg-blue-50 rounded-xl shadow p-6 border border-blue-100">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Principal's Official Address</h2>
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
         <tbody>
@@ -83,10 +90,12 @@ const SchoolDetails = () => (
         </tbody>
       </table>
                 </div>
-                <div className="mt-8">
+      <div className="mt-6 text-center">
       <a href="https://drive.google.com/file/d/1x_ZXZ_VVZ6bDZmCTyWX9b1hZ_2xrAxfq/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">SMC DETAILS (PDF)</a>
                     </div>
-    <h2 className="text-xl font-bold text-blue-900 mt-12 mb-4">Infrastructure Details</h2>
+    </div>
+    <div className="bg-white/80 rounded-xl shadow-lg p-6 border border-blue-100">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Infrastructure Details</h2>
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
         <thead>
@@ -128,7 +137,9 @@ const SchoolDetails = () => (
         </tbody>
       </table>
                     </div>
-    <h2 className="text-xl font-bold text-blue-900 mt-12 mb-4">Safety Measures available in the school (Facilities)</h2>
+    </div>
+    <div className="bg-blue-50 rounded-xl shadow p-6 border border-blue-100">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Safety Measures available in the school (Facilities)</h2>
             <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
                 <thead>
@@ -167,11 +178,13 @@ const SchoolDetails = () => (
                 </tbody>
               </table>
             </div>
-    <div className="mt-8 flex flex-col sm:flex-row gap-4">
+      <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
       <a href="https://drive.google.com/file/d/1xmolEh03lPpoTTpbSCQ0HM53YxTn_Xsy/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">Stability Certificate</a>
       <a href="https://drive.google.com/file/d/1JYc93rG11GvFxz_7lA1kXLvIuvOT9VGL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">Sanitary Certificate</a>
           </div>
-    <h2 className="text-xl font-bold text-blue-900 mt-12 mb-4">Mode of Payment of Salary</h2>
+    </div>
+    <div className="bg-white/80 rounded-xl shadow-lg p-6 border border-blue-100">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Mode of Payment of Salary</h2>
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
         <thead>
@@ -195,7 +208,9 @@ const SchoolDetails = () => (
         </tbody>
       </table>
         </div>
-    <h2 className="text-xl font-bold text-blue-900 mt-12 mb-4">Other Vital Information</h2>
+    </div>
+    <div className="bg-blue-50 rounded-xl shadow p-6 border border-blue-100">
+      <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Other Vital Information</h2>
     <div className="mb-2 text-gray-700">1. Enrolment of the students</div>
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
@@ -217,42 +232,203 @@ const SchoolDetails = () => (
         </tbody>
       </table>
           </div>
-    <div className="mt-12">
+      {/* Additional Committees and School Information */}
+      <div className="mt-12 space-y-8">
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <h2 className="text-lg font-bold text-blue-900 mb-2">Names of the committee members for INCLUSIVE STRATEGIES</h2>
+          <div className="font-bold text-blue-900 mb-2">INCLUSIVE STRATEGIES COMMITTEE MEMBERS</div>
+          <ul className="list-disc pl-6 mb-4 text-gray-700">
+            <li>Ms. UMA SUNDARASAN</li>
+            <li>Ms. MARY SHANTHI</li>
+            <li>Ms. ANU DIANA</li>
+            <li>Mr. RAJARAMAN</li>
+          </ul>
+          <div className="mb-4 text-gray-700">SCHOOL CONSULTANT: Dr. NAPPINNAI SERAN &nbsp; Phone: 9444368200</div>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2">WELLNESS GUIDANCE, COUNSELLING & YOGA COMMITTEE MEMBERS</div>
+          <ul className="list-disc pl-6 mb-4 text-gray-700">
+            <li>Ms. MARY VASANTHA KUMARI</li>
+            <li>Ms. SUBATHIRAI</li>
+            <li>Ms. JAYANTHI</li>
+            <li>Ms. STELLA MARY</li>
+            <li>Ms. ANANTHI. P</li>
+          </ul>
+          <div className="mb-4 text-gray-700">SCHOOL CONSULTANT: Dr. NAPPINNAI SERAN (INDIVIDUAL, MARRIAGE AND FAMILY THERAPIST)</div>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <h2 className="text-lg font-bold text-blue-900 mb-2 mt-8">Names of the committee members for ANTI BULLYING & GENDER SENSITIVITY</h2>
+          <div className="font-bold text-blue-900 mb-2">ANTIBULLYING & DISCIPLINE COMMITTEE MEMBERS</div>
+          <ul className="list-disc pl-6 mb-4 text-gray-700">
+            <li>Ms. MARY VASANTHAKUMARI</li>
+            <li>Ms. PUNITHA</li>
+            <li>Mr. SRI RAM</li>
+            <li>Mr. SHAHUL HAMEED</li>
+          </ul>
+          <div className="font-bold text-blue-900 mb-2">SAFETY AND SECURITY OF WOMAN AND CHILDREN @ SCHOOL COMMITTEE MEMBERS</div>
+          <ul className="list-disc pl-6 mb-4 text-gray-700">
+            <li>Ms. JOAN RAJESH</li>
+            <li>Ms. UMA RANI</li>
+            <li>Mr. GOKUL RAJ</li>
+            <li>VINITH S – XII</li>
+            <li>K LEKHANA – XII</li>
+          </ul>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2">CCE Coordinators</div>
+          <ul className="list-disc pl-6 mb-4 text-gray-700">
+            <li>Mrs. JAYALAKSHMI</li>
+            <li>Mrs.V. RAJA RAJESWARI</li>
+          </ul>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2">Details of the Contact person in case Emergency</div>
+          <div className="mb-4 text-gray-700">Mr. Gokul Raj : Cell No 8939868940</div>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2">Period of Academic Session</div>
+          <div className="mb-4 text-gray-700">April to March</div>
+          <div className="font-bold text-blue-900 mb-2">Vacation Period</div>
+          <div className="mb-4 text-gray-700">May Month</div>
+          <div className="font-bold text-blue-900 mb-2">Admission Details</div>
+          <div className="mb-2 text-gray-700">Admission Period: February to March</div>
+          <div className="mb-2 text-gray-700">Admission requirements: 2 and half for Pre KG and 3 and half for LKG</div>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2 mt-8">9. Details of Workshops and training programmes for teachers</div>
+          <div className="overflow-x-auto mb-8">
+            <table className="min-w-full bg-white border border-gray-200 text-sm">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="p-2 font-semibold border">SNO.</th>
+                  <th className="p-2 font-semibold border">TOPIC OF TRAINING PROGRAMME</th>
+                  <th className="p-2 font-semibold border">DATE</th>
+                  <th className="p-2 font-semibold border">VENUE SCHOOL & CITY</th>
+                  <th className="p-2 font-semibold border">NO OF PARTICIPANTS FROM YOUR SCHOOL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="p-2 border">1</td>
+                  <td className="p-2 border">Experiential Learning</td>
+                  <td className="p-2 border">27.06.2019<br/>28.06.2019</td>
+                  <td className="p-2 border">PSBB Milliennium School, Gerugambakkam</td>
+                  <td className="p-2 border">Mrs. Joan Rajesh - (Sr. Vice Principal)</td>
+                </tr>
+                <tr>
+                  <td className="p-2 border">2</td>
+                  <td className="p-2 border">Competency Building Programme for Class XII - Accountancy</td>
+                  <td className="p-2 border">16.08.2019<br/>17.08.2019</td>
+                  <td className="p-2 border">Kola Perumal Chetty Vaishnav Senior Secondary School, Arumbakkam</td>
+                  <td className="p-2 border">Mrs. Punitha S - 1 (PGT)</td>
+                </tr>
+                <tr>
+                  <td className="p-2 border">3</td>
+                  <td className="p-2 border">Competency Building Programme for Class XII - Accountancy</td>
+                  <td className="p-2 border">27.06.2019<br/>16.08.2019<br/>13.09.2019<br/>14.09.2019</td>
+                  <td className="p-2 border">Vedanta Academy Vanagaram</td>
+                  <td className="p-2 border">Mrs. Priyanka Dubey - 1 (TGT)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2 mt-8">Details of Text Books for the Year 2025-2026</div>
+          <div className="mb-2 text-gray-700">KG – II  VKANV Solutions – FEDFY BOOKS</div>
+          <div className="mb-2 text-gray-700">STD III - VIII – Cambridge University Press</div>
+          <div className="mb-2 text-gray-700">English, Math, Science, Social</div>
+          <div className="mb-2 text-gray-700">Tamil Nadu Government text books</div>
+          <ul className="list-disc pl-10 mb-2 text-gray-700">
+            <li>Tamil</li>
+            <li>NCERT</li>
+            <li>Hindi</li>
+          </ul>
+          <div className="mb-2 text-gray-700">STD IX – XII – NCERT TEXT BOOKS</div>
+          <div className="mb-4 text-gray-700">The books are verified by the School Text Book committee and approved</div>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2 mt-8">FEE STRUCTURE FOR YEAR 2025 - 2026</div>
+          <div className="overflow-x-auto mb-8">
+            <table className="min-w-full bg-white border border-gray-200 text-sm">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="p-2 font-semibold border">Heads of Fee</th>
+                  <th className="p-2 font-semibold border">Primary I - V</th>
+                  <th className="p-2 font-semibold border">Middle VI - VIII</th>
+                  <th className="p-2 font-semibold border">Secondary IX & X</th>
+                  <th className="p-2 font-semibold border">XI & XII Senior Secondary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="p-2 border">Tuition Fee</td>
+                  <td className="p-2 border">54000</td>
+                  <td className="p-2 border">57500</td>
+                  <td className="p-2 border">60000</td>
+                  <td className="p-2 border">63000</td>
+                </tr>
+                <tr>
+                  <td className="p-2 border">Development Fee</td>
+                  <td className="p-2 border">14500</td>
+                  <td className="p-2 border">14700</td>
+                  <td className="p-2 border">14900</td>
+                  <td className="p-2 border">14900</td>
+                </tr>
+                <tr>
+                  <td className="p-2 border">Special Fee</td>
+                  <td className="p-2 border">16100</td>
+                  <td className="p-2 border">16100</td>
+                  <td className="p-2 border">17400</td>
+                  <td className="p-2 border">25300</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2 mt-8">ORGANISATIONAL STRUCTURE</div>
+          <div className="font-bold text-blue-900 mb-2">FUNCTIONAL HEADS</div>
+          <ul className="list-disc pl-6 mb-4 text-gray-700">
+            <li>Pre-KG – Std. V : Mrs. V. Raja Rajeswari, M.A., B.Ed.</li>
+            <li>Std. VI – VIII : Mrs. Uma Rani, M.Sc., B.Ed.</li>
+            <li>Std. IX – XII : Mrs. S. Jayalakshmi, M.Sc., B.Ed.</li>
+          </ul>
       <div className="font-bold text-blue-900 mb-2">ACADEMIC COORDINATORS</div>
       <ul className="list-disc pl-6 mb-4 text-gray-700">
-        <li>Pre-KG – U.K.G. : Mrs. Priya Srikanth, B.A, M.HRM, DMTT</li>
-        <li>Std. I – V: Mrs. Shirley Roselin Isabella, M.A., B.Ed.</li>
+            <li>Pre-KG – U.K.G. : Mrs. Priya Srikanth, B.A, MHRM, DMTT</li>
+            <li>Std. I – V : Mrs. Shirley Roselin Isabella, M.A., B.Ed.</li>
         <li>Std. VI – VIII : Mrs. Agnes Sheela, M.Sc., B.Ed.</li>
         <li>Std. IX – XII : Mrs. Preethi Angel Sofia, M.Sc., B.Ed.</li>
       </ul>
       <div className="font-bold text-blue-900 mb-2">ADMIN COORDINATORS</div>
       <ul className="list-disc pl-6 mb-4 text-gray-700">
-        <li>Pre-KG – U.K.G. : Mrs. Sherlin Rani, B.Ed.</li>
-        <li>Std. I – V: Mrs. Sheeba, BCA, B.Ed.</li>
-        <li>Std. VI – VIII : Mrs. Stella Mary, MCA, B.Ed.</li>
+            <li>Pre-KG – U.K.G. : Mrs. Sherlin Rani, B.E</li>
+            <li>Std. I – V : Mrs. Sheeba, B.C.A., B.Ed.</li>
+            <li>Std. VI – VIII : Mrs. Stella Mary, M.C.A., B.Ed.</li>
         <li>Std. IX – XII : Mrs. Jenitha Devi, M. Tech., B.Ed.</li>
       </ul>
       <div className="font-bold text-blue-900 mb-2">SPORTS HEAD</div>
       <ul className="list-disc pl-6 mb-4 text-gray-700">
-        <li>Pre-KG – Std. XII : Mr. Shahrul Hameed, B.Sc., B.P.Ed.</li>
-        <li>Pre-KG – Std. V : Mrs. Ajitha, B. Com, DMTT</li>
-        <li>Std. VI – XII : Mr. Michael Balu, M.Sc., B.A., B.Ed.</li>
+            <li>Pre-KG – Std. XII : Mr. Shahul Hameed, B.Sc., B.P.Ed.</li>
+            <li>Pre-KG – Std V : Mrs. Ajitha, B. Com., DMTT</li>
+            <li>Std. VI – XII : Mr. Michael Bala, M.Sc., B.A., B.Ed,</li>
       </ul>
       <div className="font-bold text-blue-900 mb-2">CULTURAL HEAD</div>
       <ul className="list-disc pl-6 mb-4 text-gray-700">
         <li>Pre-KG – Std. XII : Mrs. Radhika Susan, B.Sc., M.A., B.Ed.</li>
-        <li>Pre-KG – U.K.G : Mrs. Anu Diana, B. Sc. D.EL.ED.</li>
-        <li>Std. I – V : Mrs. Remy John, B. Sc., B.Ed.</li>
-        <li>Std. VI – VIII : Mrs. Kumari Singh, B.A.</li>
-        <li>Std. IX – XII : Mrs. Sumathy, M.A., B.Ed.</li>
+            <li>Pre-KG – U.K.G. : Mrs. Anu Diana, B. Sc, D.EL. ED,</li>
+            <li>Std. I – V : Mrs. Reny John, B. Sc, B.Ed.</li>
+            <li>Std. VI – VIII : Mrs. Kumari Singh, BA.,</li>
+            <li>Std. IX – XII : Mrs. Sumathy, M.A, B.Ed.</li>
       </ul>
       <div className="font-bold text-blue-900 mb-2">SCOUTS, GUIDES, CUBS & BULBULS</div>
       <ul className="list-disc pl-6 mb-4 text-gray-700">
-        <li>Scout Master: Mrs. G. Jayarthi Arulmani, M.Com., B.Ed., Per-ALT</li>
-        <li>Asst. Sc. Master: Mr. J. Rajaraman, M.A., B.Ed.</li>
-        <li>Guide Captain: Ms. T. Joyce Jebarani, B.A, D.T.Ed., HWB</li>
-        <li>Cub Master: Ms. S. Sujith Jecintha, B.A., B.P.Ed.</li>
-        <li>Bulbul Leader: Mrs. K.M. Stella Mary, B.Sc., MCA., B.Ed., HWB</li>
+            <li>Scout Master : Mrs. G. Jayanthi Arulmani, M.Com., B.Ed., Pre-ALT</li>
+            <li>Asst. Sc. Master : Mr. J. Rajaraman, M.A., B.Ed.</li>
+            <li>Guide Captain : Mrs. T. Joyce Jebarani, B.A., D.T.Ed., HWB</li>
+            <li>Cub Master : Mrs. S. Sybil Jecintha, B.A., D.P.Ed.</li>
+            <li>Bulbul Leader : Mrs. K.M. Stella Mary, B.Sc., MCA., B.Ed., HWB</li>
       </ul>
       <div className="font-bold text-blue-900 mb-2">SUBJECT SYNERGISERS</div>
       <div className="font-bold text-blue-800 mt-4">ENGLISH</div>
@@ -268,23 +444,25 @@ const SchoolDetails = () => (
       <div className="font-bold text-blue-800 mt-4">HINDI</div>
       <ul className="list-disc pl-6 mb-2 text-gray-700">
         <li>Mrs. Tamil Selvi, M.A.</li>
-        <li>Mrs. Sriram Gupta, B.Com, B.Ed, CTET</li>
+            <li>Mrs. Simran Gupta, B.Com, B.Ed, CTET</li>
       </ul>
       <div className="font-bold text-blue-800 mt-4">MATHEMATICS</div>
       <ul className="list-disc pl-6 mb-2 text-gray-700">
-        <li>Mrs. Subhasini, M.Sc., M.Phil.</li>
-        <li>Mrs. Suchita Suse, B.Ed.</li>
+            <li>Mrs. Subashini, M.Sc., M.Phil.</li>
+            <li>Mrs. Sudha, M.Sc., B.Ed.</li>
       </ul>
       <div className="font-bold text-blue-800 mt-4">SCIENCE</div>
       <ul className="list-disc pl-6 mb-2 text-gray-700">
         <li>Mrs. Noel Mammen, M.Sc., B.Ed.</li>
-        <li>Mrs. Abinaya Begum, B.Sc., B.Ed.</li>
+            <li>Mrs. Arshiya Begum, B.Sc., B.Ed.</li>
       </ul>
       <div className="font-bold text-blue-800 mt-4">SOCIAL SCIENCE</div>
       <ul className="list-disc pl-6 mb-2 text-gray-700">
-        <li>Mrs. Gauthami, M.Com., M.A., B.Ed., M.Phil.</li>
-        <li>Mrs. Kalakalai Pradipma, B.A., B.Ed.</li>
+            <li>Mrs. Gauthami, M.Com., M.B.A., B.Ed., M.Phil.</li>
+            <li>Mrs. Kollaikal Padmaja, B.A., B.Ed</li>
           </ul>
+        </div>
+      </div>
         </div>
     </div>
   );

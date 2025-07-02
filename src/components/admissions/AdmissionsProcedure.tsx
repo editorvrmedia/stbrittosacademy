@@ -89,13 +89,13 @@ const AdmissionsProcedure = () => {
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-bold text-blue-700 mb-4 text-center">ONLINE APPLICATION PORTAL</h1>
-      <p className="mb-4 text-center">Dear Applicant, Welcome to St.Britto's Group of Institutions Online Application Portal for the academic year 2025-2026.</p>
+      <h1 className="text-2xl font-bold text-blue-900 mb-4 text-center">ONLINE APPLICATION PORTAL</h1>
+      <p className="mb-4 text-center text-blue-700">Dear Applicant, Welcome to St.Britto's Group of Institutions Online Application Portal for the academic year 2025-2026.</p>
       <div className="mb-4 flex justify-center gap-2">
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2" onClick={() => setShowForm(true)}>NEW APPLICANT</button>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">REGISTERED APPLICANT</button>
+        <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mr-2" onClick={() => setShowForm(true)}>NEW APPLICANT</button>
+        <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">REGISTERED APPLICANT</button>
       </div>
-      <h2 className="text-lg font-semibold mb-2 text-center">Steps to procure Online Application Form:</h2>
+      <h2 className="text-lg font-semibold mb-2 text-center text-blue-800">Steps to procure Online Application Form:</h2>
       <ol className="list-decimal list-inside mb-4 space-y-2">
         <li>
           <strong>Step 1: Register</strong>
@@ -108,7 +108,7 @@ const AdmissionsProcedure = () => {
             <strong>Age Criteria to Register</strong>
             <table className="min-w-full mt-2 mb-2 text-sm border mx-auto">
               <thead>
-                <tr className="bg-gray-100">
+                <tr className="bg-sky-100">
                   <th className="border px-2 py-1">Class</th>
                   <th className="border px-2 py-1">Age Criteria</th>
                 </tr>

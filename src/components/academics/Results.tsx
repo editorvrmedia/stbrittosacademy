@@ -114,13 +114,13 @@ const Results = () => {
   const selectedYearData = academicYears.find(year => year.year === selectedYear);
 
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="py-12 bg-sky-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-blue-900 sm:text-4xl">
             Academic Results
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-blue-700">
             Celebrating our students' achievements and academic excellence
           </p>
           </div>
@@ -128,14 +128,14 @@ const Results = () => {
         {/* Year Selector */}
         <div className="mb-8">
           <div className="max-w-2xl mx-auto">
-            <label htmlFor="year-select" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="year-select" className="block text-sm font-medium text-blue-800 mb-2">
               Select Academic Year
             </label>
               <select
               id="year-select"
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-              className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg"
+              className="block w-full rounded-md border-blue-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg"
               >
               {academicYears.map((year) => (
                 <option key={year.year} value={year.year}>
@@ -156,7 +156,7 @@ const Results = () => {
           >
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="p-6">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
+                <h3 className="text-2xl font-semibold text-blue-900 mb-6 text-center">
                   {selectedYearData.title}
                 </h3>
                   <div className="space-y-6">

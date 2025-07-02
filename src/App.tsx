@@ -135,7 +135,7 @@ function Chatbot() {
             <span className="text-white font-bold text-base sm:text-lg">BrittoBot – Ask Me Anything</span>
             <button onClick={() => setOpen(false)} className="text-white text-xl sm:text-2xl font-bold focus:outline-none hover:text-green-100 transition-colors">×</button>
           </div>
-          <div className="flex-1 overflow-y-auto px-3 sm:px-4 py-2 sm:py-3 space-y-2 bg-green-50">
+          <div className="flex-1 overflow-hidden px-3 sm:px-4 py-2 sm:py-3 space-y-2 bg-green-50">
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex ${msg.from === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`rounded-xl px-3 sm:px-4 py-2 max-w-[80%] text-sm ${msg.from === 'user' ? 'bg-green-200 text-green-900' : 'bg-white text-gray-800 border border-green-200'}`}>{msg.text}</div>

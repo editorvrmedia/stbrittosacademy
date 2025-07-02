@@ -86,19 +86,19 @@ const Achievements = () => {
       icon: Users,
       title: 'Expert Faculty',
       description: 'Our dedicated team of qualified, experienced teachers are committed to nurturing each student\'s potential and ensuring academic success.',
-      color: 'green'
+      color: 'blue'
     },
     {
       icon: BookOpen,
       title: 'Holistic Curriculum',
       description: 'We offer a comprehensive curriculum that balances academics with arts, sports, and character development for well-rounded growth.',
-      color: 'purple'
+      color: 'blue'
     },
     {
       icon: Globe,
       title: 'International Standards',
       description: 'Our international standard education prepares students for global opportunities while maintaining strong cultural roots.',
-      color: 'indigo'
+      color: 'blue'
     }
   ];
 

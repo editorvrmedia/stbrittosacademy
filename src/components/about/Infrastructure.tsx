@@ -131,11 +131,11 @@ const Infrastructure = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-700 to-gray-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Infrastructure</h1>
+          <h1 className="text-5xl font-bold mb-6">School Infrastructure</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Explore our world-class infrastructure designed to provide the best learning environment for holistic education and character development.
+            State-of-the-art facilities designed to provide the best learning environment for our students, supporting both academic excellence and holistic development.
           </p>
         </div>
       </section>

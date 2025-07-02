@@ -108,19 +108,19 @@ const HomePage = () => {
 
       {/* Quick Access Section */}
       <motion.section
-        className="pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden"
+        className="section pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeInOut' }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeInOut' }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             QUICK ACCESS
           </motion.h2>
@@ -128,8 +128,8 @@ const HomePage = () => {
             className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 lg:mb-12"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeInOut', delay: 0.2 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             Find what you're looking for
           </motion.p>
@@ -139,8 +139,8 @@ const HomePage = () => {
                 key={i}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: 'easeInOut', delay: 0.3 + i * 0.15 }}
-                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 + i * 0.05 }}
+                viewport={{ once: true, amount: 0.1 }}
               >
                 {i === 0 && (
                   <Link to="/admissions/procedure" className="bg-blue-50 hover:bg-blue-100 p-4 sm:p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex flex-col items-center justify-center h-32 sm:h-40 lg:h-48">
@@ -174,19 +174,19 @@ const HomePage = () => {
 
       {/* 28 Years of Excellence Section */}
       <motion.section 
-        className="py-12 sm:py-16 lg:py-20 bg-[#f5f8ff] max-w-full overflow-x-hidden"
+        className="section py-12 sm:py-16 lg:py-20 bg-[#f5f8ff] max-w-full overflow-x-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <motion.h2 
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 mt-2"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             Celebrating <AnimatedCounter target={28} /> Years of Educational Excellence
           </motion.h2>
@@ -196,34 +196,44 @@ const HomePage = () => {
               className="flex-1 max-w-xl"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
-              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-6">
-                <span className="font-bold text-lg sm:text-xl lg:text-2xl" style={{fontFamily: 'stbritosacademy'}}>St. Britto's Academy</span> is an International Standard school started in the year <span className="font-bold">1997</span> and here we stand proud stepping into the <span className="font-bold">28th year</span> seeking inspiration from our own achievement and continuing the quest for excellence. <span className="font-bold">St. Britto's</span> strives tirelessly, creating milestones, attaining the unattainable and creating history.
+              <h2 
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-2 sm:mb-4"
+              >
+                Welcome to St. Britto's Academy
+              </h2>
+              <p 
+                className="text-base sm:text-lg lg:text-xl text-blue-700 mb-6 sm:mb-8 lg:mb-12"
+              >
+                Nurturing minds, building character, and creating leaders of tomorrow
               </p>
-              <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-6">
-                In order to achieve their goal of being unique and progressive in the field of education, the school has a lot of innovative systems and facilities in place that have proved to be both creative and effective. Conscious efforts are made to inculcate reading habits and develop communication skills among the students.
+              <p className="text-base sm:text-lg lg:text-xl text-blue-800 mb-6">
+                Established in 1997, St. Britto's Academy has been at the forefront of educational excellence for over 28 years. Our commitment to holistic development, academic rigor, and character formation has made us one of Chennai's most trusted educational institutions.
+              </p>
+              <p className="text-base sm:text-lg lg:text-xl text-blue-800 mb-6">
+                We believe in nurturing not just academic excellence, but also the moral, physical, and social development of every child. Our comprehensive curriculum, experienced faculty, and state-of-the-art facilities create an environment where students thrive and reach their full potential.
               </p>
               <motion.div 
                 className="bg-white border-l-4 border-amber-400 rounded-lg shadow p-4 mb-6"
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.4 }}
-                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
               >
-                <p className="italic text-gray-700 text-base sm:text-lg">
-                  "Therefore, it has chosen a team of efficient, committed, sincere and experienced staff to achieve their dream. They strongly believe in the Philosophy that <span className="font-bold">'Form people to become competent than merely teaching.'</span>"
+                <p className="italic text-blue-800 text-base sm:text-lg">
+                  "Education is not preparation for life; education is life itself." - John Dewey
                 </p>
               </motion.div>
               <motion.div 
                 className="flex flex-wrap gap-3 mb-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.5 }}
-                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
               >
-                <span className="px-4 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-sm font-semibold">Excellence</span>
+                <span className="px-4 py-1 rounded-full bg-sky-100 border border-sky-200 text-blue-900 text-sm font-semibold">Excellence</span>
                 <span className="px-4 py-1 rounded-full bg-yellow-100 border border-yellow-200 text-yellow-800 text-sm font-semibold">Innovation</span>
                 <span className="px-4 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-800 text-sm font-semibold">Character Building</span>
               </motion.div>
@@ -233,8 +243,8 @@ const HomePage = () => {
               className="flex-1 flex flex-col items-center relative max-w-md w-full"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
-              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <img
                 src="/school-excellence-award-2018.jpg"
@@ -246,8 +256,8 @@ const HomePage = () => {
                 className="absolute right-0 bottom-0 mr-2 mb-2"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: 'easeOut', delay: 0.6 }}
-                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
               >
                 <div className="bg-amber-500 text-white px-5 py-2 rounded-lg shadow text-lg font-bold text-center">
                   28
@@ -261,26 +271,26 @@ const HomePage = () => {
 
       {/* Stats Bar and Vision & Mission Section */}
       <motion.section 
-        className="w-full"
+        className="section w-full"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         {/* Stats Bar */}
         <motion.div 
-          className="bg-blue-600 w-full py-10 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
+          className="bg-blue-900 w-full py-10 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           <motion.div 
             className="flex flex-col items-center text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.3 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Users className="w-10 h-10" />
@@ -292,8 +302,8 @@ const HomePage = () => {
             className="flex flex-col items-center text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.4 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Gem className="w-10 h-10" />
@@ -305,8 +315,8 @@ const HomePage = () => {
             className="flex flex-col items-center text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.5 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Star className="w-10 h-10" />
@@ -318,8 +328,8 @@ const HomePage = () => {
             className="flex flex-col items-center text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.6 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Trophy className="w-10 h-10" />
@@ -333,8 +343,8 @@ const HomePage = () => {
           className="bg-white w-full py-12 flex flex-col items-center justify-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
-          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-8 px-4 mx-auto">
             <motion.img 
@@ -343,24 +353,24 @@ const HomePage = () => {
               className="rounded-xl shadow-lg w-full max-w-sm object-cover"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
-              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
             />
             <motion.div 
               className="flex-1"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
-              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
+              viewport={{ once: true, amount: 0.1 }}
             >
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Vision & Mission</h2>
               <div className="mb-4">
-                <h3 className="text-lg font-semibold text-blue-700 mb-1">Our Vision</h3>
-                <p className="text-gray-700 text-base mb-2">To form and evolve a vibrant scientific and educational community that is creative, adaptable, and internationally renowned for excellence in education and research, and for improving society through its innovative educational strategies.</p>
+                <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Vision</h3>
+                <p className="text-white text-base mb-2">To form and evolve a vibrant scientific and educational community that is creative, adaptable, and internationally renowned for excellence in education and research, and for improving society through its innovative educational strategies.</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-blue-700 mb-1">Our Mission</h3>
-                <p className="text-gray-700 text-base">Advancing the frontiers of knowledge, blending theory with practice. Motivating and enabling students to seek the highest levels of intellectual achievements and personal growth, to become complete human beings. Sharing knowledge, discoveries and inventions for the betterment of the world at large.</p>
+                <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Mission</h3>
+                <p className="text-white text-base">Advancing the frontiers of knowledge, blending theory with practice. Motivating and enabling students to seek the highest levels of intellectual achievements and personal growth, to become complete human beings. Sharing knowledge, discoveries and inventions for the betterment of the world at large.</p>
               </div>
             </motion.div>
           </div>
@@ -369,16 +379,18 @@ const HomePage = () => {
 
       {/* Call to Action Section */}
       <motion.section
-        className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white max-w-full overflow-x-hidden"
+        className="section py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white max-w-full overflow-x-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">Ready to Join Our Community?</h2>
             <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">

@@ -100,11 +100,11 @@ const Admissions = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-700 to-purple-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Join St. Brittos Academy</h1>
+          <h1 className="text-5xl font-bold mb-6">Admissions</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Begin your child's journey toward academic excellence and personal growth. We welcome families who share our commitment to learning and character development.
+            Join the St. Britto's Academy family. Discover our admission process, requirements, and how to begin your child's educational journey with us.
           </p>
           
           {/* Quick Links to Subpages */}

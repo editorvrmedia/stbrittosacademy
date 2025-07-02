@@ -4,6 +4,15 @@ import { CheckCircle } from 'lucide-react';
 const UpperPrimary = () => {
   return (
     <div className="pt-20 bg-white min-h-screen">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-bold mb-6">Upper Primary (Grades 4-5)</h1>
+          <p className="text-xl max-w-3xl mx-auto">
+            Building upon strong foundations. Our upper primary program deepens subject knowledge while developing critical thinking, problem-solving skills, and preparing students for the challenges of middle school.
+          </p>
+        </div>
+      </section>
+
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-green-50 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
           Higher Primary at <span className="font-revue">St. Britto's Academy</span> – A Cambridge-Aligned Learning Experience

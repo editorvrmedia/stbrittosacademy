@@ -47,7 +47,7 @@ const PrincipalDesk = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <motion.section className="py-16 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+      <motion.section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             className="text-5xl font-bold mb-6"
@@ -59,7 +59,7 @@ const PrincipalDesk = () => {
             Principal's Desk
           </motion.h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Welcome to the 28th Year of Excellence at St. Britto's Academy - where opportunities thrive, innovation flourishes, and excellence is a tradition.
+            A message from our Principal, Mrs. Mary Vasantha Kumari, on our commitment to excellence in education and holistic development.
           </p>
         </div>
       </motion.section>

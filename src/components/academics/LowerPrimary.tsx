@@ -139,7 +139,7 @@ const LowerPrimary = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-emerald-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Lower Primary (Grades 1-3)</h1>
           <p className="text-xl max-w-3xl mx-auto">
@@ -149,36 +149,36 @@ const LowerPrimary = () => {
       </section>
 
       {/* New Content: Comprehensive Subjects and Learning */}
-      <section className="py-16 bg-green-50 text-center">
+      <section className="py-16 bg-sky-50 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
             Our Comprehensive Curriculum
           </h2>
 
-          <div className="text-lg text-gray-700 leading-relaxed grid md:grid-cols-2 gap-8">
+          <div className="text-lg text-blue-800 leading-relaxed grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <p className="mb-4 font-bold">
                 Our comprehensive subjects include:
               </p>
               <ul className="list-none space-y-2 mb-4">
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Languages – English, Tamil & Hindi</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Core Subjects – Mathematics & Environmental Science (EVS)</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Technology – Computer Science</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Life Skills & Values – Value Education & Talent Hunt (TH)</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Creative & Physical Development – Art Education & Physical & Health Education</span>
                 </li>
               </ul>
@@ -190,23 +190,23 @@ const LowerPrimary = () => {
               </p>
               <ul className="list-none space-y-2 mb-8">
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Smooth knowledge transition & conceptual clarity</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>A passion for lifelong learning</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Application of practical knowledge</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Talent identification & skill development</span>
                 </li>
                 <li className="flex items-start justify-center">
-                  <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
+                  <span className="text-blue-600 mr-2"><CheckCircle className="h-5 w-5" /></span>
                   <span>Collaborative learning & peer engagement</span>
                 </li>
               </ul>
@@ -223,16 +223,16 @@ const LowerPrimary = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Program Highlights</h2>
-            <p className="text-xl text-gray-600">Creating confident, capable, and curious learners</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Program Highlights</h2>
+            <p className="text-xl text-blue-700">Creating confident, capable, and curious learners</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="text-center p-6 bg-green-50 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                <feature.icon className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+              <div key={index} className="text-center p-6 bg-sky-50 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <feature.icon className="h-12 w-12 text-blue-700 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-blue-900 mb-3">{feature.title}</h3>
+                <p className="text-blue-700">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -240,11 +240,11 @@ const LowerPrimary = () => {
       </section>
 
       {/* Grade Structure */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Grade Structure</h2>
-            <p className="text-xl text-gray-600">Progressive learning journey from Grade 1 to Grade 3</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Grade Structure</h2>
+            <p className="text-xl text-blue-700">Progressive learning journey from Grade 1 to Grade 3</p>
           </div>
           
           <div className="space-y-8">
@@ -252,16 +252,16 @@ const LowerPrimary = () => {
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="grid lg:grid-cols-3 gap-6 items-center">
                   <div className="text-center lg:text-left">
-                    <h3 className="text-3xl font-bold text-green-700 mb-2">{grade.grade}</h3>
-                    <p className="text-lg text-gray-600 font-semibold">{grade.age}</p>
+                    <h3 className="text-3xl font-bold text-blue-700 mb-2">{grade.grade}</h3>
+                    <p className="text-lg text-blue-600 font-semibold">{grade.age}</p>
                   </div>
                   <div className="lg:col-span-2">
-                    <p className="text-lg text-gray-700 mb-4">{grade.focus}</p>
+                    <p className="text-lg text-blue-700 mb-4">{grade.focus}</p>
                     <div className="grid md:grid-cols-2 gap-3">
                       {grade.highlights.map((highlight, idx) => (
                         <div key={idx} className="flex items-center">
-                          <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
-                          <span className="text-gray-700">{highlight}</span>
+                          <CheckCircle className="h-5 w-5 text-blue-600 mr-3" />
+                          <span className="text-blue-700">{highlight}</span>
                         </div>
                       ))}
                     </div>
@@ -277,20 +277,20 @@ const LowerPrimary = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Core Subjects</h2>
-            <p className="text-xl text-gray-600">Comprehensive curriculum covering all essential learning areas</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Core Subjects</h2>
+            <p className="text-xl text-blue-700">Comprehensive curriculum covering all essential learning areas</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {subjects.map((subject, index) => (
-              <div key={index} className="bg-green-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{subject.name}</h3>
-                <p className="text-gray-700 mb-4">{subject.description}</p>
+              <div key={index} className="bg-sky-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <h3 className="text-xl font-bold text-blue-900 mb-3">{subject.name}</h3>
+                <p className="text-blue-700 mb-4">{subject.description}</p>
                 <div className="space-y-2">
                   {subject.skills.map((skill, idx) => (
                     <div key={idx} className="flex items-center">
-                      <Star className="h-4 w-4 text-green-600 mr-2" />
-                      <span className="text-sm text-gray-600">{skill}</span>
+                      <Star className="h-4 w-4 text-blue-600 mr-2" />
+                      <span className="text-sm text-blue-600">{skill}</span>
                     </div>
                   ))}
                 </div>
@@ -301,19 +301,19 @@ const LowerPrimary = () => {
       </section>
 
       {/* Learning Approaches */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Teaching Approach</h2>
-            <p className="text-xl text-gray-600">Engaging methodologies that make learning fun and effective</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Teaching Approach</h2>
+            <p className="text-xl text-blue-700">Engaging methodologies that make learning fun and effective</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {learningApproaches.map((approach, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-                <approach.icon className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{approach.title}</h3>
-                <p className="text-gray-600">{approach.description}</p>
+                <approach.icon className="h-12 w-12 text-blue-700 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-blue-900 mb-3">{approach.title}</h3>
+                <p className="text-blue-700">{approach.description}</p>
               </div>
             ))}
           </div>
@@ -321,7 +321,7 @@ const LowerPrimary = () => {
       </section>
 
       {/* Assessment & Progress */}
-      <section className="py-16 bg-green-700 text-white">
+      <section className="py-16 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Assessment & Progress Tracking</h2>
@@ -349,7 +349,7 @@ const LowerPrimary = () => {
             ].map((assessment, index) => (
               <div key={index} className="bg-white bg-opacity-10 p-6 rounded-lg hover:bg-opacity-20 transition-all duration-300">
                 <h3 className="text-xl font-bold mb-3">{assessment.title}</h3>
-                <p className="text-green-100">{assessment.description}</p>
+                <p className="text-blue-100">{assessment.description}</p>
               </div>
             ))}
           </div>
@@ -359,20 +359,20 @@ const LowerPrimary = () => {
       {/* Call to Action */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Build Strong Foundations</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <h2 className="text-4xl font-bold text-blue-900 mb-6">Build Strong Foundations</h2>
+          <p className="text-xl text-blue-700 mb-8">
             Give your child the best start in their academic journey with our comprehensive lower primary program.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/admissions"
-              className="bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+              className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Apply for Admission
             </a>
             <a
               href="/about/virtual-tour"
-              className="border-2 border-green-700 text-green-700 hover:bg-green-700 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+              className="border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Schedule a Visit
             </a>

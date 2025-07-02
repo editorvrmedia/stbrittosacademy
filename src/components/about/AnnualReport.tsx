@@ -45,11 +45,11 @@ const logbooks = [
 
 const AnnualReport = () => (
   <div className="min-h-screen flex flex-col items-center bg-white">
-    <div className="bg-sky-400 py-6 px-4 w-full">
+    <div className="bg-blue-900 py-6 px-4 w-full">
       <h1 className="text-3xl sm:text-4xl font-bold text-white text-center" style={{fontFamily: 'sans-serif'}}>Annual Report | St.Britto's Academy.</h1>
     </div>
     <div className="flex-1 flex flex-col items-center justify-center w-full">
-      <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-md w-full mx-4 mt-10 mb-10 border border-gray-100">
+      <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-md w-full mx-4 mt-10 mb-10 border border-blue-200">
         <ul className="space-y-5">
           {logbooks.map((log) => (
             <li key={log.year} className="text-center">
@@ -57,7 +57,7 @@ const AnnualReport = () => (
                 href={log.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-red-600 font-semibold text-lg md:text-xl tracking-wide hover:underline transition-all duration-200 block"
+                className="text-blue-700 font-semibold text-lg md:text-xl tracking-wide hover:underline transition-all duration-200 block"
                 style={{fontFamily: 'sans-serif', letterSpacing: '0.02em'}}
               >
                 LOGBOOK {log.year}

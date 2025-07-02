@@ -67,7 +67,7 @@ const Academics = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-green-700 to-green-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Academic Excellence</h1>
           <p className="text-xl max-w-3xl mx-auto">
@@ -80,19 +80,19 @@ const Academics = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Academic Programs</h2>
-            <p className="text-xl text-gray-600">Tailored education for every stage of development</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Academic Programs</h2>
+            <p className="text-xl text-blue-700">Tailored education for every stage of development</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {programs.map((program, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{program.title}</h3>
-                <p className="text-green-700 font-semibold mb-4">{program.grades}</p>
-                <p className="text-gray-700 mb-6">{program.description}</p>
+              <div key={index} className="bg-sky-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
+                <h3 className="text-2xl font-bold text-blue-900 mb-2">{program.title}</h3>
+                <p className="text-blue-700 font-semibold mb-4">{program.grades}</p>
+                <p className="text-blue-800 mb-6">{program.description}</p>
                 <ul className="space-y-2">
                   {program.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-center text-gray-600">
-                      <Star className="h-4 w-4 text-green-600 mr-2" />
+                    <li key={idx} className="flex items-center text-blue-700">
+                      <Star className="h-4 w-4 text-blue-600 mr-2" />
                       {highlight}
                     </li>
                   ))}
@@ -148,7 +148,7 @@ const Academics = () => {
       </section>
 
       {/* Academic Calendar */}
-      <section className="py-16 bg-green-700 text-white">
+      <section className="py-16 bg-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Academic Calendar</h2>
@@ -164,7 +164,7 @@ const Academics = () => {
                 <h3 className="font-semibold mb-2">{item.event}</h3>
                 <span className={`inline-block px-3 py-1 rounded-full text-sm ${
                   item.type === 'holiday' ? 'bg-red-500' :
-                  item.type === 'academic' ? 'bg-blue-500' :
+                  item.type === 'academic' ? 'bg-sky-500' :
                   item.type === 'parent' ? 'bg-purple-500' : 'bg-amber-500'
                 }`}>
                   {item.type.charAt(0).toUpperCase() + item.type.slice(1)}

@@ -130,11 +130,11 @@ const MiddleSchool = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">MIDDLE SCHOOL Grade VI to VIII</h1>
+          <h1 className="text-5xl font-bold mb-6">Middle School (Grades 6-8)</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Navigating the journey to adolescence with confidence. Our middle school program provides academic challenge, social support, and personal growth opportunities during these crucial developmental years.
+            A transformative period of growth and discovery. Our middle school program bridges the gap between primary and secondary education, fostering independence, critical thinking, and academic excellence.
           </p>
         </div>
       </section>

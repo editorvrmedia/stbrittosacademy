@@ -21,15 +21,15 @@ const TeacherLoginPage = () => {
           <h1 className="font-revue text-2xl md:text-3xl font-bold text-[#003262] tracking-wide text-center">ST. BRITTO'S ACADEMY</h1>
           <p className="text-blue-700 text-sm md:text-base font-semibold mt-1 mb-2 text-center">eVarsity ERP for Education</p>
         </div>
-        <h2 className="text-xl md:text-2xl font-bold text-gray-800 text-center mb-1">Teacher Login</h2>
-        <div className="text-center text-gray-500 text-xs mb-6">{today}</div>
+        <h2 className="text-xl md:text-2xl font-bold text-blue-900 text-center mb-1">Teacher Login</h2>
+        <div className="text-center text-blue-600 text-xs mb-6">{today}</div>
         <form className="space-y-4 w-full">
           <div>
-            <label className="block text-gray-700 font-medium mb-1" htmlFor="teacher-id">Your ID</label>
+            <label className="block text-blue-800 font-medium mb-1" htmlFor="teacher-id">Your ID</label>
             <input id="teacher-id" type="text" placeholder="Enter your ID" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-400 focus:outline-none bg-white/80" />
           </div>
           <div>
-            <label className="block text-gray-700 font-medium mb-1" htmlFor="password">Password</label>
+            <label className="block text-blue-800 font-medium mb-1" htmlFor="password">Password</label>
             <input id="password" type="password" placeholder="Enter your password" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-400 focus:outline-none bg-white/80" />
           </div>
           <div className="flex items-center justify-between text-sm">
@@ -49,7 +49,7 @@ const TeacherLoginPage = () => {
       <button
         style={{ background: 'red', zIndex: 9999, position: 'relative' }}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200"
+        className="p-2 rounded-md text-blue-700 hover:text-blue-900 hover:bg-blue-50 transition-colors duration-200"
       >
         {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>

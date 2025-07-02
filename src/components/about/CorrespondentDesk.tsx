@@ -213,19 +213,19 @@ const CorrespondentDesk = () => {
       </motion.section>
 
       {/* Educational Focus Areas */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Educational Focus</h2>
-            <p className="text-xl text-gray-600">Key areas that define our unique approach to learning</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Educational Focus</h2>
+            <p className="text-xl text-blue-700">Key areas that define our unique approach to learning</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {educationalFocus.map((focus, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-                <focus.icon className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{focus.title}</h3>
-                <p className="text-gray-600">{focus.description}</p>
+                <focus.icon className="h-12 w-12 text-blue-700 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-blue-900 mb-3">{focus.title}</h3>
+                <p className="text-blue-700">{focus.description}</p>
               </div>
             ))}
           </div>
@@ -298,22 +298,22 @@ const CorrespondentDesk = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-sky-50">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Join Our Educational Journey</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <h2 className="text-4xl font-bold text-blue-900 mb-6">Join Our Educational Journey</h2>
+          <p className="text-xl text-blue-700 mb-8">
             Experience education that goes beyond knowledge accumulation to character formation and meaningful life development.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/admissions"
-              className="bg-indigo-700 hover:bg-indigo-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+              className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Apply for Admission
             </a>
             <a
               href="/about"
-              className="border-2 border-indigo-700 text-indigo-700 hover:bg-indigo-700 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+              className="border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Learn More About Us
             </a>

@@ -143,12 +143,11 @@ const Activities = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-emerald-700 to-emerald-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Activities & Programs</h1>
+          <h1 className="text-5xl font-bold mb-6">Student Activities</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Discover a world of opportunities beyond the classroom. Our diverse range of activities 
-            helps students develop their talents, build character, and create lasting friendships.
+            Beyond academics, we offer a wide range of activities that develop creativity, leadership, teamwork, and character. Discover the opportunities that await your child.
           </p>
         </div>
       </section>

@@ -27,14 +27,14 @@ const VicePrincipalDesk = () => {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.7 }}
-        className="py-16 bg-gradient-to-r from-teal-700 to-teal-900 text-white"
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Vice Principal's Desk</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            A message from our Senior Vice Principal on student development, academic support, and creating a nurturing learning environment at St. Britto's Academy.
+            A message from our Vice Principal, Mrs. Joan Rajesh, on our educational philosophy and commitment to student success.
           </p>
         </div>
       </motion.section>
@@ -43,8 +43,8 @@ const VicePrincipalDesk = () => {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.7 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
         className="py-16 bg-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,8 +91,8 @@ const VicePrincipalDesk = () => {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.7 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
         className="py-16 bg-gray-50"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,8 +139,8 @@ const VicePrincipalDesk = () => {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.7 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
         className="py-16 bg-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,8 +186,8 @@ const VicePrincipalDesk = () => {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.7 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.1 }}
         className="py-16 bg-gray-50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -244,9 +244,7 @@ const VicePrincipalDesk = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">
-              Celebrating
-              <AnimatedCounter target={28} />
-              Years of Educational Excellence
+              Celebrating 28 Years of Educational Excellence
             </h2>
             <p className="text-xl">A legacy of nurturing minds and shaping futures</p>
           </div>

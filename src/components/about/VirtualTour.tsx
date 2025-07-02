@@ -83,11 +83,11 @@ const VirtualTour = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-cyan-700 to-cyan-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Virtual Campus Tour</h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Explore our world-class facilities from the comfort of your home. Take an immersive virtual tour of <span className="font-revue">St. Britto's Academy</span> and discover what makes our campus special.
+          <h1 className="text-5xl font-bold mb-6">Virtual Tour</h1>
+          <p className="text-xl max-w-3xl mx-auto">
+            Experience our campus virtually and discover the world-class facilities, vibrant learning spaces, and nurturing environment that makes St. Britto's Academy special.
           </p>
         </div>
       </section>

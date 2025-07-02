@@ -309,32 +309,32 @@ const ChairmanDesk = () => {
       </motion.section>
 
       {/* Quality Commitment */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Commitment to Quality</h2>
+            <h2 className="text-4xl font-bold text-blue-900 mb-6">Our Commitment to Quality</h2>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="space-y-6">
-                <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-slate-500">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Character Formation</h3>
-                  <p className="text-gray-700">
+                <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Character Formation</h3>
+                  <p className="text-blue-800">
                     Education quality reflects in how learners form their character and how the institution journeys with them 
                     through their growth in maturity, knowledge, and wisdom.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-slate-500">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Student-Centered Approach</h3>
-                  <p className="text-gray-700">
+                <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Student-Centered Approach</h3>
+                  <p className="text-blue-800">
                     Our teaching, learning, and evaluation processes are designed to be student-centered, keeping learners 
                     at the core of the educational enterprise.
                   </p>
                 </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-slate-500">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Uncompromising Standards</h3>
-                  <p className="text-gray-700">
+                <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Uncompromising Standards</h3>
+                  <p className="text-blue-800">
                     We never compromise on the quality of education we provide, ensuring every effort is made to realize 
                     our mission in concrete terms.
                   </p>

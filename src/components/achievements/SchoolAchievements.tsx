@@ -191,7 +191,7 @@ const SchoolAchievements = () => {
     {
       category: 'Environmental Initiatives',
       icon: Globe,
-      color: 'green',
+      color: 'blue',
       achievements: [
         'Green School Certification for sustainable practices',
         'Campus-wide water conservation and rainwater harvesting',
@@ -202,7 +202,7 @@ const SchoolAchievements = () => {
     {
       category: 'Cultural & Sports',
       icon: Trophy,
-      color: 'amber',
+      color: 'blue',
       achievements: [
         'State-level championships in multiple sports',
         'Recognition for excellence in performing arts',
@@ -213,7 +213,7 @@ const SchoolAchievements = () => {
     {
       category: 'Community Impact',
       icon: Users,
-      color: 'purple',
+      color: 'blue',
       achievements: [
         'Outreach programs benefiting underprivileged communities',
         'Health and wellness initiatives for local residents',
@@ -224,7 +224,7 @@ const SchoolAchievements = () => {
     {
       category: 'Olympiads & Competitions',
       icon: Award,
-      color: 'red',
+      color: 'blue',
       achievements: [
         'Top performance in Silverzone Olympiads of Mathematics',
         'Excellence in Science Olympiads at state and national levels',

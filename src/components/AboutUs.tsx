@@ -44,15 +44,15 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-sky-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-blue-600">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 opacity-90"></div>
+      <section className="relative py-20 bg-blue-900">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 opacity-90"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             About Our School
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-sky-200 max-w-3xl mx-auto">
             Nurturing minds, building character, and creating leaders of tomorrow
           </p>
         </div>
@@ -94,17 +94,17 @@ const AboutUs = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-lg text-gray-600">The principles that guide our educational journey</p>
+            <h2 className="text-3xl font-bold text-blue-900 mb-4">Our Core Values</h2>
+            <p className="text-lg text-blue-700">The principles that guide our educational journey</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-xl">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <value.icon className="h-6 w-6 text-blue-600" />
+              <div key={index} className="bg-sky-50 p-6 rounded-xl">
+                <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mb-4">
+                  <value.icon className="h-6 w-6 text-blue-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">{value.title}</h3>
+                <p className="text-blue-700">{value.description}</p>
               </div>
             ))}
           </div>

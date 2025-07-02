@@ -110,27 +110,12 @@ const Kindergarten = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-pink-500 to-purple-600 text-white">
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 opacity-90"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Kindergarten Program
-          </h1>
-          <p className="text-xl text-pink-100 max-w-3xl mx-auto mb-8">
-            A magical beginning to your child's educational journey. Our kindergarten program provides a nurturing environment where young minds explore, discover, and grow through play-based learning.
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-bold mb-6">Kindergarten (Pre-KG to UKG)</h1>
+          <p className="text-xl max-w-3xl mx-auto">
+            The foundation of lifelong learning begins here. Our kindergarten program nurtures curiosity, creativity, and confidence in young learners through play-based learning and structured activities.
           </p>
-          {/* Images in the header section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="relative rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
-                <img
-                  src={image}
-                  alt={`Kindergarten Moment ${index + 1}`}
-                  className="w-full h-48 object-cover"
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

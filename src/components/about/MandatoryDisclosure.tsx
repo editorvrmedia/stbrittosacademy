@@ -118,19 +118,19 @@ const MandatoryDisclosure = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Compliance Overview</h2>
-            <p className="text-xl text-gray-600">Our commitment to transparency and regulatory compliance</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Compliance Overview</h2>
+            <p className="text-xl text-blue-700">Our commitment to transparency and regulatory compliance</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {complianceInfo.map((info, index) => (
-              <div key={index} className="bg-red-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8 text-red-600" />
+              <div key={index} className="bg-sky-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300">
+                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8 text-blue-700" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{info.title}</h3>
-                <p className="text-gray-600 mb-4">{info.description}</p>
-                <span className="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
+                <h3 className="text-xl font-bold text-blue-900 mb-3">{info.title}</h3>
+                <p className="text-blue-700 mb-4">{info.description}</p>
+                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
                   {info.status}
                 </span>
               </div>
@@ -141,32 +141,32 @@ const MandatoryDisclosure = () => {
 
       {/* Document Categories */}
       {disclosureCategories.map((category, categoryIndex) => (
-        <section key={categoryIndex} className={`py-16 ${categoryIndex % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+        <section key={categoryIndex} className={`py-16 ${categoryIndex % 2 === 0 ? 'bg-sky-50' : 'bg-white'}`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
-                <category.icon className="h-8 w-8 text-red-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-sky-100 rounded-full mb-4">
+                <category.icon className="h-8 w-8 text-blue-700" />
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">{category.title}</h2>
+              <h2 className="text-4xl font-bold text-blue-900 mb-4">{category.title}</h2>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {category.documents.map((document, index) => (
                 <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex items-center mb-4">
-                    <FileText className="h-8 w-8 text-red-600 mr-3" />
+                    <FileText className="h-8 w-8 text-blue-700 mr-3" />
                     <div className="flex-1">
-                      <h3 className="font-bold text-gray-900 text-sm">{document.name}</h3>
-                      <p className="text-gray-500 text-xs">{document.size} • {formatDate(document.date)}</p>
+                      <h3 className="font-bold text-blue-900 text-sm">{document.name}</h3>
+                      <p className="text-blue-600 text-xs">{document.size} • {formatDate(document.date)}</p>
                     </div>
                   </div>
                   
                   <div className="flex space-x-2">
-                    <button className="flex-1 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 flex items-center justify-center">
+                    <button className="flex-1 bg-blue-700 hover:bg-blue-800 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 flex items-center justify-center">
                       <Download className="h-4 w-4 mr-1" />
                       Download
                     </button>
-                    <button className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg transition-colors duration-300">
+                    <button className="bg-sky-100 hover:bg-sky-200 text-blue-700 px-3 py-2 rounded-lg transition-colors duration-300">
                       <Eye className="h-4 w-4" />
                     </button>
                   </div>
@@ -232,8 +232,8 @@ const MandatoryDisclosure = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Detailed Information</h2>
-            <p className="text-xl text-gray-600">Access comprehensive information about our school</p>
+            <h2 className="text-4xl font-bold text-blue-900 mb-4">Detailed Information</h2>
+            <p className="text-xl text-blue-700">Access comprehensive information about our school</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -242,8 +242,8 @@ const MandatoryDisclosure = () => {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
                   <Building className="h-8 w-8 text-red-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300">School Details</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-blue-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">School Details</h3>
+                <p className="text-blue-700 mb-6">
                   Comprehensive information about our institution, including facilities, staff, academic programs, and legal compliance.
                 </p>
                 <div className="flex items-center text-red-600 font-semibold group-hover:text-red-700">
@@ -258,8 +258,8 @@ const MandatoryDisclosure = () => {
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
                   <FileText className="h-8 w-8 text-red-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-red-700 transition-colors duration-300">CBSE Mandatory Disclosure</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-blue-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">CBSE Mandatory Disclosure</h3>
+                <p className="text-blue-700 mb-6">
                   All required information as per CBSE guidelines, including staff details, infrastructure, academic information, and more.
                 </p>
                 <div className="flex items-center text-red-600 font-semibold group-hover:text-red-700">
@@ -275,15 +275,15 @@ const MandatoryDisclosure = () => {
       {/* Contact for Information */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Need Additional Information?</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <h2 className="text-4xl font-bold text-blue-900 mb-6">Need Additional Information?</h2>
+          <p className="text-xl text-blue-700 mb-8">
             If you require any additional documents or have questions about our mandatory disclosures, please contact our administrative office.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Administrative Office</h3>
-              <div className="space-y-2 text-gray-600">
+              <h3 className="text-xl font-bold text-blue-900 mb-4">Administrative Office</h3>
+              <div className="space-y-2 text-blue-700">
                 <p>📧 admin@stbrittosacademy.edu</p>
                 <p>📞 (044) 123-4567</p>
                 <p>🕒 Monday - Friday: 9:00 AM - 5:00 PM</p>
@@ -291,8 +291,8 @@ const MandatoryDisclosure = () => {
             </div>
             
             <div className="bg-white p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Right to Information</h3>
-              <div className="space-y-2 text-gray-600">
+              <h3 className="text-xl font-bold text-blue-900 mb-4">Right to Information</h3>
+              <div className="space-y-2 text-blue-700">
                 <p>📧 rti@stbrittosacademy.edu</p>
                 <p>📞 (044) 123-4568</p>
                 <p>🕒 RTI Officer: Mr. Rajesh Kumar</p>

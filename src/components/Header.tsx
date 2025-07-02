@@ -159,7 +159,7 @@ const Header = () => {
   return (
     <>
       <TopHeader />
-      <header className={`w-full z-[2002] transition-all duration-200 ${isDark ? 'bg-gray-900/90' : 'bg-white/95'} backdrop-blur-md shadow-lg border-b border-gray-200`}>
+      <header className={`w-full z-[2002] transition-all duration-200 ${isDark ? 'bg-blue-900/90' : 'bg-white/95'} backdrop-blur-md shadow-lg border-b border-blue-200`}>
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2 sm:py-3 min-h-[56px] w-full">
             {/* Logo: Centered on mobile, left on desktop */}
@@ -185,7 +185,7 @@ const Header = () => {
               </button>
             </div>
             {/* Mobile menu button: always visible on mobile, right-aligned */}
-            <div className="flex-shrink-0 flex items-center justify-center ml-2">
+            <div className="flex-shrink-0 flex items-center justify-center ml-2 xl:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -237,8 +237,8 @@ const Header = () => {
                             (item.name === 'Careers' && isCareersActive()) ||
                             (item.name === 'Blog' && isBlogActive()) ||
                             (item.name === 'Login' && location.pathname.startsWith('/login'))
-                              ? 'text-blue-700 bg-blue-50'
-                              : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                              ? 'text-blue-700 bg-sky-50'
+                              : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                           }`}
                           tabIndex={0}
                         >
@@ -255,7 +255,7 @@ const Header = () => {
                         (item.name === 'Careers' && isCareersDropdownOpen) ||
                         (item.name === 'Blog' && isBlogDropdownOpen) ||
                         (item.name === 'Login' && isLoginDropdownOpen)) && (
-                        <div className="absolute top-full left-0 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-[1000]">
+                        <div className="absolute top-full left-0 w-64 bg-white rounded-md shadow-lg border border-blue-200 py-2 z-[1000]">
                           {item.subPages?.map((subPage) => (
                             <React.Fragment key={subPage.name}>
                               {subPage.hasSubDropdown ? (
@@ -272,23 +272,23 @@ const Header = () => {
                                     to={subPage.href}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 flex items-center justify-between ${
                                       isActive(subPage.href) || (subPage.name === 'Mandatory Disclosure' && isMandatoryActive())
-                                        ? 'text-blue-700 bg-blue-50'
-                                        : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                                        ? 'text-blue-700 bg-sky-50'
+                                        : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                                     }`}
                                   >
                                     {subPage.name}
                                     <ChevronDown className="h-3 w-3" />
                                   </Link>
                                   {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
-                                    <div className="absolute left-full top-0 ml-1 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-[1000]">
+                                    <div className="absolute left-full top-0 ml-1 w-64 bg-white rounded-md shadow-lg border border-blue-200 py-2 z-[1000]">
                                       {subPage.subPages?.map((nestedSubPage) => (
                                         <Link
                                           key={nestedSubPage.name}
                                           to={nestedSubPage.href}
                                           className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                             isActive(nestedSubPage.href)
-                                              ? 'text-blue-700 bg-blue-50'
-                                              : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                                              ? 'text-blue-700 bg-sky-50'
+                                              : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                                           }`}
                                         >
                                           {nestedSubPage.name}
@@ -307,8 +307,8 @@ const Header = () => {
                                     }}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                       isActive('/student-login')
-                                        ? 'text-blue-700 bg-blue-50'
-                                        : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                                        ? 'text-blue-700 bg-sky-50'
+                                        : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                                     }`}
                                   >
                                     Student Login
@@ -322,8 +322,8 @@ const Header = () => {
                                     }}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                       isActive('/teacher-login')
-                                        ? 'text-blue-700 bg-blue-50'
-                                        : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                                        ? 'text-blue-700 bg-sky-50'
+                                        : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                                     }`}
                                   >
                                     Teacher Login
@@ -333,8 +333,8 @@ const Header = () => {
                                     to={subPage.href}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                       isActive(subPage.href)
-                                        ? 'text-blue-700 bg-blue-50'
-                                        : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                                        ? 'text-blue-700 bg-sky-50'
+                                        : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                                     }`}
                                   >
                                     {subPage.name}
@@ -351,8 +351,8 @@ const Header = () => {
                       to={item.href}
                       className={`px-2 py-2 rounded-md text-xs lg:text-sm font-medium transition-colors duration-200 whitespace-nowrap ${
                         isActive(item.href)
-                          ? 'text-blue-700 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                          ? 'text-blue-700 bg-sky-50'
+                          : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                       }`}
                     >
                       {item.name}
@@ -373,7 +373,7 @@ const Header = () => {
                 aria-label="Close menu overlay"
               />
               {/* Menu Panel */}
-              <div className="xl:hidden fixed inset-0 top-[76px] bg-white z-[9999] border-t border-gray-200 transition-all duration-300 ease-in-out animate-fade-in-down overflow-y-auto">
+              <div className="xl:hidden fixed inset-0 top-[76px] bg-white z-[9999] border-t border-blue-200 transition-all duration-300 ease-in-out animate-fade-in-down overflow-hidden">
                 {/* X Close Button */}
                 <button
                   onClick={() => setIsMenuOpen(false)}
@@ -382,7 +382,7 @@ const Header = () => {
                 >
                   <X className="h-7 w-7" />
                 </button>
-                <div className="py-4 space-y-1 max-h-[70vh] overflow-y-auto px-3">
+                <div className="py-4 space-y-1 max-h-[70vh] overflow-hidden px-3">
                   {navigation.map((item) => (
                     <div key={item.name}>
                       {item.hasDropdown ? (
@@ -409,8 +409,8 @@ const Header = () => {
                               (item.name === 'Careers' && isCareersActive()) ||
                               (item.name === 'Blog' && isBlogActive()) ||
                               (item.name === 'Login' && location.pathname.startsWith('/login'))
-                                ? 'text-blue-700 bg-blue-50'
-                                : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                                ? 'text-blue-700 bg-sky-50'
+                                : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                             }`}
                             aria-expanded={
                               (item.name === 'About' && isAboutDropdownOpen) ||
@@ -458,8 +458,8 @@ const Header = () => {
                                         }}
                                         className={`w-full text-left flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                                           isActive(subPage.href) || (subPage.name === 'Mandatory Disclosure' && isMandatoryActive())
-                                            ? 'text-blue-700 bg-blue-50'
-                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                            ? 'text-blue-700 bg-sky-50'
+                                            : 'text-blue-700 hover:text-blue-800 hover:bg-sky-50'
                                         }`}
                                       >
                                         {subPage.name}
@@ -475,8 +475,8 @@ const Header = () => {
                                               to={nestedSubPage.href}
                                               className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                                 isActive(nestedSubPage.href)
-                                                  ? 'text-blue-700 bg-blue-50'
-                                                  : 'text-gray-500 hover:text-blue-700 hover:bg-blue-50'
+                                                  ? 'text-blue-700 bg-sky-50'
+                                                  : 'text-blue-600 hover:text-blue-700 hover:bg-sky-50'
                                               }`}
                                             >
                                               {nestedSubPage.name}
@@ -495,8 +495,8 @@ const Header = () => {
                                         }}
                                         className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                           isActive('/student-login')
-                                            ? 'text-blue-700 bg-blue-50'
-                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                            ? 'text-blue-700 bg-sky-50'
+                                            : 'text-blue-700 hover:text-blue-800 hover:bg-sky-50'
                                         }`}
                                       >
                                         Student Login
@@ -510,8 +510,8 @@ const Header = () => {
                                         }}
                                         className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                           isActive('/teacher-login')
-                                            ? 'text-blue-700 bg-blue-50'
-                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                            ? 'text-blue-700 bg-sky-50'
+                                            : 'text-blue-700 hover:text-blue-800 hover:bg-sky-50'
                                         }`}
                                       >
                                         Teacher Login
@@ -521,8 +521,8 @@ const Header = () => {
                                         to={subPage.href}
                                         className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                           isActive(subPage.href)
-                                            ? 'text-blue-700 bg-blue-50'
-                                            : 'text-gray-600 hover:text-blue-700 hover:bg-blue-50'
+                                            ? 'text-blue-700 bg-sky-50'
+                                            : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                                         }`}
                                       >
                                         {subPage.name}
@@ -539,8 +539,8 @@ const Header = () => {
                           to={item.href}
                           className={`block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                             isActive(item.href)
-                              ? 'text-blue-700 bg-blue-50'
-                              : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
+                              ? 'text-blue-700 bg-sky-50'
+                              : 'text-blue-800 hover:text-blue-700 hover:bg-sky-50'
                           }`}
                           role="menuitem"
                           tabIndex={0}

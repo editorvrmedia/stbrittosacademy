@@ -15,114 +15,36 @@ const Photos = () => {
   ];
 
   const photos = [
-    {
-      id: 1,
-      src: 'https://images.pexels.com/photos/8471904/pexels-photo-8471904.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'academics',
-      title: 'Science Laboratory Session',
-      description: 'Students conducting experiments in our modern chemistry laboratory',
-      date: '2024-01-15',
-      photographer: 'School Photography Team'
-    },
-    {
-      id: 2,
-      src: 'https://images.pexels.com/photos/8466666/pexels-photo-8466666.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'academics',
-      title: 'Interactive Classroom Learning',
-      description: 'Students engaged in collaborative learning activities',
-      date: '2024-01-12',
-      photographer: 'School Photography Team'
-    },
-    {
-      id: 3,
-      src: 'https://images.pexels.com/photos/8423032/pexels-photo-8423032.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'campus',
-      title: 'Beautiful Campus Architecture',
-      description: 'Main academic building showcasing our modern infrastructure',
-      date: '2024-01-10',
-      photographer: 'Architecture Documentation'
-    },
-    {
-      id: 4,
-      src: 'https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'sports',
-      title: 'Basketball Championship',
-      description: 'Our team in action during the inter-school basketball tournament',
-      date: '2024-01-08',
-      photographer: 'Sports Department'
-    },
-    {
-      id: 5,
-      src: 'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'events',
-      title: 'Annual Day Celebration',
-      description: 'Students performing during our grand annual day celebration',
-      date: '2024-01-05',
-      photographer: 'Event Photography'
-    },
-    {
-      id: 6,
-      src: 'https://images.pexels.com/photos/7520391/pexels-photo-7520391.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'cultural',
-      title: 'Music Concert Performance',
-      description: 'School orchestra performing at the winter music concert',
-      date: '2024-01-03',
-      photographer: 'Cultural Department'
-    },
-    {
-      id: 7,
-      src: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'events',
-      title: 'Science Fair Exhibition',
-      description: 'Students presenting their innovative science projects',
-      date: '2023-12-28',
-      photographer: 'Science Department'
-    },
-    {
-      id: 8,
-      src: 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'events',
-      title: 'Community Service Day',
-      description: 'Students participating in environmental conservation activities',
-      date: '2023-12-25',
-      photographer: 'Community Service Team'
-    },
-    {
-      id: 9,
-      src: 'https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'cultural',
-      title: 'Art Exhibition Opening',
-      description: 'Student artwork displayed in our main gallery space',
-      date: '2023-12-22',
-      photographer: 'Art Department'
-    },
-    {
-      id: 10,
-      src: 'https://images.pexels.com/photos/8471709/pexels-photo-8471709.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'academics',
-      title: 'Computer Programming Class',
-      description: 'Students learning coding in our state-of-the-art computer lab',
-      date: '2023-12-20',
-      photographer: 'Technology Department'
-    },
-    {
-      id: 11,
-      src: 'https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'campus',
-      title: 'Campus Garden',
-      description: 'Students enjoying break time in our beautiful campus garden',
-      date: '2023-12-18',
-      photographer: 'Campus Life'
-    },
-    {
-      id: 12,
-      src: 'https://images.pexels.com/photos/6238003/pexels-photo-6238003.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop',
-      category: 'academics',
-      title: 'Mathematics Workshop',
-      description: 'Interactive mathematics learning session with visual aids',
-      date: '2023-12-15',
-      photographer: 'Mathematics Department'
-    }
+    // Only user-provided Campus Life images below:
+    { id: 10001, src: '/CAMPUS LIFE/CAMPUS LIFE1.JPG', category: 'campus', title: 'Geography Group Study', description: 'Students collaborating on a globe activity.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10002, src: '/CAMPUS LIFE/CAMPUS LIFE2.jpg', category: 'campus', title: 'Light Experiment', description: 'Student exploring light and shadow.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10003, src: '/CAMPUS LIFE/CAMPUS LIFE3.jpg', category: 'campus', title: 'SCOUTS AND GUIDES', description: 'Students forming a joyful circle outdoors.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10004, src: '/CAMPUS LIFE/CAMPUS LIFE4.jpg', category: 'campus', title: 'Creative Playtime', description: 'Young children building with blocks.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10005, src: '/CAMPUS LIFE/CAMPUS LIFE5.jpg', category: 'campus', title: 'Science in Action', description: 'Students conducting a science experiment.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10006, src: '/CAMPUS LIFE/CAMPUS LIFE6.JPG', category: 'campus', title: 'Cultural Performance', description: 'Students performing on stage in traditional attire.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10007, src: '/CAMPUS LIFE/CAMPUS LIFE7.JPG', category: 'campus', title: 'Inspiring Speech', description: 'Speaker addressing the school assembly.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10008, src: '/CAMPUS LIFE/CAMPUS LIFE8.JPG', category: 'campus', title: 'Seminar Session', description: 'Students attending a seminar in the auditorium.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10009, src: '/CAMPUS LIFE/CAMPUS LIFE9.JPG', category: 'campus', title: 'Leadership Wall', description: 'Student posing by a leadership-themed wall.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10010, src: '/CAMPUS LIFE/CAMPUS LIFE10.JPG', category: 'campus', title: 'Best Friends', description: 'Two young students smiling and posing together.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10011, src: '/CAMPUS LIFE/CAMPUS LIFE11.JPG', category: 'campus', title: 'Gardening Project', description: 'Student tending to plants in the school garden.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10012, src: '/CAMPUS LIFE/CAMPUS LIFE12.jpg', category: 'campus', title: 'Hand Painting Fun', description: 'Students showing off colorful painted hands.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10013, src: '/CAMPUS LIFE/CAMPUS LIFE13.png', category: 'campus', title: 'Focused Audience', description: 'Students attentively listening during an event.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10014, src: '/CAMPUS LIFE/CAMPUS LIFE14.png', category: 'campus', title: 'School Event Gathering', description: 'Large group of students at a school event.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10015, src: '/CAMPUS LIFE/CAMPUS LIFE15.JPG', category: 'campus', title: 'Math Lab Activity', description: 'Students working on a math project.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10016, src: '/CAMPUS LIFE/CAMPUS LIFE16.JPG', category: 'campus', title: 'Playful Companions', description: 'Two students sharing a happy moment.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10017, src: '/CAMPUS LIFE/CAMPUS LIFE17.JPG', category: 'campus', title: 'Microscope Discovery', description: 'Student using a microscope in science class.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10018, src: '/CAMPUS LIFE/CAMPUS LIFE18.JPG', category: 'campus', title: 'Teacher Guidance', description: 'Teacher assisting a student with a microscope.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10019, src: '/CAMPUS LIFE/CAMPUS LIFE19.JPG', category: 'campus', title: 'Reading Together', description: 'Students enjoying reading in class.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10020, src: '/CAMPUS LIFE/CAMPUS LIFE20.JPG', category: 'campus', title: 'Classroom Cheers', description: 'Students raising hands and celebrating in class.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10021, src: '/CAMPUS LIFE/CAMPUS LIFE21.JPG', category: 'campus', title: 'Confident Smile', description: 'Student smiling confidently in the corridor.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10022, src: '/CAMPUS LIFE/CAMPUS LIFE22.JPG', category: 'campus', title: 'Chemistry Experiment', description: 'Student performing a chemistry experiment.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10023, src: '/CAMPUS LIFE/CAMPUS LIFE23.JPG', category: 'campus', title: 'Lab Demonstration', description: 'Teacher demonstrating a science experiment.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10024, src: '/CAMPUS LIFE/CAMPUS LIFE24.JPG', category: 'campus', title: 'Science Project', description: 'Students working on a science project.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10025, src: '/CAMPUS LIFE/CAMPUS LIFE25.JPG', category: 'campus', title: 'Group Project', description: 'Students collaborating on a group project.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10026, src: '/CAMPUS LIFE/CAMPUS LIFE26.JPG', category: 'campus', title: 'Thumbs Up!', description: 'Student giving a thumbs up in the hallway.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10027, src: '/CAMPUS LIFE/CAMPUS LIFE27.jpg', category: 'campus', title: 'Field Trip Group', description: 'Students and teachers on a field trip.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10028, src: '/CAMPUS LIFE/CAMPUS LIFE27.jpeg', category: 'campus', title: 'Field Trip Group (Alt)', description: 'Students and teachers on a field trip (alternate photo).', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10029, src: '/CAMPUS LIFE/CAMPUS LIFE28.jpeg', category: 'campus', title: 'Award Ceremony', description: 'Award presentation with school leaders.', date: '2024-01-01', photographer: 'Campus Life' },
   ];
 
   const filteredPhotos = selectedCategory === 'all' 
@@ -355,16 +277,9 @@ const Photos = () => {
                     alt={photo.title}
                     className="w-full h-64 object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-end">
-                    <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="font-bold text-lg mb-1">{photo.title}</h3>
-                      <p className="text-sm opacity-90 mb-2">{photo.description}</p>
-                      <div className="flex items-center text-xs opacity-75">
-                        <Calendar className="h-3 w-3 mr-1" />
-                        <span>{formatDate(photo.date)}</span>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <div className="mt-2 text-center">
+                  <span className="block text-base font-semibold text-blue-900">{photo.title}</span>
                 </div>
               </div>
             ))}
@@ -374,11 +289,12 @@ const Photos = () => {
 
       {/* Lightbox */}
       {(lightboxImage && (currentPhoto || [1001,1002,1003,1004,2001,2002,2003,2004,2005,2006,2007].includes(lightboxImage))) && (
-        <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-6xl max-h-full w-full">
+        <div className="fixed inset-0 bg-blue-900 bg-opacity-90 z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-6xl max-h-full w-full rounded-xl shadow-2xl border-4 border-sky-400 bg-white flex flex-col lg:flex-row overflow-hidden">
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all duration-300"
+              className="absolute top-4 right-4 z-10 bg-sky-400 hover:bg-blue-900 text-white p-3 rounded-full transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
+              aria-label="Close"
             >
               <X className="h-6 w-6" />
             </button>
@@ -387,70 +303,34 @@ const Photos = () => {
               <>
                 <button
                   onClick={() => navigateLightbox('prev')}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all duration-300"
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-sky-400 hover:bg-blue-900 text-white p-3 rounded-full transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  aria-label="Previous"
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </button>
                 <button
                   onClick={() => navigateLightbox('next')}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition-all duration-300"
+                  className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-sky-400 hover:bg-blue-900 text-white p-3 rounded-full transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  aria-label="Next"
                 >
                   <ChevronRight className="h-6 w-6" />
                 </button>
               </>
             )}
-            <div className="flex flex-col lg:flex-row bg-white rounded-lg overflow-hidden max-h-full">
-              <div className="lg:w-2/3 flex items-center justify-center">
-                <img
-                  src={currentPhoto ? currentPhoto.src : [
-                    '/My Gallery Photos/IMAGES/ACADEMIC ACTIVITIES/CARREER GUIDANCE/IMG_0958.jpg',
-                    '/My Gallery Photos/IMAGES/ACADEMIC ACTIVITIES/CARREER GUIDANCE/IMG_0109.jpg',
-                    '/My Gallery Photos/IMAGES/ACADEMIC ACTIVITIES/CARREER GUIDANCE/IMG_0090.jpg',
-                    '/My Gallery Photos/IMAGES/ACADEMIC ACTIVITIES/CARREER GUIDANCE/IMG_0095.jpg',
-                    '/My Gallery Photos/IMAGES/SPORTS & ALTLETICS/Screenshot_2024_0702_115337.jpg',
-                    '/My Gallery Photos/IMAGES/SPORTS & ALTLETICS/IMG_1065.jpg',
-                    '/My Gallery Photos/IMAGES/SPORTS & ALTLETICS/IMG_2025.jpg',
-                    '/My Gallery Photos/IMAGES/SPORTS & ALTLETICS/DSC0146.jpg',
-                    '/My Gallery Photos/IMAGES/SPORTS & ALTLETICS/DSC0060.jpg',
-                    '/My Gallery Photos/IMAGES/SPORTS & ALTLETICS/DSC0129.jpg',
-                    '/My Gallery Photos/IMAGES/SPORTS & ALTLETICS/DSC0128.jpg',
-                  ][[1001,1002,1003,1004,2001,2002,2003,2004,2005,2006,2007].indexOf(lightboxImage)]}
-                  alt={currentPhoto ? currentPhoto.title : [
-                    'Career Guidance Talk',
-                    'Guest Speaker',
-                    'Student Interaction',
-                    'Career Guidance Talk',
-                    'Winners with Trophy',
-                    'Football Match',
-                    'Chess Practice',
-                    'Athletics in Action',
-                    'Athletics in Action',
-                    'Athletics in Action',
-                    'Athletics in Action',
-                  ][[1001,1002,1003,1004,2001,2002,2003,2004,2005,2006,2007].indexOf(lightboxImage)]}
-                  className="w-full h-full object-cover max-h-96 lg:max-h-full"
-                />
-              </div>
-              <div className="lg:w-1/3 p-6 lg:p-8 bg-white flex flex-col justify-center items-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {currentPhoto ? currentPhoto.title : [
-                    'Career Guidance Talk',
-                    'Guest Speaker',
-                    'Student Interaction',
-                    'Career Guidance Talk',
-                    'Winners with Trophy',
-                    'Football Match',
-                    'Chess Practice',
-                    'Athletics in Action',
-                    'Athletics in Action',
-                    'Athletics in Action',
-                    'Athletics in Action',
-                  ][[1001,1002,1003,1004,2001,2002,2003,2004,2005,2006,2007].indexOf(lightboxImage)]}
-                </h3>
-                <p className="text-gray-700 mb-6">
-                  {currentPhoto ? currentPhoto.description : ''}
-                </p>
-              </div>
+            <div className="lg:w-2/3 flex items-center justify-center bg-sky-50">
+              <img
+                src={currentPhoto ? currentPhoto.src : ''}
+                alt={currentPhoto ? currentPhoto.title : ''}
+                className="w-full h-full object-contain max-h-96 lg:max-h-full rounded-lg"
+              />
+            </div>
+            <div className="lg:w-1/3 p-6 lg:p-8 bg-white flex flex-col justify-center items-center border-l border-sky-200">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4 text-center">
+                {currentPhoto ? currentPhoto.title : ''}
+              </h3>
+              <p className="text-blue-700 mb-6 text-center">
+                {currentPhoto ? currentPhoto.description : ''}
+              </p>
             </div>
           </div>
         </div>

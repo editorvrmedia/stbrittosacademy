@@ -13,43 +13,55 @@ const WhyStBrittos = () => {
       icon: Users,
       title: 'Expert Faculty',
       description: 'Our dedicated team of qualified, experienced teachers are committed to nurturing each student\'s potential and ensuring academic success.',
-      color: 'green'
+      color: 'blue'
     },
     {
       icon: BookOpen,
       title: 'Holistic Curriculum',
       description: 'We offer a comprehensive curriculum that balances academics with arts, sports, and character development for well-rounded growth.',
-      color: 'purple'
+      color: 'blue'
     },
     {
       icon: Globe,
       title: 'International Standards',
       description: 'Our international standard education prepares students for global opportunities while maintaining strong cultural roots.',
-      color: 'indigo'
+      color: 'blue'
     },
     {
       icon: Heart,
       title: 'Values-Based Education',
       description: 'We instill strong moral values, ethics, and character traits that shape students into responsible global citizens.',
-      color: 'red'
+      color: 'blue'
     },
     {
       icon: Star,
       title: 'Individual Attention',
       description: 'Small class sizes and personalized learning approaches ensure every student receives the attention they deserve.',
-      color: 'amber'
+      color: 'blue'
     },
     {
       icon: Target,
       title: 'Innovation in Learning',
       description: 'We embrace modern teaching methodologies, technology, and innovative practices to enhance the learning experience.',
-      color: 'teal'
+      color: 'blue'
     },
     {
       icon: Shield,
-      title: 'Safe Environment',
-      description: 'We provide a secure, nurturing environment where students can learn, grow, and express themselves freely.',
-      color: 'emerald'
+      title: 'Safe Learning Environment',
+      description: 'Our campus provides a secure, nurturing environment where students can learn, grow, and thrive without concerns.',
+      color: 'blue'
+    },
+    {
+      icon: Lightbulb,
+      title: 'Creative Expression',
+      description: 'We encourage artistic expression, creative thinking, and innovative problem-solving skills in all our students.',
+      color: 'blue'
+    },
+    {
+      icon: Trophy,
+      title: 'Recognition & Achievement',
+      description: 'Our students consistently achieve excellence in academics, sports, arts, and various competitions at all levels.',
+      color: 'blue'
     }
   ];
 
