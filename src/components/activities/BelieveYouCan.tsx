@@ -110,9 +110,9 @@ const BelieveYouCan = () => {
                 </p>
                 <p className="text-lg leading-relaxed">
                   BYC was started by our correspondent Dr. Vimala Britto, this platform concentrates on the Holistic development of children. Students from various parts of the world participate in all three competitions. Over the years more than 6000 students have participated from different parts of the world.
-                  </p>
+                </p>
                 <p className="text-lg leading-relaxed">
-                  Our talent search didn't step back even during covid. We conducted all the competitions Online. We are happy and proud to share that we are the first to conduct Online Sports competitions for all the classes. Winners are awarded a cash prize, medals, and certificate. You can find more information on their website: <a href="https://contestbyc.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">contestbyc.com</a>
+                  Our talent search didn't step back even during covid. We conducted all the competitions Online. We are happy and proud to share that we are the first to conduct Online Sports competitions for all the classes. Winners are awarded a cash prize, medals, and certificate.
                 </p>
               </div>
             </div>

@@ -94,7 +94,17 @@ const CorrespondentDesk = () => {
               />
             </div>
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Dr. Vimala Rani Britto</h2>
+              <div className="flex items-center gap-2 mb-4 flex-wrap">
+                <h2 className="text-4xl font-bold text-gray-900 mb-0">Dr. Vimala Rani Britto</h2>
+                <a
+                  href="https://drvimalaranibritto.blogspot.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 px-4 py-1 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-full shadow transition-colors duration-200"
+                >
+                  To Know More
+                </a>
+              </div>
               <p className="text-xl text-indigo-600 font-semibold mb-6">Secretary & Correspondent, <span className="font-revue">St. Britto's Group of Institutions</span></p>
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg leading-relaxed">
@@ -178,7 +188,7 @@ const CorrespondentDesk = () => {
               </div>
               
               <div className="pt-8 border-t border-gray-200">
-                <p className="font-bold text-indigo-700 text-xl">Dr. Vimala Rani Britto</p>
+                <p className="font-bold text-indigo-700 text-xl mb-0">Dr. Vimala Rani Britto</p>
                 <p className="text-indigo-600">Secretary and Correspondent</p>
                 <p className="text-indigo-600"><span className="font-revue">St. Britto's Academy</span></p>
               </div>

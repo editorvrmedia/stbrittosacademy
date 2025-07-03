@@ -243,7 +243,6 @@ const Header = () => {
                           tabIndex={0}
                         >
                           {item.name}
-                          <ChevronDown className="ml-1 h-3 w-3" />
                         </Link>
                       </div>
                       {((item.name === 'About' && isAboutDropdownOpen) || 
@@ -277,7 +276,6 @@ const Header = () => {
                                     }`}
                                   >
                                     {subPage.name}
-                                    <ChevronDown className="h-3 w-3" />
                                   </Link>
                                   {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
                                     <div className="absolute left-full top-0 ml-1 w-64 bg-white rounded-md shadow-lg border border-blue-200 py-2 z-[1000]">
@@ -426,17 +424,6 @@ const Header = () => {
                             aria-controls={`mobile-dropdown-${item.name}`}
                           >
                             {item.name}
-                            <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
-                              (item.name === 'About' && isAboutDropdownOpen) || 
-                              (item.name === 'Academics' && isAcademicsDropdownOpen) ||
-                              (item.name === 'Activities' && isActivitiesDropdownOpen) ||
-                              (item.name === 'Achievements' && isAchievementsDropdownOpen) ||
-                              (item.name === 'Admissions' && isAdmissionsDropdownOpen) ||
-                              (item.name === 'Gallery' && isGalleryDropdownOpen) ||
-                              (item.name === 'Careers' && isCareersDropdownOpen) ||
-                              (item.name === 'Blog' && isBlogDropdownOpen) ||
-                              (item.name === 'Login' && isLoginDropdownOpen) ? 'rotate-180' : ''
-                            }`} />
                           </button>
                           {((item.name === 'About' && isAboutDropdownOpen) || 
                             (item.name === 'Academics' && isAcademicsDropdownOpen) ||
@@ -463,9 +450,6 @@ const Header = () => {
                                         }`}
                                       >
                                         {subPage.name}
-                                        <ChevronDown className={`h-3 w-3 transition-transform duration-200 ${
-                                          subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen ? 'rotate-180' : ''
-                                        }`} />
                                       </button>
                                       {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
                                         <div className="ml-4 mt-2 space-y-1">
