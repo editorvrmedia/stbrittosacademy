@@ -366,11 +366,11 @@ const HomePage = () => {
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Vision & Mission</h2>
               <div className="mb-4">
                 <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Vision</h3>
-                <p className="text-white text-base mb-2">To form and evolve a vibrant scientific and educational community that is creative, adaptable, and internationally renowned for excellence in education and research, and for improving society through its innovative educational strategies.</p>
+                <p className="text-gray-800 text-base mb-2">To form and evolve a vibrant scientific and educational community that is creative, adaptable, and internationally renowned for excellence in education and research, and for improving society through its innovative educational strategies.</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Mission</h3>
-                <p className="text-white text-base">Advancing the frontiers of knowledge, blending theory with practice. Motivating and enabling students to seek the highest levels of intellectual achievements and personal growth, to become complete human beings. Sharing knowledge, discoveries and inventions for the betterment of the world at large.</p>
+                <p className="text-gray-800 text-base">Advancing the frontiers of knowledge, blending theory with practice. Motivating and enabling students to seek the highest levels of intellectual achievements and personal growth, to become complete human beings. Sharing knowledge, discoveries and inventions for the betterment of the world at large.</p>
               </div>
             </motion.div>
           </div>
@@ -450,30 +450,48 @@ const HomePage = () => {
 // Animated Counter Component
 const AnimatedCounter = ({ target }: { target: number }) => {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
-      const duration = 2000; // 2 seconds
-      const increment = target / (duration / 16); // 60fps
-      let current = 0;
+    // Start animation immediately
+    const startDelay = setTimeout(() => {
+      setIsAnimating(true);
+      console.log('Starting animation for target:', target);
       
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          setCount(target);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(current));
+      // Phase 1: Quick random numbers
+      let randomStep = 0;
+      const randomInterval = setInterval(() => {
+        const randomNum = Math.floor(Math.random() * (target * 2));
+        setCount(randomNum);
+        randomStep++;
+        
+        if (randomStep >= 10) { // Reduced from 20 to 10
+          clearInterval(randomInterval);
+          console.log('Random phase done, counting to target');
+          
+          // Phase 2: Quick count to target
+          let current = 0;
+          const countInterval = setInterval(() => {
+            current++;
+            setCount(current);
+            
+            if (current >= target) {
+              clearInterval(countInterval);
+              console.log('Animation finished');
+            }
+          }, 30); // Reduced from 100ms to 30ms
         }
-      }, 16);
-      
-      return () => clearInterval(timer);
-    }
-  }, [isInView, target]);
+      }, 30); // Reduced from 100ms to 30ms
+    }, 100); // Reduced from 500ms to 100ms
 
-  return <span ref={ref} className="text-amber-500">{count}</span>;
+    return () => clearTimeout(startDelay);
+  }, [target]);
+
+  return (
+    <span className="text-amber-500 font-bold">
+      {count}
+    </span>
+  );
 };
 
 export default HomePage;

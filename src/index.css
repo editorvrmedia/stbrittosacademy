@@ -25,11 +25,11 @@
 html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: none;
+  scroll-snap-type: y mandatory;
 }
 
 html, body {
-  scroll-snap-type: none;
+  scroll-snap-type: y mandatory;
   overflow-x: hidden;
 }
 
@@ -37,14 +37,17 @@ html, body {
 * {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* IE 10+ */
-  scroll-snap-type: none;
 }
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
 
+/* Enable scroll snap for full-page sections */
 .section {
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  transition: scroll-snap-type 0.3s;
 }
