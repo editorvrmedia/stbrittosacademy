@@ -51,21 +51,6 @@ const Photos = () => {
     ? photos 
     : photos.filter(photo => photo.category === selectedCategory);
 
-  // Define the cultural events array for navigation
-  const culturalEvents = [
-    { id: 90001, src: '/CULTURAL EVENTS/RGL/IMG_2097.JPG', title: 'Chief Guest and Correspondent', description: '' },
-    { id: 90002, src: '/CULTURAL EVENTS/RGL/IMG_2124.JPG', title: 'Student Audience in Hall', description: '' },
-    { id: 90003, src: '/CULTURAL EVENTS/RGL/IMG_2067.JPG', title: 'Enthusiastic Students Attending the Event', description: '' },
-    { id: 90004, src: '/CULTURAL EVENTS/RGL/IMG_4916.JPG', title: 'Girls Cheering with Peace Signs', description: '' },
-    { id: 90005, src: '/CULTURAL EVENTS/RGL/IMG_4824.JPG', title: 'Student Performing with Mic on Stage', description: '' },
-    { id: 90006, src: '/CULTURAL EVENTS/RGL/IMG_4757.JPG', title: 'Judges Watching Cultural Performance', description: '' },
-    { id: 90007, src: '/CULTURAL EVENTS/RGL/IMG_4744.JPG', title: 'Traditional Music Performance by Students', description: '' },
-    { id: 90008, src: '/CULTURAL EVENTS/RGL/IMG_4525.JPG', title: 'Girls in Traditional Dance Costumes', description: '' },
-    { id: 90009, src: '/CULTURAL EVENTS/RGL/IMG_4504.JPG', title: 'Students in Black "Believe You Can 2023–24" T-Shirts', description: '' },
-    { id: 90010, src: '/CULTURAL EVENTS/RGL/IMG_1832.JPG', title: 'Crowd Gathered at the Entrance Area', description: '' },
-    { id: 90011, src: '/CULTURAL EVENTS/RGL/IMG_4491.JPG', title: 'Student in Uniform in School Corridor', description: '' },
-  ];
-
   // Intramurals images for Sports & Athletics
   const intramuralsImages = [
     { id: 91001, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1305.JPG', title: 'Intense Kabaddi Face-off' },
@@ -91,6 +76,9 @@ const Photos = () => {
 
   // State for intramurals modal
   const [intramuralsModal, setIntramuralsModal] = useState<{ open: boolean, index: number }>({ open: false, index: 0 });
+
+  // --- MODAL STATE ---
+  const [modal, setModal] = useState<{ open: boolean, images: any[], index: number }>({ open: false, images: [], index: 0 });
 
   const openLightbox = (imageId: number) => {
     setLightboxImage(imageId);
@@ -160,8 +148,51 @@ const Photos = () => {
     return () => window.removeEventListener('keydown', handleEsc);
   }, [intramuralsModal.open]);
 
-  // Calculate total number of photos including main, cultural, and intramurals
-  const totalPhotos = photos.length + culturalEvents.length + intramuralsImages.length;
+  // Calculate total number of photos including main and intramurals only
+  const totalPhotos = photos.length + intramuralsImages.length;
+
+  // --- OPEN MODAL ---
+  const openModal = (images: any[], index: number) => {
+    setModal({ open: true, images, index });
+  };
+
+  // --- CLOSE MODAL ---
+  const closeModal = () => setModal({ open: false, images: [], index: 0 });
+
+  // --- NAVIGATE MODAL ---
+  const navigateModal = (direction: 'prev' | 'next') => {
+    setModal(m => {
+      const len = m.images.length;
+      const newIndex = direction === 'prev' ? (m.index - 1 + len) % len : (m.index + 1) % len;
+      return { ...m, index: newIndex };
+    });
+  };
+
+  // --- ESC KEY CLOSE ---
+  useEffect(() => {
+    if (!modal.open) return;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [modal.open]);
+
+  // Add ZEST images array
+  const zestImages = [
+    { id: 92001, src: '/SCHOOL EVENTS/ZEST/DSCN0564.JPG', title: 'Superhero Role Play – Group Picture' },
+    { id: 92002, src: '/SCHOOL EVENTS/ZEST/DSCN0625.JPG', title: 'Stuffed Bread Bowl with Veggies – Culinary Display' },
+    { id: 92003, src: '/SCHOOL EVENTS/ZEST/DSCN0627.JPG', title: 'Plated Veg Rolls – Student Culinary Art' },
+    { id: 92004, src: '/SCHOOL EVENTS/ZEST/DSCN0629.JPG', title: 'Toast Plating by Participants' },
+    { id: 92005, src: '/SCHOOL EVENTS/ZEST/FSCN0547.JPG', title: 'Student Wall Art – Fire & Cat' },
+    { id: 92006, src: '/SCHOOL EVENTS/ZEST/FSCN0580.JPG', title: 'ZEST Activity Room – Drawing & Crafts' },
+    { id: 92007, src: '/SCHOOL EVENTS/ZEST/FSCN0581.JPG', title: 'Children Attending ZEST Event' },
+    { id: 92008, src: '/SCHOOL EVENTS/ZEST/IMG_7367.JPG', title: 'Superheroes Assembled – Costume Fun' },
+    { id: 92009, src: '/SCHOOL EVENTS/ZEST/IMG_7384.JPG', title: 'Speech Performance – Junior Participant' },
+    { id: 92010, src: '/SCHOOL EVENTS/ZEST/IMG_7386.JPG', title: 'Public Speaking – ZEST Stage' },
+    { id: 92011, src: '/SCHOOL EVENTS/ZEST/IMG_7443.JPG', title: 'Culinary Competition – Hands-on Experience' },
+    { id: 92012, src: '/SCHOOL EVENTS/ZEST/IMG_7464.JPG', title: 'Proud Moment – Dessert Display Winner' },
+  ];
 
   return (
     <div className="pt-20">
@@ -236,15 +267,16 @@ const Photos = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredPhotos.map((photo) => (
+            {filteredPhotos.map((photo, idx) => (
               <div
                 key={photo.id}
                 className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
-                onClick={() => openLightbox(photo.id)}
+                onClick={() => openModal(filteredPhotos, idx)}
               >
                 <img
                   src={photo.src}
                   alt={photo.title}
+                  loading="lazy"
                   className="w-full h-64 object-cover rounded-t-lg"
                 />
                 <div className="text-sm text-center font-semibold text-[#03045e] mt-2 px-2 pb-3">{photo.title}</div>
@@ -253,37 +285,6 @@ const Photos = () => {
           </div>
         </div>
       </section>
-
-      {/* Cultural Events – Believe You Can 2023–24 */}
-      {selectedCategory === 'cultural' && (
-        <section className="py-8 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-[#03045e] mb-4">RGL – Believe You Can 2023–24</h2>
-              <p className="text-base text-[#0077b6]">A glimpse into our vibrant cultural celebrations and student talent showcase.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {culturalEvents.map((img) => (
-                <div
-                  key={img.id}
-                  className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
-                  style={{ aspectRatio: '4/3' }}
-                  onClick={() => openLightbox(img.id)}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.title}
-                    loading="lazy"
-                    className="w-full h-48 object-cover rounded-t-lg"
-                    style={{ aspectRatio: '4/3' }}
-                  />
-                  <div className="text-sm text-center font-semibold text-[#03045e] mt-2 px-2 pb-3">{img.title}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Intramurals – Sports Fest Highlights */}
       {selectedCategory === 'sports' && (
@@ -294,7 +295,7 @@ const Photos = () => {
               <div
                 key={img.id}
                 className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
-                onClick={() => setIntramuralsModal({ open: true, index: idx })}
+                onClick={() => openModal(intramuralsImages, idx)}
               >
                 <img
                   src={img.src}
@@ -307,99 +308,72 @@ const Photos = () => {
               </div>
             ))}
           </div>
-
-          {/* Modal/Lightbox for Intramurals */}
-          {intramuralsModal.open && (
-            <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4"
-              onClick={() => setIntramuralsModal({ open: false, index: 0 })}
-            >
-              <div
-                className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full mx-auto flex flex-col items-center p-0"
-                onClick={e => e.stopPropagation()}
-              >
-                <button
-                  className="absolute top-2 right-2 w-10 h-10 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl font-bold focus:outline-none transition hover:bg-[#03045e] hover:text-white"
-                  onClick={() => setIntramuralsModal({ open: false, index: 0 })}
-                  aria-label="Close"
-                >
-                  ×
-                </button>
-                <img
-                  src={intramuralsImages[intramuralsModal.index].src}
-                  alt={intramuralsImages[intramuralsModal.index].title}
-                  className="w-full max-h-[70vh] object-contain rounded-t-lg shadow-md"
-                  style={{ background: '#f8fafc' }}
-                />
-                <div className="w-full bg-white rounded-b-lg p-6 flex flex-col items-center">
-                  <div className="text-xl font-bold text-[#03045e] text-center mt-2 mb-1">{intramuralsImages[intramuralsModal.index].title}</div>
-                </div>
-                {/* Navigation Arrows */}
-                <div className="absolute inset-y-0 left-0 flex items-center">
-                  <button
-                    className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white"
-                    onClick={e => { e.stopPropagation(); setIntramuralsModal(m => ({ open: true, index: (m.index - 1 + intramuralsImages.length) % intramuralsImages.length })); }}
-                    aria-label="Previous"
-                  >
-                    <ChevronLeft className="h-6 w-6" />
-                  </button>
-                </div>
-                <div className="absolute inset-y-0 right-0 flex items-center">
-                  <button
-                    className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white"
-                    onClick={e => { e.stopPropagation(); setIntramuralsModal(m => ({ open: true, index: (m.index + 1) % intramuralsImages.length })); }}
-                    aria-label="Next"
-                  >
-                    <ChevronRight className="h-6 w-6" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
         </section>
       )}
 
-      {/* Lightbox */}
-      {(lightboxImage && (currentPhoto || [1001,1002,1003,1004,2001,2002,2003,2004,2005,2006,2007].includes(lightboxImage))) && (
-        <div className="fixed inset-0 bg-blue-900 bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-2xl w-full rounded-lg shadow-xl bg-white flex flex-col items-center p-0">
+      {/* ZEST – Talent, Art & Culinary Carnival */}
+      {selectedCategory === 'events' && (
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-[#03045e] text-center mb-6">ZEST – Talent, Art & Culinary Carnival</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {zestImages.map((img, idx) => (
+              <div
+                key={img.id}
+                className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
+                onClick={() => openModal(zestImages, idx)}
+              >
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  loading="lazy"
+                  className="w-full h-48 object-cover rounded-t-lg"
+                  style={{ aspectRatio: '4/3' }}
+                />
+                <div className="text-sm text-center font-semibold text-[#03045e] mt-2 px-2 pb-3">{img.title}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Modal/Lightbox */}
+      {modal.open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4" onClick={closeModal}>
+          <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full mx-auto flex flex-col items-center p-0" onClick={e => e.stopPropagation()}>
             <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl font-bold focus:outline-none transition hover:bg-[#03045e] hover:text-white"
+              className="absolute top-2 right-2 w-10 h-10 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl font-bold focus:outline-none transition hover:bg-[#03045e] hover:text-white"
+              onClick={closeModal}
               aria-label="Close"
             >
-              <X className="h-6 w-6" />
+              ×
             </button>
-            {/* Navigation for main gallery only */}
-            {currentPhoto && (
-              <>
-                <button
-                  onClick={() => navigateLightbox('prev')}
-                  className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white absolute left-4 top-1/2 transform -translate-y-1/2"
-                  aria-label="Previous"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-                <button
-                  onClick={() => navigateLightbox('next')}
-                  className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white absolute right-16 top-1/2 transform -translate-y-1/2"
-                  aria-label="Next"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </>
-            )}
             <img
-              src={currentPhoto ? currentPhoto.src : ''}
-              alt={currentPhoto ? currentPhoto.title : ''}
+              src={modal.images[modal.index].src}
+              alt={modal.images[modal.index].title}
               className="w-full max-h-[70vh] object-contain rounded-t-lg shadow-md"
               style={{ background: '#f8fafc' }}
             />
             <div className="w-full bg-white rounded-b-lg p-6 flex flex-col items-center">
-              <div className="text-xl font-bold text-[#03045e] text-center mt-2 mb-1">{currentPhoto ? currentPhoto.title : ''}</div>
-              {currentPhoto && currentPhoto.description && (
-                <p className="text-blue-700 mt-2 text-center">{currentPhoto.description}</p>
-              )}
+              <div className="text-xl font-bold text-[#03045e] text-center mt-2 mb-1">{modal.images[modal.index].title}</div>
+            </div>
+            {/* Navigation Arrows */}
+            <div className="absolute inset-y-0 left-0 flex items-center">
+              <button
+                className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white"
+                onClick={e => { e.stopPropagation(); navigateModal('prev'); }}
+                aria-label="Previous"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="absolute inset-y-0 right-0 flex items-center">
+              <button
+                className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white"
+                onClick={e => { e.stopPropagation(); navigateModal('next'); }}
+                aria-label="Next"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
             </div>
           </div>
         </div>

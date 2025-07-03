@@ -254,49 +254,6 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* Cultural Events – Believe You Can 2023–24 */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-[#03045e] mb-4">Cultural Events – Believe You Can 2023–24</h2>
-            <p className="text-lg text-[#0077b6]">A glimpse into our vibrant cultural celebrations and student talent showcase.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {/* Card List */}
-            {[
-              { src: '/CULTURAL EVENTS/RGL/IMG_2097.JPG', caption: 'Chief Guest & Principal at Event Backdrop' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_2124.JPG', caption: 'Student Audience in Hall' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_2067.JPG', caption: 'Enthusiastic Students Attending the Event' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_4916.JPG', caption: 'Girls Cheering with Peace Signs' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_4824.JPG', caption: 'Student Performing with Mic on Stage' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_4757.JPG', caption: 'Judges Watching Cultural Performance' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_4744.JPG', caption: 'Traditional Music Performance by Students' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_4525.JPG', caption: 'Girls in Traditional Dance Costumes' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_4504.JPG', caption: 'Students in Black "Believe You Can 2023–24" T-Shirts' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_1832.JPG', caption: 'Crowd Gathered at the Entrance Area' },
-              { src: '/CULTURAL EVENTS/RGL/IMG_4491.JPG', caption: 'Student in Uniform in School Corridor' },
-            ].map((img, idx) => (
-              <div
-                key={img.src}
-                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform duration-200 hover:scale-105 hover:shadow-blue-200"
-                style={{ aspectRatio: '4/3' }}
-              >
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  loading="lazy"
-                  className="w-full h-48 object-cover rounded-t-lg"
-                  style={{ aspectRatio: '4/3' }}
-                />
-                <div className="p-3 flex-1 flex items-end">
-                  <div className="w-full text-center text-sm font-semibold text-[#03045e]">{img.caption}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Stats Bar and Vision & Mission Section */}
       <motion.section 
         className="section w-full"
