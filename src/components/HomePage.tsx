@@ -199,44 +199,29 @@ const HomePage = () => {
               transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <h2 
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blue-900 mb-2 sm:mb-4"
+              <section
+                className="bg-gradient-to-br from-[#f4faff] to-[#ffffff] rounded-xl shadow-md px-6 py-10 max-w-4xl mx-auto mb-6 font-[Inter,sans-serif] flex flex-col gap-6"
               >
-                Welcome to St. Britto's Academy
-              </h2>
-              <p 
-                className="text-base sm:text-lg lg:text-xl text-blue-700 mb-6 sm:mb-8 lg:mb-12"
-              >
-                Nurturing minds, building character, and creating leaders of tomorrow
-              </p>
-              <p className="text-base sm:text-lg lg:text-xl text-blue-800 mb-6">
-                Established in 1997, St. Britto's Academy has been at the forefront of educational excellence for over 28 years. Our commitment to holistic development, academic rigor, and character formation has made us one of Chennai's most trusted educational institutions.
-              </p>
-              <p className="text-base sm:text-lg lg:text-xl text-blue-800 mb-6">
-                We believe in nurturing not just academic excellence, but also the moral, physical, and social development of every child. Our comprehensive curriculum, experienced faculty, and state-of-the-art facilities create an environment where students thrive and reach their full potential.
-              </p>
-              <motion.div 
-                className="bg-white border-l-4 border-amber-400 rounded-lg shadow p-4 mb-6"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true, amount: 0.1 }}
-              >
-                <p className="italic text-blue-800 text-base sm:text-lg">
-                  "Education is not preparation for life; education is life itself." - John Dewey
+                <p className="text-lg text-[#03045e] leading-relaxed mb-4">
+                  Established in 1997, St. Britto's Academy has been at the forefront of <span className="font-semibold text-[#0077b6]">academic excellence</span> for over 28 years. Our commitment to <span className="font-semibold text-[#0077b6]">holistic development</span>, academic rigor, and character formation has made us one of Chennai's most trusted educational institutions.
                 </p>
-              </motion.div>
-              <motion.div 
-                className="flex flex-wrap gap-3 mb-2"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-                viewport={{ once: true, amount: 0.1 }}
-              >
-                <span className="px-4 py-1 rounded-full bg-sky-100 border border-sky-200 text-blue-900 text-sm font-semibold">Excellence</span>
-                <span className="px-4 py-1 rounded-full bg-yellow-100 border border-yellow-200 text-yellow-800 text-sm font-semibold">Innovation</span>
-                <span className="px-4 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-800 text-sm font-semibold">Character Building</span>
-              </motion.div>
+                <p className="text-lg text-[#03045e] leading-relaxed mb-4">
+                  We believe in nurturing not just <span className="font-semibold text-[#0077b6]">academic excellence</span>, but also the moral, physical, and social development of every child. Our comprehensive curriculum, experienced faculty, and state-of-the-art facilities create an environment where students thrive and reach their full potential.
+                </p>
+                {/* Quote Card */}
+                <div className="bg-white rounded-md shadow-sm p-4 border-l-4 border-yellow-400 mb-4">
+                  <p className="italic text-slate-700 text-lg">
+                    "Education is not preparation for life; education is life itself."
+                  </p>
+                  <div className="text-right font-medium text-slate-700 mt-2">- John Dewey</div>
+                </div>
+                {/* Badges */}
+                <div className="flex flex-wrap gap-2 mt-2">
+                  <span className="px-4 py-1 rounded-full bg-sky-100 text-sky-800 font-semibold text-sm hover:scale-105 transition-transform duration-200">Excellence</span>
+                  <span className="px-4 py-1 rounded-full bg-yellow-100 text-yellow-800 font-semibold text-sm hover:scale-105 transition-transform duration-200">Innovation</span>
+                  <span className="px-4 py-1 rounded-full bg-purple-100 text-purple-800 font-semibold text-sm hover:scale-105 transition-transform duration-200">Character Building</span>
+                </div>
+              </section>
             </motion.div>
             {/* Right: Trophy Image and Badge */}
             <motion.div 
@@ -268,6 +253,49 @@ const HomePage = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Cultural Events – Believe You Can 2023–24 */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[#03045e] mb-4">Cultural Events – Believe You Can 2023–24</h2>
+            <p className="text-lg text-[#0077b6]">A glimpse into our vibrant cultural celebrations and student talent showcase.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {/* Card List */}
+            {[
+              { src: '/CULTURAL EVENTS/RGL/IMG_2097.JPG', caption: 'Chief Guest & Principal at Event Backdrop' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_2124.JPG', caption: 'Student Audience in Hall' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_2067.JPG', caption: 'Enthusiastic Students Attending the Event' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_4916.JPG', caption: 'Girls Cheering with Peace Signs' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_4824.JPG', caption: 'Student Performing with Mic on Stage' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_4757.JPG', caption: 'Judges Watching Cultural Performance' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_4744.JPG', caption: 'Traditional Music Performance by Students' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_4525.JPG', caption: 'Girls in Traditional Dance Costumes' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_4504.JPG', caption: 'Students in Black "Believe You Can 2023–24" T-Shirts' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_1832.JPG', caption: 'Crowd Gathered at the Entrance Area' },
+              { src: '/CULTURAL EVENTS/RGL/IMG_4491.JPG', caption: 'Student in Uniform in School Corridor' },
+            ].map((img, idx) => (
+              <div
+                key={img.src}
+                className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform duration-200 hover:scale-105 hover:shadow-blue-200"
+                style={{ aspectRatio: '4/3' }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  loading="lazy"
+                  className="w-full h-48 object-cover rounded-t-lg"
+                  style={{ aspectRatio: '4/3' }}
+                />
+                <div className="p-3 flex-1 flex items-end">
+                  <div className="w-full text-center text-sm font-semibold text-[#03045e]">{img.caption}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Stats Bar and Vision & Mission Section */}
       <motion.section 

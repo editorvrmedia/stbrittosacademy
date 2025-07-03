@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Camera, Calendar, Users } from 'lucide-react';
 
 const Photos = () => {
@@ -12,20 +12,6 @@ const Photos = () => {
     { id: 'academics', name: 'Academic Activities' },
     { id: 'sports', name: 'Sports & Athletics' },
     { id: 'cultural', name: 'Cultural Programs' },
-  ];
-
-  const foodStallImageNames = [
-    'IMG_0276.JPG','IMG_0277.JPG','IMG_0280.JPG','IMG_0284.JPG','IMG_0289.JPG','IMG_0291.JPG','IMG_0292.JPG','IMG_0295.JPG','IMG_0296.JPG','IMG_0298.JPG','IMG_0299.JPG','IMG_0300.JPG','IMG_0301.JPG',
-    'IMG_0306.JPG','IMG_0308.JPG','IMG_0309.JPG','IMG_0310.JPG','IMG_0317.JPG','IMG_0318.JPG','IMG_0335.JPG','IMG_0336.JPG','IMG_0337.JPG','IMG_0339.JPG','IMG_0344.JPG','IMG_0350.JPG','IMG_0352.JPG',
-    'IMG_0365.JPG','IMG_0370.JPG','IMG_0377.JPG','IMG_0383.JPG','IMG_0388.JPG','IMG_0389.JPG','IMG_0390.JPG','IMG_0392.JPG','IMG_0395.JPG','IMG_0397.JPG','IMG_0398.JPG','IMG_0399.JPG','IMG_0400.JPG',
-    'IMG_0402.JPG','IMG_0404.JPG','IMG_0406.JPG','IMG_0412.JPG','IMG_0415.JPG','IMG_0419.JPG','IMG_0423.JPG','IMG_0424.JPG','IMG_0427.JPG','IMG_0429.JPG','IMG_0431.JPG','IMG_0448.JPG','IMG_0449.JPG',
-    'IMG_0450.JPG','IMG_0452.JPG','IMG_0458.JPG','IMG_0465.JPG','IMG_0466.JPG','IMG_0469.JPG','IMG_0472.JPG','IMG_0476.JPG','IMG_0477.JPG','IMG_0478.JPG','IMG_0479.JPG','IMG_0480.JPG','IMG_0481.JPG',
-    'IMG_0487.JPG','IMG_0488.JPG','IMG_0489.JPG','IMG_0490.JPG','IMG_0491.JPG','IMG_0492.JPG','IMG_0493.JPG','IMG_0494.JPG','IMG_0495.JPG','IMG_0496.JPG','IMG_0497.JPG','IMG_0498.JPG','IMG_0499.JPG',
-    'IMG_0500.JPG','IMG_0501.JPG','IMG_0502.JPG','IMG_0503.JPG','IMG_0504.JPG','IMG_0505.JPG','IMG_0506.JPG','IMG_0507.JPG','IMG_0508.JPG','IMG_0509.JPG','IMG_0510.JPG','IMG_0511.JPG','IMG_0512.JPG',
-    'IMG_0513.JPG','IMG_0514.JPG','IMG_0515.JPG','IMG_0516.JPG','IMG_0517.JPG','IMG_0518.JPG','IMG_0519.JPG','IMG_0520.JPG','IMG_0521.JPG','IMG_0523.JPG','IMG_0524.JPG','IMG_0525.JPG','IMG_0526.JPG',
-    'IMG_0527.JPG','IMG_0528.JPG','IMG_0529.JPG','IMG_0530.JPG','IMG_0531.JPG','IMG_0532.JPG','IMG_0533.JPG','IMG_0534.JPG','IMG_0535.JPG','IMG_0536.JPG','IMG_1044.JPG','IMG_1045.JPG','IMG_1050.JPG',
-    'IMG_1051.JPG','IMG_1342.JPG','IMG_1343.JPG','IMG_1345.JPG','IMG_1346.JPG','IMG_1348.JPG','IMG_1353.JPG','IMG_1356.JPG','IMG_1364.JPG','IMG_1366.JPG','IMG_1369.JPG','IMG_1374.JPG','IMG_1381.JPG',
-    'IMG_1386.JPG','IMG_1389.JPG','IMG_1401.JPG','IMG_1414.JPG','IMG_1419.JPG','IMG_1420.JPG','IMG_1421.JPG','IMG_1423.JPG',
   ];
 
   const photos = [
@@ -57,25 +43,54 @@ const Photos = () => {
     { id: 10025, src: '/CAMPUS LIFE/CAMPUS LIFE25.JPG', category: 'campus', title: 'Group Project', description: 'Students collaborating on a group project.', date: '2024-01-01', photographer: 'Campus Life' },
     { id: 10026, src: '/CAMPUS LIFE/CAMPUS LIFE26.JPG', category: 'campus', title: 'Thumbs Up!', description: 'Student giving a thumbs up in the hallway.', date: '2024-01-01', photographer: 'Campus Life' },
     { id: 10027, src: '/CAMPUS LIFE/CAMPUS LIFE27.jpg', category: 'campus', title: 'Field Trip Group', description: 'Students and teachers on a field trip.', date: '2024-01-01', photographer: 'Campus Life' },
-    { id: 10028, src: '/CAMPUS LIFE/CAMPUS LIFE27.jpeg', category: 'campus', title: 'Field Trip Group (Alt)', description: 'Students and teachers on a field trip (alternate photo).', date: '2024-01-01', photographer: 'Campus Life' },
-    { id: 10029, src: '/CAMPUS LIFE/CAMPUS LIFE28.jpeg', category: 'campus', title: 'Award Ceremony', description: 'Award presentation with school leaders.', date: '2024-01-01', photographer: 'Campus Life' },
-    // Food Stall images under School Events
-    ...foodStallImageNames.map((name, idx) => ({
-      id: 20000 + idx,
-      src: `/SCHOOL EVENTS/Food Stall/${name}`,
-      category: 'events',
-      title: [
-        "Students Arranging Food Items", "Welcoming Guests to the Stall", "Serving Refreshments", "Teamwork at the Food Counter", "Students Handling Cash Counter", "Preparing Snacks for Sale", "Food Stall Decorations", "Explaining Menu to Visitors", "Students Enjoying the Event", "Parents Visiting the Stall", "Teachers Supervising the Activity", "Healthy Food Display", "Students Promoting Healthy Eating", "Serving Beverages", "Food Stall Volunteers", "Students Taking Orders", "Preparing Sandwiches", "Group Photo at the Stall", "Students with Food Samples", "Decorated Food Counter", "Students Explaining Dishes", "Crowd at the Food Stall", "Serving Traditional Dishes", "Students with Aprons", "Food Presentation", "Students Cleaning Up", "Food Stall Banner", "Students with Certificates", "Parents and Students Together", "Food Stall Setup", "Students Tasting Food", "Preparing Ingredients", "Serving Sweets", "Students at the Juice Counter", "Food Stall Volunteers Group", "Students with Food Trays", "Explaining Nutrition Facts", "Food Stall Crowd", "Students with Food Labels", "Serving Hot Snacks", "Students with Food Coupons", "Food Stall Teamwork", "Students with Food Posters", "Food Stall Prize Distribution", "Students with Food Baskets", "Food Stall Closing Ceremony", "Students with Food Samples", "Food Stall Feedback", "Students with Food Tokens", "Food Stall Group Photo", "Serving Cold Drinks", "Students with Food Stalls", "Food Stall Volunteers", "Students with Food Menus", "Food Stall Decorations", "Serving Food to Guests", "Students with Food Items", "Food Stall Preparation", "Students with Food Banners", "Food Stall Team", "Serving Snacks", "Students with Food Coupons", "Food Stall Activities", "Students with Food Trays", "Food Stall Volunteers", "Serving Food to Parents", "Students with Food Posters", "Food Stall Group", "Students with Food Samples", "Food Stall Event", "Students with Food Items", "Food Stall Team", "Serving Food to Students", "Food Stall Volunteers", "Students with Food Baskets", "Food Stall Setup", "Students with Food Labels", "Food Stall Group", "Serving Food to Guests", "Students with Food Coupons", "Food Stall Activities", "Students with Food Trays", "Food Stall Volunteers", "Serving Food to Parents", "Students with Food Posters", "Food Stall Group", "Students with Food Samples", "Food Stall Event", "Students with Food Items", "Food Stall Team", "Serving Food to Students", "Food Stall Volunteers", "Students with Food Baskets", "Food Stall Setup", "Students with Food Labels", "Food Stall Group"
-      ][idx] || name,
-      description: 'Students Engaging in Food Stall Activities – Fun, Learning, and Entrepreneurship',
-      date: '2024-01-01',
-      photographer: 'School Events',
-    })),
+    { id: 10028, src: '/CAMPUS LIFE/CAMPUS LIFE27.jpeg', category: 'campus', title: 'Interactive session with Dr APJ Abdul Kalam', description: 'Award presentation with school leaders.', date: '2024-01-01', photographer: 'Campus Life' },
+    { id: 10029, src: '/CAMPUS LIFE/CAMPUS LIFE28.jpeg', category: 'campus', title: 'Interactive session with Dr APJ Abdul Kalam', description: 'Award presentation with school leaders.', date: '2024-01-01', photographer: 'Campus Life' },
   ];
 
   const filteredPhotos = selectedCategory === 'all' 
     ? photos 
     : photos.filter(photo => photo.category === selectedCategory);
+
+  // Define the cultural events array for navigation
+  const culturalEvents = [
+    { id: 90001, src: '/CULTURAL EVENTS/RGL/IMG_2097.JPG', title: 'Chief Guest and Correspondent', description: '' },
+    { id: 90002, src: '/CULTURAL EVENTS/RGL/IMG_2124.JPG', title: 'Student Audience in Hall', description: '' },
+    { id: 90003, src: '/CULTURAL EVENTS/RGL/IMG_2067.JPG', title: 'Enthusiastic Students Attending the Event', description: '' },
+    { id: 90004, src: '/CULTURAL EVENTS/RGL/IMG_4916.JPG', title: 'Girls Cheering with Peace Signs', description: '' },
+    { id: 90005, src: '/CULTURAL EVENTS/RGL/IMG_4824.JPG', title: 'Student Performing with Mic on Stage', description: '' },
+    { id: 90006, src: '/CULTURAL EVENTS/RGL/IMG_4757.JPG', title: 'Judges Watching Cultural Performance', description: '' },
+    { id: 90007, src: '/CULTURAL EVENTS/RGL/IMG_4744.JPG', title: 'Traditional Music Performance by Students', description: '' },
+    { id: 90008, src: '/CULTURAL EVENTS/RGL/IMG_4525.JPG', title: 'Girls in Traditional Dance Costumes', description: '' },
+    { id: 90009, src: '/CULTURAL EVENTS/RGL/IMG_4504.JPG', title: 'Students in Black "Believe You Can 2023–24" T-Shirts', description: '' },
+    { id: 90010, src: '/CULTURAL EVENTS/RGL/IMG_1832.JPG', title: 'Crowd Gathered at the Entrance Area', description: '' },
+    { id: 90011, src: '/CULTURAL EVENTS/RGL/IMG_4491.JPG', title: 'Student in Uniform in School Corridor', description: '' },
+  ];
+
+  // Intramurals images for Sports & Athletics
+  const intramuralsImages = [
+    { id: 91001, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1305.JPG', title: 'Intense Kabaddi Face-off' },
+    { id: 91002, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1302.JPG', title: 'Players in Action – Kabaddi Match' },
+    { id: 91003, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1255.JPG', title: 'Kabaddi Dive and Defense' },
+    { id: 91004, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1212.JPG', title: 'Mid-Game Move – Kabaddi' },
+    { id: 91005, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1204.JPG', title: 'Teams Assembling for Match' },
+    { id: 91006, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9700.JPG', title: 'Audience Cheering the Players' },
+    { id: 91007, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9644.JPG', title: 'Basketball Throw Under Pressure' },
+    { id: 91008, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9571.JPG', title: 'Orange Ball Warm-up Round' },
+    { id: 91009, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9556.JPG', title: 'Sports Teacher Guiding with Ball' },
+    { id: 91010, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9514.JPG', title: 'Tug of War – Students in Motion' },
+    { id: 91011, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9511.JPG', title: 'Student in Action – Sprint Start' },
+    { id: 91012, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9422.JPG', title: 'Basketball Match Mid-Throw' },
+    { id: 91013, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9397.JPG', title: 'Teachers Interacting with Students' },
+    { id: 91014, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9349.JPG', title: 'Jump Shot Under the Hoop' },
+    { id: 91015, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0101.JPG', title: 'Student Warming Up for Athletics' },
+    { id: 91016, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0084.JPG', title: 'Young Team Competing – Basketball' },
+    { id: 91017, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0012.JPG', title: 'Fast-Paced Play – Court Action' },
+    { id: 91018, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0013.JPG', title: 'Mid-Dribble Basketball Moment' },
+    { id: 91019, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9998.JPG', title: 'Player Celebrates Victory' },
+  ];
+
+  // State for intramurals modal
+  const [intramuralsModal, setIntramuralsModal] = useState<{ open: boolean, index: number }>({ open: false, index: 0 });
 
   const openLightbox = (imageId: number) => {
     setLightboxImage(imageId);
@@ -87,20 +102,44 @@ const Photos = () => {
 
   const navigateLightbox = (direction: 'prev' | 'next') => {
     if (lightboxImage === null) return;
-    
+    // If viewing a cultural event image, navigate within that array
+    if (selectedCategory === 'cultural' && culturalEvents.some(img => img.id === lightboxImage)) {
+      const currentIndex = culturalEvents.findIndex(img => img.id === lightboxImage);
+      let newIndex;
+      if (direction === 'prev') {
+        newIndex = currentIndex > 0 ? currentIndex - 1 : culturalEvents.length - 1;
+      } else {
+        newIndex = currentIndex < culturalEvents.length - 1 ? currentIndex + 1 : 0;
+      }
+      setLightboxImage(culturalEvents[newIndex].id);
+      return;
+    }
+    // Default: use filteredPhotos
     const currentIndex = filteredPhotos.findIndex(photo => photo.id === lightboxImage);
     let newIndex;
-    
     if (direction === 'prev') {
       newIndex = currentIndex > 0 ? currentIndex - 1 : filteredPhotos.length - 1;
     } else {
       newIndex = currentIndex < filteredPhotos.length - 1 ? currentIndex + 1 : 0;
     }
-    
     setLightboxImage(filteredPhotos[newIndex].id);
   };
 
-  const currentPhoto = lightboxImage ? photos.find(photo => photo.id === lightboxImage) : null;
+  const currentPhoto = lightboxImage
+    ? photos.find(photo => photo.id === lightboxImage) || [
+        { id: 90001, src: '/CULTURAL EVENTS/RGL/IMG_2097.JPG', title: 'Chief Guest and Correspondent', description: '' },
+        { id: 90002, src: '/CULTURAL EVENTS/RGL/IMG_2124.JPG', title: 'Student Audience in Hall', description: '' },
+        { id: 90003, src: '/CULTURAL EVENTS/RGL/IMG_2067.JPG', title: 'Enthusiastic Students Attending the Event', description: '' },
+        { id: 90004, src: '/CULTURAL EVENTS/RGL/IMG_4916.JPG', title: 'Girls Cheering with Peace Signs', description: '' },
+        { id: 90005, src: '/CULTURAL EVENTS/RGL/IMG_4824.JPG', title: 'Student Performing with Mic on Stage', description: '' },
+        { id: 90006, src: '/CULTURAL EVENTS/RGL/IMG_4757.JPG', title: 'Judges Watching Cultural Performance', description: '' },
+        { id: 90007, src: '/CULTURAL EVENTS/RGL/IMG_4744.JPG', title: 'Traditional Music Performance by Students', description: '' },
+        { id: 90008, src: '/CULTURAL EVENTS/RGL/IMG_4525.JPG', title: 'Girls in Traditional Dance Costumes', description: '' },
+        { id: 90009, src: '/CULTURAL EVENTS/RGL/IMG_4504.JPG', title: 'Students in Black "Believe You Can 2023–24" T-Shirts', description: '' },
+        { id: 90010, src: '/CULTURAL EVENTS/RGL/IMG_1832.JPG', title: 'Crowd Gathered at the Entrance Area', description: '' },
+        { id: 90011, src: '/CULTURAL EVENTS/RGL/IMG_4491.JPG', title: 'Student in Uniform in School Corridor', description: '' },
+      ].find(img => img.id === lightboxImage)
+    : null;
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -110,6 +149,19 @@ const Photos = () => {
       day: 'numeric' 
     });
   };
+
+  // Add ESC key to close modal
+  useEffect(() => {
+    if (!intramuralsModal.open) return;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIntramuralsModal({ open: false, index: 0 });
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [intramuralsModal.open]);
+
+  // Calculate total number of photos including main, cultural, and intramurals
+  const totalPhotos = photos.length + culturalEvents.length + intramuralsImages.length;
 
   return (
     <div className="pt-20">
@@ -128,7 +180,7 @@ const Photos = () => {
             <div className="flex items-center justify-center">
               <Camera className="h-8 w-8 text-purple-600 mr-3" />
               <div>
-                <div className="text-2xl font-bold text-gray-900">{photos.length}+</div>
+                <div className="text-2xl font-bold text-gray-900">{totalPhotos}+</div>
                 <div className="text-gray-600">Photos</div>
               </div>
             </div>
@@ -158,10 +210,10 @@ const Photos = () => {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full shadow font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#03045e] ${
                   selectedCategory === category.id
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
+                    ? 'bg-[#03045e] text-white'
+                    : 'bg-white text-[#03045e] hover:bg-[#03045e] hover:text-white'
                 }`}
               >
                 {category.name}
@@ -182,44 +234,138 @@ const Photos = () => {
               {filteredPhotos.length} photo{filteredPhotos.length !== 1 ? 's' : ''} found
             </p>
           </div>
-
-          {/* Food Stall Header */}
-          {selectedCategory === 'events' && filteredPhotos.some(photo => photo.title === 'Food Stall Activity') && (
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2" style={{ color: '#03045e' }}>Food Stall – 2024</h3>
-            </div>
-          )}
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredPhotos.map((photo) => (
               <div
                 key={photo.id}
-                className="group cursor-pointer"
+                className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
                 onClick={() => openLightbox(photo.id)}
               >
-                <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-                  <img
-                    src={photo.src}
-                    alt={photo.title}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
-                <div className="mt-2 text-center">
-                  <span className="block text-base font-semibold text-blue-900">{photo.title}</span>
-                </div>
+                <img
+                  src={photo.src}
+                  alt={photo.title}
+                  className="w-full h-64 object-cover rounded-t-lg"
+                />
+                <div className="text-sm text-center font-semibold text-[#03045e] mt-2 px-2 pb-3">{photo.title}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Cultural Events – Believe You Can 2023–24 */}
+      {selectedCategory === 'cultural' && (
+        <section className="py-8 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-[#03045e] mb-4">RGL – Believe You Can 2023–24</h2>
+              <p className="text-base text-[#0077b6]">A glimpse into our vibrant cultural celebrations and student talent showcase.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {culturalEvents.map((img) => (
+                <div
+                  key={img.id}
+                  className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
+                  style={{ aspectRatio: '4/3' }}
+                  onClick={() => openLightbox(img.id)}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    loading="lazy"
+                    className="w-full h-48 object-cover rounded-t-lg"
+                    style={{ aspectRatio: '4/3' }}
+                  />
+                  <div className="text-sm text-center font-semibold text-[#03045e] mt-2 px-2 pb-3">{img.title}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Intramurals – Sports Fest Highlights */}
+      {selectedCategory === 'sports' && (
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-[#03045e] text-center mb-6">Intramurals – Sports Fest Highlights</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {intramuralsImages.map((img, idx) => (
+              <div
+                key={img.id}
+                className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
+                onClick={() => setIntramuralsModal({ open: true, index: idx })}
+              >
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  loading="lazy"
+                  className="w-full h-56 object-cover rounded-t-lg"
+                  style={{ aspectRatio: '4/3' }}
+                />
+                <div className="text-sm text-center font-semibold text-[#03045e] mt-2 px-2 pb-3">{img.title}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Modal/Lightbox for Intramurals */}
+          {intramuralsModal.open && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4"
+              onClick={() => setIntramuralsModal({ open: false, index: 0 })}
+            >
+              <div
+                className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full mx-auto flex flex-col items-center p-0"
+                onClick={e => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-2 right-2 w-10 h-10 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl font-bold focus:outline-none transition hover:bg-[#03045e] hover:text-white"
+                  onClick={() => setIntramuralsModal({ open: false, index: 0 })}
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+                <img
+                  src={intramuralsImages[intramuralsModal.index].src}
+                  alt={intramuralsImages[intramuralsModal.index].title}
+                  className="w-full max-h-[70vh] object-contain rounded-t-lg shadow-md"
+                  style={{ background: '#f8fafc' }}
+                />
+                <div className="w-full bg-white rounded-b-lg p-6 flex flex-col items-center">
+                  <div className="text-xl font-bold text-[#03045e] text-center mt-2 mb-1">{intramuralsImages[intramuralsModal.index].title}</div>
+                </div>
+                {/* Navigation Arrows */}
+                <div className="absolute inset-y-0 left-0 flex items-center">
+                  <button
+                    className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white"
+                    onClick={e => { e.stopPropagation(); setIntramuralsModal(m => ({ open: true, index: (m.index - 1 + intramuralsImages.length) % intramuralsImages.length })); }}
+                    aria-label="Previous"
+                  >
+                    <ChevronLeft className="h-6 w-6" />
+                  </button>
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center">
+                  <button
+                    className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white"
+                    onClick={e => { e.stopPropagation(); setIntramuralsModal(m => ({ open: true, index: (m.index + 1) % intramuralsImages.length })); }}
+                    aria-label="Next"
+                  >
+                    <ChevronRight className="h-6 w-6" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
       {/* Lightbox */}
       {(lightboxImage && (currentPhoto || [1001,1002,1003,1004,2001,2002,2003,2004,2005,2006,2007].includes(lightboxImage))) && (
         <div className="fixed inset-0 bg-blue-900 bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-6xl max-h-full w-full rounded-xl shadow-2xl border-4 border-sky-400 bg-white flex flex-col lg:flex-row overflow-hidden">
+          <div className="relative max-w-2xl w-full rounded-lg shadow-xl bg-white flex flex-col items-center p-0">
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 bg-sky-400 hover:bg-blue-900 text-white p-3 rounded-full transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
+              className="absolute top-4 right-4 z-10 w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl font-bold focus:outline-none transition hover:bg-[#03045e] hover:text-white"
               aria-label="Close"
             >
               <X className="h-6 w-6" />
@@ -229,34 +375,31 @@ const Photos = () => {
               <>
                 <button
                   onClick={() => navigateLightbox('prev')}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-sky-400 hover:bg-blue-900 text-white p-3 rounded-full transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white absolute left-4 top-1/2 transform -translate-y-1/2"
                   aria-label="Previous"
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </button>
                 <button
                   onClick={() => navigateLightbox('next')}
-                  className="absolute right-16 top-1/2 transform -translate-y-1/2 bg-sky-400 hover:bg-blue-900 text-white p-3 rounded-full transition-all duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-sky-400"
+                  className="w-12 h-12 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl focus:outline-none transition hover:bg-[#03045e] hover:text-white absolute right-16 top-1/2 transform -translate-y-1/2"
                   aria-label="Next"
                 >
                   <ChevronRight className="h-6 w-6" />
                 </button>
               </>
             )}
-            <div className="lg:w-2/3 flex items-center justify-center bg-sky-50">
-              <img
-                src={currentPhoto ? currentPhoto.src : ''}
-                alt={currentPhoto ? currentPhoto.title : ''}
-                className="w-full h-full object-contain max-h-96 lg:max-h-full rounded-lg"
-                />
-              </div>
-            <div className="lg:w-1/3 p-6 lg:p-8 bg-white flex flex-col justify-center items-center border-l border-sky-200">
-              <h3 className="text-2xl font-bold text-blue-900 mb-4 text-center">
-                {currentPhoto ? currentPhoto.title : ''}
-                </h3>
-              <p className="text-blue-700 mb-6 text-center">
-                  {currentPhoto ? currentPhoto.description : ''}
-                </p>
+            <img
+              src={currentPhoto ? currentPhoto.src : ''}
+              alt={currentPhoto ? currentPhoto.title : ''}
+              className="w-full max-h-[70vh] object-contain rounded-t-lg shadow-md"
+              style={{ background: '#f8fafc' }}
+            />
+            <div className="w-full bg-white rounded-b-lg p-6 flex flex-col items-center">
+              <div className="text-xl font-bold text-[#03045e] text-center mt-2 mb-1">{currentPhoto ? currentPhoto.title : ''}</div>
+              {currentPhoto && currentPhoto.description && (
+                <p className="text-blue-700 mt-2 text-center">{currentPhoto.description}</p>
+              )}
             </div>
           </div>
         </div>
