@@ -45,6 +45,20 @@ const Photos = () => {
     { id: 10027, src: '/CAMPUS LIFE/CAMPUS LIFE27.jpg', category: 'campus', title: 'Field Trip Group', description: 'Students and teachers on a field trip.', date: '2024-01-01', photographer: 'Campus Life' },
     { id: 10028, src: '/CAMPUS LIFE/CAMPUS LIFE27.jpeg', category: 'campus', title: 'Interactive session with Dr APJ Abdul Kalam', description: 'Award presentation with school leaders.', date: '2024-01-01', photographer: 'Campus Life' },
     { id: 10029, src: '/CAMPUS LIFE/CAMPUS LIFE28.jpeg', category: 'campus', title: 'Interactive session with Dr APJ Abdul Kalam', description: 'Award presentation with school leaders.', date: '2024-01-01', photographer: 'Campus Life' },
+    // Add Young Forum images to Academic Activities
+    { id: 80001, src: '/ACADEMIC ACTIVITES/YF/IMG_1553.JPG', category: 'academics', title: 'Student Playing Keyboard on Stage', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80002, src: '/ACADEMIC ACTIVITES/YF/IMG_4354.JPG', category: 'academics', title: 'Academic Trophy Display', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80003, src: '/ACADEMIC ACTIVITES/YF/IMG_4322.JPG', category: 'academics', title: 'Student Delegates with Medals', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80004, src: '/ACADEMIC ACTIVITES/YF/IMG_4311.JPG', category: 'academics', title: 'Students Listening During Session', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80005, src: '/ACADEMIC ACTIVITES/YF/IMG_4308.JPG', category: 'academics', title: 'School Delegation Attending Forum', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80006, src: '/ACADEMIC ACTIVITES/YF/IMG_4307.JPG', category: 'academics', title: "Girls' Delegation at the Forum", description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80007, src: '/ACADEMIC ACTIVITES/YF/IMG_1729.JPG', category: 'academics', title: 'Chief Guest Seated in Audience', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80008, src: '/ACADEMIC ACTIVITES/YF/IMG_1792.JPG', category: 'academics', title: 'Stage Panel – Dignitaries Addressing', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80009, src: '/ACADEMIC ACTIVITES/YF/IMG_1427.JPG', category: 'academics', title: 'Keynote Speakers Smiling for Camera', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80010, src: '/ACADEMIC ACTIVITES/YF/IMG_1468.JPG', category: 'academics', title: 'Speaker at Podium – SEEK Foundation Banner', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80011, src: '/ACADEMIC ACTIVITES/YF/IMG_1679.JPG', category: 'academics', title: 'Stage Marshal and Guest', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80012, src: '/ACADEMIC ACTIVITES/YF/IMG_1735.JPG', category: 'academics', title: 'Parent or Guest Judge Observing', description: '', date: '2024-01-01', photographer: 'Young Forum' },
+    { id: 80013, src: '/ACADEMIC ACTIVITES/YF/IMG_0118.JPG', category: 'academics', title: 'Full Hall View of Forum Session', description: '', date: '2024-01-01', photographer: 'Young Forum' },
   ];
 
   const filteredPhotos = selectedCategory === 'all' 
@@ -53,25 +67,40 @@ const Photos = () => {
 
   // Intramurals images for Sports & Athletics
   const intramuralsImages = [
-    { id: 91001, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1305.JPG', title: 'Intense Kabaddi Face-off' },
-    { id: 91002, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1302.JPG', title: 'Players in Action – Kabaddi Match' },
-    { id: 91003, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1255.JPG', title: 'Kabaddi Dive and Defense' },
-    { id: 91004, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1212.JPG', title: 'Mid-Game Move – Kabaddi' },
-    { id: 91005, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1204.JPG', title: 'Teams Assembling for Match' },
-    { id: 91006, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9700.JPG', title: 'Audience Cheering the Players' },
-    { id: 91007, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9644.JPG', title: 'Basketball Throw Under Pressure' },
-    { id: 91008, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9571.JPG', title: 'Orange Ball Warm-up Round' },
-    { id: 91009, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9556.JPG', title: 'Sports Teacher Guiding with Ball' },
-    { id: 91010, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9514.JPG', title: 'Tug of War – Students in Motion' },
-    { id: 91011, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9511.JPG', title: 'Student in Action – Sprint Start' },
-    { id: 91012, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9422.JPG', title: 'Basketball Match Mid-Throw' },
-    { id: 91013, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9397.JPG', title: 'Teachers Interacting with Students' },
-    { id: 91014, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9349.JPG', title: 'Jump Shot Under the Hoop' },
-    { id: 91015, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0101.JPG', title: 'Student Warming Up for Athletics' },
-    { id: 91016, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0084.JPG', title: 'Young Team Competing – Basketball' },
-    { id: 91017, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0012.JPG', title: 'Fast-Paced Play – Court Action' },
-    { id: 91018, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0013.JPG', title: 'Mid-Dribble Basketball Moment' },
-    { id: 91019, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9998.JPG', title: 'Player Celebrates Victory' },
+    { id: 91001, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1305.JPG', category: 'sports', title: 'Intense Kabaddi Face-off', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91002, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1302.JPG', category: 'sports', title: 'Players in Action – Kabaddi Match', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91003, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1255.JPG', category: 'sports', title: 'Kabaddi Dive and Defense', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91004, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1212.JPG', category: 'sports', title: 'Mid-Game Move – Kabaddi', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91005, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_1204.JPG', category: 'sports', title: 'Teams Assembling for Match', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91006, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9700.JPG', category: 'sports', title: 'Audience Cheering the Players', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91007, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9644.JPG', category: 'sports', title: 'Basketball Throw Under Pressure', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91008, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9571.JPG', category: 'sports', title: 'Orange Ball Warm-up Round', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91009, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9556.JPG', category: 'sports', title: 'Sports Teacher Guiding with Ball', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91010, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9514.JPG', category: 'sports', title: 'Tug of War – Students in Motion', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91011, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9511.JPG', category: 'sports', title: 'Student in Action – Sprint Start', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91012, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9422.JPG', category: 'sports', title: 'Basketball Match Mid-Throw', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91013, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9397.JPG', category: 'sports', title: 'Teachers Interacting with Students', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91014, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9349.JPG', category: 'sports', title: 'Jump Shot Under the Hoop', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91015, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0101.JPG', category: 'sports', title: 'Student Warming Up for Athletics', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91016, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0084.JPG', category: 'sports', title: 'Young Team Competing – Basketball', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91017, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0012.JPG', category: 'sports', title: 'Fast-Paced Play – Court Action', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91018, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_0013.JPG', category: 'sports', title: 'Mid-Dribble Basketball Moment', description: '', date: '2024-01-01', photographer: 'Sports' },
+    { id: 91019, src: '/SPORTS & ALTELITCS/INTRAMURALS/IMG_9998.JPG', category: 'sports', title: 'Player Celebrates Victory', description: '', date: '2024-01-01', photographer: 'Sports' },
+  ];
+
+  // Cultural event images for Cultural Programs
+  const culturalEvents = [
+    { id: 90001, src: '/CULTURAL EVENTS/RGL/IMG_2097.JPG', category: 'cultural', title: 'Chief Guest and Correspondent', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90002, src: '/CULTURAL EVENTS/RGL/IMG_2124.JPG', category: 'cultural', title: 'Student Audience in Hall', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90003, src: '/CULTURAL EVENTS/RGL/IMG_2067.JPG', category: 'cultural', title: 'Enthusiastic Students Attending the Event', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90004, src: '/CULTURAL EVENTS/RGL/IMG_4916.JPG', category: 'cultural', title: 'Girls Cheering with Peace Signs', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90005, src: '/CULTURAL EVENTS/RGL/IMG_4824.JPG', category: 'cultural', title: 'Student Performing with Mic on Stage', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90006, src: '/CULTURAL EVENTS/RGL/IMG_4757.JPG', category: 'cultural', title: 'Judges Watching Cultural Performance', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90007, src: '/CULTURAL EVENTS/RGL/IMG_4744.JPG', category: 'cultural', title: 'Traditional Music Performance by Students', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90008, src: '/CULTURAL EVENTS/RGL/IMG_4525.JPG', category: 'cultural', title: 'Girls in Traditional Dance Costumes', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90009, src: '/CULTURAL EVENTS/RGL/IMG_4504.JPG', category: 'cultural', title: 'Students in Black "Believe You Can 2023–24" T-Shirts', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90010, src: '/CULTURAL EVENTS/RGL/IMG_1832.JPG', category: 'cultural', title: 'Crowd Gathered at the Entrance Area', description: '', date: '2024-01-01', photographer: 'Cultural' },
+    { id: 90011, src: '/CULTURAL EVENTS/RGL/IMG_4491.JPG', category: 'cultural', title: 'Student in Uniform in School Corridor', description: '', date: '2024-01-01', photographer: 'Cultural' },
   ];
 
   // State for intramurals modal
@@ -148,8 +177,18 @@ const Photos = () => {
     return () => window.removeEventListener('keydown', handleEsc);
   }, [intramuralsModal.open]);
 
-  // Calculate total number of photos including main and intramurals only
-  const totalPhotos = photos.length + intramuralsImages.length;
+  // Calculate total number of photos including main, intramurals, and cultural events
+  const totalPhotos = photos.length + intramuralsImages.length + culturalEvents.length;
+
+  // Determine which photos to display based on selected category
+  let displayedPhotos = photos;
+  if (selectedCategory === 'cultural') {
+    displayedPhotos = culturalEvents;
+  } else if (selectedCategory === 'sports') {
+    displayedPhotos = intramuralsImages;
+  } else if (selectedCategory !== 'all') {
+    displayedPhotos = photos.filter(photo => photo.category === selectedCategory);
+  }
 
   // --- OPEN MODAL ---
   const openModal = (images: any[], index: number) => {
@@ -157,7 +196,10 @@ const Photos = () => {
   };
 
   // --- CLOSE MODAL ---
-  const closeModal = () => setModal({ open: false, images: [], index: 0 });
+  const closeModal = () => {
+    console.log('Modal closed');
+    setModal({ open: false, images: [], index: 0 });
+  };
 
   // --- NAVIGATE MODAL ---
   const navigateModal = (direction: 'prev' | 'next') => {
@@ -262,16 +304,16 @@ const Photos = () => {
               {selectedCategory === 'all' ? 'All Photos' : categories.find(cat => cat.id === selectedCategory)?.name}
             </h2>
             <p className="text-gray-600">
-              {filteredPhotos.length} photo{filteredPhotos.length !== 1 ? 's' : ''} found
+              {displayedPhotos.length} photo{displayedPhotos.length !== 1 ? 's' : ''} found
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredPhotos.map((photo, idx) => (
+            {displayedPhotos.map((photo, idx) => (
               <div
                 key={photo.id}
                 className="bg-white rounded-lg shadow-md hover:scale-105 transition duration-300 flex flex-col cursor-pointer"
-                onClick={() => openModal(filteredPhotos, idx)}
+                onClick={() => openModal(displayedPhotos, idx)}
               >
                 <img
                   src={photo.src}
@@ -336,10 +378,36 @@ const Photos = () => {
         </section>
       )}
 
+      {/* Academic Activities: Young Forum 2024 Section */}
+      {selectedCategory === 'academics' && (
+        <section className="mb-12 animate-fade-in-up">
+          <h2 className="text-3xl font-bold text-[#03045e] text-center mb-6">YOUNG FORUM 2024 – Inter-school Intellectual Symposium</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {photos.filter(p => p.category === 'academics').map((img, idx) => (
+              <div
+                key={img.id}
+                className="rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col cursor-pointer"
+                onClick={() => openModal(photos.filter(p => p.category === 'academics'), idx)}
+                style={{ background: '#f8fafc' }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  loading="lazy"
+                  className="w-full h-64 object-cover rounded-t-lg"
+                  style={{ aspectRatio: '4/3' }}
+                />
+                <div className="text-sm text-center font-semibold text-[#03045e] mt-2 px-2 pb-3">{img.title}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Modal/Lightbox */}
       {modal.open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4" onClick={closeModal}>
-          <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full mx-auto flex flex-col items-center p-0" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4">
+          <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full mx-auto flex flex-col items-center p-0" onClick={e => { e.stopPropagation(); }}>
             <button
               className="absolute top-2 right-2 w-10 h-10 flex items-center justify-center bg-white text-[#03045e] rounded-full shadow-lg text-2xl font-bold focus:outline-none transition hover:bg-[#03045e] hover:text-white"
               onClick={closeModal}
@@ -375,6 +443,8 @@ const Photos = () => {
                 <ChevronRight className="h-6 w-6" />
               </button>
             </div>
+            {/* Overlay click closes modal */}
+            <div className="fixed inset-0 z-40" onClick={closeModal} style={{ cursor: 'pointer' }} />
           </div>
         </div>
       )}

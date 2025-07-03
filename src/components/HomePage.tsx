@@ -83,6 +83,8 @@ const HomePage = () => {
     { icon: Trophy, number: '100+', label: 'Awards Won' }
   ];
 
+  const totalPhotos = photos.length + intramuralsImages.length;
+
   return (
     <div className="max-w-full overflow-x-hidden">
       <style>{`
@@ -279,7 +281,7 @@ const HomePage = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Users className="w-10 h-10" />
-              <span className="text-3xl font-bold"><AnimatedCounter target={1200} />+</span>
+              <div className="text-2xl font-bold text-gray-900">{totalPhotos}+</div>
             </div>
             <span className="text-sm">Students</span>
           </motion.div>
