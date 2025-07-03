@@ -116,12 +116,20 @@ const BelieveYouCan = () => {
                 </p>
               </div>
             </div>
-            <div>
+            <div className="flex flex-col items-center">
               <img
                 src="/BYC NAME.jpg"
                 alt="Believe You Can Logo"
                 className="rounded-xl shadow-lg w-full h-auto"
               />
+              <a
+                href="https://contestbyc.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors text-lg"
+              >
+                Visit our website
+              </a>
             </div>
           </div>
         </div>

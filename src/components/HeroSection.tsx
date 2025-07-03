@@ -41,7 +41,7 @@ const HeroSection = () => {
       </motion.section>
 
       {/* Scrolling Marquee News Bar (below the video) */}
-      <div className="w-full bg-black/90 overflow-hidden relative z-20 px-2 sm:px-4 py-2">
+      <div className="w-full bg-sky-400 overflow-hidden relative z-20 px-2 sm:px-4 py-2">
         <div className="animate-infinite-scroll whitespace-nowrap font-semibold text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl" 
              style={{ 
                fontFamily: 'Inter, Arial, sans-serif', 

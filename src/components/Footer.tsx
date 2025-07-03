@@ -51,11 +51,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border-b border-gray-800 pb-8">
           {/* Column 1: School Info */}
           <div>
-            <Link to="/" className="flex flex-col items-start mb-4">
+            <Link to="/" className="flex flex-col items-start mb-4 w-full">
               <img 
-                src="/SBA.png" 
-                alt="St. Britto's Academy Logo" 
-                className="h-20 w-auto mb-3"
+                src="/SBA LOGO FOR WEBSITE.png" 
+                alt="St. Britto's Academy Banner" 
+                className="w-full max-w-full h-auto object-contain mb-3 rounded-lg"
               />
             </Link>
             <p className="text-gray-300 text-sm mb-4">

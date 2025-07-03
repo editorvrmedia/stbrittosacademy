@@ -165,6 +165,14 @@ function Chatbot() {
   );
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   const [isAdmissionPopupOpen, setIsAdmissionPopupOpen] = useState(false);
   const location = useLocation();
@@ -181,6 +189,7 @@ function App() {
     <>
       <ScrollProgressBar />
       <Chatbot />
+      <ScrollToTop />
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <AdmissionPopup 
           isOpen={isAdmissionPopupOpen} 

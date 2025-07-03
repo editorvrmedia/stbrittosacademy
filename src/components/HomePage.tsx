@@ -83,8 +83,6 @@ const HomePage = () => {
     { icon: Trophy, number: '100+', label: 'Awards Won' }
   ];
 
-  const totalPhotos = photos.length + intramuralsImages.length;
-
   return (
     <div className="max-w-full overflow-x-hidden">
       <style>{`
@@ -213,9 +211,9 @@ const HomePage = () => {
                 {/* Quote Card */}
                 <div className="bg-white rounded-md shadow-sm p-4 border-l-4 border-yellow-400 mb-4">
                   <p className="italic text-slate-700 text-lg">
-                    "Education is not preparation for life; education is life itself."
+                    "Education transcends the mere accumulation of knowledge. It's about the shaping of character"
                   </p>
-                  <div className="text-right font-medium text-slate-700 mt-2">- John Dewey</div>
+                  <div className="text-right font-medium text-slate-700 mt-2">- Vimala Rani Britto</div>
                 </div>
                 {/* Badges */}
                 <div className="flex flex-wrap gap-2 mt-2">
@@ -236,8 +234,8 @@ const HomePage = () => {
               <img
                 src="/school-excellence-award-2018.jpg"
                 alt="School Excellence Leadership Award 2018"
-                className="rounded-xl shadow-2xl w-full max-w-xs mx-auto h-auto bg-white"
-                style={{objectFit: 'contain'}}
+                className="rounded-xl shadow-2xl w-full max-w-md mx-auto h-auto bg-white"
+                style={{objectFit: 'contain', minHeight: '340px', minWidth: '260px'}}
               />
               <motion.div 
                 className="absolute right-0 bottom-0 mr-2 mb-2"
@@ -281,7 +279,7 @@ const HomePage = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Users className="w-10 h-10" />
-              <div className="text-2xl font-bold text-gray-900">{totalPhotos}+</div>
+              <div className="text-2xl font-bold text-white">1,200+</div>
             </div>
             <span className="text-sm">Students</span>
           </motion.div>
@@ -294,7 +292,7 @@ const HomePage = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Gem className="w-10 h-10" />
-              <span className="text-3xl font-bold"><AnimatedCounter target={50} />+</span>
+              <span className="text-3xl font-bold">50+</span>
             </div>
             <span className="text-sm">Expert Teachers</span>
           </motion.div>
@@ -307,7 +305,7 @@ const HomePage = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Star className="w-10 h-10" />
-              <span className="text-3xl font-bold"><AnimatedCounter target={28} /></span>
+              <span className="text-3xl font-bold">28</span>
             </div>
             <span className="text-sm">Years of Excellence</span>
           </motion.div>
@@ -320,31 +318,36 @@ const HomePage = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Trophy className="w-10 h-10" />
-              <span className="text-3xl font-bold"><AnimatedCounter target={100} />+</span>
+              <span className="text-3xl font-bold">100+</span>
             </div>
             <span className="text-sm">Awards Won</span>
           </motion.div>
         </motion.div>
         {/* Vision & Mission */}
         <motion.div 
-          className="bg-white w-full py-12 flex flex-col items-center justify-center"
+          className="bg-white w-full py-12 flex items-center justify-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
           viewport={{ once: true, amount: 0.1 }}
         >
-          <div className="max-w-5xl w-full flex flex-col md:flex-row items-center gap-8 px-4 mx-auto">
-            <motion.img 
-              src="/SBA Building.jpg" 
-              alt="School Building" 
-              className="rounded-xl shadow-lg w-full max-w-sm object-cover"
+          <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-center gap-10 px-4 mx-auto">
+            <motion.div 
+              className="w-full md:w-1/2 flex justify-center"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
               viewport={{ once: true, amount: 0.1 }}
-            />
+            >
+              <img 
+                src="/SBA Building.jpg" 
+                alt="School Building" 
+                className="rounded-2xl shadow-2xl w-full h-auto max-w-3xl min-h-[300px] object-cover"
+                style={{ minWidth: '350px' }}
+              />
+            </motion.div>
             <motion.div 
-              className="flex-1"
+              className="w-full md:w-1/2 flex flex-col justify-center md:min-h-[320px]"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
@@ -353,11 +356,11 @@ const HomePage = () => {
               <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Vision & Mission</h2>
               <div className="mb-4">
                 <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Vision</h3>
-                <p className="text-gray-800 text-base mb-2">To form and evolve a vibrant scientific and educational community that is creative, adaptable, and internationally renowned for excellence in education and research, and for improving society through its innovative educational strategies.</p>
+                <p className="text-gray-800 text-base mb-2 leading-relaxed">To form and evolve a vibrant scientific and educational community that is creative, adaptable, and internationally renowned for excellence in education and research, and for improving society through its innovative educational strategies.</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Mission</h3>
-                <p className="text-gray-800 text-base">Advancing the frontiers of knowledge, blending theory with practice. Motivating and enabling students to seek the highest levels of intellectual achievements and personal growth, to become complete human beings. Sharing knowledge, discoveries and inventions for the betterment of the world at large.</p>
+                <p className="text-gray-800 text-base leading-relaxed">Advancing the frontiers of knowledge, blending theory with practice. Motivating and enabling students to seek the highest levels of intellectual achievements and personal growth, to become complete human beings. Sharing knowledge, discoveries and inventions for the betterment of the world at large.</p>
               </div>
             </motion.div>
           </div>
