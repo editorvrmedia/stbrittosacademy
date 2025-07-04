@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SchoolDetails = () => (
-  <div className="max-w-4xl mx-auto py-12 px-4 mt-24 space-y-12">
+  <div className="max-w-4xl mx-auto px-4 space-y-12">
     <h1 className="text-3xl font-extrabold text-blue-900 mb-8 text-center drop-shadow">School Details</h1>
     <div className="bg-white/80 rounded-xl shadow-lg p-6 border border-blue-100">
     <div className="overflow-x-auto">
@@ -275,8 +275,8 @@ const SchoolDetails = () => (
           <div className="font-bold text-blue-900 mb-2">Vacation Period</div>
           <div className="mb-4 text-gray-700">May Month</div>
           <div className="font-bold text-blue-900 mb-2">Admission Details</div>
-          <div className="mb-2 text-gray-700">Admission Period: February to March</div>
-          <div className="mb-2 text-gray-700">Admission requirements: 2 and half for Pre KG and 3 and half for LKG</div>
+          <div className="mb-2 text-gray-700">Admission Period: Jan - March</div>
+          <div className="mb-2 text-gray-700">Admission requirements: 3 years for PreKG, 4 years for LKG</div>
         </div>
         <div className="bg-white/90 rounded-lg shadow p-4">
           <div className="font-bold text-blue-900 mb-2 mt-8">9. Details of Workshops and training programmes for teachers</div>

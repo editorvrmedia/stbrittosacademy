@@ -174,7 +174,7 @@ const Infrastructure = () => {
       </section>
 
       {/* Premium State-of-the-Art Facilities Section (after Campus Overview) */}
-      <section className="relative w-full py-16 px-2 sm:px-6 lg:px-12 bg-gradient-to-br from-blue-50 via-white to-blue-100 overflow-x-hidden">
+      <section className="relative w-full py-8 px-2 sm:px-6 lg:px-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-100 overflow-x-hidden">
         {/* Hero Banner */}
         <div className="relative flex flex-col items-center justify-center text-center mb-12">
           <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-700/80 to-blue-400/60 blur-2xl opacity-80 -z-10" style={{backgroundImage: 'url(/SBA%20Building.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'multiply'}}></div>
@@ -194,7 +194,7 @@ const Infrastructure = () => {
           </motion.p>
         </div>
         {/* Subsection Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 gap-10 mb-8">
           {/* Academic Excellence */}
           <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-blue-500" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
             <div className="flex items-center gap-3 mb-2">
@@ -239,7 +239,7 @@ const Infrastructure = () => {
           </motion.div>
         </div>
         {/* Sports & Fitness Facilities and SMR Auditorium */}
-        <div className="grid md:grid-cols-2 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 gap-10 mb-8">
           <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-green-500" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
             <div className="flex items-center gap-3 mb-2">
               <Trophy className="w-8 h-8 text-green-600" />
@@ -272,7 +272,7 @@ const Infrastructure = () => {
           </motion.div>
         </div>
         {/* Safety & Security and Digital Integration */}
-        <div className="grid md:grid-cols-2 gap-10 mb-12">
+        <div className="grid md:grid-cols-2 gap-10 mb-8">
           <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-green-400" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.5, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
             <div className="flex items-center gap-3 mb-2">
               <Monitor className="w-8 h-8 text-green-600" />
@@ -320,7 +320,7 @@ const Infrastructure = () => {
 
       {/* Facilities by Category */}
       {facilities.map((category, categoryIndex) => (
-        <section key={categoryIndex} className={`py-16 ${categoryIndex % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+        <section key={categoryIndex} className={`py-8 bg-transparent`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className={`inline-flex items-center justify-center w-16 h-16 bg-${category.color}-100 rounded-full mb-4`}>
@@ -331,7 +331,7 @@ const Infrastructure = () => {
             
             <div className="grid lg:grid-cols-3 gap-8">
               {category.items.map((item, index) => (
-                <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div key={index} className="bg-blue-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <img
                     src={item.image}
                     alt={item.name}

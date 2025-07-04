@@ -206,7 +206,7 @@ function App() {
       <ScrollProgressBar />
       <Chatbot />
       <ScrollToTop />
-      <div className="min-h-screen bg-gray-50 flex flex-col">
+      <div className="min-h-screen bg-transparent flex flex-col">
         <AdmissionPopup 
           isOpen={isAdmissionPopupOpen} 
           onClose={() => setIsAdmissionPopupOpen(false)} 

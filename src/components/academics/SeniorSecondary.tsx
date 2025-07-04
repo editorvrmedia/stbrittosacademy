@@ -236,7 +236,7 @@ const SeniorSecondary = () => {
       </section>
 
       {/* Grade Structure */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Grade Structure</h2>
@@ -438,7 +438,7 @@ const SeniorSecondary = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {achievements.map((item, index) => (
-              <div key={index} className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div key={index} className="text-center p-6 bg-blue-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <p className="text-5xl font-bold text-indigo-600 mb-2">{item.metric}</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{item.label}</h3>
                 <p className="text-gray-600">{item.description}</p>
@@ -458,7 +458,7 @@ const SeniorSecondary = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/admissions"
-              className="bg-white text-blue-900 hover:bg-sky-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
+              className="bg-blue-700 text-white hover:bg-blue-800 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Apply for Admission
             </a>

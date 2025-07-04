@@ -144,7 +144,7 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Excellence & Heritage */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -170,8 +170,8 @@ const WhyStBrittos = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/8423032/pexels-photo-8423032.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="School campus"
+                src="/SBA Building.jpg"
+                alt="SBA Building - St. Britto's Academy"
                 className="rounded-xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-emerald-500 text-white p-6 rounded-xl shadow-lg">
@@ -186,7 +186,7 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Innovative Learning */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Innovative Learning & Progressive Education</h2>
@@ -196,9 +196,9 @@ const WhyStBrittos = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
             {innovativeFeatures.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div key={index} className="bg-emerald-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
                 <feature.icon className="h-12 w-12 text-emerald-600 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -206,7 +206,7 @@ const WhyStBrittos = () => {
             ))}
           </div>
           
-          <div className="bg-white p-8 rounded-xl shadow-lg">
+          <div className="bg-emerald-50 p-8 rounded-xl shadow-lg">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Educational Philosophy</h3>
@@ -236,7 +236,7 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Key Reasons */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Sets Us Apart</h2>
@@ -255,7 +255,7 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Statistics */}
-      <section className="py-16 bg-emerald-700 text-white">
+      <section className="py-8 bg-emerald-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Track Record</h2>
@@ -274,7 +274,7 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Facilities */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">World-Class Facilities</h2>
@@ -292,7 +292,7 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Parent Testimonials */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Parents Say</h2>
@@ -300,7 +300,7 @@ const WhyStBrittos = () => {
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div key={index} className="bg-emerald-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="flex items-center mb-6">
                   <img
                     src={testimonial.image}
@@ -320,9 +320,9 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Excellence Statement */}
-      <section className="py-16 bg-emerald-700 text-white">
+      <section className="py-8 bg-emerald-700 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <div className="bg-white bg-opacity-10 p-8 rounded-xl">
+          <div className="bg-emerald-50 p-8 rounded-xl">
             <Trophy className="h-16 w-16 mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-6"><span className="font-revue">St. Britto's Academy</span> – Where Excellence Meets Innovation!</h2>
             <p className="text-xl leading-relaxed">
@@ -335,7 +335,7 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Join Our Family?</h2>
           <p className="text-xl text-gray-600 mb-8">

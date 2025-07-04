@@ -154,7 +154,7 @@ const Header = () => {
   return (
     <>
       <TopHeader />
-      <header className={`w-full z-[2002] transition-all duration-200 ${isDark ? 'bg-blue-900/90' : 'bg-white/95'} backdrop-blur-md shadow-lg border-b border-blue-200`}>
+      <header className={`w-full z-[2002] transition-all duration-200 ${isDark ? 'bg-blue-900/90' : 'bg-transparent'} backdrop-blur-md`}>
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2 sm:py-3 min-h-[56px] w-full">
             {/* Logo: Centered on mobile, left on desktop */}
@@ -252,7 +252,7 @@ const Header = () => {
                         <div className="absolute top-full left-0 w-64 bg-white rounded-md shadow-lg border border-blue-200 py-2 z-[1000]">
                           {item.subPages?.map((subPage) => (
                             <React.Fragment key={subPage.name}>
-                              {subPage.hasSubDropdown ? (
+                              {subPage?.hasSubDropdown ? (
                                 <div
                                   className="relative"
                                   onMouseEnter={() => {
@@ -274,7 +274,7 @@ const Header = () => {
                                   </Link>
                                   {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
                                     <div className="absolute left-full top-0 ml-1 w-64 bg-white rounded-md shadow-lg border border-blue-200 py-2 z-[1000]">
-                                      {subPage.subPages?.map((nestedSubPage) => (
+                                      {subPage?.subPages?.map((nestedSubPage: any) => (
                                         <Link
                                           key={nestedSubPage.name}
                                           to={nestedSubPage.href}
@@ -432,7 +432,7 @@ const Header = () => {
                             <div id={`mobile-dropdown-${item.name}`} className="ml-4 mt-2 space-y-1 transition-all duration-300 ease-in-out animate-fade-in-down">
                               {item.subPages?.map((subPage) => (
                                 <React.Fragment key={subPage.name}>
-                                  {subPage.hasSubDropdown ? (
+                                  {subPage?.hasSubDropdown ? (
                                     <div>
                                       <button
                                         onClick={() => {
@@ -448,7 +448,7 @@ const Header = () => {
                                       </button>
                                       {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
                                         <div className="ml-4 mt-2 space-y-1">
-                                          {subPage.subPages?.map((nestedSubPage) => (
+                                          {subPage?.subPages?.map((nestedSubPage: any) => (
                                             <Link
                                               key={nestedSubPage.name}
                                               to={nestedSubPage.href}

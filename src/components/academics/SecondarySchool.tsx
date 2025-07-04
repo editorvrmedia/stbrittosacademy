@@ -143,7 +143,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Program Features */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Secondary School Excellence</h2>
@@ -163,7 +163,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Grade Structure */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Grade Structure</h2>
@@ -193,7 +193,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Subjects */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Secondary School at <span className="font-revue">St. Britto's Academy</span> – CBSE Curriculum for Academic Excellence
@@ -290,7 +290,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Exam Preparation */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Board Exam Preparation</h2>
@@ -299,7 +299,7 @@ const SecondarySchool = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {examPreparation.map((prep, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div key={index} className="bg-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
                 <prep.icon className="h-12 w-12 text-red-600 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{prep.title}</h3>
                 <p className="text-gray-600">{prep.description}</p>
@@ -310,7 +310,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Career Guidance */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Stream Selection Guidance</h2>
@@ -352,7 +352,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Achievements */}
-      <section className="py-16 bg-red-700 text-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Track Record</h2>
@@ -372,7 +372,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Support Services */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Student Support Services</h2>
@@ -408,7 +408,7 @@ const SecondarySchool = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-transparent">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Excel in Board Examinations</h2>
           <p className="text-xl text-gray-600 mb-8">
