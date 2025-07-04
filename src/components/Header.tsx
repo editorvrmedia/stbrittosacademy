@@ -252,7 +252,7 @@ const Header = () => {
                         <div className="absolute top-full left-0 w-64 bg-white rounded-md shadow-lg border border-blue-200 py-2 z-[1000]">
                           {item.subPages?.map((subPage) => (
                             <React.Fragment key={subPage.name}>
-                              {subPage?.hasSubDropdown ? (
+                              {subPage && 'hasSubDropdown' in subPage && subPage.hasSubDropdown ? (
                                 <div
                                   className="relative"
                                   onMouseEnter={() => {
@@ -272,9 +272,9 @@ const Header = () => {
                                   >
                                     {subPage.name}
                                   </Link>
-                                  {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
+                                  {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && Array.isArray((subPage as any).subPages) && (
                                     <div className="absolute left-full top-0 ml-1 w-64 bg-white rounded-md shadow-lg border border-blue-200 py-2 z-[1000]">
-                                      {subPage?.subPages?.map((nestedSubPage: any) => (
+                                      {(subPage as any).subPages.map((nestedSubPage: any) => (
                                         <Link
                                           key={nestedSubPage.name}
                                           to={nestedSubPage.href}
@@ -293,10 +293,10 @@ const Header = () => {
                               ) : (
                                 subPage.name === 'Student ERP Login' ? (
                                   <a
-                                    href="/student-login"
+                                    href="https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp"
                                     onClick={e => {
                                       e.preventDefault();
-                                      window.open('/student-login', '_blank');
+                                      window.open('https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp', '_blank');
                                     }}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                       isActive('/student-login')
@@ -308,10 +308,10 @@ const Header = () => {
                                   </a>
                                 ) : subPage.name === 'Teacher ERP Login' ? (
                                   <a
-                                    href="/teacher-login"
+                                    href="https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp"
                                     onClick={e => {
                                       e.preventDefault();
-                                      window.open('/teacher-login', '_blank');
+                                      window.open('https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp', '_blank');
                                     }}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                       isActive('/teacher-login')
@@ -432,7 +432,7 @@ const Header = () => {
                             <div id={`mobile-dropdown-${item.name}`} className="ml-4 mt-2 space-y-1 transition-all duration-300 ease-in-out animate-fade-in-down">
                               {item.subPages?.map((subPage) => (
                                 <React.Fragment key={subPage.name}>
-                                  {subPage?.hasSubDropdown ? (
+                                  {subPage && 'hasSubDropdown' in subPage && subPage.hasSubDropdown ? (
                                     <div>
                                       <button
                                         onClick={() => {
@@ -446,9 +446,9 @@ const Header = () => {
                                       >
                                         {subPage.name}
                                       </button>
-                                      {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && (
+                                      {subPage.name === 'Mandatory Disclosure' && isMandatoryDropdownOpen && Array.isArray((subPage as any).subPages) && (
                                         <div className="ml-4 mt-2 space-y-1">
-                                          {subPage?.subPages?.map((nestedSubPage: any) => (
+                                          {(subPage as any).subPages.map((nestedSubPage: any) => (
                                             <Link
                                               key={nestedSubPage.name}
                                               to={nestedSubPage.href}
@@ -467,10 +467,10 @@ const Header = () => {
                                   ) : (
                                     subPage.name === 'Student ERP Login' ? (
                                       <a
-                                        href="/student-login"
+                                        href="https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp"
                                         onClick={e => {
                                           e.preventDefault();
-                                          window.open('/student-login', '_blank');
+                                          window.open('https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp', '_blank');
                                         }}
                                         className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                           isActive('/student-login')
@@ -482,10 +482,10 @@ const Header = () => {
                                       </a>
                                     ) : subPage.name === 'Teacher ERP Login' ? (
                                       <a
-                                        href="/teacher-login"
+                                        href="https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp"
                                         onClick={e => {
                                           e.preventDefault();
-                                          window.open('/teacher-login', '_blank');
+                                          window.open('https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp', '_blank');
                                         }}
                                         className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                           isActive('/teacher-login')
