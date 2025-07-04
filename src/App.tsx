@@ -15,8 +15,6 @@ import VicePrincipalDesk from './components/about/VicePrincipalDesk';
 import Infrastructure from './components/about/Infrastructure';
 import VirtualTour from './components/about/VirtualTour';
 import MandatoryDisclosure from './components/about/MandatoryDisclosure';
-import SchoolDetails from './components/about/disclosure/SchoolDetails';
-import CBSEMandatory from './components/about/disclosure/CBSEMandatory';
 import AnnualReport from './components/about/AnnualReport';
 import Academics from './components/Academics';
 import Curriculum from './components/academics/Curriculum';
@@ -52,6 +50,24 @@ import EventDetails from './components/events/EventDetails';
 import AdmissionPopup from './components/AdmissionPopup';
 import { FaComments } from 'react-icons/fa';
 import HeroSection from './components/HeroSection';
+import InvestitureCeremony2025Page from './components/events/InvestitureCeremony2025Page';
+import PongalCelebration2025Page from './components/events/PongalCelebration2025Page';
+import ChristmasCelebration2024Page from './components/events/ChristmasCelebration2024Page';
+import ChildrensDayCelebration2024Page from './components/events/ChildrensDayCelebration2024Page';
+import DiwaliCelebration2024Page from './components/events/DiwaliCelebration2024Page';
+import RoyalGridlock2024Page from './components/events/RoyalGridlock2024Page';
+import YoungForum2024Page from './components/events/YoungForum2024Page';
+import GrandparentsDay2024Page from './components/events/GrandparentsDay2024Page';
+import ZestRegalia2024Page from './components/events/ZestRegalia2024Page';
+import InvestitureCeremony2024Page from './components/events/InvestitureCeremony2024Page';
+import KGGraduationDay2024Page from './components/events/KGGraduationDay2024Page';
+import DiwaliCelebrationNov2023Page from './components/events/DiwaliCelebrationNov2023Page';
+import Asset2023Page from './components/events/Asset2023Page';
+import RoyalGridlock2023Page from './components/events/RoyalGridlock2023Page';
+import YoungForum2023Page from './components/events/YoungForum2023Page';
+import ArrayOfSumptuousness2023Page from './components/events/ArrayOfSumptuousness2023Page';
+import InvestitureCeremony2023Page from './components/events/InvestitureCeremony2023Page';
+import ZestRegalia2023Page from './components/events/ZestRegalia2023Page';
 
 function ScrollProgressBar() {
   const [scroll, setScroll] = useState(0);
@@ -212,8 +228,6 @@ function App() {
             <Route path="/about/infrastructure" element={<Infrastructure />} />
             <Route path="/about/virtual-tour" element={<VirtualTour />} />
             <Route path="/about/mandatory-disclosure" element={<MandatoryDisclosure />} />
-            <Route path="/about/mandatory-disclosure/school-details" element={<SchoolDetails />} />
-            <Route path="/about/mandatory-disclosure/cbse-mandatory" element={<CBSEMandatory />} />
             <Route path="/about/annual-report" element={<AnnualReport />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/academics/curriculum" element={<Curriculum />} />
@@ -245,6 +259,24 @@ function App() {
             <Route path="/login/student-erp" element={<StudentERPLogin />} />
             <Route path="/student-login" element={<StudentERPLogin />} />
             <Route path="/teacher-login" element={<TeacherLoginPage />} />
+            <Route path="/events/investiture-ceremony-2025-26" element={<InvestitureCeremony2025Page />} />
+            <Route path="/events/pongal-celebration-2025" element={<PongalCelebration2025Page />} />
+            <Route path="/events/christmas-celebration-2024" element={<ChristmasCelebration2024Page />} />
+            <Route path="/events/childrens-day-2024" element={<ChildrensDayCelebration2024Page />} />
+            <Route path="/events/diwali-celebration-2024" element={<DiwaliCelebration2024Page />} />
+            <Route path="/events/byc-royal-gridlock-2024" element={<RoyalGridlock2024Page />} />
+            <Route path="/events/young-forum-2024" element={<YoungForum2024Page />} />
+            <Route path="/events/grandparents-day-2024" element={<GrandparentsDay2024Page />} />
+            <Route path="/events/zest-regalia-2024" element={<ZestRegalia2024Page />} />
+            <Route path="/events/investiture-ceremony-2024" element={<InvestitureCeremony2024Page />} />
+            <Route path="/events/kg-graduation-day-2024" element={<KGGraduationDay2024Page />} />
+            <Route path="/events/diwali-celebration-nov-2023" element={<DiwaliCelebrationNov2023Page />} />
+            <Route path="/events/asset-2023" element={<Asset2023Page />} />
+            <Route path="/events/royal-gridlock-2023" element={<RoyalGridlock2023Page />} />
+            <Route path="/events/young-forum-2023" element={<YoungForum2023Page />} />
+            <Route path="/events/array-of-sumptuousness-2023" element={<ArrayOfSumptuousness2023Page />} />
+            <Route path="/events/investiture-ceremony-2023" element={<InvestitureCeremony2023Page />} />
+            <Route path="/events/zest-regalia-2023" element={<ZestRegalia2023Page />} />
             <Route path="/events/:eventId" element={<EventDetails />} />
           </Routes>
         </main>

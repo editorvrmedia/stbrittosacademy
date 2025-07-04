@@ -88,9 +88,6 @@ const PrincipalDesk = () => {
               </motion.h2>
               <p className="text-xl text-blue-600 font-semibold mb-2">Principal</p>
               <p className="text-lg text-gray-600 mb-6">St. Britto's Academy</p>
-              <div className="bg-blue-50 p-4 rounded-lg mb-6">
-                <p className="text-blue-800 font-medium">📧 mary.vasantha@stbrittosacademy.edu.in</p>
-              </div>
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg leading-relaxed">
                   Leading St. Britto's Academy with exceptional vision and dedication, Mary Vasantha Kumari. J brings extensive experience in educational leadership and innovation. Under her guidance, the academy has achieved remarkable recognition and continues to set new standards in holistic education.

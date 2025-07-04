@@ -3,7 +3,7 @@ import { FileText, Download, CheckCircle, Calendar, Users, Building, BookOpen, S
 
 const CBSEMandatory = () => (
   <div className="max-w-4xl mx-auto py-12 px-4 mt-24">
-    <h1 className="text-2xl font-bold text-blue-900 mb-6 text-center">MANDATORY PUBLIC DISCLOSURE</h1>
+    <h1 className="text-2xl font-bold text-blue-900 mb-6 text-center">CBSE MANDATORY</h1>
     <div className="overflow-x-auto mb-8">
       <table className="min-w-full bg-white border border-gray-200 text-sm">
         <thead>

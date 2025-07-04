@@ -249,6 +249,33 @@ const VicePrincipalDesk = () => {
             <p className="text-xl">A legacy of nurturing minds and shaping futures</p>
           </div>
           
+          {/* Event Highlights Marquee */}
+          <div className="mb-12 overflow-hidden bg-white bg-opacity-10 rounded-lg py-4">
+            <div className="flex animate-infinite-scroll whitespace-nowrap">
+              <div className="flex items-center space-x-8 px-4">
+                <span className="text-lg font-bold text-teal-100">• Investiture Ceremony 2025-26</span>
+                <span className="text-lg font-bold text-teal-100">• Pongal Celebration 2025</span>
+                <span className="text-lg font-bold text-teal-100">• Christmas Celebration 2024</span>
+                <span className="text-lg font-bold text-teal-100">• Children's Day 2024</span>
+                <span className="text-lg font-bold text-teal-100">• Diwali Celebration 2024</span>
+                <span className="text-lg font-bold text-teal-100">• BYC ROYAL GRIDLOCK 2024</span>
+                <span className="text-lg font-bold text-teal-100">• Grandparents Day 2024</span>
+                <span className="text-lg font-bold text-teal-100">• ZEST-REGALIA 2024</span>
+              </div>
+              {/* Duplicate for seamless loop */}
+              <div className="flex items-center space-x-8 px-4">
+                <span className="text-lg font-bold text-teal-100">• Investiture Ceremony 2025-26</span>
+                <span className="text-lg font-bold text-teal-100">• Pongal Celebration 2025</span>
+                <span className="text-lg font-bold text-teal-100">• Christmas Celebration 2024</span>
+                <span className="text-lg font-bold text-teal-100">• Children's Day 2024</span>
+                <span className="text-lg font-bold text-teal-100">• Diwali Celebration 2024</span>
+                <span className="text-lg font-bold text-teal-100">• BYC ROYAL GRIDLOCK 2024</span>
+                <span className="text-lg font-bold text-teal-100">• Grandparents Day 2024</span>
+                <span className="text-lg font-bold text-teal-100">• ZEST-REGALIA 2024</span>
+              </div>
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
               { number: '28', label: 'Years of Excellence', description: 'Beacon of educational quality' },

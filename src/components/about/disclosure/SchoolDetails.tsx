@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './components/Header';
 
 const SchoolDetails = () => (
   <div className="max-w-4xl mx-auto py-12 px-4 mt-24 space-y-12">
@@ -28,9 +27,6 @@ const SchoolDetails = () => (
           <tr className="border-b"><td className="font-semibold p-2">iii) Status of Affiliation</td><td className="p-2">Provisional up to 2028</td></tr>
         </tbody>
       </table>
-                  </div>
-      <div className="mt-6 text-center">
-      <a href="https://drive.google.com/file/d/1nc5gWAwdt4mfGlh0m-w1lBL6RPKzPgxQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">View/Download PDF</a>
                   </div>
     </div>
     <div className="bg-blue-50 rounded-xl shadow p-6 border border-blue-100">
@@ -90,9 +86,6 @@ const SchoolDetails = () => (
         </tbody>
       </table>
                 </div>
-      <div className="mt-6 text-center">
-      <a href="https://drive.google.com/file/d/1x_ZXZ_VVZ6bDZmCTyWX9b1hZ_2xrAxfq/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">SMC DETAILS (PDF)</a>
-                    </div>
     </div>
     <div className="bg-white/80 rounded-xl shadow-lg p-6 border border-blue-100">
       <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Infrastructure Details</h2>
@@ -179,9 +172,7 @@ const SchoolDetails = () => (
               </table>
             </div>
       <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://drive.google.com/file/d/1xmolEh03lPpoTTpbSCQ0HM53YxTn_Xsy/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">Stability Certificate</a>
-      <a href="https://drive.google.com/file/d/1JYc93rG11GvFxz_7lA1kXLvIuvOT9VGL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition">Sanitary Certificate</a>
-          </div>
+      </div>
     </div>
     <div className="bg-white/80 rounded-xl shadow-lg p-6 border border-blue-100">
       <h2 className="text-2xl font-bold text-blue-900 mb-4 border-b border-blue-200 pb-2">Mode of Payment of Salary</h2>
@@ -272,13 +263,6 @@ const SchoolDetails = () => (
             <li>Mr. GOKUL RAJ</li>
             <li>VINITH S – XII</li>
             <li>K LEKHANA – XII</li>
-          </ul>
-        </div>
-        <div className="bg-white/90 rounded-lg shadow p-4">
-          <div className="font-bold text-blue-900 mb-2">CCE Coordinators</div>
-          <ul className="list-disc pl-6 mb-4 text-gray-700">
-            <li>Mrs. JAYALAKSHMI</li>
-            <li>Mrs.V. RAJA RAJESWARI</li>
           </ul>
         </div>
         <div className="bg-white/90 rounded-lg shadow p-4">

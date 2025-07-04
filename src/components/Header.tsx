@@ -54,12 +54,7 @@ const Header = () => {
         { name: 'Virtual Tour', href: '/about/virtual-tour' },
         { 
           name: 'Mandatory Disclosure', 
-          href: '/about/mandatory-disclosure',
-          hasSubDropdown: true,
-          subPages: [
-            { name: 'School Details', href: '/about/mandatory-disclosure/school-details' },
-            { name: 'CBSE Mandatory', href: '/about/mandatory-disclosure/cbse-mandatory' }
-          ]
+          href: '/about/mandatory-disclosure'
         },
         { name: 'Annual Report', href: '/about/annual-report' }
       ]

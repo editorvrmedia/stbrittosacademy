@@ -190,6 +190,7 @@ const HomePage = () => {
           >
             Celebrating <AnimatedCounter target={28} /> Years of Educational Excellence
           </motion.h2>
+          
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
             {/* Left: Text Content */}
             <motion.div 
@@ -251,6 +252,60 @@ const HomePage = () => {
               </motion.div>
             </motion.div>
           </div>
+
+          {/* Event Highlights Marquee - now below the image */}
+          <motion.div 
+            className="mt-8 mb-8 overflow-x-hidden bg-white bg-opacity-20 rounded-lg py-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            <div
+              className="flex whitespace-nowrap"
+              style={{
+                animation: 'marquee-test 20s linear infinite',
+                minWidth: '200%',
+              }}
+            >
+              <style>{`
+                @keyframes marquee-test {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-50%); }
+                }
+              `}</style>
+              <div className="flex items-center space-x-8 px-4">
+                <Link to="/events/investiture-ceremony-2025-26" className="text-lg font-bold text-sky-400 hover:underline">• Investiture Ceremony 2025-26</Link>
+                <Link to="/events/pongal-celebration-2025" className="text-lg font-bold text-sky-400 hover:underline">• Pongal Celebration 2025</Link>
+                <Link to="/events/christmas-celebration-2024" className="text-lg font-bold text-sky-400 hover:underline">• Christmas Celebration 2024</Link>
+                <Link to="/events/childrens-day-2024" className="text-lg font-bold text-sky-400 hover:underline">• Children's Day 2024</Link>
+                <Link to="/events/diwali-celebration-2024" className="text-lg font-bold text-sky-400 hover:underline">• Diwali Celebration 2024</Link>
+                <Link to="/events/byc-royal-gridlock-2024" className="text-lg font-bold text-sky-400 hover:underline">• BYC ROYAL GRIDLOCK 2024</Link>
+                <Link to="/events/grandparents-day-2024" className="text-lg font-bold text-sky-400 hover:underline">• Grandparents Day 2024</Link>
+                <Link to="/events/zest-regalia-2024" className="text-lg font-bold text-sky-400 hover:underline">• ZEST-REGALIA 2024</Link>
+                <Link to="/events/asset-2023" className="text-lg font-bold text-sky-400 hover:underline">• ASSET - 2023, AUGUST 19, 26 - 2023</Link>
+                <Link to="/events/byc-royal-gridlock-2024" className="text-lg font-bold text-sky-400 hover:underline">• ROYAL GRIDLOCK - 2023, AUGUST 4, 2023</Link>
+                <Link to="/events/young-forum-2024" className="text-lg font-bold text-sky-400 hover:underline">• YOUNG FORUM - 2023, AUGUST 3, 2023</Link>
+                <Link to="/events/array-of-sumptuousness-2023" className="text-lg font-bold text-sky-400 hover:underline">• AN ARRAY OF SUMPTUOUSNESS ON YOUR PLATE !!! July 21 to 31, 2023</Link>
+                <Link to="/events/investiture-ceremony-2024" className="text-lg font-bold text-sky-400 hover:underline">• INVESTITURE CEREMONY July 3, 2023</Link>
+                <Link to="/events/zest-regalia-2024" className="text-lg font-bold text-sky-400 hover:underline">• ZEST REGALIA 2023, 22, 23 JUNE 2023</Link>
+                <Link to="/events/mathematics-ix-2023" className="text-lg font-bold text-sky-400 hover:underline">• MATHEMATICS-IX STD, JUNE 20, 23</Link>
+                <Link to="/events/kg-graduation-day-2024" className="text-lg font-bold text-sky-400 hover:underline">• GRADUATION DAY FOR KG, FEBRUARY 18, 23</Link>
+                <Link to="/events/space-and-seasons-kg-2023" className="text-lg font-bold text-sky-400 hover:underline">• SPACE AND SEASONS KG, FEBRUARY 13,23</Link>
+              </div>
+              {/* Duplicate for seamless loop */}
+              <div className="flex items-center space-x-8 px-4">
+                <Link to="/events/investiture-ceremony-2025-26" className="text-lg font-bold text-sky-400 hover:underline">• Investiture Ceremony 2025-26</Link>
+                <Link to="/events/pongal-celebration-2025" className="text-lg font-bold text-sky-400 hover:underline">• Pongal Celebration 2025</Link>
+                <Link to="/events/christmas-celebration-2024" className="text-lg font-bold text-sky-400 hover:underline">• Christmas Celebration 2024</Link>
+                <Link to="/events/childrens-day-2024" className="text-lg font-bold text-sky-400 hover:underline">• Children's Day 2024</Link>
+                <Link to="/events/diwali-celebration-2024" className="text-lg font-bold text-sky-400 hover:underline">• Diwali Celebration 2024</Link>
+                <Link to="/events/byc-royal-gridlock-2024" className="text-lg font-bold text-sky-400 hover:underline">• BYC ROYAL GRIDLOCK 2024</Link>
+                <Link to="/events/grandparents-day-2024" className="text-lg font-bold text-sky-400 hover:underline">• Grandparents Day 2024</Link>
+                <Link to="/events/zest-regalia-2024" className="text-lg font-bold text-sky-400 hover:underline">• ZEST-REGALIA 2024</Link>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </motion.section>
 
