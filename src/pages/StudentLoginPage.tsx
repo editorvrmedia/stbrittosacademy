@@ -12,7 +12,7 @@ const StudentLoginPage = () => {
       {/* Glassmorphism Login Card */}
       <div className="backdrop-blur-md bg-white/60 border border-white/30 shadow-2xl rounded-2xl p-8 md:p-12 w-full max-w-md md:max-w-lg flex flex-col items-center justify-center">
         <div className="flex flex-col items-center mb-6">
-          <img src="/sba-logo.png" alt="St. Britto's Academy Logo" className="h-20 w-auto mb-2" />
+          <img src="/SBA.png" alt="St. Britto's Academy Logo" className="h-28 w-auto mb-3" />
           <h1 className="font-revue text-2xl md:text-3xl font-bold text-[#003262] tracking-wide text-center">St. Britto's Academy</h1>
           <p className="text-blue-700 text-sm md:text-base font-semibold mt-1 mb-2 text-center">eVarsity ERP for Education</p>
         </div>
