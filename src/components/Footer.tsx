@@ -53,7 +53,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex flex-col items-start mb-4 w-full">
               <img 
-                src="/SBA LOGO FOR WEBSITE.png" 
+                src="/SBA LOGO FOR WEBSITE DOWN.png" 
                 alt="St. Britto's Academy Banner" 
                 className="w-full max-w-full h-auto object-contain mb-3 rounded-lg"
               />
