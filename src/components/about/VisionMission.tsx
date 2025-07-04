@@ -78,8 +78,8 @@ const VisionMission = () => {
             </div>
             <div>
               <img
-                src="/Best%20CBSE%20School%20in%20Chennai.JPG"
-                alt="Vision and Mission"
+                src="/Vision And Mission/IMG_9950.jpg"
+                alt="Our Vision"
                 className="rounded-xl shadow-lg"
               />
             </div>
@@ -93,8 +93,8 @@ const VisionMission = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
-                src="https://images.pexels.com/photos/8471904/pexels-photo-8471904.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Students studying"
+                src="/Vision And Mission/IMG_2344.jpg"
+                alt="Our Mission"
                 className="rounded-xl shadow-lg"
               />
             </div>
