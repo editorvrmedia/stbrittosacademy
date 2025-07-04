@@ -44,14 +44,14 @@ const TeacherERPLogin = () => {
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-sky-200 mb-2">Your ID</label>
+              <label htmlFor="email" className="block text-sm font-medium text-sky-200 mb-2">Username</label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-sky-400" />
                 <input
                   type="text"
                   id="email"
                   className="w-full px-4 pl-10 py-3 bg-sky-800 border border-sky-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                  placeholder="Enter your ID"
+                  placeholder="Enter your username"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -96,7 +96,6 @@ const TeacherERPLogin = () => {
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-sky-200">Remember me</label>
               </div>
-              <a href="#" className="text-sm font-medium text-orange-500 hover:text-orange-400">Forgot password?</a>
             </div>
 
             <button

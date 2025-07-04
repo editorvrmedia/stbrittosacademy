@@ -11,6 +11,11 @@ const UpcomingEventsAside = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     { date: '25.06.2025', description: 'Care', classInfo: 'UKG A' },
     { date: '26.06.2025', description: 'Class Assembly-Self-Motivation-DRIVE', classInfo: 'X C' },
     { date: '27.06.2025', description: 'Responsible', classInfo: 'UKG B' },
+    { date: '25.07.2025', description: 'Young Forum (KG & Primary) / Royal Gridlock', classInfo: '' },
+    { date: '26.07.2025', description: 'Young Forum (Middle, Secondary & Senior Secondary) / Royal Gridlock', classInfo: '' },
+    { date: '23.08.2025', description: 'Asset (Girls)', classInfo: '' },
+    { date: '30.08.2025', description: 'Asset (Boys)', classInfo: '' },
+    { date: '25.10.2025', description: 'Asset - Splash (Swimming Meet)', classInfo: '' },
   ];
 
   // Filter and sort events based on today's date

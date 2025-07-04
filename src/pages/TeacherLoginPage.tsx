@@ -25,8 +25,8 @@ const TeacherLoginPage = () => {
         <div className="text-center text-blue-600 text-xs mb-6">{today}</div>
         <form className="space-y-4 w-full">
           <div>
-            <label className="block text-blue-800 font-medium mb-1" htmlFor="teacher-id">Your ID</label>
-            <input id="teacher-id" type="text" placeholder="Enter your ID" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-400 focus:outline-none bg-white/80" />
+            <label className="block text-blue-800 font-medium mb-1" htmlFor="teacher-id">Username</label>
+            <input id="teacher-id" type="text" placeholder="Enter your username" className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-400 focus:outline-none bg-white/80" />
           </div>
           <div>
             <label className="block text-blue-800 font-medium mb-1" htmlFor="password">Password</label>
@@ -37,7 +37,6 @@ const TeacherLoginPage = () => {
               <input type="checkbox" checked={remember} onChange={() => setRemember(!remember)} className="accent-orange-500" />
               Remember me
             </label>
-            <a href="#" className="text-orange-600 hover:underline">Forgot password?</a>
           </div>
           <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-lg shadow-md transition-colors">Login</button>
         </form>

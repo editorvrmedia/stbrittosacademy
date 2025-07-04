@@ -81,7 +81,6 @@ const StudentERPLogin = () => {
               />
               <label htmlFor="remember-me" className="ml-2 block text-blue-800">Remember me</label>
             </div>
-            <a href="#" className="font-medium text-blue-700 hover:text-blue-900">Forgot Password</a>
           </div>
 
           <button

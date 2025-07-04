@@ -32,7 +32,6 @@ const StudentLoginPage = () => {
               <input type="checkbox" checked={remember} onChange={() => setRemember(!remember)} className="accent-orange-500" />
               Remember me
             </label>
-            <a href="#" className="text-orange-600 hover:underline">Forgot password?</a>
           </div>
           <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded-lg shadow-md transition-colors">Login</button>
         </form>
