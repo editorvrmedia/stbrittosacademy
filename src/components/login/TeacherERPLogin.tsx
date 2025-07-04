@@ -31,7 +31,6 @@ const TeacherERPLogin = () => {
           <form 
             action="https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp"
             method="POST"
-            target="_blank"
             className="space-y-6"
           >
             <div>

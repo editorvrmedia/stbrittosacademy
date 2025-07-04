@@ -20,7 +20,6 @@ const StudentERPLogin = () => {
         <form
           action="https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp"
           method="POST"
-          target="_blank"
           className="space-y-4"
         >
           <div>
