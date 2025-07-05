@@ -11,6 +11,10 @@ const HomePage = () => {
   const [isUpcomingEventsAsideOpen, setIsUpcomingEventsAsideOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   
+  const statsBarRef = useRef<HTMLDivElement | null>(null);
+  const isStatsInView = useInView(statsBarRef, { amount: 0.5 });
+  const [statsInViewKey, setStatsInViewKey] = useState(0);
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAdmissionPopupOpen(true);
@@ -38,6 +42,12 @@ const HomePage = () => {
       window.removeEventListener('click', closeAfterDelay);
     };
   }, [isAdmissionPopupOpen]);
+  
+  useEffect(() => {
+    if (isStatsInView) {
+      setStatsInViewKey(prev => prev + 1);
+    }
+  }, [isStatsInView]);
   
   const handleAdmissionPopupClose = () => {
     setIsAdmissionPopupOpen(false);
@@ -85,6 +95,8 @@ const HomePage = () => {
 
   return (
     <div className="max-w-full overflow-x-hidden">
+      {/* Removed minimal test for AnimatedCounter animation */}
+
       <style>{`
         @keyframes glitch {
           0% { text-shadow: 2px 0 red, -2px 0 blue; }
@@ -319,22 +331,23 @@ const HomePage = () => {
       >
         {/* Stats Bar */}
         <motion.div 
+          ref={statsBarRef}
           className="bg-blue-900 w-full py-10 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: false, amount: 0.1 }}
         >
           <motion.div 
             className="flex flex-col items-center text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Users className="w-10 h-10" />
-              <div className="text-2xl font-bold text-white">1,200+</div>
+              <AnimatedCounter key={"students-"+statsInViewKey} target={1200} suffix="+" duration={1200} />
             </div>
             <span className="text-sm">Students</span>
           </motion.div>
@@ -343,11 +356,11 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Gem className="w-10 h-10" />
-              <span className="text-3xl font-bold">50+</span>
+              <AnimatedCounter key={"teachers-"+statsInViewKey} target={50} suffix="+" duration={1200} />
             </div>
             <span className="text-sm">Expert Teachers</span>
           </motion.div>
@@ -356,11 +369,11 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Star className="w-10 h-10" />
-              <span className="text-3xl font-bold">28</span>
+              <AnimatedCounter key={"years-"+statsInViewKey} target={28} duration={1200} />
             </div>
             <span className="text-sm">Years of Excellence</span>
           </motion.div>
@@ -369,11 +382,11 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: false, amount: 0.1 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Trophy className="w-10 h-10" />
-              <span className="text-3xl font-bold">100+</span>
+              <AnimatedCounter key={"awards-"+statsInViewKey} target={100} suffix="+" duration={1200} />
             </div>
             <span className="text-sm">Awards Won</span>
           </motion.div>
@@ -493,48 +506,37 @@ const HomePage = () => {
 };
 
 // Animated Counter Component
-const AnimatedCounter = ({ target }: { target: number }) => {
+const AnimatedCounter = ({ target, suffix = '', duration = 1000 }: { target: number, suffix?: string, duration?: number }) => {
   const [count, setCount] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const startTimestamp = useRef<number | null>(null);
 
   useEffect(() => {
-    // Start animation immediately
-    const startDelay = setTimeout(() => {
-      setIsAnimating(true);
-      console.log('Starting animation for target:', target);
-      
-      // Phase 1: Quick random numbers
-      let randomStep = 0;
-      const randomInterval = setInterval(() => {
-        const randomNum = Math.floor(Math.random() * (target * 2));
-        setCount(randomNum);
-        randomStep++;
-        
-        if (randomStep >= 10) { // Reduced from 20 to 10
-          clearInterval(randomInterval);
-          console.log('Random phase done, counting to target');
-          
-          // Phase 2: Quick count to target
-          let current = 0;
-          const countInterval = setInterval(() => {
-            current++;
-            setCount(current);
-            
-            if (current >= target) {
-              clearInterval(countInterval);
-              console.log('Animation finished');
-            }
-          }, 30); // Reduced from 100ms to 30ms
-        }
-      }, 30); // Reduced from 100ms to 30ms
-    }, 100); // Reduced from 500ms to 100ms
+    console.log('AnimatedCounter mounted for target:', target);
+    let animationFrame: number;
+    startTimestamp.current = null;
 
-    return () => clearTimeout(startDelay);
-  }, [target]);
+    const step = (timestamp: number) => {
+      if (!startTimestamp.current) startTimestamp.current = timestamp;
+      const progress = Math.min((timestamp - startTimestamp.current) / duration, 1);
+      const current = Math.floor(progress * target);
+      setCount(current);
+      console.log('AnimatedCounter step:', { target, current, progress });
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(step);
+      } else {
+        setCount(target);
+        console.log('AnimatedCounter finished for target:', target);
+      }
+    };
+    animationFrame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [target, duration]);
+
+  const formatNumber = (num: number) => num.toLocaleString();
 
   return (
-    <span className="text-amber-500 font-bold">
-      {count}
+    <span className="text-3xl font-bold">
+      {formatNumber(count)}{suffix}
     </span>
   );
 };

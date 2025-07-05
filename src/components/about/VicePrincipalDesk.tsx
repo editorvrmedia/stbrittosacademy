@@ -51,7 +51,7 @@ const VicePrincipalDesk = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <img
-                src="/IMG_1502 (1) (1).jpg"
+                src="/viceprincipal.png"
                 alt="Ms. Joan Rajesh - Senior Vice Principal"
                 className="w-80 h-80 rounded-full object-cover mx-auto lg:mx-0 shadow-2xl"
               />

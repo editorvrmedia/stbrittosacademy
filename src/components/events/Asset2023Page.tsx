@@ -27,4 +27,4 @@ const Asset2023Page = () => (
   </div>
 );
 
-export default Asset2023Page; 
+export default Asset2023Page;

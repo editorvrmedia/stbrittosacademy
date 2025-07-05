@@ -356,7 +356,7 @@ const Header = () => {
             </nav>
           </div>
 
-          {/* Mobile Navigation: overlays content, slides down */}
+          {/* Mobile Navigation: overlays content, slides in from right */}
           {isMenuOpen && ReactDOM.createPortal(
             <>
               {/* Overlay */}
@@ -365,8 +365,9 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 aria-label="Close menu overlay"
               />
-              {/* Menu Panel */}
-              <div className="xl:hidden fixed inset-0 top-[76px] bg-white z-[9999] border-t border-blue-200 transition-all duration-300 ease-in-out animate-fade-in-down overflow-hidden">
+              {/* Menu Panel - slides in from right */}
+              <div className={`xl:hidden fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-[9999] border-l border-blue-200 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+              >
                 {/* X Close Button */}
                 <button
                   onClick={() => setIsMenuOpen(false)}
