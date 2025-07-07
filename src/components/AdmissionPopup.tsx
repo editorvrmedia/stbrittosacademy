@@ -62,13 +62,13 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
           />
           <div className="w-full overflow-x-auto">
             <h3
-              className="font-revue text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 text-center w-full uppercase tracking-wide leading-tight whitespace-nowrap px-2"
+              className="font-revue text-lg sm:text-xl md:text-2xl text-white mb-1 text-center w-full tracking-wide leading-tight whitespace-nowrap px-2"
               style={{
                 lineHeight: 1.1,
                 margin: 0
               }}
             >
-              ST. BRITTO'S ACADEMY
+              St  Britto&rsquo;s Academy
             </h3>
           </div>
         </div>

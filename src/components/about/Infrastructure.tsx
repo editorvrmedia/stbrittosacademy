@@ -374,7 +374,7 @@ const Infrastructure = () => {
                     </motion.div>
                   </motion.div>
                 ))}
-              </div>
+                  </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {cat.items.map((facility, idx) => (
@@ -391,7 +391,7 @@ const Infrastructure = () => {
                     {/* Facility Name Below Card */}
                     <div className="w-full text-center py-2 font-semibold text-lg text-gray-800 bg-sky-100 z-10">
                       {facility.name}
-                    </div>
+                </div>
                     {/* Overlay */}
                     <motion.div
                       variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
@@ -403,8 +403,8 @@ const Infrastructure = () => {
                       <span className="text-white text-sm drop-shadow-lg">{facility.description.split('.')[0]}</span>
                     </motion.div>
                   </motion.div>
-                ))}
-              </div>
+              ))}
+            </div>
             )}
           </div>
         </section>
