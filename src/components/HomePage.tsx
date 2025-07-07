@@ -20,7 +20,6 @@ const HomePage = () => {
   const quickAccessRef = useRef<HTMLElement>(null);
   const yearsSectionRef = useRef<HTMLElement>(null);
   const statsBarRef = useRef<HTMLDivElement>(null);
-  const visionMissionRef = useRef<HTMLDivElement>(null);
   const ctaSectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
@@ -144,27 +143,7 @@ const HomePage = () => {
       );
     }
 
-    // Vision & Mission Section Animation
-    if (visionMissionRef.current) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: visionMissionRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      });
 
-      tl.fromTo(visionMissionRef.current.querySelector('img'), 
-        { opacity: 0, x: -100, scale: 0.8 },
-        { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: 'power2.out' }
-      )
-      .fromTo(visionMissionRef.current.querySelectorAll('.vision-content > *'), 
-        { opacity: 0, x: 50 },
-        { opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' },
-        '-=0.4'
-      );
-    }
 
     // CTA Section Animation
     if (ctaSectionRef.current) {
@@ -525,49 +504,7 @@ const HomePage = () => {
             <span className="text-sm">Awards Won</span>
           </motion.div>
         </motion.div>
-        {/* Vision & Mission */}
-        <motion.div 
-          ref={visionMissionRef}
-          className="bg-white w-full py-12 flex items-center justify-center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-center gap-10 px-4 mx-auto">
-            <motion.div 
-              className="w-full md:w-1/2 flex justify-center"
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <img 
-                src="/SBA Building.jpg" 
-                alt="School Building" 
-                className="rounded-2xl shadow-2xl w-full h-auto max-w-3xl min-h-[300px] object-cover"
-                style={{ minWidth: '350px' }}
-              />
-            </motion.div>
-            <motion.div 
-              className="w-full md:w-1/2 flex flex-col justify-center md:min-h-[320px] vision-content"
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Vision & Mission</h2>
-              <div className="mb-4">
-                <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Vision</h3>
-                <p className="text-gray-800 text-base mb-2 leading-relaxed">To form and evolve a vibrant scientific and educational community that is creative, adaptable, and internationally renowned for excellence in education and research, and for improving society through its innovative educational strategies.</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-sky-400 mb-1">Our Mission</h3>
-                <p className="text-gray-800 text-base leading-relaxed">Advancing the frontiers of knowledge, blending theory with practice. Motivating and enabling students to seek the highest levels of intellectual achievements and personal growth, to become complete human beings. Sharing knowledge, discoveries and inventions for the betterment of the world at large.</p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
+
       </motion.section>
 
       {/* Call to Action Section */}

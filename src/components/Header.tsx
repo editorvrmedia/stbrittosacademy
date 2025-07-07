@@ -107,7 +107,7 @@ const Header = () => {
       hasDropdown: true,
       subPages: [
         { name: 'Photos', href: '/gallery/photos' },
-        { name: 'Gallery', href: '/gallery/gallery' }
+        { name: 'Videos', href: '/gallery/videos' }
       ]
     },
     { 

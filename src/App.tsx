@@ -249,7 +249,7 @@ function App() {
             <Route path="/admissions/code-of-conduct" element={<CodeOfConduct />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/gallery/photos" element={<Photos />} />
-            <Route path="/gallery/gallery" element={<GalleryMain />} />
+            <Route path="/gallery/videos" element={<GalleryMain />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/principal" element={<PrincipalBlog />} />
             <Route path="/blog/vice-principal" element={<VicePrincipalBlog />} />

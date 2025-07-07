@@ -123,11 +123,11 @@ const Gallery = () => {
               Photo Gallery
             </Link>
             <Link
-              to="/gallery/gallery"
+              to="/gallery/videos"
               className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center"
             >
               <Camera className="h-5 w-5 mr-2" />
-              Gallery Collections
+              Video Collections
             </Link>
           </div>
         </div>
@@ -229,7 +229,7 @@ const Gallery = () => {
           
           <div className="text-center">
             <Link
-              to="/gallery/gallery"
+              to="/gallery/videos"
               className="inline-flex items-center bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Explore All Collections
@@ -362,7 +362,7 @@ const Gallery = () => {
                 title: 'Video Gallery',
                 description: 'Watch videos from various school events and activities',
                 image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-                link: '/gallery/gallery'
+                link: '/gallery/videos'
               }
             ].map((category, index) => (
               <Link
