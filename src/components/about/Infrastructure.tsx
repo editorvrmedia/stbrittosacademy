@@ -1,6 +1,6 @@
-import React from 'react';
-import { Building, Microscope, BookOpen, Monitor, Palette, Music, Trophy, Utensils } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { Building, Microscope, BookOpen, Monitor, Palette, Music, Trophy, Utensils, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Infrastructure = () => {
   const facilities = [
@@ -10,19 +10,34 @@ const Infrastructure = () => {
       color: 'blue',
       items: [
         {
-          name: 'Modern Classrooms',
-          description: 'Smart classrooms equipped with interactive whiteboards, projectors, and audio-visual systems',
-          image: 'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
-        },
-        {
-          name: 'Science Laboratories',
-          description: 'Fully equipped Physics, Chemistry, and Biology labs with modern instruments and safety equipment',
-          image: 'https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Cookery Lab',
+          description: 'Hands-on culinary lab for nutrition, cooking, and farm-to-table experiences',
+          image: '/Infrastructure/COOKERYLAB.jpg'
         },
         {
           name: 'Mathematics Lab',
           description: 'Interactive mathematics laboratory with manipulatives and digital tools for conceptual learning',
-          image: 'https://images.pexels.com/photos/6238003/pexels-photo-6238003.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/Infrastructure/MATHSLAB.jpg'
+        },
+        {
+          name: 'Physics Lab',
+          description: 'State-of-the-art physics laboratory equipped for experiments and conceptual learning',
+          image: '/Infrastructure/PHYSICSLAB.jpg'
+        },
+        {
+          name: 'Biology Lab',
+          description: 'Modern biology laboratory for hands-on experiments and scientific exploration',
+          image: '/Infrastructure/BIOLAB.jpg'
+        },
+        {
+          name: 'Chemistry Lab',
+          description: 'Well-equipped chemistry laboratory for practical experiments and research',
+          image: '/Infrastructure/CHEMISTRYLAB.jpg'
+        },
+        {
+          name: 'Library',
+          description: 'Modern library with digital resources, e-books, and online research databases',
+          image: '/Infrastructure/LIBRARY.jpg'
         }
       ]
     },
@@ -34,17 +49,12 @@ const Infrastructure = () => {
         {
           name: 'Computer Laboratory',
           description: 'State-of-the-art computer lab with latest hardware and software for digital literacy',
-          image: 'https://images.pexels.com/photos/8471709/pexels-photo-8471709.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/Infrastructure/COMPUTERLAB.jpg'
         },
         {
-          name: 'Robotics Lab',
-          description: 'Advanced robotics and coding laboratory for STEM education and innovation',
-          image: 'https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
-        },
-        {
-          name: 'Digital Library',
-          description: 'Modern library with digital resources, e-books, and online research databases',
-          image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Multimedia Lab',
+          description: 'Advanced multimedia and coding laboratory for STEM education and innovation',
+          image: '/Infrastructure/MULTIMEDIA LAB.jpg'
         }
       ]
     },
@@ -54,19 +64,14 @@ const Infrastructure = () => {
       color: 'green',
       items: [
         {
-          name: 'Sports Complex',
-          description: 'Multi-purpose sports complex with basketball, volleyball, and badminton courts',
-          image: 'https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
-        },
-        {
           name: 'Swimming Pool',
           description: 'Olympic-size swimming pool with trained instructors and safety equipment',
-          image: 'https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/Infrastructure/SWIMMINGPOOL.jpg'
         },
         {
           name: 'Playground',
-          description: 'Spacious playground with football field, cricket pitch, and athletic track',
-          image: 'https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          description: 'Spacious playground with a dedicated football field and basketball court, offering ample space for active sports and team activities',
+          image: '/Infrastructure/GROUND.jpg'
         }
       ]
     },
@@ -76,19 +81,19 @@ const Infrastructure = () => {
       color: 'amber',
       items: [
         {
-          name: 'Art Studios',
-          description: 'Well-lit art studios with professional equipment for painting, sculpture, and crafts',
-          image: 'https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Dance Room',
+          description: 'Spacious dance room with mirrors and professional flooring for dance practice and performances',
+          image: '/Infrastructure/DANCEROOM.jpg'
         },
         {
           name: 'Music Room',
           description: 'Acoustically designed music rooms with instruments and recording equipment',
-          image: 'https://images.pexels.com/photos/7520391/pexels-photo-7520391.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/Infrastructure/DANCEROOM.jpg'
         },
         {
-          name: 'Auditorium',
-          description: '500-seat auditorium with professional lighting and sound systems for performances',
-          image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'SMR Auditorium',
+          description: '500-seat SMR Auditorium with professional lighting and sound systems for performances',
+          image: '/Infrastructure/SMRAUDITORIUM.jpg'
         }
       ]
     }
@@ -127,6 +132,17 @@ const Infrastructure = () => {
     { label: 'Auditorium Capacity', value: '500 Seats' },
     { label: 'Parking Capacity', value: '200 Vehicles' }
   ];
+
+  // --- Facilities Modal State ---
+  type Facility = { name: string; description: string; image: string };
+  const [modal, setModal] = useState<{ open: boolean; facility: Facility | null }>({ open: false, facility: null });
+
+  const emojiTags = {
+    'Academic Facilities': '📘',
+    'Technology Infrastructure': '💻',
+    'Sports & Recreation': '🏅',
+    'Arts & Culture': '🎭',
+  };
 
   return (
     <div className="pt-20">
@@ -239,7 +255,7 @@ const Infrastructure = () => {
           </motion.div>
         </div>
         {/* Sports & Fitness Facilities and SMR Auditorium */}
-        <div className="grid md:grid-cols-2 gap-10 mb-8">
+        <div className="flex justify-center gap-10 mb-8">
           <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-green-500" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
             <div className="flex items-center gap-3 mb-2">
               <Trophy className="w-8 h-8 text-green-600" />
@@ -319,31 +335,77 @@ const Infrastructure = () => {
       </section>
 
       {/* Facilities by Category */}
-      {facilities.map((category, categoryIndex) => (
-        <section key={categoryIndex} className={`py-8 bg-transparent`}>
+      {facilities.map((cat, cidx) => (
+        <section key={cat.category} className={`py-8 bg-transparent`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <div className={`inline-flex items-center justify-center w-16 h-16 bg-${category.color}-100 rounded-full mb-4`}>
-                <category.icon className={`h-8 w-8 text-${category.color}-600`} />
+              <div className={`inline-flex items-center justify-center w-16 h-16 bg-${cat.color}-100 rounded-full mb-4`}>
+                <cat.icon className={`h-8 w-8 text-${cat.color}-600`} />
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">{category.category}</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">{cat.category}</h2>
             </div>
             
-            <div className="grid lg:grid-cols-3 gap-8">
-              {category.items.map((item, index) => (
-                <div key={index} className="bg-blue-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{item.name}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {['Technology Infrastructure', 'Sports & Recreation', 'Arts & Culture'].includes(cat.category) ? (
+              <div className="flex justify-center gap-8 flex-wrap">
+                {cat.items.map((facility, idx) => (
+                  <motion.div
+                    key={facility.name}
+                    className="relative rounded-2xl overflow-hidden shadow-xl group cursor-pointer bg-white w-64 mb-4 flex flex-col items-center"
+                    whileHover="hover"
+                    initial="rest"
+                    animate="rest"
+                    variants={{}}
+                    onClick={() => setModal({ open: true, facility })}
+                  >
+                    <img src={facility.image} alt={facility.name} className="w-full h-56 object-cover" />
+                    {/* Facility Name Below Card */}
+                    <div className="w-full text-center py-2 font-semibold text-lg text-gray-800 bg-sky-100 z-10">
+                      {facility.name}
+                    </div>
+                    {/* Overlay */}
+                    <motion.div
+                      variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      <span className="text-white text-xl font-bold mb-2 drop-shadow-lg">{facility.name}</span>
+                      <span className="text-white text-sm drop-shadow-lg">{facility.description.split('.')[0]}</span>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                {cat.items.map((facility, idx) => (
+                  <motion.div
+                    key={facility.name}
+                    className="relative rounded-2xl overflow-hidden shadow-xl group cursor-pointer bg-white flex flex-col items-center"
+                    whileHover="hover"
+                    initial="rest"
+                    animate="rest"
+                    variants={{}}
+                    onClick={() => setModal({ open: true, facility })}
+                  >
+                    <img src={facility.image} alt={facility.name} className="w-full h-56 object-cover" />
+                    {/* Facility Name Below Card */}
+                    <div className="w-full text-center py-2 font-semibold text-lg text-gray-800 bg-sky-100 z-10">
+                      {facility.name}
+                    </div>
+                    {/* Overlay */}
+                    <motion.div
+                      variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      <span className="text-white text-xl font-bold mb-2 drop-shadow-lg">{facility.name}</span>
+                      <span className="text-white text-sm drop-shadow-lg">{facility.description.split('.')[0]}</span>
+                    </motion.div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       ))}
@@ -451,6 +513,37 @@ const Infrastructure = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal/Lightbox */}
+      <AnimatePresence>
+        {modal.open && modal.facility && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative flex flex-col items-center"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+            >
+              <button
+                className="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl"
+                onClick={() => setModal({ open: false, facility: null })}
+                aria-label="Close"
+              >
+                <X />
+              </button>
+              <img src={modal.facility.image} alt={modal.facility.name} className="w-full h-64 object-cover rounded-xl mb-4" />
+              <h3 className="text-2xl font-bold text-blue-900 mb-2">{modal.facility.name}</h3>
+              <p className="text-gray-700 text-center text-lg">{modal.facility.description}</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
