@@ -1,19 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Award, Users, BookOpen, Trophy, Star, Target, Eye, Gem } from 'lucide-react';
+import { Award, Users, BookOpen, Trophy, Star, Target, Eye, Gem, ChevronDown } from 'lucide-react';
 import UpcomingEventsAside from './UpcomingEventsAside';
 import AdmissionPopup from './AdmissionPopup';
 import StylizedLogo from './StylizedLogo';
 import { motion, useInView, animate } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   const [isAdmissionPopupOpen, setIsAdmissionPopupOpen] = useState(false);
   const [isUpcomingEventsAsideOpen, setIsUpcomingEventsAsideOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   
-  const statsBarRef = useRef<HTMLDivElement | null>(null);
-  const isStatsInView = useInView(statsBarRef, { amount: 0.5 });
-  const [statsInViewKey, setStatsInViewKey] = useState(0);
+  // Refs for GSAP animations
+  const quickAccessRef = useRef<HTMLElement>(null);
+  const yearsSectionRef = useRef<HTMLElement>(null);
+  const statsBarRef = useRef<HTMLDivElement>(null);
+  const visionMissionRef = useRef<HTMLDivElement>(null);
+  const ctaSectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -43,12 +51,6 @@ const HomePage = () => {
     };
   }, [isAdmissionPopupOpen]);
   
-  useEffect(() => {
-    if (isStatsInView) {
-      setStatsInViewKey(prev => prev + 1);
-    }
-  }, [isStatsInView]);
-  
   const handleAdmissionPopupClose = () => {
     setIsAdmissionPopupOpen(false);
     setIsUpcomingEventsAsideOpen(true);
@@ -62,6 +64,136 @@ const HomePage = () => {
   const handleNotificationClose = () => {
     setIsNotificationOpen(false);
   };
+
+  // GSAP Animations Setup
+  useEffect(() => {
+    // Quick Access Section Animation
+    if (quickAccessRef.current) {
+      gsap.fromTo(quickAccessRef.current.querySelectorAll('.quick-access-item'), 
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: quickAccessRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // 28 Years Section Animation
+    if (yearsSectionRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: yearsSectionRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      tl.fromTo(yearsSectionRef.current.querySelector('h2'), 
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
+      )
+      .fromTo(yearsSectionRef.current.querySelectorAll('.years-content > *'), 
+        { opacity: 0, x: -50 },
+        { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' },
+        '-=0.4'
+      )
+      .fromTo(yearsSectionRef.current.querySelectorAll('.years-image > *'), 
+        { opacity: 0, x: 50 },
+        { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' },
+        '-=0.6'
+      );
+    }
+
+    // Stats Bar Animation
+    if (statsBarRef.current) {
+      gsap.fromTo(statsBarRef.current.querySelectorAll('.stat-item'), 
+        {
+          opacity: 0,
+          y: 30,
+          scale: 0.8
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: statsBarRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Vision & Mission Section Animation
+    if (visionMissionRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: visionMissionRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      tl.fromTo(visionMissionRef.current.querySelector('img'), 
+        { opacity: 0, x: -100, scale: 0.8 },
+        { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: 'power2.out' }
+      )
+      .fromTo(visionMissionRef.current.querySelectorAll('.vision-content > *'), 
+        { opacity: 0, x: 50 },
+        { opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' },
+        '-=0.4'
+      );
+    }
+
+    // CTA Section Animation
+    if (ctaSectionRef.current) {
+      gsap.fromTo(ctaSectionRef.current.querySelectorAll('*'), 
+        {
+          opacity: 0,
+          y: 40
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: ctaSectionRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   const coreValues = [
     {
@@ -115,11 +247,11 @@ const HomePage = () => {
           animation: glitch 1.2s cubic-bezier(.25,.46,.45,.94) both;
         }
       `}</style>
-      {/* Hero Section with Notification Popup beside the image */}
-      {/* <HeroSection /> */}
+      {/* Hero Section is rendered in App.tsx */}
 
       {/* Quick Access Section */}
       <motion.section
+        ref={quickAccessRef}
         className="section pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -149,6 +281,7 @@ const HomePage = () => {
             {[0,1,2,3].map((i) => (
               <motion.div
                 key={i}
+                className="quick-access-item"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 + i * 0.05 }}
@@ -186,6 +319,7 @@ const HomePage = () => {
 
       {/* 28 Years of Excellence Section */}
       <motion.section 
+        ref={yearsSectionRef}
         className="section py-12 sm:py-16 lg:py-20 bg-[#f5f8ff] max-w-full overflow-x-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -200,13 +334,13 @@ const HomePage = () => {
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true, amount: 0.1 }}
           >
-            Celebrating <AnimatedCounter target={28} /> Years of Educational Excellence
+            Celebrating <AnimatedCounter target={28} className="text-3xl sm:text-4xl lg:text-5xl" textColor="text-sky-500" /> Years of Educational Excellence
           </motion.h2>
           
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
             {/* Left: Text Content */}
             <motion.div 
-              className="flex-1 max-w-xl"
+              className="flex-1 max-w-xl years-content"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
@@ -238,7 +372,7 @@ const HomePage = () => {
             </motion.div>
             {/* Right: Trophy Image and Badge */}
             <motion.div 
-              className="flex-1 flex flex-col items-center relative max-w-md w-full"
+              className="flex-1 flex flex-col items-center relative max-w-md w-full years-image"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
@@ -336,63 +470,64 @@ const HomePage = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div 
-            className="flex flex-col items-center text-white"
+            className="flex flex-col items-center text-white stat-item"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Users className="w-10 h-10" />
-              <AnimatedCounter key={"students-"+statsInViewKey} target={1200} suffix="+" duration={1200} />
+              <AnimatedCounter target={1200} suffix="+" duration={1200} className="text-3xl" />
             </div>
             <span className="text-sm">Students</span>
           </motion.div>
           <motion.div 
-            className="flex flex-col items-center text-white"
+            className="flex flex-col items-center text-white stat-item"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Gem className="w-10 h-10" />
-              <AnimatedCounter key={"teachers-"+statsInViewKey} target={50} suffix="+" duration={1200} />
+              <AnimatedCounter target={50} suffix="+" duration={1200} className="text-3xl" />
             </div>
             <span className="text-sm">Expert Teachers</span>
           </motion.div>
           <motion.div 
-            className="flex flex-col items-center text-white"
+            className="flex flex-col items-center text-white stat-item"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Star className="w-10 h-10" />
-              <AnimatedCounter key={"years-"+statsInViewKey} target={28} duration={1200} />
+              <AnimatedCounter target={28} duration={1200} className="text-3xl" />
             </div>
             <span className="text-sm">Years of Excellence</span>
           </motion.div>
           <motion.div 
-            className="flex flex-col items-center text-white"
+            className="flex flex-col items-center text-white stat-item"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
               <Trophy className="w-10 h-10" />
-              <AnimatedCounter key={"awards-"+statsInViewKey} target={100} suffix="+" duration={1200} />
+              <AnimatedCounter target={100} suffix="+" duration={1200} className="text-3xl" />
             </div>
             <span className="text-sm">Awards Won</span>
           </motion.div>
         </motion.div>
         {/* Vision & Mission */}
         <motion.div 
+          ref={visionMissionRef}
           className="bg-white w-full py-12 flex items-center justify-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -415,7 +550,7 @@ const HomePage = () => {
               />
             </motion.div>
             <motion.div 
-              className="w-full md:w-1/2 flex flex-col justify-center md:min-h-[320px]"
+              className="w-full md:w-1/2 flex flex-col justify-center md:min-h-[320px] vision-content"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
@@ -437,6 +572,7 @@ const HomePage = () => {
 
       {/* Call to Action Section */}
       <motion.section
+        ref={ctaSectionRef}
         className="section py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white max-w-full overflow-x-hidden"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -506,36 +642,59 @@ const HomePage = () => {
 };
 
 // Animated Counter Component
-const AnimatedCounter = ({ target, suffix = '', duration = 1000 }: { target: number, suffix?: string, duration?: number }) => {
+const AnimatedCounter = ({ target, suffix = '', duration = 1000, className = '', textColor = '' }: { target: number, suffix?: string, duration?: number, className?: string, textColor?: string }) => {
   const [count, setCount] = useState(0);
-  const startTimestamp = useRef<number | null>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const elementRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    console.log('AnimatedCounter mounted for target:', target);
-    let animationFrame: number;
-    startTimestamp.current = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            animateCount();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    const step = (timestamp: number) => {
-      if (!startTimestamp.current) startTimestamp.current = timestamp;
-      const progress = Math.min((timestamp - startTimestamp.current) / duration, 1);
-      const current = Math.floor(progress * target);
-      setCount(current);
-      console.log('AnimatedCounter step:', { target, current, progress });
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(step);
-      } else {
-        setCount(target);
-        console.log('AnimatedCounter finished for target:', target);
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
       }
     };
-    animationFrame = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [target, duration]);
+  }, [hasAnimated]);
+
+  const animateCount = () => {
+    let startTime: number | null = null;
+    const startCount = 0;
+
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const current = Math.floor(startCount + (target - startCount) * progress);
+      setCount(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        setCount(target);
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
 
   const formatNumber = (num: number) => num.toLocaleString();
 
   return (
-    <span className="text-3xl font-bold">
+    <span ref={elementRef} className={`font-bold ${className} ${textColor}`}>
       {formatNumber(count)}{suffix}
     </span>
   );

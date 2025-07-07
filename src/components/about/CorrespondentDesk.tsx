@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Quote, BookOpen, Users, Target, Lightbulb, Heart, Award, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const CorrespondentDesk = () => {
+  // Refs for GSAP animations
+  const heroRef = useRef<HTMLElement>(null);
+  const profileRef = useRef<HTMLElement>(null);
+  const messageRef = useRef<HTMLElement>(null);
+  const philosophyRef = useRef<HTMLElement>(null);
+  const focusRef = useRef<HTMLElement>(null);
+  const successRef = useRef<HTMLElement>(null);
+  const legacyRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
+
   const educationalFocus = [
     {
       icon: Heart,
@@ -58,10 +73,214 @@ const CorrespondentDesk = () => {
     'The wisdom and integrity you show in your decisions'
   ];
 
+  // GSAP Animations Setup
+  useEffect(() => {
+    // Hero Section Animation
+    if (heroRef.current) {
+      gsap.fromTo(heroRef.current.querySelectorAll('*'), 
+        {
+          opacity: 0,
+          y: 60,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Profile Section Animation
+    if (profileRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: profileRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      tl.fromTo(profileRef.current.querySelector('img'), 
+        { opacity: 0, x: -100, scale: 0.8 },
+        { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: 'power2.out' }
+      )
+      .fromTo(profileRef.current.querySelectorAll('.profile-content > *'), 
+        { opacity: 0, x: 50 },
+        { opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' },
+        '-=0.4'
+      )
+      .fromTo(profileRef.current.querySelectorAll('.profile-stats > *'), 
+        { opacity: 0, y: 30, scale: 0.8 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out' },
+        '-=0.3'
+      );
+    }
+
+    // Message Section Animation
+    if (messageRef.current) {
+      gsap.fromTo(messageRef.current.querySelectorAll('*'), 
+        {
+          opacity: 0,
+          y: 40
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: messageRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Philosophy Section Animation
+    if (philosophyRef.current) {
+      gsap.fromTo(philosophyRef.current.querySelectorAll('.philosophy-item'), 
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: philosophyRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Focus Areas Animation
+    if (focusRef.current) {
+      gsap.fromTo(focusRef.current.querySelectorAll('.focus-item'), 
+        {
+          opacity: 0,
+          y: 40,
+          scale: 0.8
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: focusRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Success Measures Animation
+    if (successRef.current) {
+      gsap.fromTo(successRef.current.querySelectorAll('.success-item'), 
+        {
+          opacity: 0,
+          x: -50,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: successRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Legacy Section Animation
+    if (legacyRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: legacyRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      tl.fromTo(legacyRef.current.querySelector('img'), 
+        { opacity: 0, x: 100, scale: 0.8 },
+        { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: 'power2.out' }
+      )
+      .fromTo(legacyRef.current.querySelectorAll('.legacy-content > *'), 
+        { opacity: 0, x: -50 },
+        { opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' },
+        '-=0.4'
+      );
+    }
+
+    // CTA Section Animation
+    if (ctaRef.current) {
+      gsap.fromTo(ctaRef.current.querySelectorAll('*'), 
+        {
+          opacity: 0,
+          y: 40
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: ctaRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
       <motion.section
+        ref={heroRef}
         className="py-16 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -78,6 +297,7 @@ const CorrespondentDesk = () => {
 
       {/* Correspondent's Profile */}
       <motion.section
+        ref={profileRef}
         className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +313,7 @@ const CorrespondentDesk = () => {
                 className="w-80 h-80 rounded-full object-cover mx-auto lg:mx-0 shadow-2xl"
               />
             </div>
-            <div>
+            <div className="profile-content">
               <div className="flex items-center gap-2 mb-4 flex-wrap">
                 <h2 className="text-4xl font-bold text-gray-900 mb-0">Dr. Vimala Rani Britto</h2>
                 <a
@@ -119,7 +339,7 @@ const CorrespondentDesk = () => {
                   meaningful for students and others.
                 </p>
               </div>
-              <div className="mt-8 grid md:grid-cols-3 gap-4">
+              <div className="mt-8 grid md:grid-cols-3 gap-4 profile-stats">
                 <div className="text-center p-4 bg-indigo-50 rounded-lg">
                   <BookOpen className="h-8 w-8 text-indigo-600 mx-auto mb-2" />
                   <p className="font-semibold text-gray-900">Secretary</p>
@@ -143,6 +363,7 @@ const CorrespondentDesk = () => {
 
       {/* Correspondent's Message */}
       <motion.section
+        ref={messageRef}
         className="py-16 bg-gray-50"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -199,6 +420,7 @@ const CorrespondentDesk = () => {
 
       {/* Educational Philosophy */}
       <motion.section
+        ref={philosophyRef}
         className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +435,7 @@ const CorrespondentDesk = () => {
           
           <div className="grid md:grid-cols-2 gap-8">
             {educationalPhilosophy.map((philosophy, index) => (
-              <div key={index} className="bg-indigo-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
+              <div key={index} className="bg-indigo-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300 philosophy-item">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{philosophy.title}</h3>
                 <p className="text-gray-700 text-lg">{philosophy.description}</p>
               </div>
@@ -223,7 +445,7 @@ const CorrespondentDesk = () => {
       </motion.section>
 
       {/* Educational Focus Areas */}
-      <section className="py-16 bg-sky-50">
+      <section ref={focusRef} className="py-16 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Educational Focus</h2>
@@ -232,7 +454,7 @@ const CorrespondentDesk = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {educationalFocus.map((focus, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center focus-item">
                 <focus.icon className="h-12 w-12 text-blue-700 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-blue-900 mb-3">{focus.title}</h3>
                 <p className="text-blue-700">{focus.description}</p>
@@ -243,7 +465,7 @@ const CorrespondentDesk = () => {
       </section>
 
       {/* Success Redefined */}
-      <section className="py-16 bg-indigo-700 text-white">
+      <section ref={successRef} className="py-16 bg-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">How We Measure Success</h2>
@@ -255,7 +477,7 @@ const CorrespondentDesk = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {successMeasures.map((measure, index) => (
-              <div key={index} className="bg-white bg-opacity-10 p-6 rounded-lg hover:bg-opacity-20 transition-all duration-300">
+              <div key={index} className="bg-white bg-opacity-10 p-6 rounded-lg hover:bg-opacity-20 transition-all duration-300 success-item">
                 <div className="flex items-start">
                   <Star className="h-6 w-6 mr-3 mt-1 flex-shrink-0" />
                   <p className="font-medium">{measure}</p>
@@ -298,9 +520,9 @@ const CorrespondentDesk = () => {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/8466666/pexels-photo-8466666.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Students in learning environment"
-                className="rounded-xl shadow-lg"
+                src="/vimala.jpg"
+                alt="Dr. Vimala Rani Britto"
+                className="rounded-xl shadow-lg object-cover w-full h-[400px] max-w-md mx-auto"
               />
             </div>
           </div>
