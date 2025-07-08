@@ -589,12 +589,6 @@ const HomePage = () => {
               >
             Apply Now
           </Link>
-              <Link
-                to="/about/contact"
-                className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white hover:text-blue-600 transition-colors duration-300"
-              >
-                Contact Us
-              </Link>
             </div>
           </motion.div>
         </div>
