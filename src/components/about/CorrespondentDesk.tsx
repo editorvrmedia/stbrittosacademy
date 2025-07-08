@@ -50,7 +50,7 @@ const CorrespondentDesk = () => {
     },
     {
       title: 'Unique Learning Experience',
-      description: <>Making learning at <span className="font-revue">St. Britto's</span> unique and interesting through innovative approaches</>
+      description: <>Making learning at St. Britto's unique and interesting through innovative approaches</>
     },
     {
       title: 'Faculty Accompaniment',
@@ -367,12 +367,12 @@ const CorrespondentDesk = () => {
                   To Know More
                 </a>
               </div>
-              <p className="text-xl text-indigo-600 font-semibold mb-6">Secretary & Correspondent, <span className="font-revue">St. Britto's Group of Institutions</span></p>
+              <p className="text-xl text-indigo-600 font-semibold mb-6">Secretary & Correspondent, St. Britto's Group of Institutions</p>
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg leading-relaxed">
-                  Dr. Vimala Rani Britto serves as the Secretary & Correspondent of <span className="font-revue">St. Britto's Group of Institutions</span>,
+                  Dr. Vimala Rani Britto serves as the Secretary & Correspondent of St. Britto's Group of Institutions,
                   bringing exceptional leadership and vision to educational administration. As the administrative head,
-                  she makes enormous efforts to make learning at <span className="font-revue">St. Britto's</span> unique and interesting.
+                  she makes enormous efforts to make learning at St. Britto's unique and interesting.
                 </p>
                 <p className="text-lg leading-relaxed">
                   Inspired by the experience of her parents, who were dedicated teachers, she is passionate about
@@ -421,7 +421,7 @@ const CorrespondentDesk = () => {
           <div className="bg-white p-8 lg:p-12 rounded-xl shadow-lg">
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                <span className="text-2xl font-bold text-indigo-700">"</span>I warmly welcome you to enter into the portals of <span className="font-revue">St. Britto's Academy</span> and thank you for choosing <span className="font-revue">St. Britto's</span> for your child's studies and shaping their future. I am sure that this choice will make a significant difference in their life.
+                <span className="text-2xl font-bold text-indigo-700">"</span>I warmly welcome you to enter into the portals of St. Britto's Academy and thank you for choosing St. Britto's for your child's studies and shaping their future. I am sure that this choice will make a significant difference in their life.
               </p>
 
               <p>
@@ -429,7 +429,7 @@ const CorrespondentDesk = () => {
               </p>
 
               <p>
-                Inspired by the experience of our parents, who were dedicated teachers, we want to contribute to society through our educational institutions. As the administrative head of the institution, I make an enormous effort to make learning at <span className="font-revue">St. Britto's</span> unique and interesting.
+                Inspired by the experience of our parents, who were dedicated teachers, we want to contribute to society through our educational institutions. As the administrative head of the institution, I make an enormous effort to make learning at St. Britto's unique and interesting.
               </p>
 
               <p>
@@ -453,7 +453,7 @@ const CorrespondentDesk = () => {
               <div className="pt-8 border-t border-gray-200">
                 <p className="font-bold text-indigo-700 text-xl mb-0">Dr. Vimala Rani Britto</p>
                 <p className="text-indigo-600">Secretary and Correspondent</p>
-                <p className="text-indigo-600"><span className="font-revue">St. Britto's Academy</span></p>
+                <p className="text-indigo-600">St. Britto's Academy</p>
               </div>
             </div>
           </div>

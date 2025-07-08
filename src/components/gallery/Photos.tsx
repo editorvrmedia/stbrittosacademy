@@ -242,7 +242,7 @@ const Photos = () => {
       <section className="py-16 bg-gradient-to-r from-purple-600 to-purple-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Photo Gallery</h1>
-          <p className="text-xl text-white/90 mb-8">Capturing the vibrant moments and memories of life at <span className="font-revue">St. Britto's Academy</span>.</p>
+          <p className="text-xl text-white/90 mb-8">Capturing the vibrant moments and memories of life at St. Britto's Academy.</p>
         </div>
       </section>
 

@@ -115,7 +115,7 @@ const VicePrincipalBlog = () => {
                 />
                 <div>
                   <h3 className="font-bold text-lg">Ms. Joan Rajesh</h3>
-                  <p className="text-teal-100">Vice Principal, <span className="font-revue">St. Britto's Academy</span></p>
+                  <p className="text-teal-100">Vice Principal, St. Britto's Academy</p>
                 </div>
               </div>
             </div>
@@ -269,7 +269,7 @@ const VicePrincipalBlog = () => {
             </div>
             <div className="prose prose-lg mx-auto text-gray-700">
               <p className="mb-6">
-                Mrs. John Rajesh serves as Vice Principal at <span className="font-revue">St. Britto's Academy</span>, bringing over 15 years of
+                Mrs. John Rajesh serves as Vice Principal at St. Britto's Academy, bringing over 15 years of
                 experience in educational leadership and curriculum development. Her dedication to fostering a
                 supportive and innovative learning environment has been instrumental in our school's success.
               </p>

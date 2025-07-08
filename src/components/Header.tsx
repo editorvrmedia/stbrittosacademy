@@ -223,13 +223,17 @@ const Header = () => {
               </button>
             </div>
             {/* Mobile menu button: always visible on mobile, right-aligned */}
-            <div className="flex-shrink-0 flex items-center justify-center ml-2 xl:hidden">
+            <div
+              className="fixed top-4 right-4 z-[10001] w-12 h-12 flex items-center justify-center xl:hidden"
+              style={{ pointerEvents: 'auto' }}
+            >
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-12 h-12 p-2 rounded-full bg-white shadow-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center"
                 aria-label="Toggle mobile menu"
+                style={{ zIndex: 10002 }}
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
               </button>
             </div>
             {/* Desktop Navigation */}

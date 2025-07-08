@@ -70,13 +70,13 @@ const ChairmanDesk = () => {
             Chairman's Desk
           </motion.h1>
           <motion.p
-            className="text-xl max-w-3xl mx-auto"
+            className="text-xl max-w-3xl mx-auto whitespace-nowrap"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
             viewport={{ once: true, amount: 0.7 }}
           >
-            A message from our esteemed Chairman on the vision, values, and mission of <span className="font-revue">St. Britto's Academy</span>.
+            A message from our esteemed Chairman on the vision, values, and mission of St. Britto's Academy.
           </motion.p>
         </div>
       </motion.section>
@@ -116,7 +116,7 @@ const ChairmanDesk = () => {
               <p className="text-xl text-slate-600 font-semibold mb-6">Chairman, St. Britto's Group of Institutions</p>
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg leading-relaxed">
-                  Mr. Xavier Britto brings exceptional leadership and vision to <span className="font-revue">St. Britto's Academy</span>. With qualifications in 
+                  Mr. Xavier Britto brings exceptional leadership and vision to St. Britto's Academy. With qualifications in 
                   Commerce, Law, Business Administration, and Company Secretaryship, he combines academic excellence with 
                   practical business acumen.
                 </p>
@@ -183,7 +183,7 @@ const ChairmanDesk = () => {
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
                 viewport={{ once: true, amount: 0.7 }}
               >
-                <span className="text-2xl font-bold text-blue-700">"</span>With immense pleasure and happiness, I welcome you to <span className="font-revue">St. Britto's Academy</span>. It is a privilege to guide an institution that has consistently upheld a legacy of academic excellence, innovation, and holistic development. As we continue our journey, we are committed to nurturing young minds with knowledge, values, and skills that empower them to become compassionate leaders and responsible global citizens."
+                <span className="text-2xl font-bold text-blue-700">"</span>With immense pleasure and happiness, I welcome you to St. Britto's Academy. It is a privilege to guide an institution that has consistently upheld a legacy of academic excellence, innovation, and holistic development. As we continue our journey, we are committed to nurturing young minds with knowledge, values, and skills that empower them to become compassionate leaders and responsible global citizens."
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 40 }}
@@ -221,7 +221,7 @@ const ChairmanDesk = () => {
               >
                 <p className="font-bold text-blue-700 text-xl">Mr. Xavier Britto</p>
                 <p className="text-blue-600">Chairman</p>
-                <p className="text-blue-600"><span className="font-revue">St. Britto's Academy</span></p>
+                <p className="text-blue-600">St. Britto's Academy</p>
               </motion.div>
           </div>
           </motion.div>

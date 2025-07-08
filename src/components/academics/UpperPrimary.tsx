@@ -15,12 +15,12 @@ const UpperPrimary = () => {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-green-50 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
-          Higher Primary at <span className="font-revue">St. Britto's Academy</span> – A Cambridge-Aligned Learning Experience
+          Higher Primary at St. Britto's Academy – A Cambridge-Aligned Learning Experience
         </h1>
 
         <div className="text-lg text-gray-700 leading-relaxed mb-8">
           <p className="mb-4">
-            At <span className="font-revue">St. Britto's Academy</span>, our Higher Primary Programme (Grades III – V) follows the Cambridge Curriculum, with the school serving as a knowledge partner. Our curriculum is designed to ensure academic excellence, critical thinking, and holistic development.
+            At St. Britto's Academy, our Higher Primary Programme (Grades III – V) follows the Cambridge Curriculum, with the school serving as a knowledge partner. Our curriculum is designed to ensure academic excellence, critical thinking, and holistic development.
           </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

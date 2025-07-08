@@ -109,7 +109,7 @@ const PrincipalBlog = () => {
                 />
                 <div>
                   <h3 className="font-bold text-lg">Dr. Sarah Johnson</h3>
-                  <p className="text-blue-100">Principal, <span className="font-revue">St. Britto's Academy</span></p>
+                  <p className="text-blue-100">Principal, St. Britto's Academy</p>
                 </div>
               </div>
             </div>
@@ -246,7 +246,7 @@ const PrincipalBlog = () => {
             </div>
             <div className="prose prose-lg mx-auto text-gray-700">
               <p className="mb-6">
-                Dr. Sarah Johnson has been leading <span className="font-revue">St. Britto's Academy</span> with vision and dedication for over 8 years. 
+                Dr. Sarah Johnson has been leading St. Britto's Academy with vision and dedication for over 8 years. 
                 With a Ph.D. in Educational Leadership and 20+ years of experience in education, she brings a wealth 
                 of knowledge and innovative thinking to our school community.
               </p>
@@ -257,7 +257,7 @@ const PrincipalBlog = () => {
               </p>
               <p>
                 Through her blog, Dr. Johnson shares insights on educational trends, leadership strategies, and her 
-                vision for the future of learning at <span className="font-revue">St. Britto's Academy</span>.
+                vision for the future of learning at St. Britto's Academy.
               </p>
             </div>
           </div>

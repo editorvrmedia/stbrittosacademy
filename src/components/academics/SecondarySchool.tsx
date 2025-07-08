@@ -196,12 +196,12 @@ const SecondarySchool = () => {
       <section className="py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Secondary School at <span className="font-revue">St. Britto's Academy</span> – CBSE Curriculum for Academic Excellence
+            Secondary School at St. Britto's Academy – CBSE Curriculum for Academic Excellence
           </h2>
 
           <div className="text-lg text-gray-700 leading-relaxed mb-8">
             <p className="mb-6">
-              The Secondary School Programme (Grades IX & X) at <span className="font-revue">St. Britto's Academy</span> follows NCERT textbooks as per CBSE guidelines, ensuring a strong academic foundation and skill-based learning.
+              The Secondary School Programme (Grades IX & X) at St. Britto's Academy follows NCERT textbooks as per CBSE guidelines, ensuring a strong academic foundation and skill-based learning.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -283,7 +283,7 @@ const SecondarySchool = () => {
             </div>
 
             <p className="mt-8">
-              The CBSE Secondary Curriculum at <span className="font-revue">St. Britto's Academy</span> ensures intellectual growth, critical thinking, and career readiness, preparing students for higher education and future success.
+              The CBSE Secondary Curriculum at St. Britto's Academy ensures intellectual growth, critical thinking, and career readiness, preparing students for higher education and future success.
             </p>
           </div>
         </div>

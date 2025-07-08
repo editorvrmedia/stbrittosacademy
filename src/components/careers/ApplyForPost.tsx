@@ -64,7 +64,7 @@ const ApplyForPost = () => {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Application Submitted!</h2>
           <p className="text-gray-600 mb-6">
-            Thank you for your interest in joining <span className="font-revue">St. Britto's Academy</span>. We have received your application and will review it carefully.
+            Thank you for your interest in joining St. Britto's Academy. We have received your application and will review it carefully.
           </p>
           <p className="text-sm text-gray-500">
             You will receive a confirmation email shortly, and we will contact you within 5-7 business days regarding the next steps.

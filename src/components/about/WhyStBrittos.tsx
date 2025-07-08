@@ -132,13 +132,13 @@ const WhyStBrittos = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-emerald-700 to-emerald-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Why Choose <span className="font-revue">St. Britto's Academy</span>?</h1>
+          <h1 className="text-5xl font-bold mb-6">Why Choose St. Britto's Academy?</h1>
           <p className="text-xl max-w-4xl mx-auto mb-8">
             "Education is the fountain head of experience; a confluence of the art of 'seeking' and the science of 'doing'. 
             Most importantly, it is an ethos that your child imbibes to transform his life."
           </p>
           <div className="bg-white bg-opacity-10 p-6 rounded-xl max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4"><span className="font-revue">St. Britto's Academy</span> – Excellence in Education, Leadership & Global Awareness</h2>
+            <h2 className="text-2xl font-bold mb-4">St. Britto's Academy – Excellence in Education, Leadership & Global Awareness</h2>
           </div>
         </div>
       </section>
@@ -151,7 +151,7 @@ const WhyStBrittos = () => {
               <h2 className="text-4xl font-bold text-gray-900 mb-6">28 Years of Educational Excellence</h2>
               <div className="space-y-6 text-gray-700">
                 <p className="text-lg leading-relaxed">
-                  <span className="font-revue">St. Britto's Academy</span> is a premier international standard school that has been shaping young minds since 1997. 
+                  St. Britto's Academy is a premier international standard school that has been shaping young minds since 1997. 
                   As we proudly step into our <strong>28th year</strong>, we continue to draw inspiration from our achievements 
                   while striving for academic excellence, character building, and leadership development.
                 </p>
@@ -191,7 +191,7 @@ const WhyStBrittos = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Innovative Learning & Progressive Education</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              <span className="font-revue">St. Britto's Academy</span> is committed to progressive education, constantly innovating to set new benchmarks. 
+              St. Britto's Academy is committed to progressive education, constantly innovating to set new benchmarks. 
               Our unique teaching methodologies, state-of-the-art facilities, and dedicated faculty create an engaging and effective learning environment.
             </p>
           </div>
@@ -240,7 +240,7 @@ const WhyStBrittos = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Sets Us Apart</h2>
-            <p className="text-xl text-gray-600">Eight compelling reasons why <span className="font-revue">St. Britto's Academy</span> is the right choice for your child's future</p>
+            <p className="text-xl text-gray-600">Eight compelling reasons why St. Britto's Academy is the right choice for your child's future</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {reasons.map((reason, index) => (
@@ -296,7 +296,7 @@ const WhyStBrittos = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Parents Say</h2>
-            <p className="text-xl text-gray-600">Hear from our parent community about their experience with <span className="font-revue">St. Britto's Academy</span></p>
+            <p className="text-xl text-gray-600">Hear from our parent community about their experience with St. Britto's Academy</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
@@ -324,7 +324,7 @@ const WhyStBrittos = () => {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <div className="bg-emerald-50 p-8 rounded-xl">
             <Trophy className="h-16 w-16 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6"><span className="font-revue">St. Britto's Academy</span> – Where Excellence Meets Innovation!</h2>
+            <h2 className="text-4xl font-bold mb-6">St. Britto's Academy – Where Excellence Meets Innovation!</h2>
             <p className="text-xl leading-relaxed">
               In order to achieve our goal of being unique and progressive in the field of education, we have innovative systems 
               and facilities in place that have proved to be both creative and effective. We believe in forming people to become 

@@ -427,7 +427,7 @@ const SchoolAchievements = () => {
                   </div>
                   
                   <h3 className="text-3xl font-bold text-gray-900 mb-4">Maximum Students Singing Together in Various Languages</h3>
-                  <p className="text-gray-600 mb-6"><span className="font-revue">St. Britto's Academy</span> set a record at India Book of Records for the maximum number of students (426) singing together in 26 national and international languages at Phoenix Market City, Velacherry, Chennai on December 13, 2019. The event showcased our students' linguistic talent and cultural unity.</p>
+                  <p className="text-gray-600 mb-6">St. Britto's Academy set a record at India Book of Records for the maximum number of students (426) singing together in 26 national and international languages at Phoenix Market City, Velacherry, Chennai on December 13, 2019. The event showcased our students' linguistic talent and cultural unity.</p>
                   
                   <div className="space-y-4 mb-6">
                     <div className="bg-amber-50 p-4 rounded-lg">
@@ -571,7 +571,7 @@ const SchoolAchievements = () => {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Join Our Success Story</h2>
-          <p className="text-xl text-gray-600 mb-8">Be part of <span className="font-revue">St. Britto's Academy</span> and help us continue our legacy of excellence, innovation, and achievement.</p>
+          <p className="text-xl text-gray-600 mb-8">Be part of St. Britto's Academy and help us continue our legacy of excellence, innovation, and achievement.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/admissions"

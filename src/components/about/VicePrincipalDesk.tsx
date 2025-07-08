@@ -58,12 +58,12 @@ const VicePrincipalDesk = () => {
             </div>
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Ms. Joan Rajesh</h2>
-              <p className="text-xl text-teal-600 font-semibold mb-6">Senior Vice Principal, <span className="font-revue">St. Britto's Academy</span></p>
+              <p className="text-xl text-teal-600 font-semibold mb-6">Senior Vice Principal, St. Britto's Academy</p>
               <div className="space-y-4 text-gray-700">
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  <span className="text-teal-600 font-semibold">"It is an immense privilege to be part of an institution that has consistently upheld a strong legacy of academic excellence and holistic development. I am committed to fostering a nurturing learning environment at <span className="font-revue">St. Britto's Academy</span>, where every student feels empowered to explore their potential and achieve their dreams."</span>
+                  <span className="text-teal-600 font-semibold">"It is an immense privilege to be part of an institution that has consistently upheld a strong legacy of academic excellence and holistic development. I am committed to fostering a nurturing learning environment at St. Britto's Academy, where every student feels empowered to explore their potential and achieve their dreams."</span>
                 </p>
-                <p className="text-gray-600 mb-6">Ms. Joan Rajesh serves as the Senior Vice Principal of <span className="font-revue">St. Britto's Academy</span>, bringing exceptional leadership and vision to our esteemed institution. With extensive experience in educational administration and student development, she has been instrumental in shaping our academic programs and fostering a supportive learning community. Her dedication to fostering a vibrant and inclusive school environment inspires both students and staff.</p>
+                <p className="text-gray-600 mb-6">Ms. Joan Rajesh serves as the Senior Vice Principal of St. Britto's Academy, bringing exceptional leadership and vision to our esteemed institution. With extensive experience in educational administration and student development, she has been instrumental in shaping our academic programs and fostering a supportive learning community. Her dedication to fostering a vibrant and inclusive school environment inspires both students and staff.</p>
               </div>
               <div className="mt-8 grid md:grid-cols-3 gap-4">
                 <div className="text-center p-4 bg-teal-50 rounded-lg">

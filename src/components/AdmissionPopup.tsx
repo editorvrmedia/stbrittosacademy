@@ -77,7 +77,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 margin: 0
               }}
             >
-              St  Britto&rsquo;s Academy
+              St. Britto&rsquo;s Academy
             </h3>
           </div>
         </div>

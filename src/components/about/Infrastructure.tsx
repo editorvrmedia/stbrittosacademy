@@ -163,7 +163,7 @@ const Infrastructure = () => {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Campus Overview</h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                <span className="font-revue">St. Britto's Academy</span> boasts a sprawling 15-acre campus designed to provide an optimal learning environment. Our infrastructure combines modern architectural design with functional spaces that cater to
+                St. Britto's Academy boasts a sprawling 15-acre campus designed to provide an optimal learning environment. Our infrastructure combines modern architectural design with functional spaces that cater to
                 the diverse needs of our students, fostering an atmosphere conducive to academic excellence, innovation, and holistic development.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">

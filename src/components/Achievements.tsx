@@ -177,7 +177,7 @@ const Achievements = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Our Achievements</h2>
-            <p className="text-xl text-gray-600">Discover the many ways <span className="font-revue">St. Britto's Academy</span> excels</p>
+            <p className="text-xl text-gray-600">Discover the many ways St. Britto's Academy excels</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -312,7 +312,7 @@ const Achievements = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What Parents Say</h2>
-            <p className="text-xl text-gray-600">Hear from our parent community about their experience with <span className="font-revue">St. Britto's Academy</span></p>
+            <p className="text-xl text-gray-600">Hear from our parent community about their experience with St. Britto's Academy</p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">

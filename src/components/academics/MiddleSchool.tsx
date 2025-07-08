@@ -270,12 +270,12 @@ const MiddleSchool = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
-            Middle School at <span className="font-revue">St. Britto's Academy</span> – Cambridge Curriculum for Holistic Growth
+            Middle School at St. Britto's Academy – Cambridge Curriculum for Holistic Growth
           </h2>
 
           <div className="text-lg text-gray-700 leading-relaxed mb-8">
             <p className="mb-4">
-              At <span className="font-revue">St. Britto's Academy</span>, our Middle School Programme (Grades VI – VIII) follows the <b>Cambridge Curriculum</b>, with the school serving as a <b>knowledge partner</b>. The curriculum is designed to provide a <b>strong academic foundation</b> while fostering <b>critical thinking, practical learning, and personal development</b>.
+              At St. Britto's Academy, our Middle School Programme (Grades VI – VIII) follows the <b>Cambridge Curriculum</b>, with the school serving as a <b>knowledge partner</b>. The curriculum is designed to provide a <b>strong academic foundation</b> while fostering <b>critical thinking, practical learning, and personal development</b>.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">

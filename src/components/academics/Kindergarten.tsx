@@ -146,12 +146,12 @@ const Kindergarten = () => {
             SUBJECTS OF STUDY
           </h1>
           <p className="text-xl text-gray-700 mb-8 text-center">
-            Kindergarten at <span className="font-revue">St. Britto's Academy</span> – A Joyful Learning Experience
+            Kindergarten at St. Britto's Academy – A Joyful Learning Experience
           </p>
 
           <div className="text-lg text-gray-700 leading-relaxed mb-8">
             <p className="mb-4">
-              At <span className="font-revue">St. Britto's Academy</span>, our Kindergarten programme (Pre-KG, LKG & UKG) follows the internationally accredited FEFDY Curriculum (IAO & CIAA), fostering holistic early childhood development.
+              At St. Britto's Academy, our Kindergarten programme (Pre-KG, LKG & UKG) follows the internationally accredited FEFDY Curriculum (IAO & CIAA), fostering holistic early childhood development.
             </p>
             <p className="mb-4">
               Through a play-way and activity-oriented approach, we nurture literacy, numeracy, sensory exploration, scientific thinking, and creative expression. Our engaging curriculum enhances:

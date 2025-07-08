@@ -402,7 +402,7 @@ const SeniorSecondary = () => {
             </div>
 
             <p className="mt-4 text-gray-700 text-center">
-              The Senior Secondary curriculum at <span className="font-revue">St. Britto's Academy</span> emphasizes not just academic excellence but also holistic development, preparing students to be responsible global citizens and future leaders. Our focus on a balanced education ensures students are well-rounded and ready for the challenges of higher education and professional life.
+              The Senior Secondary curriculum at St. Britto's Academy emphasizes not just academic excellence but also holistic development, preparing students to be responsible global citizens and future leaders. Our focus on a balanced education ensures students are well-rounded and ready for the challenges of higher education and professional life.
             </p>
           </div>
         </div>
