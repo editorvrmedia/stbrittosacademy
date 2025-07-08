@@ -208,7 +208,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2 sm:py-3 min-h-[56px] w-full">
             {/* Logo: Centered on mobile, left on desktop */}
-            <div className="flex-1 flex items-center justify-center xl:justify-start flex-shrink-0">
+            <div className="flex items-center flex-shrink-0">
               <button
                 onClick={handleLogoClick}
                 className="flex items-center justify-center space-x-2 sm:space-x-3 flex-shrink-0 bg-transparent border-none p-0 m-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
@@ -221,15 +221,10 @@ const Header = () => {
                   style={{ maxWidth: '320px' }}
                 />
               </button>
-            </div>
-            {/* Mobile menu button: always visible on mobile, right-aligned */}
-            <div
-              className="fixed top-4 right-4 z-[10001] w-12 h-12 flex items-center justify-center xl:hidden"
-              style={{ pointerEvents: 'auto' }}
-            >
+              {/* Hamburger menu button: visible only on mobile (<=768px) */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="w-12 h-12 p-2 rounded-full bg-white shadow-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center"
+                className="w-12 h-12 p-2 ml-2 rounded-full bg-white shadow-lg text-gray-700 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center md:hidden"
                 aria-label="Toggle mobile menu"
                 style={{ zIndex: 10002 }}
               >
@@ -413,7 +408,7 @@ const Header = () => {
                 aria-label="Close menu overlay"
               />
               {/* Menu Panel - slides in from right */}
-              <div className={`xl:hidden fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-[9999] border-l border-blue-200 transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+              <div className={`fixed top-0 right-0 h-full w-[80vw] max-w-[400px] bg-white z-[9999] border-l border-blue-200 transition-transform duration-300 ease-in-out md:w-[80vw] md:max-w-[400px] md:block ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
               >
                 {/* X Close Button */}
                 <button
