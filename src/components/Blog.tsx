@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, Tag, ArrowRight, Search, Users, BookOpen } from 'lucide-react';
+import ErrorBoundary from './ErrorBoundary';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -19,7 +20,7 @@ const Blog = () => {
     {
       id: 1,
       title: 'The Future of Education: Embracing Technology in the Classroom',
-      excerpt: 'Exploring how digital tools and innovative teaching methods are transforming the learning experience at St. Brittos Academy.',
+      excerpt: "Exploring how digital tools and innovative teaching methods are transforming the learning experience at St. Britto's Academy.",
       content: 'In today\'s rapidly evolving world, education must adapt to prepare students for the challenges of tomorrow...',
       author: 'Dr. Sarah Johnson',
       date: '2024-01-20',
@@ -30,7 +31,7 @@ const Blog = () => {
     {
       id: 2,
       title: 'Student Spotlight: Excellence in Science Fair 2024',
-      excerpt: 'Meet our outstanding students who represented St. Brittos Academy at the National Science Fair and brought home top honors.',
+      excerpt: "Meet our outstanding students who represented St. Britto's Academy at the National Science Fair and brought home top honors.",
       content: 'This year\'s science fair was a remarkable showcase of innovation and creativity...',
       author: 'Prof. Michael Chen',
       date: '2024-01-18',
@@ -42,7 +43,7 @@ const Blog = () => {
       id: 3,
       title: 'Building Character Through Community Service',
       excerpt: 'How our community service programs help students develop empathy, leadership skills, and a sense of social responsibility.',
-      content: 'Community service is an integral part of our educational philosophy at St. Brittos Academy...',
+      content: "Community service is an integral part of our educational philosophy at St. Britto's Academy...",
       author: 'Ms. Emily Rodriguez',
       date: '2024-01-15',
       category: 'student-life',
@@ -310,4 +311,8 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default () => (
+  <ErrorBoundary>
+    <Blog />
+  </ErrorBoundary>
+);

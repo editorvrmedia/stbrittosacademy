@@ -7,16 +7,19 @@ import StylizedLogo from './StylizedLogo';
 import { motion, useInView, animate } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ErrorBoundary from './ErrorBoundary';
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+// Register ScrollTrigger plugin only on client side
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const HomePage = () => {
   const [isAdmissionPopupOpen, setIsAdmissionPopupOpen] = useState(false);
   const [isUpcomingEventsAsideOpen, setIsUpcomingEventsAsideOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   
-  // Refs for GSAP animations
+  // Refs for GSAP animations - now only for simple animations, not pinning
   const quickAccessRef = useRef<HTMLElement>(null);
   const yearsSectionRef = useRef<HTMLElement>(null);
   const statsBarRef = useRef<HTMLDivElement>(null);
@@ -64,113 +67,162 @@ const HomePage = () => {
     setIsNotificationOpen(false);
   };
 
-  // GSAP Animations Setup
+  // GSAP Animations Setup - Refactored to use static wrappers and simple animations only
   useEffect(() => {
-    // Quick Access Section Animation
-    if (quickAccessRef.current) {
-      gsap.fromTo(quickAccessRef.current.querySelectorAll('.quick-access-item'), 
-        {
-          opacity: 0,
-          y: 50,
-          scale: 0.9
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: quickAccessRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
+    // Guard against SSR and missing refs or unmounted component
+    if (typeof window === 'undefined' || !quickAccessRef.current || !yearsSectionRef.current || !statsBarRef.current || !ctaSectionRef.current) {
+      return;
     }
 
-    // 28 Years Section Animation
-    if (yearsSectionRef.current) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
+    const scrollTriggers: ScrollTrigger[] = [];
+
+    try {
+      // Quick Access Section Animation - Simple fade/slide only
+      if (quickAccessRef.current) {
+        const trigger = ScrollTrigger.create({
+          trigger: quickAccessRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
+          onEnter: () => {
+            const elements = quickAccessRef.current?.querySelectorAll('.quick-access-item');
+            if (elements && elements.length > 0) {
+              gsap.fromTo(elements, 
+                {
+                  opacity: 0,
+                  y: 50,
+                  scale: 0.9
+                },
+                {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  duration: 0.8,
+                  stagger: 0.1,
+                  ease: 'power2.out'
+                }
+              );
+            }
+          }
+        });
+        scrollTriggers.push(trigger);
+      }
+
+      // 28 Years Section Animation - Simple fade/slide only
+      if (yearsSectionRef.current) {
+        const trigger = ScrollTrigger.create({
           trigger: yearsSectionRef.current,
           start: 'top 80%',
           end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      });
-
-      tl.fromTo(yearsSectionRef.current.querySelector('h2'), 
-        { opacity: 0, y: 60 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
-      )
-      .fromTo(yearsSectionRef.current.querySelectorAll('.years-content > *'), 
-        { opacity: 0, x: -50 },
-        { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' },
-        '-=0.4'
-      )
-      .fromTo(yearsSectionRef.current.querySelectorAll('.years-image > *'), 
-        { opacity: 0, x: 50 },
-        { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' },
-        '-=0.6'
-      );
-    }
-
-    // Stats Bar Animation
-    if (statsBarRef.current) {
-      gsap.fromTo(statsBarRef.current.querySelectorAll('.stat-item'), 
-        {
-          opacity: 0,
-          y: 30,
-          scale: 0.8
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: statsBarRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
+          toggleActions: 'play none none reverse',
+          onEnter: () => {
+            const tl = gsap.timeline();
+            const h2Element = yearsSectionRef.current?.querySelector('h2');
+            const contentElements = yearsSectionRef.current?.querySelectorAll('.years-content > *');
+            const imageElements = yearsSectionRef.current?.querySelectorAll('.years-image > *');
+            
+            if (h2Element) {
+              tl.fromTo(h2Element, 
+                { opacity: 0, y: 60 },
+                { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
+              );
+            }
+            
+            if (contentElements && contentElements.length > 0) {
+              tl.fromTo(contentElements, 
+                { opacity: 0, x: -50 },
+                { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' },
+                '-=0.4'
+              );
+            }
+            
+            if (imageElements && imageElements.length > 0) {
+              tl.fromTo(imageElements, 
+                { opacity: 0, x: 50 },
+                { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' },
+                '-=0.6'
+              );
+            }
           }
-        }
-      );
-    }
+        });
+        scrollTriggers.push(trigger);
+      }
 
-
-
-    // CTA Section Animation
-    if (ctaSectionRef.current) {
-      gsap.fromTo(ctaSectionRef.current.querySelectorAll('*'), 
-        {
-          opacity: 0,
-          y: 40
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: ctaSectionRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
+      // Stats Bar Animation - Simple fade/slide only
+      if (statsBarRef.current) {
+        const trigger = ScrollTrigger.create({
+          trigger: statsBarRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
+          onEnter: () => {
+            const elements = statsBarRef.current?.querySelectorAll('.stat-item');
+            if (elements && elements.length > 0) {
+              gsap.fromTo(elements, 
+                {
+                  opacity: 0,
+                  y: 30,
+                  scale: 0.8
+                },
+                {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  duration: 0.6,
+                  stagger: 0.1,
+                  ease: 'power2.out'
+                }
+              );
+            }
           }
-        }
-      );
+        });
+        scrollTriggers.push(trigger);
+      }
+
+      // CTA Section Animation - Simple fade/slide only
+      if (ctaSectionRef.current) {
+        const trigger = ScrollTrigger.create({
+          trigger: ctaSectionRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
+          onEnter: () => {
+            const elements = ctaSectionRef.current?.querySelectorAll('*');
+            if (elements && elements.length > 0) {
+              gsap.fromTo(elements, 
+                {
+                  opacity: 0,
+                  y: 40
+                },
+                {
+                  opacity: 1,
+                  y: 0,
+                  duration: 0.8,
+                  stagger: 0.1,
+                  ease: 'power2.out'
+                }
+              );
+            }
+          }
+        });
+        scrollTriggers.push(trigger);
+      }
+    } catch (error) {
+      console.error('GSAP animation error:', error);
     }
 
     // Cleanup function
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      try {
+        scrollTriggers.forEach(trigger => trigger.kill());
+        ScrollTrigger.getAll().forEach(trigger => {
+          if (scrollTriggers.includes(trigger)) {
+            trigger.kill();
+          }
+        });
+      } catch (error) {
+        console.error('GSAP cleanup error:', error);
+      }
     };
   }, []);
 
@@ -232,8 +284,8 @@ const HomePage = () => {
       <motion.section
         ref={quickAccessRef}
         className="section pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={false}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.4, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.1 }}
       >
@@ -637,4 +689,8 @@ const AnimatedCounter = ({ target, suffix = '', duration = 1000, className = '',
   );
 };
 
-export default HomePage;
+export default () => (
+  <ErrorBoundary>
+    <HomePage />
+  </ErrorBoundary>
+);

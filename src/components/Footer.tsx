@@ -40,8 +40,9 @@ const Footer = () => {
 
   return (
     <motion.footer 
+      initial={false}
+      animate={{ opacity: 1 }}
       className="bg-[#0B0F1C] text-[#F1F1F1]"
-      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
       viewport={{ once: true, amount: 0.3 }}

@@ -1,12 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 const HEADER_HEIGHT = 76; // 28px TopHeader + ~48px Header
 
@@ -17,52 +12,33 @@ const HeroSection = () => {
   const scrollArrowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const hero = heroRef.current;
-    const video = videoRef.current;
-    const newsBar = newsBarRef.current;
-    const scrollArrow = scrollArrowRef.current;
+    // Simple scroll-based animations without GSAP pinning
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const video = videoRef.current;
+      const newsBar = newsBarRef.current;
+      const scrollArrow = scrollArrowRef.current;
 
-    if (!hero || !video || !newsBar || !scrollArrow) return;
-
-    // Create the main timeline for hero section
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: hero,
-        start: 'top top',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: true,
-        scrub: 1,
-        onUpdate: (self) => {
-          // Zoom effect on video background
-          const progress = self.progress;
-          gsap.set(video, {
-            scale: 1 + (progress * 0.15), // Subtle zoom effect
-          });
-        }
+      if (video) {
+        // Simple zoom effect based on scroll
+        const progress = Math.min(scrollY / 500, 1);
+        const scale = 1 + (progress * 0.15);
+        video.style.transform = `scale(${scale})`;
       }
-    });
 
-    // Animate the news bar to fade out as user scrolls
-    tl.to(newsBar, {
-      opacity: 0,
-      y: -20,
-      duration: 0.5,
-      ease: 'power2.in'
-    }, '+=0.3');
+      if (newsBar && scrollY > 100) {
+        newsBar.style.opacity = Math.max(0, 1 - (scrollY - 100) / 200).toString();
+        newsBar.style.transform = `translateY(${Math.min(-20, -(scrollY - 100) / 10)}px)`;
+      }
 
-    // Animate scroll arrow to fade out
-    tl.to(scrollArrow, {
-      opacity: 0,
-      y: -30,
-      duration: 0.5,
-      ease: 'power2.in'
-    }, '+=0.2');
-
-    // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if (scrollArrow && scrollY > 50) {
+        scrollArrow.style.opacity = Math.max(0, 1 - scrollY / 200).toString();
+        scrollArrow.style.transform = `translateY(${Math.min(-30, -scrollY / 10)}px)`;
+      }
     };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -71,61 +47,76 @@ const HeroSection = () => {
       <div className="w-full h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600"></div>
       
       <div ref={heroRef}>
-      <motion.section
-        className="relative w-full flex items-center justify-center overflow-hidden max-w-full pb-0"
-        style={{ minHeight: 'auto' }}
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeInOut' }}
-        viewport={{ once: true, amount: 0.1 }}
-      >
-        {/* Responsive Banner Video Background */}
-        <div className="relative w-full bg-black overflow-hidden" style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}>
-          <video
-              ref={videoRef}
-            src="/videointro.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-0 left-0 w-full h-full object-cover bg-black"
-            style={{
-              border: 0,
-              background: 'black',
-              minWidth: '100vw',
-              minHeight: '100%',
-              maxHeight: '100%',
-              maxWidth: '100%',
-            }}
-          />
-            
-
-            
-            {/* Scroll Arrow */}
-            <div 
-              ref={scrollArrowRef}
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer z-10"
-              onClick={() => {
-                const quickAccessSection = document.querySelector('[ref="quickAccessRef"]');
-                if (quickAccessSection) {
-                  quickAccessSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              <FiChevronDown className="w-8 h-8" />
+        <AnimatePresence mode="wait">
+          <motion.section
+            key="hero-section"
+            initial={false}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="relative w-full flex items-center justify-center overflow-hidden max-w-full pb-0"
+            style={{ minHeight: 'auto' }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {/* Responsive Banner Video Background */}
+            <div className="relative w-full bg-black overflow-hidden" style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}>
+              <video
+                ref={videoRef}
+                src="/videointro.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover bg-black transition-transform duration-300"
+                style={{
+                  border: 0,
+                  background: 'black',
+                  minWidth: '100vw',
+                  minHeight: '100%',
+                  maxHeight: '100%',
+                  maxWidth: '100%',
+                }}
+                onError={(e) => {
+                  console.error('Video failed to load:', e);
+                  // Fallback to a static image or background
+                  const videoElement = e.target as HTMLVideoElement;
+                  videoElement.style.display = 'none';
+                }}
+              />
+              {/* Scroll Arrow */}
+              <div 
+                ref={scrollArrowRef}
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer z-10 transition-all duration-300"
+                onClick={() => {
+                  try {
+                    const quickAccessSection = document.querySelector('[ref="quickAccessRef"]');
+                    if (quickAccessSection) {
+                      quickAccessSection.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      // Fallback: scroll to a reasonable position
+                      window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                    }
+                  } catch (error) {
+                    console.error('Scroll error:', error);
+                    // Fallback: scroll to top of page
+                    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+                  }
+                }}
+              >
+                <FiChevronDown className="w-8 h-8" />
+              </div>
             </div>
-        </div>
-      </motion.section>
-
-      {/* Scrolling Marquee News Bar (below the video) */}
-        <div ref={newsBarRef} className="w-full bg-sky-400 overflow-hidden relative z-20 px-2 sm:px-4 py-2">
-        <div className="animate-infinite-scroll whitespace-nowrap font-semibold text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl" 
-             style={{ 
-               fontFamily: 'Inter, Arial, sans-serif', 
-               letterSpacing: '0.01em',
-               lineHeight: '1.4'
-             }}>
-          Latest News: Applications for admission 2025-2026 to Play Group, Pre-KG, LKG, UKG, Classes I to IX, and XI will be issued from 11th November 2024 onwards.
+          </motion.section>
+        </AnimatePresence>
+        {/* Scrolling Marquee News Bar (below the video) */}
+        <div ref={newsBarRef} className="w-full bg-sky-400 overflow-hidden relative z-20 px-2 sm:px-4 py-2 transition-all duration-300">
+          <div className="animate-infinite-scroll whitespace-nowrap font-semibold text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl" 
+            style={{ 
+              fontFamily: 'Inter, Arial, sans-serif', 
+              letterSpacing: '0.01em',
+              lineHeight: '1.4'
+            }}>
+            Latest News: Applications for admission 2025-2026 to Play Group, Pre-KG, LKG, UKG, Classes I to IX, and XI will be issued from 11th November 2024 onwards.
           </div>
         </div>
       </div>

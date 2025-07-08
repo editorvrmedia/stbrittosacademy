@@ -36,6 +36,22 @@ const Header = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      try {
+        document.body.style.overflow = 'hidden';
+      } catch (error) {
+        console.error('Body overflow error:', error);
+      }
+    } else {
+      try {
+        document.body.style.overflow = 'unset';
+      } catch (error) {
+        console.error('Body overflow error:', error);
+      }
+    }
+  }, [isMenuOpen]);
+
   const navigation = [
     { name: 'Home', href: '/' },
     { 
@@ -151,6 +167,40 @@ const Header = () => {
   const isBlogActive = () => location.pathname.startsWith('/blog');
   const isMandatoryActive = () => location.pathname.startsWith('/about/mandatory-disclosure');
 
+  const handleStudentLogin = () => {
+    try {
+      window.open('https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp', '_blank');
+    } catch (error) {
+      console.error('Student login error:', error);
+      // Fallback: try to navigate in same window
+      window.location.href = 'https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp';
+    }
+  };
+
+  const handleTeacherLogin = () => {
+    try {
+      window.open('https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp', '_blank');
+    } catch (error) {
+      console.error('Teacher login error:', error);
+      // Fallback: try to navigate in same window
+      window.location.href = 'https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp';
+    }
+  };
+
+  const handleLogoClick = () => {
+    try {
+      if (location.pathname === '/') {
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
+      } else {
+        navigate('/');
+      }
+    } catch (error) {
+      console.error('Scroll error:', error);
+      // Fallback: simple scroll
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <>
       <TopHeader />
@@ -160,14 +210,7 @@ const Header = () => {
             {/* Logo: Centered on mobile, left on desktop */}
             <div className="flex-1 flex items-center justify-center xl:justify-start flex-shrink-0">
               <button
-                onClick={() => {
-                  if (location.pathname !== '/') {
-                    navigate('/');
-                    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
-                  } else {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }
-                }}
+                onClick={handleLogoClick}
                 className="flex items-center justify-center space-x-2 sm:space-x-3 flex-shrink-0 bg-transparent border-none p-0 m-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
                 aria-label="Go to top of home page"
               >
@@ -296,7 +339,7 @@ const Header = () => {
                                     href="https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp"
                                     onClick={e => {
                                       e.preventDefault();
-                                      window.open('https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp', '_blank');
+                                      handleStudentLogin();
                                     }}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                       isActive('/student-login')
@@ -311,7 +354,7 @@ const Header = () => {
                                     href="https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp"
                                     onClick={e => {
                                       e.preventDefault();
-                                      window.open('https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp', '_blank');
+                                      handleTeacherLogin();
                                     }}
                                     className={`block px-4 py-2 text-sm transition-colors duration-200 ${
                                       isActive('/teacher-login')
@@ -471,7 +514,7 @@ const Header = () => {
                                         href="https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp"
                                         onClick={e => {
                                           e.preventDefault();
-                                          window.open('https://erp.stbrittosacademy.edu.in/schoolstudentportal/students/loginManager/youLogin.jsp', '_blank');
+                                          handleStudentLogin();
                                         }}
                                         className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                           isActive('/student-login')
@@ -486,7 +529,7 @@ const Header = () => {
                                         href="https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp"
                                         onClick={e => {
                                           e.preventDefault();
-                                          window.open('https://erp.stbrittosacademy.edu.in/evarsitysbi/usermanager/loginManager/youLogin.jsp', '_blank');
+                                          handleTeacherLogin();
                                         }}
                                         className={`block px-3 py-2 rounded-md text-sm transition-colors duration-200 ${
                                           isActive('/teacher-login')

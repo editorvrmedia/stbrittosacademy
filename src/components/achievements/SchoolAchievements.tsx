@@ -339,7 +339,7 @@ const SchoolAchievements = () => {
             </div>
               <motion.div
                 ref={guinnessRef}
-                initial={{ opacity: 0, x: -100 }}
+                initial={false}
                 animate={guinnessInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="bg-white rounded-xl overflow-hidden shadow-xl"
@@ -404,7 +404,7 @@ const SchoolAchievements = () => {
             </div>
               <motion.div
                 ref={indiaRef}
-                initial={{ opacity: 0, x: 100 }}
+                initial={false}
                 animate={indiaInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 className="bg-white rounded-xl overflow-hidden shadow-xl"
@@ -480,8 +480,8 @@ const SchoolAchievements = () => {
                 return (
                   <motion.div
                     key={award.id}
-                    initial={{ opacity: 0, ...dir }}
-                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    initial={false}
+                    animate={guinnessInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...dir }}
                     viewport={{ amount: 0.4 }}
                     transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.15 }}
                     whileHover={{ scale: 1.05, boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}

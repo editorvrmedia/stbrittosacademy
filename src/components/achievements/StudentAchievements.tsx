@@ -77,7 +77,7 @@ const StudentAchievements = () => {
       key: 'raksha',
       content: (
         <motion.section
-          initial={{ opacity: 0, y: 40 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
           className="w-full flex justify-center items-center py-10 px-2"
@@ -231,7 +231,7 @@ const StudentAchievements = () => {
     if (post.key === 'raksha') {
       return (
         <motion.section
-          initial={{ opacity: 0, y: 40 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeInOut' }}
           className="w-full flex justify-center items-center py-10 px-2"

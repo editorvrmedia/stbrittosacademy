@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Download, FileText, Phone, Mail, CheckCircle, Calendar, Users, DollarSign, ArrowRight } from 'lucide-react';
+import ErrorBoundary from './ErrorBoundary';
 
 const Admissions = () => {
   const [formData, setFormData] = useState({
@@ -461,4 +462,8 @@ const Admissions = () => {
   );
 };
 
-export default Admissions;
+export default () => (
+  <ErrorBoundary>
+    <Admissions />
+  </ErrorBoundary>
+);

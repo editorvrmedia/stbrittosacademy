@@ -1,27 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [selectedGrade, setSelectedGrade] = useState('Pre School');
   const [hasTyped, setHasTyped] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
         onClose();
       }
     };
-    window.addEventListener('keydown', handleKeyDown);
+
     let timer: ReturnType<typeof setTimeout> | undefined;
-    if (!hasTyped) {
-      timer = setTimeout(() => {
-        onClose();
-      }, 10000);
+
+    try {
+      window.addEventListener('keydown', handleKeyDown);
+      
+      if (!hasTyped) {
+        timer = setTimeout(() => {
+          onClose();
+        }, 10000);
+      }
+    } catch (error) {
+      console.error('AdmissionPopup event listener error:', error);
     }
+
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      if (timer) clearTimeout(timer);
+      try {
+        window.removeEventListener('keydown', handleKeyDown);
+        if (timer) clearTimeout(timer);
+      } catch (error) {
+        console.error('AdmissionPopup cleanup error:', error);
+      }
     };
   }, [isOpen, onClose, hasTyped]);
 
@@ -48,17 +63,11 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       <div className="bg-white rounded-lg shadow-xl w-full max-w-xs sm:max-w-md md:max-w-2xl flex flex-col md:flex-row overflow-hidden md:max-h-[90vh] overflow-hidden">
         {/* Left Section - Image and Info */}
         <div className="md:w-1/2 bg-blue-500 text-white p-3 sm:p-4 flex flex-col items-center justify-center relative">
-          <button
-            onClick={onClose}
-            className="absolute top-3 right-3 text-white hover:text-gray-200 focus:outline-none"
-            aria-label="Close popup"
-          >
-            <X className="h-6 w-6" />
-          </button>
           <img 
             src="/SBA.png" 
             alt="St. Britto's Academy Logo" 
-            className="h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] w-auto object-contain mb-0"
+            className="h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] w-auto object-contain mb-0 cursor-pointer"
+            onClick={() => { onClose(); navigate('/'); }}
           />
           <div className="w-full overflow-x-auto">
             <h3
@@ -75,7 +84,16 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
 
         {/* Right Section - Admission Form */}
         <div className="md:w-1/2 bg-blue-600 p-3 sm:p-4 text-white flex flex-col justify-center">
-          <h2 className="text-lg font-bold mb-4 text-center whitespace-nowrap">Admission Open for 2025-26</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold text-left whitespace-nowrap">Admission Open for 2025-26</h2>
+            <button
+              onClick={onClose}
+              className="text-white hover:text-gray-200 focus:outline-none ml-4"
+              aria-label="Close popup"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
           <form onSubmit={handleSubmit} className="space-y-3">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">Name <span className="text-red-300">*</span></label>

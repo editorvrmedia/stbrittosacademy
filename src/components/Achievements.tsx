@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Award, Users, BookOpen, Globe, Heart, Star, Target, Shield, Lightbulb, Trophy } from 'lucide-react';
+import ErrorBoundary from './ErrorBoundary';
 
 const ParallaxBackground = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -362,4 +363,8 @@ const Achievements = () => {
   );
 };
 
-export default Achievements;
+export default () => (
+  <ErrorBoundary>
+    <Achievements />
+  </ErrorBoundary>
+);

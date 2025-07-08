@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Heart, Target, Users, Mail, Phone, Check, X, BookOpen, Calendar, GraduationCap, Users2 } from 'lucide-react';
+import ErrorBoundary from './ErrorBoundary';
 
 const AboutUs = () => {
   const achievements = [
@@ -134,4 +135,8 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default () => (
+  <ErrorBoundary>
+    <AboutUs />
+  </ErrorBoundary>
+);

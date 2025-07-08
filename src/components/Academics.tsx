@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, BookOpen, Trophy, Users, Star, ArrowRight } from 'lucide-react';
+import ErrorBoundary from './ErrorBoundary';
 
 const Academics = () => {
   const programs = [
@@ -203,4 +204,8 @@ const Academics = () => {
   );
 };
 
-export default Academics;
+export default () => (
+  <ErrorBoundary>
+    <Academics />
+  </ErrorBoundary>
+);

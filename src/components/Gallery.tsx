@@ -110,7 +110,7 @@ const Gallery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Media Gallery</h1>
           <p className="text-xl max-w-3xl mx-auto mb-8">
-            Explore the vibrant life at St. Brittos Academy through our collection of photos, videos, and galleries showcasing student achievements, campus events, and daily activities.
+            Explore the vibrant life at St. Britto's Academy through our collection of photos, videos, and galleries showcasing student achievements, campus events, and daily activities.
           </p>
           
           {/* Quick Links to Subpages */}

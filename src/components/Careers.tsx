@@ -162,7 +162,7 @@ const Careers = () => {
           <h1 className="text-5xl font-bold mb-6">Join Our Team</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Be part of an educational community that values excellence, innovation, and the development of young minds. 
-            Discover rewarding career opportunities at St. Brittos Academy.
+            Discover rewarding career opportunities at St. Britto's Academy.
           </p>
         </div>
       </section>
@@ -171,7 +171,7 @@ const Careers = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose St. Brittos Academy?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose St. Britto's Academy?</h2>
             <p className="text-xl text-gray-600">Join a community dedicated to educational excellence</p>
           </div>
           
@@ -301,7 +301,7 @@ const Careers = () => {
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">Have Questions?</h2>
           <p className="text-xl mb-8">
-            Our HR team is here to help you with any questions about career opportunities at St. Brittos Academy.
+            Our HR team is here to help you with any questions about career opportunities at St. Britto's Academy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

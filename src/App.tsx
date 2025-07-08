@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
@@ -189,8 +189,78 @@ function ScrollToTop() {
   return null;
 }
 
+// ErrorBoundary component
+class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean, error?: Error }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError(error: Error) { 
+    console.error('ErrorBoundary caught error:', error);
+    return { hasError: true, error }; 
+  }
+  componentDidCatch(error: any, info: any) { 
+    console.error('ErrorBoundary caught:', error, info); 
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ 
+          padding: 40, 
+          textAlign: 'center', 
+          color: 'red',
+          backgroundColor: '#fef2f2',
+          border: '1px solid #fecaca',
+          borderRadius: '8px',
+          margin: '20px'
+        }}>
+          <h2>Something went wrong</h2>
+          <p>Please refresh the page or try again later.</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#3b82f6',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              marginTop: '10px'
+            }}
+          >
+            Refresh Page
+          </button>
+          {this.state.error && (
+            <details style={{ marginTop: '20px', textAlign: 'left' }}>
+              <summary>Error Details</summary>
+              <pre style={{ 
+                backgroundColor: '#f3f4f6', 
+                padding: '10px', 
+                borderRadius: '4px',
+                overflow: 'auto',
+                fontSize: '12px'
+              }}>
+                {this.state.error.toString()}
+              </pre>
+            </details>
+          )}
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+// Simple loading spinner
+const LoadingSpinner = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '40vh' }}>
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+    <span className="ml-4 text-blue-700 font-semibold">Loading...</span>
+  </div>
+);
+
 function App() {
   const [isAdmissionPopupOpen, setIsAdmissionPopupOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const location = useLocation();
 
   // Paths where header/footer should be hidden
@@ -198,91 +268,99 @@ function App() {
   const isStandalone = standalonePaths.includes(location.pathname);
 
   useEffect(() => {
+    setIsClient(true);
     console.log('App component mounted');
   }, []);
 
+  // Prevent hydration issues by not rendering until client-side
+  if (!isClient) {
+    return <LoadingSpinner />;
+  }
+
   return (
-    <>
-      <ScrollProgressBar />
-      <Chatbot />
-      <ScrollToTop />
-      <div className="min-h-screen bg-transparent flex flex-col">
-        <AdmissionPopup 
-          isOpen={isAdmissionPopupOpen} 
-          onClose={() => setIsAdmissionPopupOpen(false)} 
-        />
-        {!isStandalone && <Header />}
-        {/* Show video after both headers, only on homepage */}
-        {!isStandalone && location.pathname === '/' && <HeroSection />}
-        <main className="flex-1 w-full">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/about/governance" element={<Governance />} />
-            <Route path="/about/vision-mission" element={<VisionMission />} />
-            <Route path="/about/why-stbrittos" element={<WhyStBrittos />} />
-            <Route path="/about/chairmans-desk" element={<ChairmanDesk />} />
-            <Route path="/about/correspondents-desk" element={<CorrespondentDesk />} />
-            <Route path="/about/principals-desk" element={<PrincipalDesk />} />
-            <Route path="/about/vice-principals-desk" element={<VicePrincipalDesk />} />
-            <Route path="/about/infrastructure" element={<Infrastructure />} />
-            <Route path="/about/virtual-tour" element={<VirtualTour />} />
-            <Route path="/about/mandatory-disclosure" element={<MandatoryDisclosure />} />
-            <Route path="/about/annual-report" element={<AnnualReport />} />
-            <Route path="/academics" element={<Academics />} />
-            <Route path="/academics/curriculum" element={<Curriculum />} />
-            <Route path="/academics/kindergarten" element={<Kindergarten />} />
-            <Route path="/academics/lower-primary" element={<LowerPrimary />} />
-            <Route path="/academics/upper-primary" element={<UpperPrimary />} />
-            <Route path="/academics/middle-school" element={<MiddleSchool />} />
-            <Route path="/academics/secondary-school" element={<SecondarySchool />} />
-            <Route path="/academics/senior-secondary" element={<SeniorSecondary />} />
-            <Route path="/academics/results" element={<Results />} />
-            <Route path="/activities" element={<Activities />} />
-            <Route path="/activities/8-quotients" element={<EightQuotients />} />
-            <Route path="/activities/believe-you-can" element={<BelieveYouCan />} />
-            <Route path="/achievements" element={<Achievements />} />
-            <Route path="/achievements/school" element={<SchoolAchievements />} />
-            <Route path="/achievements/students" element={<StudentAchievements />} />
-            <Route path="/admissions" element={<Admissions />} />
-            <Route path="/admissions/procedure" element={<AdmissionsProcedure />} />
-            <Route path="/admissions/code-of-conduct" element={<CodeOfConduct />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/gallery/photos" element={<Photos />} />
-            <Route path="/gallery/videos" element={<GalleryMain />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/principal" element={<PrincipalBlog />} />
-            <Route path="/blog/vice-principal" element={<VicePrincipalBlog />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/careers/apply" element={<ApplyForPost />} />
-            <Route path="/login/teacher-erp" element={<TeacherERPLogin />} />
-            <Route path="/login/student-erp" element={<StudentERPLogin />} />
-            <Route path="/student-login" element={<StudentERPLogin />} />
-            <Route path="/teacher-login" element={<TeacherLoginPage />} />
-            <Route path="/events/investiture-ceremony-2025-26" element={<InvestitureCeremony2025Page />} />
-            <Route path="/events/pongal-celebration-2025" element={<PongalCelebration2025Page />} />
-            <Route path="/events/christmas-celebration-2024" element={<ChristmasCelebration2024Page />} />
-            <Route path="/events/childrens-day-2024" element={<ChildrensDayCelebration2024Page />} />
-            <Route path="/events/diwali-celebration-2024" element={<DiwaliCelebration2024Page />} />
-            <Route path="/events/byc-royal-gridlock-2024" element={<RoyalGridlock2024Page />} />
-            <Route path="/events/young-forum-2024" element={<YoungForum2024Page />} />
-            <Route path="/events/grandparents-day-2024" element={<GrandparentsDay2024Page />} />
-            <Route path="/events/zest-regalia-2024" element={<ZestRegalia2024Page />} />
-            <Route path="/events/investiture-ceremony-2024" element={<InvestitureCeremony2024Page />} />
-            <Route path="/events/kg-graduation-day-2024" element={<KGGraduationDay2024Page />} />
-            <Route path="/events/diwali-celebration-nov-2023" element={<DiwaliCelebrationNov2023Page />} />
-            <Route path="/events/asset-2023" element={<Asset2023Page />} />
-            <Route path="/events/royal-gridlock-2023" element={<RoyalGridlock2023Page />} />
-            <Route path="/events/young-forum-2023" element={<YoungForum2023Page />} />
-            <Route path="/events/array-of-sumptuousness-2023" element={<ArrayOfSumptuousness2023Page />} />
-            <Route path="/events/investiture-ceremony-2023" element={<InvestitureCeremony2023Page />} />
-            <Route path="/events/zest-regalia-2023" element={<ZestRegalia2023Page />} />
-            <Route path="/events/:eventId" element={<EventDetails />} />
-          </Routes>
-        </main>
-        {!isStandalone && <Footer />}
-      </div>
-    </>
+    <ErrorBoundary>
+      <Suspense fallback={<LoadingSpinner />}>
+        <ScrollProgressBar />
+        <Chatbot />
+        <ScrollToTop />
+        <div className="min-h-screen bg-transparent flex flex-col">
+          <AdmissionPopup 
+            isOpen={isAdmissionPopupOpen} 
+            onClose={() => setIsAdmissionPopupOpen(false)} 
+          />
+          {!isStandalone && <Header />}
+          {/* Show video after both headers, only on homepage */}
+          {!isStandalone && location.pathname === '/' && <HeroSection />}
+          <main className="flex-1 w-full">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/about/governance" element={<Governance />} />
+              <Route path="/about/vision-mission" element={<VisionMission />} />
+              <Route path="/about/why-stbrittos" element={<WhyStBrittos />} />
+              <Route path="/about/chairmans-desk" element={<ChairmanDesk />} />
+              <Route path="/about/correspondents-desk" element={<CorrespondentDesk />} />
+              <Route path="/about/principals-desk" element={<PrincipalDesk />} />
+              <Route path="/about/vice-principals-desk" element={<VicePrincipalDesk />} />
+              <Route path="/about/infrastructure" element={<Infrastructure />} />
+              <Route path="/about/virtual-tour" element={<VirtualTour />} />
+              <Route path="/about/mandatory-disclosure" element={<MandatoryDisclosure />} />
+              <Route path="/about/annual-report" element={<AnnualReport />} />
+              <Route path="/academics" element={<Academics />} />
+              <Route path="/academics/curriculum" element={<Curriculum />} />
+              <Route path="/academics/kindergarten" element={<Kindergarten />} />
+              <Route path="/academics/lower-primary" element={<LowerPrimary />} />
+              <Route path="/academics/upper-primary" element={<UpperPrimary />} />
+              <Route path="/academics/middle-school" element={<MiddleSchool />} />
+              <Route path="/academics/secondary-school" element={<SecondarySchool />} />
+              <Route path="/academics/senior-secondary" element={<SeniorSecondary />} />
+              <Route path="/academics/results" element={<Results />} />
+              <Route path="/activities" element={<Activities />} />
+              <Route path="/activities/8-quotients" element={<EightQuotients />} />
+              <Route path="/activities/believe-you-can" element={<BelieveYouCan />} />
+              <Route path="/achievements" element={<Achievements />} />
+              <Route path="/achievements/school" element={<SchoolAchievements />} />
+              <Route path="/achievements/students" element={<StudentAchievements />} />
+              <Route path="/admissions" element={<Admissions />} />
+              <Route path="/admissions/procedure" element={<AdmissionsProcedure />} />
+              <Route path="/admissions/code-of-conduct" element={<CodeOfConduct />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/gallery/photos" element={<Photos />} />
+              <Route path="/gallery/videos" element={<GalleryMain />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/principal" element={<PrincipalBlog />} />
+              <Route path="/blog/vice-principal" element={<VicePrincipalBlog />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/careers/apply" element={<ApplyForPost />} />
+              <Route path="/login/teacher-erp" element={<TeacherERPLogin />} />
+              <Route path="/login/student-erp" element={<StudentERPLogin />} />
+              <Route path="/student-login" element={<StudentERPLogin />} />
+              <Route path="/teacher-login" element={<TeacherLoginPage />} />
+              <Route path="/events/investiture-ceremony-2025-26" element={<InvestitureCeremony2025Page />} />
+              <Route path="/events/pongal-celebration-2025" element={<PongalCelebration2025Page />} />
+              <Route path="/events/christmas-celebration-2024" element={<ChristmasCelebration2024Page />} />
+              <Route path="/events/childrens-day-2024" element={<ChildrensDayCelebration2024Page />} />
+              <Route path="/events/diwali-celebration-2024" element={<DiwaliCelebration2024Page />} />
+              <Route path="/events/byc-royal-gridlock-2024" element={<RoyalGridlock2024Page />} />
+              <Route path="/events/young-forum-2024" element={<YoungForum2024Page />} />
+              <Route path="/events/grandparents-day-2024" element={<GrandparentsDay2024Page />} />
+              <Route path="/events/zest-regalia-2024" element={<ZestRegalia2024Page />} />
+              <Route path="/events/investiture-ceremony-2024" element={<InvestitureCeremony2024Page />} />
+              <Route path="/events/kg-graduation-day-2024" element={<KGGraduationDay2024Page />} />
+              <Route path="/events/diwali-celebration-nov-2023" element={<DiwaliCelebrationNov2023Page />} />
+              <Route path="/events/asset-2023" element={<Asset2023Page />} />
+              <Route path="/events/royal-gridlock-2023" element={<RoyalGridlock2023Page />} />
+              <Route path="/events/young-forum-2023" element={<YoungForum2023Page />} />
+              <Route path="/events/array-of-sumptuousness-2023" element={<ArrayOfSumptuousness2023Page />} />
+              <Route path="/events/investiture-ceremony-2023" element={<InvestitureCeremony2023Page />} />
+              <Route path="/events/zest-regalia-2023" element={<ZestRegalia2023Page />} />
+              <Route path="/events/:eventId" element={<EventDetails />} />
+            </Routes>
+          </main>
+          {!isStandalone && <Footer />}
+        </div>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 

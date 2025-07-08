@@ -5,7 +5,7 @@ const AdmissionsProcedure = () => {
   const [showForm, setShowForm] = useState(false);
 
   const [form, setForm] = useState({
-    school: 'ST. BRITTO`S ACADEMY',
+    school: 'ST. BRITTO\'S ACADEMY',
     class: '',
     name: '',
     dob: '',
@@ -19,7 +19,7 @@ const AdmissionsProcedure = () => {
 
   const handleReset = () => {
     setForm({
-      school: 'ST. BRITTO`S ACADEMY',
+      school: 'ST. BRITTO\'S ACADEMY',
       class: '',
       name: '',
       dob: '',
@@ -39,7 +39,7 @@ const AdmissionsProcedure = () => {
           <div className="flex items-center justify-between">
             <label className="font-semibold">School applying for<span className="text-red-500">*</span></label>
             <select name="school" value={form.school} onChange={handleChange} className="border rounded px-2 py-1 w-1/2">
-              <option value="ST. BRITTO`S ACADEMY">ST. BRITTO`S ACADEMY</option>
+              <option value="ST. BRITTO'S ACADEMY">ST. BRITTO'S ACADEMY</option>
             </select>
           </div>
           <div className="flex items-center justify-between">
