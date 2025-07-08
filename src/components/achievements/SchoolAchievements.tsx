@@ -36,7 +36,7 @@ const SchoolAchievements = () => {
       year: '2018',
       description: 'St. Britto\'s Institutions achieved a Guinness World Record for the largest human image of a wheelchair accessibility symbol consisting of 816 people.',
       impact: 'Raised awareness about accessibility and inclusion',
-      image: '/guinness-awards.jpg'
+      image: '/AWARDS/guinness-awards.jpg'
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const SchoolAchievements = () => {
       year: '2019',
       description: 'St. Britto\'s Academy set a record at India Book of Records for the maximum number of students (426) singing together in 26 national and international languages.',
       impact: 'Showcased linguistic diversity and cultural integration',
-      image: '/asia-book-of-records-singing.jpg'
+      image: '/AWARDS/asia-book-of-records-singing.jpg'
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ const SchoolAchievements = () => {
       year: '2017-2020',
       description: 'British Council has awarded St Britto\'s Academy with International School Award 2017-2020. It has been accredited for outstanding development of the International dimension in the curriculum on 15th December 2017.',
       impact: 'Recognized for global education excellence',
-      image: '/British Council award.jpg'
+      image: '/AWARDS/British Council award.jpg'
     },
     {
       id: 5,
@@ -63,7 +63,7 @@ const SchoolAchievements = () => {
       year: '2018',
       description: 'Centre for Educational Development, Touch Education awarded Mrs. Vimala Britto with the prestigious Dr. Sarvepalli Radhakrishnan School Excellence Leadership Award.',
       impact: 'Recognized as a TOP CBSE School at International EDUSummIT & EDUAwarDS in New Delhi',
-      image: '/radhakrishnan-school-excellence-award.jpg'
+      image: '/AWARDS/radhakrishnan-school-excellence-award.jpg'
     },
     {
       id: 6,
@@ -72,7 +72,7 @@ const SchoolAchievements = () => {
       year: '2018-2019',
       description: 'Dhina Malar awarded St. Britto\'s Academy with the Velli Thamarai Award at Vinnadi, Venna, Viruthu for the Academic year 2018-2019.',
       impact: 'Recognized for outstanding contributions to education',
-      image: '/Dhina Malar award.jpg'
+      image: '/AWARDS/Dhina Malar award.jpg'
     },
     {
       id: 7,
@@ -81,7 +81,7 @@ const SchoolAchievements = () => {
       year: '2019',
       description: 'Eldrok India K-12 Awards honored St. Britto\'s Academy for Excellence in Holistic Development Programs at the Eldrok India K-12 Summit.',
       impact: 'Recognized for comprehensive student development approach',
-      image: '/Eldrok India K-12 Awards.jpg'
+      image: '/AWARDS/Eldrok India K-12 Awards.jpg'
     },
     {
       id: 8,
@@ -90,7 +90,7 @@ const SchoolAchievements = () => {
       year: '2016',
       description: 'St. Britto\'s Academy was selected as one of the TOP TEN SCHOOLS in the Arithmetic Genius Inter-School Contest conducted by SIP Academy India.',
       impact: 'Recognized for students\' outstanding performance in mathematics',
-      image: '/SIP abacus awards St Britto\’s Academy.jpg'
+      image: '/AWARDS/SIP abacus awards St Britto’s Academy.jpg'
     },
     {
       id: 9,
@@ -99,25 +99,25 @@ const SchoolAchievements = () => {
       year: '2015-16',
       description: 'St. Britto\'s Academy was awarded the Performance Excellence Award for overall performance in Silverzone Olympiads of Mathematics.',
       impact: 'Recognized for excellence in mathematics education',
-      image: '/silverzone-olympiads-math-excellence.jpg'
+      image: '/AWARDS/St Britto’s Academy is awarded the Performance Excellence Award for overall performance in Silverzone Olympiads of Mathematics for the year 2015..jpg'
     },
     {
       id: 10,
-      title: 'Silverzone Olympiads - Science Excellence',
+      title: 'Silverzone Olympiads - Overall 2015-16',
       category: 'olympiads',
       year: '2015-16',
       description: 'St. Britto\'s Academy was awarded the Performance Excellence Award for overall performance in Silverzone Olympiads of Science.',
       impact: 'Recognized for excellence in science education',
-      image: '/silverzone-olympiads-science-excellence.jpg'
+      image: '/AWARDS/St Britto’s Academy is awarded the Performance Excellence Award for overall performance in Silverzone Olympiads of Science for the year 2015..jpg'
     },
     {
       id: 11,
-      title: 'Silverzone Olympiads - Overall Excellence',
+      title: 'Silverzone Olympiads - Overall Excellence 2013',
       category: 'olympiads',
       year: '2013',
       description: 'St. Britto\'s Academy was awarded the Performance Excellence Award for overall performance in Silverzone Olympiads.',
       impact: 'Recognized for consistent excellence in academic competitions',
-      image: '/St Britto\’s Academy is awarded the Performance Excellence Award f.jpg'
+      image: '/AWARDS/St Britto’s Academy is awarded the Performance Excellence Award.jpg'
     },
     {
       id: 12,
@@ -126,7 +126,7 @@ const SchoolAchievements = () => {
       year: '2019',
       description: 'St. Britto\'s Academy was recognized for organizing the National Level Art Competition in Mumbai.',
       impact: 'Promoting artistic talent and creativity among students nationwide',
-      image: '/rangotsav-national-art-competition.jpg'
+      image: '/AWARDS/rangotsav-national-art-competition.jpg'
     },
     {
       id: 13,
@@ -135,7 +135,7 @@ const SchoolAchievements = () => {
       year: '2019',
       description: 'St. Britto\'s Group of Institutions entered into Asia Book of Records for singing in 26 different languages.',
       impact: 'Showcasing linguistic diversity and cultural integration',
-      image: '/asia-book-of-records-singing.jpg'
+      image: '/AWARDS/asia-book-of-records-singing.jpg'
     },
     {
       id: 14,
@@ -144,7 +144,7 @@ const SchoolAchievements = () => {
       year: '2013',
       description: 'St Britto\'s Group of Institutions, (St Britto\'s Academy (CBSE), St Britto\'s Matriculation HSS and St Britto\'s College) Chennai participated in a joint activity across the three premises during which 3,077 students and teachers painted the most Santas within an hour (10.30 am – 11.30 am) on December 5, 2013, as part of a prelude to Christmas celebrations. The theme was Tidings of Great Joy and Peace to Mankind. The activity was carried out in association with Pidilite Industries.',
       impact: 'Recognized for mass participation and creative engagement',
-      image: '/limca records.jpg'
+      image: '/AWARDS/limca records.jpg'
     },
     {
       id: 15,
@@ -153,7 +153,7 @@ const SchoolAchievements = () => {
       year: '2018',
       description: 'The certificate Body of TUV SUD South Asia Private limited certifies that St Britto\'s Academy has implemented an educational organization Management System in accordance with ISO 21001: 2018 for the scope of design and development of curriculum for kindergarten and imparting education from kindergarten to senior secondary.',
       impact: 'Ensuring international standards in educational management and curriculum development',
-      image: '/certificate.jpg'
+      image: '/AWARDS/ISO 210012018 Certification.jpg'
     },
     {
       id: 16,
@@ -162,7 +162,7 @@ const SchoolAchievements = () => {
       year: '2020',
       description: 'Franklin Covey education certify the certificate of Appreciation to St Britto\'s Academy for being the torchbearer in building a global educational leadership community on 28th January 2020.',
       impact: 'Recognized for building a global educational leadership community',
-      image: '/Franklin Covey education.jpg'
+      image: '/AWARDS/Franklin Covey education.jpg'
     }
   ];
 
@@ -383,7 +383,7 @@ const SchoolAchievements = () => {
                 
                 <div className="flex items-center justify-center p-8 bg-gray-50">
                   <img 
-                    src="/guinness-awards.jpg" 
+                    src="/AWARDS/guinness-awards.jpg" 
                     alt="Guinness World Record Certificate" 
                     className="max-w-full max-h-96 object-contain rounded-lg shadow-lg"
                   />
@@ -412,7 +412,7 @@ const SchoolAchievements = () => {
               <div className="grid lg:grid-cols-2 gap-0">
                 <div className="flex items-center justify-center p-8 bg-gray-50">
                   <img 
-                    src="/asia-book-of-records-singing.jpg" 
+                    src="/AWARDS/asia-book-of-records-singing.jpg" 
                     alt="India Book of Records Certificate" 
                     className="max-w-full max-h-96 object-contain rounded-lg shadow-lg"
                   />
@@ -469,24 +469,10 @@ const SchoolAchievements = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredAwards.filter(award => award.id !== 1 && award.id !== 2 && award.id !== 3).map((award, idx) => {
-                // Cycle through directions for fly-in
-                const directions = [
-                  { x: -100, y: 0 },
-                  { x: 100, y: 0 },
-                  { x: 0, y: 100 },
-                  { x: 0, y: -100 }
-                ];
-                const dir = directions[idx % directions.length];
                 return (
-                  <motion.div
+                  <div
                     key={award.id}
-                    initial={false}
-                    animate={guinnessInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...dir }}
-                    viewport={{ amount: 0.4 }}
-                    transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.15 }}
-                    whileHover={{ scale: 1.05, boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}
                     className="bg-white rounded-xl overflow-hidden shadow-lg transition-shadow duration-300 flex flex-col"
-                    style={{ willChange: 'transform' }}
                   >
                 <div className="p-6 flex-grow">
                   <div className="mb-4">
@@ -520,7 +506,7 @@ const SchoolAchievements = () => {
                     className="h-48 object-contain rounded-lg"
                   />
                 </div>
-                  </motion.div>
+                  </div>
                 );
               })}
           </div>

@@ -16,7 +16,7 @@ const ParallaxBackground = () => {
     <div className="pointer-events-none select-none fixed top-0 left-0 w-full h-full z-0" aria-hidden>
       {/* School Logo */}
       <img
-        src="/sba-logo.png"
+        src="/LOGOS/sba-logo.png"
         alt="School Logo Parallax"
         className="absolute opacity-10"
         style={{

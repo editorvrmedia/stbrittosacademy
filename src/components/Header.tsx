@@ -215,7 +215,7 @@ const Header = () => {
                 aria-label="Go to top of home page"
               >
                 <img
-                  src="/SBA%20LOGO%20FOR%20WEBSITE.png"
+                  src="/LOGOS/SBA%20LOGO%20FOR%20WEBSITE.png"
                   alt="SBA Logo"
                   className="h-20 w-auto object-contain mx-auto"
                   style={{ maxWidth: '320px' }}

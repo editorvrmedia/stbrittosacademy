@@ -5,7 +5,7 @@ const StylizedLogo = () => {
     <div className="flex justify-center items-center">
       <div className="flex items-center gap-5 md:gap-3 mr-8">
         <img 
-          src="/sba-logo.png" 
+          src="/LOGOS/sba-logo.png" 
           alt="St. Britto's Academy Logo" 
           className="h-[100px] md:h-[75px] w-auto object-contain"
         />

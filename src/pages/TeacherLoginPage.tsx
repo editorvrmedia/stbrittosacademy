@@ -17,7 +17,7 @@ const TeacherLoginPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300">
       <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md flex flex-col items-center">
-        <img src="/SBA.png" alt="SBA Logo" className="h-20 mb-4" />
+        <img src="/LOGOS/SBA.png" alt="SBA Logo" className="h-20 mb-4" />
         <h2 className="text-2xl font-bold text-blue-900 mb-2">Teacher Login</h2>
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
           <input

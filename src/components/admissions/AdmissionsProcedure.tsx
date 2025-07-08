@@ -32,7 +32,7 @@ const AdmissionsProcedure = () => {
     return (
       <div className="w-full max-w-lg mx-auto px-4 py-12 bg-white rounded-lg shadow-md">
         <div className="flex flex-col items-center mb-6">
-          <img src="/sba-logo.png" alt="St. Britto's Academy Logo" className="h-24 mb-2" />
+          <img src="/LOGOS/sba-logo.png" alt="St. Britto's Academy Logo" className="h-24 mb-2" />
           <h2 className="text-xl font-bold text-blue-800 text-center">ONLINE APPLICATION (2025-2026)</h2>
         </div>
         <form className="space-y-4">

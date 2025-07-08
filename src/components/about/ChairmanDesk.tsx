@@ -99,7 +99,7 @@ const ChairmanDesk = () => {
               viewport={{ once: true, amount: 0.7 }}
             >
               <img
-                src="/xb.jpg"
+                src="/PERSONS/xb.jpg"
                 alt="Mr. Xavier Britto - Chairman"
                 className="w-96 h-96 rounded-full object-cover object-top mx-auto lg:mx-0 shadow-2xl border-4 border-white"
                 style={{ objectPosition: 'center top' }}

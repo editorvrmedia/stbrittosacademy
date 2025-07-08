@@ -70,7 +70,7 @@ const PrincipalDesk = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <img
-                src="/principal.png"
+                src="/PERSONS/principal.png"
                 alt="Mary Vasantha Kumari. J - Principal"
                 className="w-80 h-80 rounded-full object-cover object-top mx-auto lg:mx-0 shadow-2xl border-4 border-white"
                 style={{ objectPosition: 'center top' }}

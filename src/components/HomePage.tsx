@@ -410,7 +410,7 @@ const HomePage = () => {
               viewport={{ once: true, amount: 0.1 }}
             >
               <img
-                src="/school-excellence-award-2018.jpg"
+                src="/AWARDS/school-excellence-award-2018.jpg"
                 alt="School Excellence Leadership Award 2018"
                 className="rounded-xl shadow-2xl w-full max-w-md mx-auto h-auto bg-white"
                 style={{objectFit: 'contain', minHeight: '340px', minWidth: '260px'}}

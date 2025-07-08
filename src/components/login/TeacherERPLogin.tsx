@@ -19,7 +19,7 @@ const TeacherERPLogin = () => {
         {/* Left Section - Login Form */}
         <div className="w-full lg:w-2/5 p-10 flex flex-col justify-center items-center z-10">
           <div className="flex items-center justify-center mb-10">
-            <img src="/SBA.png" alt="SBA Logo" className="h-24 mr-3" />
+            <img src="/LOGOS/SBA.png" alt="SBA Logo" className="h-24 mr-3" />
             <div className="flex flex-col text-center">
               <h3 className="text-white text-base font-bold">ST BRITTO'S ACADEMY</h3>
               <p className="text-sky-200 text-sm">eVarsity ERP for Education</p>

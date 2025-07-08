@@ -12,7 +12,7 @@ const StudentERPLogin = () => {
     >
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col justify-center p-8">
         <div className="text-center mb-8">
-          <img src="/SBA.png" alt="SBA Logo" className="h-28 w-auto mx-auto mb-3" />
+          <img src="/LOGOS/SBA.png" alt="SBA Logo" className="h-28 w-auto mx-auto mb-3" />
           <h2 className="text-3xl font-revue font-bold text-[#003262] mb-2">ST BRITTO'S ACADEMY</h2>
           <p className="text-blue-700 text-sm font-semibold mb-2">eVarsity ERP for Education</p>
           <h3 className="text-xl font-bold text-blue-900 mb-1">Student Login</h3>

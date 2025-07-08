@@ -562,7 +562,7 @@ const CorrespondentDesk = () => {
             </div>
             <div ref={legacyRef} className="legacy-content">
               <img
-                src="/vimala.jpg"
+                src="/PERSONS/vimala.jpg"
                 alt="Dr. Vimala Rani Britto - Educational Visionary"
                 className="w-full h-auto rounded-xl shadow-2xl"
               />

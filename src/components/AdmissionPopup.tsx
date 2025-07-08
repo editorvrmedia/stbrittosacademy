@@ -64,7 +64,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
         {/* Left Section - Image and Info */}
         <div className="md:w-1/2 bg-blue-500 text-white p-3 sm:p-4 flex flex-col items-center justify-center relative">
           <img 
-            src="/SBA.png" 
+            src="/LOGOS/SBA.png" 
             alt="St. Britto's Academy Logo" 
             className="h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] w-auto object-contain mb-0 cursor-pointer"
             onClick={() => { onClose(); navigate('/'); }}
