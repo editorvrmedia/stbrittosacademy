@@ -225,8 +225,8 @@ const WhyStBrittos = () => {
               </div>
               <div>
                 <img
-                  src="https://images.pexels.com/photos/8466666/pexels-photo-8466666.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                  alt="Students in classroom"
+                  src="/DSC01567.JPG"
+                  alt="Educational Philosophy - St. Britto's Academy"
                   className="rounded-xl shadow-lg"
                 />
               </div>
@@ -281,11 +281,13 @@ const WhyStBrittos = () => {
             <p className="text-xl text-gray-600">Infrastructure that supports comprehensive learning and development</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {facilities.map((facility, index) => (
-              <div key={index} className="bg-emerald-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300">
-                <Shield className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
-                <p className="font-semibold text-gray-900">{facility}</p>
-              </div>
+            {facilities
+              .filter(facility => facility !== 'Nutritious Cafeteria Services')
+              .map((facility, index) => (
+                <div key={index} className="bg-emerald-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300">
+                  <Shield className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
+                  <p className="font-semibold text-gray-900">{facility === 'Well-equipped Library with Digital Resources' ? 'Well-equipped Library' : facility}</p>
+                </div>
             ))}
           </div>
         </div>
@@ -320,12 +322,12 @@ const WhyStBrittos = () => {
       </section>
 
       {/* Excellence Statement */}
-      <section className="py-8 bg-emerald-700 text-white">
+      <section className="py-8 bg-emerald-700">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <div className="bg-emerald-50 p-8 rounded-xl">
-            <Trophy className="h-16 w-16 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-6">St. Britto's Academy – Where Excellence Meets Innovation!</h2>
-            <p className="text-xl leading-relaxed">
+          <div className="bg-white p-8 rounded-xl">
+            <Trophy className="h-16 w-16 mx-auto mb-6 text-emerald-700" />
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">St. Britto's Academy – Where Excellence Meets Innovation!</h2>
+            <p className="text-xl leading-relaxed text-gray-700">
               In order to achieve our goal of being unique and progressive in the field of education, we have innovative systems 
               and facilities in place that have proved to be both creative and effective. We believe in forming people to become 
               competent rather than merely teaching, preparing students to create milestones and attain the unattainable.

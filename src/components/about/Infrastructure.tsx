@@ -273,7 +273,7 @@ const Infrastructure = () => {
               <h3 className="text-2xl font-bold text-pink-700 underline underline-offset-4">SMR AUDITORIUM</h3>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-6">
-              <img src="/SBA Building.jpg" alt="SMR Auditorium" className="rounded-xl shadow-lg w-full max-w-xs md:max-w-[220px] border-4 border-pink-200" />
+              <img src="/Infrastructure/SMRAUDITORIUM.jpg" alt="SMR Auditorium" className="rounded-xl shadow-lg w-full max-w-xs md:max-w-[220px] border-4 border-pink-200" />
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <Microscope className="w-6 h-6 text-pink-400 animate-pulse" />

@@ -145,28 +145,28 @@ const MiddleSchool = () => {
           <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0%,#000_10%,#000_90%,transparent_100%)]">
             <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll">
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9616.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9616.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9675.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9675.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9662.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9662.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9635.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9635.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/C0763T01.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/C0763T01.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/Academic Excellence St.Brittos Acdemy.JPG" alt="Academic Excellence St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/Academic Excellence St.Brittos Acdemy.JPG" alt="Academic Excellence St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/Excellence in Education CBSE St.Brittos Acdemy.JPG" alt="Excellence in Education CBSE St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/Excellence in Education CBSE St.Brittos Acdemy.JPG" alt="Excellence in Education CBSE St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9128.JPG" alt="IMG_9128" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9128.JPG" alt="IMG_9128" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
                 <img src="/IMG_8686.JPG" alt="IMG_8686" className="w-full h-auto rounded-lg shadow-md" />
@@ -178,28 +178,28 @@ const MiddleSchool = () => {
             {/* Duplicate content for seamless scrolling */}
             <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll" aria-hidden="true">
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9616.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9616.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9675.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9675.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9662.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9662.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9635.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9635.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/C0763T01.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/C0763T01.JPG" alt="Middle School Students" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/Academic Excellence St.Brittos Acdemy.JPG" alt="Academic Excellence St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/Academic Excellence St.Brittos Acdemy.JPG" alt="Academic Excellence St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/Excellence in Education CBSE St.Brittos Acdemy.JPG" alt="Excellence in Education CBSE St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/Excellence in Education CBSE St.Brittos Acdemy.JPG" alt="Excellence in Education CBSE St.Brittos Acdemy" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
-                <img src="/IMG_9128.JPG" alt="IMG_9128" className="w-full h-auto rounded-lg shadow-md" />
+                <img src="/Middle School/IMG_9128.JPG" alt="IMG_9128" className="w-full h-auto rounded-lg shadow-md" />
               </li>
               <li className="flex-shrink-0 w-80">
                 <img src="/IMG_8686.JPG" alt="IMG_8686" className="w-full h-auto rounded-lg shadow-md" />

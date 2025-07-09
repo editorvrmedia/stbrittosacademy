@@ -124,10 +124,10 @@ const Curriculum = () => {
           <div className="overflow-x-auto">
             <div className="flex gap-8 min-w-max">
               {[
-                { src: '/21st Century Learning CBSE.JPG', alt: '21st Century Learning CBSE' },
-                { src: '/Best CBSE Curriculum School Chennai.JPG', alt: 'Best CBSE Curriculum School Chennai' },
-                { src: '/CBSE Syllabus Chennai Schools.JPG', alt: 'CBSE Syllabus Chennai Schools' },
-                { src: '/Holistic Learning CBSE Chennai.JPG', alt: 'Holistic Learning CBSE Chennai' },
+                { src: '/Curriculum/21st Century Learning CBSE.JPG', alt: '21st Century Learning CBSE' },
+                { src: '/Curriculum/Best CBSE Curriculum School Chennai.JPG', alt: 'Best CBSE Curriculum School Chennai' },
+                { src: '/Curriculum/CBSE Syllabus Chennai Schools.JPG', alt: 'CBSE Syllabus Chennai Schools' },
+                { src: '/Curriculum/Holistic Learning CBSE Chennai.JPG', alt: 'Holistic Learning CBSE Chennai' },
               ].map((img, idx) => (
                 <motion.div
                   key={img.src}

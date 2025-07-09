@@ -35,7 +35,7 @@ const StudentAchievements = () => {
             {/* Main Image */}
             <div className="w-full flex justify-center items-center bg-green-50 rounded-2xl shadow-lg mb-6 p-4" style={{minHeight: 320}}>
               <img
-                src="/11.jpeg"
+                src="/STUDENTS ACHIEVENMENT/11.jpeg"
                 alt="Event Main"
                 className="object-contain h-72 w-auto mx-auto"
                 style={{background: 'white', borderRadius: '1rem'}}
@@ -44,16 +44,16 @@ const StudentAchievements = () => {
             {/* Thumbnails Row */}
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6 mb-6">
               <div className="bg-green-50 rounded-2xl shadow p-2 flex items-center justify-center">
-                <img src="/22.jpeg" alt="Event 2" className="object-cover rounded-xl h-32 w-full" />
+                <img src="/STUDENTS ACHIEVENMENT/22.jpeg" alt="Event 2" className="object-cover rounded-xl h-32 w-full" />
               </div>
               <div className="bg-green-50 rounded-2xl shadow p-2 flex items-center justify-center">
-                <img src="/33.jpeg" alt="Event 3" className="object-cover rounded-xl h-32 w-full" />
+                <img src="/STUDENTS ACHIEVENMENT/33.jpeg" alt="Event 3" className="object-cover rounded-xl h-32 w-full" />
               </div>
               <div className="bg-green-50 rounded-2xl shadow p-2 flex items-center justify-center">
-                <img src="/44.jpeg" alt="Event 4" className="object-cover rounded-xl h-32 w-full" />
+                <img src="/STUDENTS ACHIEVENMENT/44.jpeg" alt="Event 4" className="object-cover rounded-xl h-32 w-full" />
               </div>
               <div className="bg-green-50 rounded-2xl shadow p-2 flex items-center justify-center">
-                <img src="/55.jpeg" alt="Event 5" className="object-cover rounded-xl h-32 w-full" />
+                <img src="/STUDENTS ACHIEVENMENT/55.jpeg" alt="Event 5" className="object-cover rounded-xl h-32 w-full" />
               </div>
             </div>
             <div className="text-gray-800 text-base md:text-lg leading-relaxed w-full">
@@ -87,7 +87,7 @@ const StudentAchievements = () => {
             <div className="md:w-1/2 flex justify-center items-center">
               <div className="rounded-xl shadow-lg p-4 bg-white">
                 {withLightbox({
-                  src: '/wow.jpeg',
+                  src: '/STUDENTS ACHIEVENMENT/wow.jpeg',
                   alt: 'P. R. Raksha - Student Achievement',
                   className: 'rounded-xl object-cover w-[260px] h-[320px] max-w-full',
                   style: { objectFit: 'cover' }
@@ -135,7 +135,7 @@ const StudentAchievements = () => {
               <div className="flex items-center justify-center bg-[#f4f7ff] p-6 md:p-8 md:w-1/2">
                 <div className="rounded-xl bg-white shadow-lg p-2 border-4 border-white">
                   {withLightbox({
-                    src: '/goldmedal.jpg',
+                    src: '/STUDENTS ACHIEVENMENT/goldmedal.jpg',
                     alt: "Shreenithi with medals and St. Britto's Academy banner",
                     className: 'rounded-lg object-contain w-[320px] h-[320px] md:w-[340px] md:h-[340px] max-w-full max-h-[60vw] bg-white',
                     style: { objectFit: 'contain' }
@@ -194,7 +194,7 @@ const StudentAchievements = () => {
             {/* Main Image */}
             <div className="w-full flex justify-center items-center bg-green-50 rounded-2xl shadow-lg mb-6 p-4" style={{minHeight: 320}}>
               {withLightbox({
-                src: '/11.jpeg',
+                src: '/STUDENTS ACHIEVENMENT/11.jpeg',
                 alt: 'Event Main',
                 className: 'object-contain h-72 w-auto mx-auto',
                 style: { background: 'white', borderRadius: '1rem' }
@@ -202,7 +202,7 @@ const StudentAchievements = () => {
             </div>
             {/* Thumbnails Row */}
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6 mb-6">
-              {['/22.jpeg','/33.jpeg','/44.jpeg','/55.jpeg'].map((src, i) => (
+              {['/STUDENTS ACHIEVENMENT/22.jpeg','/STUDENTS ACHIEVENMENT/33.jpeg','/STUDENTS ACHIEVENMENT/44.jpeg','/STUDENTS ACHIEVENMENT/55.jpeg'].map((src, i) => (
                 <div key={src} className="bg-green-50 rounded-2xl shadow p-2 flex items-center justify-center">
                   {withLightbox({
                     src,
@@ -241,7 +241,7 @@ const StudentAchievements = () => {
             <div className="md:w-1/2 flex justify-center items-center">
               <div className="rounded-xl shadow-lg p-4 bg-white">
                 {withLightbox({
-                  src: '/wow.jpeg',
+                  src: '/STUDENTS ACHIEVENMENT/wow.jpeg',
                   alt: 'P. R. Raksha - Student Achievement',
                   className: 'rounded-xl object-cover w-[260px] h-[320px] max-w-full',
                   style: { objectFit: 'cover' }

@@ -70,7 +70,7 @@ const PrincipalDesk = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <img
-                src="/PERSONS/principal.png"
+                src="/PERSONS/principal.jpg"
                 alt="Mary Vasantha Kumari. J - Principal"
                 className="w-80 h-80 rounded-full object-cover object-top mx-auto lg:mx-0 shadow-2xl border-4 border-white"
                 style={{ objectPosition: 'center top' }}
@@ -78,7 +78,7 @@ const PrincipalDesk = () => {
             </div>
             <div>
               <motion.h2
-                className="text-4xl font-bold text-gray-900 mb-4"
+                className="text-4xl font-bold text-gray-900 mb-2"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
@@ -86,28 +86,24 @@ const PrincipalDesk = () => {
               >
                 Mary Vasantha Kumari. J
               </motion.h2>
+              <p className="text-lg text-blue-700 font-semibold mb-2">M.Phil. (Ed. Psy), M.B.A (Ed. Mgmt), M.Sc. (Psy), B.Ed., SLET (Mgmt).</p>
               <p className="text-xl text-blue-600 font-semibold mb-2">Principal</p>
-              <p className="text-lg text-gray-600 mb-6">St. Britto's Academy</p>
-              <div className="space-y-4 text-gray-700">
-                <p className="text-lg leading-relaxed">
-                  Leading St. Britto's Academy with exceptional vision and dedication, Mary Vasantha Kumari. J brings extensive experience in educational leadership and innovation. Under her guidance, the academy has achieved remarkable recognition and continues to set new standards in holistic education.
-                </p>
-              </div>
-              <div className="mt-8 grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <Award className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <p className="font-semibold text-gray-900">28 Years</p>
-                  <p className="text-sm text-gray-600">Excellence</p>
+              <p className="text-lg text-gray-600 mb-2">St. Britto's Academy</p>
+              <p className="text-lg leading-relaxed mb-6">
+                Leading St. Britto's Academy with exceptional vision and dedication, Mary Vasantha Kumari. J brings extensive experience in educational leadership and innovation. Under her guidance, the academy has achieved remarkable recognition and continues to set new standards in holistic education.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <div className="flex flex-col items-center bg-blue-50 rounded-lg p-4">
+                  <span className="text-3xl mb-2">🎓</span>
+                  <span className="font-semibold text-gray-900">M.Phil., M.Sc., B.Ed.</span>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <Trophy className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <p className="font-semibold text-gray-900">Multiple</p>
-                  <p className="text-sm text-gray-600">Awards</p>
+                <div className="flex flex-col items-center bg-blue-50 rounded-lg p-4">
+                  <span className="text-3xl mb-2">👩‍👧</span>
+                  <span className="font-semibold text-gray-900">Parenting Coach</span>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <Star className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                  <p className="font-semibold text-gray-900">Top CBSE</p>
-                  <p className="text-sm text-gray-600">School</p>
+                <div className="flex flex-col items-center bg-blue-50 rounded-lg p-4">
+                  <span className="text-3xl mb-2">🧭</span>
+                  <span className="font-semibold text-gray-900">Career Guidance Expert</span>
                 </div>
               </div>
             </div>
@@ -116,71 +112,50 @@ const PrincipalDesk = () => {
       </motion.section>
 
       {/* Principal's Message */}
-      <motion.section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Quote className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-            <motion.h2
-              className="text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
-              viewport={{ once: true, amount: 0.7 }}
-            >
-              Principal's Message
-            </motion.h2>
-            <p className="text-xl text-gray-600 mb-8">Welcome to the 28th Year of Excellence at St. Britto's Academy! - where opportunities thrive, innovation flourishes, and excellence is a tradition.</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Message from Principal</h2>
           </div>
-          
-          <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
-            <div className="lg:col-span-1 text-center lg:text-left">
-              <motion.h3
-                className="text-3xl font-bold text-gray-900 mb-2"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-                viewport={{ once: true, amount: 0.7 }}
-              >
-                Mary Vasantha Kumari. J
-              </motion.h3>
-              <p className="text-lg text-gray-600 mb-6">St. Britto's Academy!</p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">Leading St. Britto's Academy! with exceptional vision and dedication, Mary Vasantha Kumari. J brings extensive experience in educational leadership and innovation. Under her guidance, the academy has achieved significant milestones, fostering a culture of academic excellence and holistic development. Her passion for empowering young minds and her commitment to fostering a dynamic learning environment make her an inspirational leader.</p>
+          <div className="bg-white p-8 lg:p-12 rounded-xl shadow-lg">
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <p className="font-bold text-xl text-blue-900 mb-2">Welcome to the 28th Year of Excellence at St. Britto’s Academy!</p>
+              <p>We are immensely delighted to step into our 28th year of academic brilliance at St. Britto’s Academy—a school where opportunities thrive, innovation flourishes, and excellence is a tradition. Our unwavering commitment to holistic education has made us a leading institution, shaping young minds into future-ready, responsible global citizens.</p>
+              <p>With immense gratitude, we acknowledge the support of our dedicated faculty, involved parents, and ambitious students, whose contributions have helped us earn prestigious accolades. Ranked among the top CBSE schools in India by the Centre for Educational Development, New Delhi, St. Britto’s Academy is recognised for its cutting-edge curriculum, aligned with NCERT guidelines. Our emphasis on real-world learning has also earned us the following honours:</p>
+              <ul className="list-disc list-inside ml-4">
+                <li>The ISA Award (2017-2020) by the British Council, for integrating global education within an Indian perspective.</li>
+                <li>Asia Book of Records & Guinness World Record, for our “Reaching Out to Society” initiative, which extends education beyond the classroom and into the community.</li>
+              </ul>
+              <h3 className="font-semibold text-lg text-blue-800 mt-6">Transformational Learning & Innovation</h3>
+              <p>At St. Britto’s Academy, education is more than textbooks—it is about nurturing curiosity, fostering leadership, and developing critical thinking. We integrate mind mapping, concept mapping, and memory techniques to enhance comprehension and retention. Our regular curriculum reviews ensure that our teaching methodologies remain innovative, engaging, and tailored to the evolving needs of students.</p>
+              <p>To further enrich learning, we have introduced:</p>
+              <ul className="list-disc list-inside ml-4">
+                <li>The St. Britto’s 8 Quotients Framework, incorporating 100+ innovative pedagogical practices to ensure holistic development.</li>
+                <li>Advanced reference materials, remedial classes, and specialised education services, ensuring that every student receives individualised academic support.</li>
+              </ul>
+              <h3 className="font-semibold text-lg text-blue-800 mt-6">A Commitment to Holistic Development</h3>
+              <p>Our mission is to shape students into critical thinkers, problem solvers, and ethical leaders. We create opportunities through:</p>
+              <ul className="list-disc list-inside ml-4">
+                <li>Talent Hunt competitions, diverse clubs, and a dynamic sports programme to encourage participation and skill development.</li>
+                <li>A stimulating learning environment, fostering teamwork, creativity, and adaptability to modern technology.</li>
+                <li>A child-centric approach, where every learner’s unique strength and passion are recognised and nurtured.</li>
+              </ul>
+              <p>As Margaret Mead once said, “Children must be taught how to think, not what to think.” At St. Britto’s Academy, we foster a culture of inquiry, imagination, and innovation, allowing students the freedom to question, explore, and discover. We believe in nurturing both heart and mind, as Aristotle rightly stated, “Educating the mind without educating the heart is no education at all.”</p>
+              <p className="font-bold text-lg text-blue-900 mt-6">A Future of Possibilities Awaits!</p>
+              <p>As we embark on this new academic year, we reaffirm our commitment to excellence, inclusivity, and innovation. Our students are the scientists, engineers, researchers, and changemakers of tomorrow—individuals who will not only enhance the quality of life but also contribute to an ethically refined society.</p>
+              <p>We invite you to be a part of this journey—to learn, explore, and grow together at St. Britto’s Academy.</p>
+              <p className="italic">Let’s shape the future, one child at a time!</p>
+              <div className="pt-8 border-t border-gray-200">
+                <p className="font-bold text-blue-700 text-xl mb-0">Warm Regards,</p>
+                <p className="font-bold text-blue-700 text-lg mb-0">Mary Vasantha Kumari,</p>
+                <p className="text-blue-600">Principal,</p>
+                <p className="text-blue-600">St. Britto’s Academy.</p>
               </div>
-              </div>
-              
-          <div className="mb-12 text-center max-w-3xl mx-auto bg-white rounded-xl shadow-md p-8">
-            <div className="prose prose-lg mx-auto text-gray-700 text-center bg-white rounded-xl shadow-md p-8 mt-8">
-              <motion.h3
-                className="text-2xl font-bold text-blue-700 mb-4"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-                viewport={{ once: true, amount: 0.7 }}
-              >
-                Welcome to the 28th Year of Excellence at St. Britto's Academy!
-              </motion.h3>
-            <p className="mb-6">
-                We are immensely delighted to step into our <strong>28th year of academic brilliance</strong> at St. Britto's Academy!—a school where opportunities thrive, innovation flourishes, and excellence is a tradition. Our unwavering commitment to holistic education has made us a leading institution, shaping young minds into compassionate leaders and innovative thinkers.
-            </p>
-            <p className="mb-6">
-              With a rich history spanning nearly three decades, we have consistently adapted to evolving educational landscapes while staying true to our core values. Recognized by the Centre for Educational Development, New Delhi, St. Britto's Academy is recognised for its cutting-edge curriculum, aligned with NCERT guidelines.
-            </p>
-            <p className="mb-6">
-              At St. Britto's Academy, education is more than textbooks—it is about <strong>nurturing curiosity, fostering leadership, and developing critical thinking</strong>. We integrate mind mapping, concept mapping, and experiential learning to encourage students to question, explore, and innovate. Our dedicated faculty, state-of-the-art facilities, and vibrant co-curricular programs ensure a well-rounded educational journey.
-            </p>
-            <p className="mb-6">
-              As Margaret Mead once said, <strong>"Children must be taught how to think, not what to think."</strong> At St. Britto's Academy, we foster a culture of inquiry, imagination, and innovation, allowing students the freedom to question, explore, and discover. We believe in empowering them to become lifelong learners who are adaptable, resilient, and ready to navigate the complexities of the modern world.
-              </p>
-            <p className="mb-6">
-              We invite you to be a part of this journey—to learn, explore, and grow together at St. Britto's Academy.
-            </p>
-            <p className="text-right font-semibold text-xl text-gray-800">Warmly,</p>
-            <p className="text-right font-semibold text-xl text-gray-800">Mary Vasantha Kumari. J</p>
-            <p className="text-right text-blue-600">St. Britto's Academy</p>
+            </div>
           </div>
         </div>
-        </div>
-      </motion.section>
+      </section>
 
       {/* Prestigious Achievements */}
       <motion.section className="py-16 bg-white">

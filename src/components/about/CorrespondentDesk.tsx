@@ -350,7 +350,7 @@ const CorrespondentDesk = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <img
-                src="/DSC00337.JPG"
+                src="/PERSONS/DSC00337.JPG"
                 alt="Dr. Vimala Rani Britto - Correspondent"
                 className="w-80 h-80 rounded-full object-cover mx-auto lg:mx-0 shadow-2xl"
               />
@@ -562,9 +562,9 @@ const CorrespondentDesk = () => {
             </div>
             <div ref={legacyRef} className="legacy-content">
               <img
-                src="/PERSONS/vimala.jpg"
+                src="/correspondant.png"
                 alt="Dr. Vimala Rani Britto - Educational Visionary"
-                className="w-full h-auto rounded-xl shadow-2xl"
+                className="w-full h-auto rounded-xl shadow-2xl object-cover"
               />
             </div>
           </div>

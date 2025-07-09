@@ -122,7 +122,7 @@ const VisionMission = () => {
             <h2 className="text-4xl font-bold mb-6 inter-font">Our Motto</h2>
             <div className="max-w-4xl mx-auto">
               <div className="bg-white bg-opacity-10 p-8 rounded-xl border border-white border-opacity-20">
-                <h3 className="text-3xl font-bold mb-6 inter-font">"Honesty, Commitment, and Prosperity"</h3>
+                <h3 className="text-3xl font-bold mb-6 inter-font">"Honesty, Commitment and Prosperity"</h3>
                 <p className="text-xl text-gray-700 leading-relaxed">
                   These guiding principles serve as the foundation at <span className="revue-font">St. Britto's Academy</span>, shaping students into 
                   compassionate leaders, innovative thinkers, and responsible global citizens ready to make a positive impact on the world.
