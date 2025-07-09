@@ -1,32 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const YoungForum2024Page = () => (
-  <div className="max-w-3xl mx-auto px-4 py-12">
-    <h1 className="text-3xl sm:text-4xl font-bold text-sky-700 mb-6 text-center">Believe You Can – Young Forum 2024</h1>
-    <div className="bg-white rounded-xl shadow-lg p-6 sm:p-10 text-lg text-gray-800 leading-relaxed">
-      <p className="mb-4">
-        On August 2nd, at 9:00 AM, the much-anticipated event commenced with an inaugural function that set a high tone for the day's activities. The ceremony opened with a soulful prayer song, followed by an insightful reading from the scriptures. The formal commencement was marked by the ceremonial lighting of the traditional kuthuvilakku.
-      </p>
-      <p className="mb-4">
-        The program continued with a captivating invocation dance, a warm and welcoming speech, and an inspiring address by the Principal. The Academic Head – Prefects provided detailed instructions and venue information to the participants, ensuring a smooth and organized day. Participants from various schools displayed exceptional enthusiasm and competitiveness throughout the events.
-      </p>
-      <p className="mb-4">
-        The valedictory function took place later that evening, at 3:00 PM, and was graced by esteemed guests including Chief Guest Mr. Racha Aribarg, Royal Thai Consulate General, and Dr. Vimala Rani Britto, Founder of Seek Foundation and Author of the FEFDY curriculum. The event began with a reflective prayer song, setting a thoughtful tone for the proceedings.
-      </p>
-      <p className="mb-4">
-        In his address, Mr. Aribarg highlighted the importance of unity in diversity and encouraged attendees to focus on their goals and aspirations. The highlight of the evening was the award distribution ceremony, where the achievements of the participants were celebrated.
-      </p>
-      <h2 className="text-2xl font-bold text-sky-600 mt-6 mb-2">Award Winners</h2>
-      <ul className="list-disc pl-6 mb-4">
-        <li><span className="font-semibold">St. Britto's Academy</span> – First Place</li>
-        <li><span className="font-semibold">Anitha Methodist MHSS</span> – Second Place</li>
-        <li><span className="font-semibold">DAV Public School</span> – Third Place</li>
-      </ul>
-      <p>
-        The event concluded with the announcement of the overall winners in the Young Forum category, bringing the competition to a successful and joyous close. Congratulations to all participants for their remarkable efforts and achievements!
-      </p>
+const YoungForum2024Page = () => {
+  const [visibleCount, setVisibleCount] = useState(2);
+  const [fadeIn, setFadeIn] = useState(false);
+
+  const imageNames = [
+    'yf2.jpg', 'yf1.jpg'
+  ];
+
+  const images = imageNames.map(name => ({
+    src: `/EVENTS/BELIEVE YOU CAN – YOUNG FORUM 2024/${name}`,
+    alt: name.replace(/-/g, ' ').replace('.jpg', ''),
+  }));
+
+  const handleLoadMore = () => {
+    setFadeIn(false);
+    setTimeout(() => {
+      setVisibleCount((prev) => Math.min(prev + 2, images.length));
+      setFadeIn(true);
+    }, 10);
+  };
+
+  React.useEffect(() => {
+    setFadeIn(true);
+  }, []);
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-12">
+      <h1 className="text-3xl sm:text-4xl font-bold text-sky-700 mb-6 text-center">Young Forum 2024: Believe You Can</h1>
+      
+      {/* Image Gallery Section */}
+      <section className="bg-white rounded-xl shadow-lg p-6 sm:p-10 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {images.slice(0, visibleCount).map((img, idx) => (
+            <div
+              key={img.src}
+              className={`overflow-hidden rounded-lg border-2 transition-shadow duration-300 bg-white ${fadeIn ? 'animate-fade-in' : ''}`}
+              style={{ borderColor: '#0077b6' }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                style={{ borderRadius: '0.5rem' }}
+              />
+            </div>
+          ))}
+        </div>
+        {visibleCount < images.length && (
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={handleLoadMore}
+              className="px-8 py-3 rounded-full font-semibold text-white hover:bg-sky-600 transition-colors duration-300"
+              style={{ background: '#0077b6' }}
+            >
+              Load More
+            </button>
+          </div>
+        )}
+        <style>{`
+          @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: none; }
+          }
+          .animate-fade-in {
+            animation: fade-in 0.7s ease;
+          }
+        `}</style>
+      </section>
+
+      <div className="bg-white rounded-xl shadow-lg p-6 sm:p-10 text-lg text-gray-800 leading-relaxed">
+        <p className="mb-4">
+          The Young Forum 2024, themed "Believe You Can," was an inspiring event that brought together young minds to explore their potential and capabilities. This forum provided a platform for students to engage in meaningful discussions, share their ideas, and develop their leadership skills.
+        </p>
+        <p className="mb-4">
+          The event featured various activities including debates, presentations, and interactive sessions that encouraged students to think critically and express their views confidently. The theme "Believe You Can" emphasized the importance of self-confidence and determination in achieving one's goals.
+        </p>
+        <p>
+          Through this forum, students learned valuable life skills such as public speaking, teamwork, and problem-solving. The event was a great success, leaving participants inspired and motivated to pursue their dreams with confidence and determination.
+        </p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default YoungForum2024Page; 
