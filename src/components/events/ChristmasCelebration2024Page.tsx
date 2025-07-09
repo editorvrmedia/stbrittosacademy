@@ -25,32 +25,66 @@ const ChristmasCelebration2024Page = () => {
     setFadeIn(true);
   }, []);
 
+  const visibleImages = images.slice(0, visibleCount);
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <h1 className="text-3xl sm:text-4xl font-bold text-sky-700 mb-6 text-center">Christmas Celebration 2024</h1>
-      
       {/* Image Gallery Section */}
       <section className="bg-white rounded-xl shadow-lg p-6 sm:p-10 mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-sky-700">
-          Event Gallery
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {images.slice(0, visibleCount).map((img, idx) => (
-            <div
-              key={img.src}
-              className={`overflow-hidden rounded-lg border-2 transition-shadow duration-300 bg-white ${fadeIn ? 'animate-fade-in' : ''}`}
-              style={{ borderColor: '#0077b6' }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-                style={{ borderRadius: '0.5rem' }}
-              />
+        {visibleImages.length === 3 ? (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {visibleImages.slice(0, 2).map((img, idx) => (
+                <div
+                  key={img.src}
+                  className={`overflow-hidden rounded-lg border-2 transition-shadow duration-300 bg-white ${fadeIn ? 'animate-fade-in' : ''}`}
+                  style={{ borderColor: '#0077b6' }}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    style={{ borderRadius: '0.5rem' }}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+            <div className="flex justify-center mt-6">
+              <div
+                className={`overflow-hidden rounded-lg border-2 transition-shadow duration-300 bg-white ${fadeIn ? 'animate-fade-in' : ''}`}
+                style={{ borderColor: '#0077b6', width: '100%', maxWidth: '400px' }}
+              >
+                <img
+                  src={visibleImages[2].src}
+                  alt={visibleImages[2].alt}
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  style={{ borderRadius: '0.5rem' }}
+                />
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {visibleImages.map((img, idx) => (
+              <div
+                key={img.src}
+                className={`overflow-hidden rounded-lg border-2 transition-shadow duration-300 bg-white ${fadeIn ? 'animate-fade-in' : ''}`}
+                style={{ borderColor: '#0077b6' }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  style={{ borderRadius: '0.5rem' }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
         {visibleCount < images.length && (
           <div className="flex justify-center mt-8">
             <button
@@ -72,7 +106,6 @@ const ChristmasCelebration2024Page = () => {
           }
         `}</style>
       </section>
-
       <div className="bg-white rounded-xl shadow-lg p-6 sm:p-10 text-lg text-gray-800 leading-relaxed">
         <p className="mb-4">
           The Christmas Celebration 2024 at St. Britto's Academy was a magical and joyous event that brought the spirit of Christmas to life. This special celebration highlighted the values of love, peace, and giving that are central to the Christmas season.

@@ -18,6 +18,7 @@ const HomePage = () => {
   const [isAdmissionPopupOpen, setIsAdmissionPopupOpen] = useState(false);
   const [isUpcomingEventsAsideOpen, setIsUpcomingEventsAsideOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  const [marqueeDuration, setMarqueeDuration] = useState(20); // seconds
   
   // Refs for GSAP animations - now only for simple animations, not pinning
   const quickAccessRef = useRef<HTMLElement>(null);
@@ -441,9 +442,11 @@ const HomePage = () => {
             <div
               className="flex whitespace-nowrap"
               style={{
-                animation: 'marquee-test 20s linear infinite',
+                animation: `marquee-test ${marqueeDuration}s linear infinite`,
                 minWidth: '200%',
               }}
+              onMouseEnter={() => setMarqueeDuration(60)} // slow down on hover
+              onMouseLeave={() => setMarqueeDuration(20)} // normal speed on leave
             >
               <style>{`
                 @keyframes marquee-test {
