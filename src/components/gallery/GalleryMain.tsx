@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Camera, Calendar, Users, ArrowRight, Play, Image, Video } from 'lucide-react';
+import RecentVideos from './RecentVideos';
+import RecentShorts from './RecentShorts';
 
 const GalleryMain = () => {
   const [selectedType, setSelectedType] = useState('all');
@@ -322,80 +324,11 @@ const GalleryMain = () => {
         )}
       </section>
 
-      {/* Recent Uploads */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Recent Uploads</h2>
-            <Link
-              to="/gallery/photos"
-              className="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center"
-            >
-              View All Photos
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {recentUploads.map((upload, index) => (
-              <div
-                key={index}
-                className="group cursor-pointer"
-                onClick={() => {
-                  if (upload.type === "video") {
-                    // Convert normal YouTube URL to embed with autoplay
-                    const match = upload.videoUrl.match(/(?:youtu.be\/|v=)([\w-]{11})/);
-                    const videoId = match ? match[1] : "";
-                    setRecentLightboxVideoUrl(`https://www.youtube.com/embed/${videoId}?autoplay=1`);
-                    setRecentLightboxOpen(true);
-                  }
-                }}
-              >
-                <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                  <img
-                    src={upload.thumbnail}
-                    alt={upload.title}
-                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  {upload.type === "video" && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300">
-                      <Play className="h-10 w-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                  )}
-                </div>
-                <div className="mt-3">
-                  <h3 className="font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
-                    {upload.title}
-                  </h3>
-                  <p className="text-sm text-gray-500">{upload.date}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* Lightbox for recent uploads */}
-          {recentLightboxOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
-              <div className="relative w-full max-w-3xl aspect-video bg-black rounded-lg overflow-hidden">
-                <button
-                  className="absolute top-2 right-2 z-10 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full"
-                  onClick={() => setRecentLightboxOpen(false)}
-                >
-                  <span className="text-2xl">&times;</span>
-                </button>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={recentLightboxVideoUrl}
-                  title="Recent Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
+      {/* Recent Videos from YouTube */}
+      <RecentVideos />
+
+      {/* Recent Shorts from YouTube */}
+      <RecentShorts />
 
       {/* Gallery Categories */}
       <section className="py-16 bg-gray-50">

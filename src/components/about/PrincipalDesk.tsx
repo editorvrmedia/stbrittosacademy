@@ -90,8 +90,8 @@ const PrincipalDesk = () => {
               <p className="text-xl text-blue-600 font-semibold mb-2">Principal</p>
               <p className="text-lg text-gray-600 mb-2">St. Britto's Academy</p>
               <p className="text-lg leading-relaxed mb-6">
-                Leading St. Britto's Academy with exceptional vision and dedication, Mary Vasantha Kumari. J brings extensive experience in educational leadership and innovation. Under her guidance, the academy has achieved remarkable recognition and continues to set new standards in holistic education.
-              </p>
+                  Leading St. Britto's Academy with exceptional vision and dedication, Mary Vasantha Kumari. J brings extensive experience in educational leadership and innovation. Under her guidance, the academy has achieved remarkable recognition and continues to set new standards in holistic education.
+                </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <div className="flex flex-col items-center bg-blue-50 rounded-lg p-4">
                   <span className="text-3xl mb-2">🎓</span>
@@ -152,7 +152,7 @@ const PrincipalDesk = () => {
                 <p className="text-blue-600">Principal,</p>
                 <p className="text-blue-600">St. Britto’s Academy.</p>
               </div>
-            </div>
+              </div>
           </div>
         </div>
       </section>
