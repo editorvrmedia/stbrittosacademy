@@ -22,7 +22,31 @@ const Admissions = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your inquiry! We will contact you within 24 hours.');
+    
+    // Create email content with form data
+    const subject = 'New Admission Inquiry - St. Britto\'s Academy';
+    const body = `
+New Admission Inquiry
+
+Parent/Guardian Name: ${formData.parentName}
+Student Name: ${formData.studentName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Grade Level: ${formData.grade}
+Additional Message: ${formData.message}
+
+---
+This inquiry was submitted through the St. Britto's Academy website.
+    `.trim();
+
+    // Create mailto link
+    const mailtoLink = `mailto:gopinath.r@stbrittosacademy.edu.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open default email client
+    window.open(mailtoLink);
+    
+    alert('Thank you for your inquiry! Your email client will open with the details pre-filled. Please send the email to complete your inquiry.');
+    
     setFormData({
       parentName: '',
       studentName: '',
