@@ -94,57 +94,49 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
               <X className="h-6 w-6" />
             </button>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-3">
+          <form 
+            action="https://docs.google.com/forms/d/e/1FAIpQLSezQNOc9en-cUWn73ePppMlfmnH7X_0Ygn7D32cuK1zWRaUFQ/formResponse" 
+            method="POST" 
+            target="hidden_iframe"
+            className="space-y-3"
+          >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-1">Name <span className="text-red-300">*</span></label>
-              <input
-                type="text"
-                id="name"
-                name="name" 
+              <label htmlFor="entry.1940558930" className="block text-sm font-medium mb-1">Name <span className="text-red-300">*</span></label>
+              <input 
+                type="text" 
+                name="entry.1940558930" 
+                id="entry.1940558930"
+                placeholder="Your Name" 
                 required
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                placeholder="Your Name"
-                autoComplete="name"
-                onInput={handleInput}
               />
             </div>
             <div>
-              <label htmlFor="contactNo" className="block text-sm font-medium mb-1">Contact no <span className="text-red-300">*</span></label>
-              <input
-                type="tel"
-                id="contactNo" 
-                name="contactNo" 
+              <label htmlFor="entry.607470366" className="block text-sm font-medium mb-1">Contact no <span className="text-red-300">*</span></label>
+              <input 
+                type="text" 
+                name="entry.607470366" 
+                id="entry.607470366"
+                placeholder="Your Contact Number" 
                 required
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                placeholder="Your Contact Number"
-                autoComplete="tel"
-                onInput={handleInput}
               />
             </div>
             <div>
-              <label htmlFor="grade" className="block text-sm font-medium mb-1">Choose your grade <span className="text-red-300">*</span></label>
-              <select
-                id="grade"
-                name="grade" 
+              <label htmlFor="entry.1262789795" className="block text-sm font-medium mb-1">Choose your grade <span className="text-red-300">*</span></label>
+              <select 
+                name="entry.1262789795" 
+                id="entry.1262789795"
                 required
-                value={selectedGrade}
-                onChange={(e) => { setSelectedGrade(e.target.value); handleInput(); }}
                 className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white focus:ring-2 focus:ring-blue-400 focus:border-transparent"
               >
+                <option value="">Choose your grade</option>
                 <option value="Pre School">Pre School</option>
-                <option value="Pre-KG">Pre-KG</option>
                 <option value="LKG">LKG</option>
                 <option value="UKG">UKG</option>
-                <option value="Class I">Class I</option>
-                <option value="Class II">Class II</option>
-                <option value="Class III">Class III</option>
-                <option value="Class IV">Class IV</option>
-                <option value="Class V">Class V</option>
-                <option value="Class VI">Class VI</option>
-                <option value="Class VII">Class VII</option>
-                <option value="Class VIII">Class VIII</option>
-                <option value="Class IX">Class IX</option>
-                <option value="Class XI">Class XI</option>
+                <option value="Grade 1">Grade 1</option>
+                <option value="Grade 2">Grade 2</option>
+                {/* Add more options as needed */}
               </select>
             </div>
             <button
@@ -154,6 +146,7 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
               Submit
             </button>
           </form>
+          <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
         </div>
       </div>
     </div>

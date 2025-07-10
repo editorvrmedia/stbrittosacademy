@@ -115,18 +115,11 @@ const Blog = () => {
           {/* Featured Blog Links */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/blog/principal"
+              to="/blog/student"
               className="bg-white bg-opacity-10 hover:bg-opacity-20 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center"
             >
               <Users className="mr-2 h-5 w-5" />
-              Principal's Blog
-            </Link>
-            <Link
-              to="/blog/vice-principal"
-              className="bg-white bg-opacity-10 hover:bg-opacity-20 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center"
-            >
-              <BookOpen className="mr-2 h-5 w-5" />
-              Vice Principal's Blog
+              Student Blog
             </Link>
           </div>
         </div>
@@ -227,60 +220,33 @@ const Blog = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Blog Series</h2>
-            <p className="text-xl text-gray-600">Exclusive insights from our school leadership</p>
+            <p className="text-xl text-gray-600">Stories and insights from our students</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="max-w-4xl mx-auto">
             <Link
-              to="/blog/principal"
-              className="group bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300"
+              to="/blog/student"
+              className="group bg-gradient-to-r from-green-50 to-green-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300 block"
             >
               <div className="flex items-center mb-6">
                 <img
-                  src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                  alt="Dr. Sarah Johnson"
+                  src="https://images.pexels.com/photos/8471709/pexels-photo-8471709.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+                  alt="Student Blog"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
-                    Principal's Blog
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-green-700 transition-colors duration-300">
+                    Student Blog
                   </h3>
-                  <p className="text-blue-600">Dr. Sarah Johnson</p>
+                  <p className="text-green-600">Student Perspectives</p>
                 </div>
               </div>
               <p className="text-gray-700 mb-4">
-                Insights on educational leadership, innovation in teaching, and the future of learning. 
-                Discover the vision and philosophy that guides our institution.
+                Discover authentic stories, experiences, and insights from our students. 
+                Read about their academic journeys, achievements, and life at St. Britto's Academy.
               </p>
-              <div className="flex items-center text-blue-600 group-hover:text-blue-700 font-semibold">
-                Read Principal's Posts
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </div>
-            </Link>
-            
-            <Link
-              to="/blog/vice-principal"
-              className="group bg-gradient-to-r from-teal-50 to-teal-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300"
-            >
-              <div className="flex items-center mb-6">
-                <img
-                  src="https://images.pexels.com/photos/2182969/pexels-photo-2182969.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
-                  alt="Prof. Michael Chen"
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-teal-700 transition-colors duration-300">
-                    Vice Principal's Blog
-                  </h3>
-                  <p className="text-teal-600">Prof. Michael Chen</p>
-                </div>
-              </div>
-              <p className="text-gray-700 mb-4">
-                Perspectives on student development, academic support, and innovative teaching practices. 
-                Learn about our student-centered approach to education.
-              </p>
-              <div className="flex items-center text-teal-600 group-hover:text-teal-700 font-semibold">
-                Read Vice Principal's Posts
+              <div className="flex items-center text-green-600 group-hover:text-green-700 font-semibold">
+                Read Student Posts
                 <ArrowRight className="ml-2 h-4 w-4" />
               </div>
             </Link>

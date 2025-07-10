@@ -123,7 +123,8 @@ const Header = () => {
       hasDropdown: true,
       subPages: [
         { name: 'Photos', href: '/gallery/photos' },
-        { name: 'Videos', href: '/gallery/videos' }
+        { name: 'Videos', href: '/gallery/videos' },
+        { name: 'Upcoming Events', href: '/gallery/upcoming-events' }
       ]
     },
     { 
@@ -132,8 +133,7 @@ const Header = () => {
       hasDropdown: true,
       subPages: [
         { name: 'All Posts', href: '/blog' },
-        { name: 'Principal\'s Blog', href: '/blog/principal' },
-        { name: 'Vice Principal\'s Blog', href: '/blog/vice-principal' }
+        { name: 'Student Blog', href: '/blog/student' }
       ]
     },
     { 

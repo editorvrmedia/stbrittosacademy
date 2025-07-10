@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, ChevronLeft, ChevronRight, Camera, Video, Image, ArrowRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Camera, Video, Image, ArrowRight, Calendar } from 'lucide-react';
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -128,6 +128,13 @@ const Gallery = () => {
             >
               <Camera className="h-5 w-5 mr-2" />
               Video Collections
+            </Link>
+            <Link
+              to="/gallery/upcoming-events"
+              className="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center"
+            >
+              <Calendar className="h-5 w-5 mr-2" />
+              Upcoming Events
             </Link>
           </div>
         </div>

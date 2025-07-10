@@ -37,9 +37,9 @@ import CodeOfConduct from './components/admissions/CodeOfConduct';
 import Gallery from './components/Gallery';
 import Photos from './components/gallery/Photos';
 import GalleryMain from './components/gallery/GalleryMain';
+import UpcomingEvents from './components/gallery/UpcomingEvents';
 import Blog from './components/Blog';
-import PrincipalBlog from './components/blog/PrincipalBlog';
-import VicePrincipalBlog from './components/blog/VicePrincipalBlog';
+import StudentBlog from './components/blog/StudentBlog';
 import Careers from './components/Careers';
 import ApplyForPost from './components/careers/ApplyForPost';
 import TeacherERPLogin from './components/login/TeacherERPLogin';
@@ -327,9 +327,9 @@ function App() {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/gallery/photos" element={<Photos />} />
               <Route path="/gallery/videos" element={<GalleryMain />} />
+              <Route path="/gallery/upcoming-events" element={<UpcomingEvents />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/principal" element={<PrincipalBlog />} />
-              <Route path="/blog/vice-principal" element={<VicePrincipalBlog />} />
+              <Route path="/blog/student" element={<StudentBlog />} />
               <Route path="/careers" element={<Careers />} />
               <Route path="/careers/apply" element={<ApplyForPost />} />
               <Route path="/login/teacher-erp" element={<TeacherERPLogin />} />
