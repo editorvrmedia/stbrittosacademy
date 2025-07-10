@@ -16,16 +16,8 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       }
     };
 
-    let timer: ReturnType<typeof setTimeout> | undefined;
-
     try {
       window.addEventListener('keydown', handleKeyDown);
-      
-      if (!hasTyped) {
-        timer = setTimeout(() => {
-          onClose();
-        }, 10000);
-      }
     } catch (error) {
       console.error('AdmissionPopup event listener error:', error);
     }
@@ -33,12 +25,11 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
     return () => {
       try {
         window.removeEventListener('keydown', handleKeyDown);
-        if (timer) clearTimeout(timer);
       } catch (error) {
         console.error('AdmissionPopup cleanup error:', error);
       }
     };
-  }, [isOpen, onClose, hasTyped]);
+  }, [isOpen, onClose]);
 
   const handleInput = () => {
     setHasTyped(true);
@@ -84,51 +75,32 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
 
         {/* Right Section - Admission Form */}
         <div className="md:w-1/2 bg-blue-600 p-3 sm:p-4 text-white flex flex-col justify-center">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-bold text-left whitespace-nowrap">Admission Open for 2025-26</h2>
-            <button
-              onClick={onClose}
-              className="text-white hover:text-gray-200 focus:outline-none ml-4"
-              aria-label="Close popup"
+          <div style={{ padding: '2rem', background: '#f0f8ff', color: '#222', borderRadius: '8px' }}>
+            <h2 style={{ color: '#222', marginBottom: '1rem' }}>📄 Admission Form Test</h2>
+            <form
+              action="https://docs.google.com/forms/d/e/1FAIpQLSezQNOc9en-cUWn73ePppMlfmnH7X_0Ygn7D32cuK1zWRaUFQ/formResponse"
+              method="POST"
+              target="hidden_iframe"
+              style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '400px' }}
             >
-              <X className="h-6 w-6" />
-            </button>
-          </div>
-          <form 
-            action="https://docs.google.com/forms/d/e/1FAIpQLSezQNOc9en-cUWn73ePppMlfmnH7X_0Ygn7D32cuK1zWRaUFQ/formResponse" 
-            method="POST" 
-            target="hidden_iframe"
-            className="space-y-3"
-          >
-            <div>
-              <label htmlFor="entry.1940558930" className="block text-sm font-medium mb-1">Name <span className="text-red-300">*</span></label>
-              <input 
-                type="text" 
-                name="entry.1940558930" 
-                id="entry.1940558930"
-                placeholder="Your Name" 
+              <input
+                type="text"
+                name="entry.1940558930"
+                placeholder="Your Name"
                 required
-                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
               />
-            </div>
-            <div>
-              <label htmlFor="entry.607470366" className="block text-sm font-medium mb-1">Contact no <span className="text-red-300">*</span></label>
-              <input 
-                type="text" 
-                name="entry.607470366" 
-                id="entry.607470366"
-                placeholder="Your Contact Number" 
+              <input
+                type="text"
+                name="entry.607470366"
+                placeholder="Your Contact Number"
                 required
-                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
               />
-            </div>
-            <div>
-              <label htmlFor="entry.1262789795" className="block text-sm font-medium mb-1">Choose your grade <span className="text-red-300">*</span></label>
-              <select 
-                name="entry.1262789795" 
-                id="entry.1262789795"
+              <select
+                name="entry.1262789795"
                 required
-                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
               >
                 <option value="">Choose your grade</option>
                 <option value="Pre School">Pre School</option>
@@ -136,17 +108,13 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
                 <option value="UKG">UKG</option>
                 <option value="Grade 1">Grade 1</option>
                 <option value="Grade 2">Grade 2</option>
-                {/* Add more options as needed */}
               </select>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-white text-blue-600 font-semibold py-2 rounded-md hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-            >
-              Submit
-            </button>
-          </form>
-          <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
+              <button type="submit" style={{ padding: '0.75rem', borderRadius: '4px', background: '#4f46e5', color: '#fff', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>
+                Submit
+              </button>
+            </form>
+            <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
+          </div>
         </div>
       </div>
     </div>
