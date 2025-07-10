@@ -6,6 +6,8 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
   const [selectedGrade, setSelectedGrade] = useState('Pre School');
   const [hasTyped, setHasTyped] = useState(false);
   const navigate = useNavigate();
+  const [submitting, setSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -16,8 +18,16 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       }
     };
 
+    let timer: ReturnType<typeof setTimeout> | undefined;
+
     try {
       window.addEventListener('keydown', handleKeyDown);
+      
+      if (!hasTyped) {
+        timer = setTimeout(() => {
+          onClose();
+        }, 10000);
+      }
     } catch (error) {
       console.error('AdmissionPopup event listener error:', error);
     }
@@ -25,26 +35,52 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
     return () => {
       try {
         window.removeEventListener('keydown', handleKeyDown);
+        if (timer) clearTimeout(timer);
       } catch (error) {
         console.error('AdmissionPopup cleanup error:', error);
       }
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, hasTyped]);
 
   const handleInput = () => {
     setHasTyped(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log({
-      name: (e.target as any).name.value,
-      contactNo: (e.target as any).contactNo.value,
-      grade: selectedGrade,
-    });
-    alert('Admission inquiry submitted!');
-    onClose(); // Call the onClose prop when form is submitted
+    setSubmitting(true);
+    setSubmitMessage(null);
+    const form = e.target as any;
+    const name = form.name.value;
+    const contactNo = form.contactNo.value;
+    const grade = form.grade.value;
+
+    try {
+      const res = await fetch('http://localhost:5000/api/admission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email: '', // No email field in form, can add if needed
+          phone: contactNo,
+          message: `Grade: ${grade}`
+        })
+      });
+      if (res.ok) {
+        setSubmitMessage('Admission inquiry submitted successfully!');
+        setTimeout(() => {
+          setSubmitMessage(null);
+          setSubmitting(false);
+          onClose();
+        }, 2000);
+      } else {
+        setSubmitMessage('Failed to submit. Please try again.');
+        setSubmitting(false);
+      }
+    } catch (err) {
+      setSubmitMessage('Failed to submit. Please try again.');
+      setSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -75,46 +111,82 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
 
         {/* Right Section - Admission Form */}
         <div className="md:w-1/2 bg-blue-600 p-3 sm:p-4 text-white flex flex-col justify-center">
-          <div style={{ padding: '2rem', background: '#f0f8ff', color: '#222', borderRadius: '8px' }}>
-            <h2 style={{ color: '#222', marginBottom: '1rem' }}>📄 Admission Form Test</h2>
-            <form
-              action="https://docs.google.com/forms/d/e/1FAIpQLSezQNOc9en-cUWn73ePppMlfmnH7X_0Ygn7D32cuK1zWRaUFQ/formResponse"
-              method="POST"
-              target="hidden_iframe"
-              style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '400px' }}
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold text-left whitespace-nowrap">Admission Open for 2025-26</h2>
+            <button
+              onClick={onClose}
+              className="text-white hover:text-gray-200 focus:outline-none ml-4"
+              aria-label="Close popup"
             >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium mb-1">Name <span className="text-red-300">*</span></label>
               <input
                 type="text"
-                name="entry.1940558930"
+                id="name"
+                name="name" 
+                required
+                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                 placeholder="Your Name"
-                required
-                style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
+                autoComplete="name"
+                onInput={handleInput}
               />
+            </div>
+            <div>
+              <label htmlFor="contactNo" className="block text-sm font-medium mb-1">Contact no <span className="text-red-300">*</span></label>
               <input
-                type="text"
-                name="entry.607470366"
+                type="tel"
+                id="contactNo" 
+                name="contactNo" 
+                required
+                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
                 placeholder="Your Contact Number"
-                required
-                style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
+                autoComplete="tel"
+                onInput={handleInput}
               />
+            </div>
+            <div>
+              <label htmlFor="grade" className="block text-sm font-medium mb-1">Choose your grade <span className="text-red-300">*</span></label>
               <select
-                name="entry.1262789795"
+                id="grade"
+                name="grade" 
                 required
-                style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
+                value={selectedGrade}
+                onChange={(e) => { setSelectedGrade(e.target.value); handleInput(); }}
+                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white focus:ring-2 focus:ring-blue-400 focus:border-transparent"
               >
-                <option value="">Choose your grade</option>
                 <option value="Pre School">Pre School</option>
+                <option value="Pre-KG">Pre-KG</option>
                 <option value="LKG">LKG</option>
                 <option value="UKG">UKG</option>
-                <option value="Grade 1">Grade 1</option>
-                <option value="Grade 2">Grade 2</option>
+                <option value="Class I">Class I</option>
+                <option value="Class II">Class II</option>
+                <option value="Class III">Class III</option>
+                <option value="Class IV">Class IV</option>
+                <option value="Class V">Class V</option>
+                <option value="Class VI">Class VI</option>
+                <option value="Class VII">Class VII</option>
+                <option value="Class VIII">Class VIII</option>
+                <option value="Class IX">Class IX</option>
+                <option value="Class XI">Class XI</option>
               </select>
-              <button type="submit" style={{ padding: '0.75rem', borderRadius: '4px', background: '#4f46e5', color: '#fff', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>
-                Submit
-              </button>
-            </form>
-            <iframe name="hidden_iframe" style={{ display: 'none' }}></iframe>
-          </div>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-white text-blue-600 font-semibold py-2 rounded-md hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+              disabled={submitting}
+            >
+              {submitting ? 'Submitting...' : 'Submit'}
+            </button>
+            {submitMessage && (
+              <p className={`mt-2 text-center ${submitMessage.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
+                {submitMessage}
+              </p>
+            )}
+          </form>
         </div>
       </div>
     </div>
