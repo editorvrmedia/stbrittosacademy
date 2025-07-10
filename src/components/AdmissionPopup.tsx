@@ -121,72 +121,18 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
               <X className="h-6 w-6" />
             </button>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-1">Name <span className="text-red-300">*</span></label>
-              <input
-                type="text"
-                id="name"
-                name="name" 
-                required
-                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                placeholder="Your Name"
-                autoComplete="name"
-                onInput={handleInput}
-              />
-            </div>
-            <div>
-              <label htmlFor="contactNo" className="block text-sm font-medium mb-1">Contact no <span className="text-red-300">*</span></label>
-              <input
-                type="tel"
-                id="contactNo" 
-                name="contactNo" 
-                required
-                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white placeholder-blue-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-                placeholder="Your Contact Number"
-                autoComplete="tel"
-                onInput={handleInput}
-              />
-            </div>
-            <div>
-              <label htmlFor="grade" className="block text-sm font-medium mb-1">Choose your grade <span className="text-red-300">*</span></label>
-              <select
-                id="grade"
-                name="grade" 
-                required
-                value={selectedGrade}
-                onChange={(e) => { setSelectedGrade(e.target.value); handleInput(); }}
-                className="w-full p-2 rounded-md bg-blue-700 border border-blue-800 text-white focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-              >
-                <option value="Pre School">Pre School</option>
-                <option value="Pre-KG">Pre-KG</option>
-                <option value="LKG">LKG</option>
-                <option value="UKG">UKG</option>
-                <option value="Class I">Class I</option>
-                <option value="Class II">Class II</option>
-                <option value="Class III">Class III</option>
-                <option value="Class IV">Class IV</option>
-                <option value="Class V">Class V</option>
-                <option value="Class VI">Class VI</option>
-                <option value="Class VII">Class VII</option>
-                <option value="Class VIII">Class VIII</option>
-                <option value="Class IX">Class IX</option>
-                <option value="Class XI">Class XI</option>
-              </select>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-white text-blue-600 font-semibold py-2 rounded-md hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-              disabled={submitting}
-            >
-              {submitting ? 'Submitting...' : 'Submit'}
-            </button>
-            {submitMessage && (
-              <p className={`mt-2 text-center ${submitMessage.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
-                {submitMessage}
-              </p>
-            )}
-          </form>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSezQNOc9en-cUWn73ePppMlfmnH7X_0Ygn7D32cuK1zWRaUFQ/viewform?embedded=true"
+            width="100%"
+            height="600"
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+            title="Admission Form"
+            style={{ background: 'white', borderRadius: '8px' }}
+          >
+            Loading…
+          </iframe>
         </div>
       </div>
     </div>
