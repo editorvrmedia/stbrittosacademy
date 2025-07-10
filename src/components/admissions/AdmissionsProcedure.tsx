@@ -1,171 +1,49 @@
-import React, { useState } from 'react';
-import { FileText, Calendar, Users, CheckCircle, Clock, Phone, Mail, MapPin } from 'lucide-react';
+import React from 'react';
+import { FileText, Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const AdmissionsProcedure = () => {
-  const [showForm, setShowForm] = useState(false);
-
-  const [form, setForm] = useState({
-    school: 'ST. BRITTO\'S ACADEMY',
-    class: '',
-    name: '',
-    dob: '',
-    mobile: '',
-    email: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleReset = () => {
-    setForm({
-      school: 'ST. BRITTO\'S ACADEMY',
-      class: '',
-      name: '',
-      dob: '',
-      mobile: '',
-      email: '',
-    });
-  };
-
-  if (showForm) {
-    return (
-      <div className="w-full max-w-lg mx-auto px-4 py-12 bg-white rounded-lg shadow-md">
-        <div className="flex flex-col items-center mb-6">
-          <img src="/LOGOS/sba-logo.png" alt="St. Britto's Academy Logo" className="h-24 mb-2" />
-          <h2 className="text-xl font-bold text-blue-800 text-center">ONLINE APPLICATION (2025-2026)</h2>
-        </div>
-        <form className="space-y-4">
-          <div className="flex items-center justify-between">
-            <label className="font-semibold">School applying for<span className="text-red-500">*</span></label>
-            <select name="school" value={form.school} onChange={handleChange} className="border rounded px-2 py-1 w-1/2">
-              <option value="ST. BRITTO'S ACADEMY">ST. BRITTO'S ACADEMY</option>
-            </select>
-          </div>
-          <div className="flex items-center justify-between">
-            <label className="font-semibold">Class applying for<span className="text-red-500">*</span></label>
-            <select name="class" value={form.class} onChange={handleChange} className="border rounded px-2 py-1 w-1/2">
-              <option value="">Select Class</option>
-              <option value="Pre-KG">Pre-KG</option>
-              <option value="LKG">LKG</option>
-              <option value="UKG">UKG</option>
-              <option value="I">I</option>
-              <option value="II">II</option>
-              <option value="III">III</option>
-              <option value="IV">IV</option>
-              <option value="V">V</option>
-              <option value="VI">VI</option>
-              <option value="VII">VII</option>
-              <option value="VIII">VIII</option>
-              <option value="IX">IX</option>
-              <option value="XI">XI</option>
-            </select>
-          </div>
-          <div className="flex items-center justify-between">
-            <label className="font-semibold">Name of the Applicant (As per valid ID Proof)<span className="text-red-500">*</span></label>
-            <input name="name" value={form.name} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="name" />
-          </div>
-          <div className="flex items-center justify-between">
-            <label className="font-semibold">Date of Birth<span className="text-red-500">[DD-MM-YYYY]</span> *</label>
-            <input name="dob" type="date" value={form.dob} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="bday" />
-          </div>
-          <div className="flex items-center justify-between">
-            <label className="font-semibold">Father/Mother/Guardian Mobile No.<span className="text-red-500">*</span></label>
-            <input name="mobile" value={form.mobile} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="tel" />
-          </div>
-          <div className="flex items-center justify-between">
-            <label className="font-semibold">Father/Mother/Guardian Email-Id<span className="text-red-500">*</span></label>
-            <input name="email" value={form.email} onChange={handleChange} className="border rounded px-2 py-1 w-1/2" autoComplete="email" />
-          </div>
-          <div className="flex justify-center gap-4 pt-4">
-            <button type="button" className="bg-blue-900 text-white px-6 py-2 rounded" onClick={() => alert('Application submitted!')}>Apply</button>
-            <button type="button" className="bg-blue-900 text-white px-6 py-2 rounded" onClick={handleReset}>Reset</button>
-            <button type="button" className="bg-blue-900 text-white px-6 py-2 rounded" onClick={() => setShowForm(false)}>Back</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
-
+  const navigate = useNavigate();
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-12">
-      <h1 className="text-2xl font-bold text-blue-900 mb-4 text-center">ONLINE APPLICATION PORTAL</h1>
-      <p className="mb-4 text-center text-blue-700">Dear Applicant, Welcome to St.Britto's Group of Institutions Online Application Portal for the academic year 2025-2026.</p>
-      <div className="mb-4 flex justify-center gap-2">
-        <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded mr-2" onClick={() => setShowForm(true)}>NEW APPLICANT</button>
-        <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">REGISTERED APPLICANT</button>
+    <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-sky-100 py-16 px-2 flex flex-col items-center">
+      {/* Header Section */}
+      <div className="w-full max-w-3xl text-center mb-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 drop-shadow-sm">Admission Procedure</h1>
+        <p className="text-lg md:text-xl text-blue-800 font-medium mb-2">St.Britto’s Academy welcomes all deserving and meritorious students, irrespective of caste and creed. The Management is not particular about the qualifications and background of the parent. We stand proud stepping into the 25th year, seeking inspiration from our achievement and continuing the quest for excellence.</p>
       </div>
-      <h2 className="text-lg font-semibold mb-2 text-center text-blue-800">Steps to procure Online Application Form:</h2>
-      <ol className="list-decimal list-inside mb-4 space-y-2">
-        <li>
-          <strong>Step 1: Register</strong>
-          <ul className="list-disc list-inside ml-6">
-            <li>Click "New Applicant" and register with your mobile number and email ID</li>
-            <li>Ensure Name of the student and Date of Birth is as per valid ID proof</li>
-            <li>Mobile Number is mandatory for online Application</li>
+
+      {/* Card Section */}
+      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 mb-10 border border-blue-100">
+        <div className="flex items-center mb-4">
+          <FileText className="h-7 w-7 text-sky-500 mr-2" />
+          <h2 className="text-2xl font-bold text-blue-800">Offline Admission</h2>
+        </div>
+        <ul className="list-disc pl-6 text-gray-700 space-y-3 text-base">
+          <li>The student should satisfy the age rule: <span className="font-semibold">3 yrs</span> for Pre-Kg, <span className="font-semibold">4 yrs</span> for LKG, <span className="font-semibold">5 yrs</span> for UKG, <span className="font-semibold">5+</span> for I Std as on <span className="font-semibold">31st May</span> of the year of admission.</li>
+          <li>The application cost is <span className="font-semibold">Rs 750 /-</span> (Rupees Seven hundred and fifty only). Parents seeking admission to their ward should obtain the application form from the office.</li>
+          <li>The duly completed application form should be submitted within <span className="font-semibold">three days</span>.</li>
+          <li>The following documents have to be submitted along with the filled application:</li>
+          <ul className="list-disc pl-8 text-gray-600 space-y-1 text-sm">
+            <li>Photocopy of the Birth Certificate, Community Certificate, Aadhar card, and original copy of the Transfer Certificate.</li>
+            <li>Recently taken passport size color photograph (3 nos).</li>
+            <li>Overseas students, non-resident Indians holding passports should submit a photocopy of the passport for verification.</li>
           </ul>
-          <div className="mt-2">
-            <strong>Age Criteria to Register</strong>
-            <table className="min-w-full mt-2 mb-2 text-sm border mx-auto">
-              <thead>
-                <tr className="bg-sky-100">
-                  <th className="border px-2 py-1">Class</th>
-                  <th className="border px-2 py-1">Age Criteria</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="border px-2 py-1">Pre-KG</td>
-                  <td className="border px-2 py-1">Should complete three years by April 1st of the admission year.</td>
-                </tr>
-                <tr>
-                  <td className="border px-2 py-1">LKG</td>
-                  <td className="border px-2 py-1">Should complete four years by April 1st of the admission year.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </li>
-        <li>
-          <strong>Step 2: Pay online</strong>
-          <ul className="list-disc list-inside ml-6">
-            <li>Pay the Application fee online using Debit/Credit card/Net banking/UPI</li>
-            <li>Application Number, Unique user ID & password will be sent to the registered email ID / mobile number</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Step 3: Submit</strong>
-          <ul className="list-disc list-inside ml-6">
-            <li>Submit the Online Application Form within 3 working days from the date of procurement.</li>
-            <li>Log in using your unique user ID & password in the online portal home page or through the link received via email / SMS</li>
-            <li>Fill in all the fields. Fields marked with * are mandatory</li>
-            <li>Upload the Enclosures/Documents (file size should not exceed 200 KB; upload as .jpg/.gif,.jpeg,.png,.pdf only)</li>
-          </ul>
-          <div className="mt-2">
-            <strong>Note:</strong> The uploaded documents will be auto saved as applicant name_attachment type
-            <ul className="list-disc list-inside ml-6 mt-1">
-              <li>Recent Passport size photograph*</li>
-              <li>Birth Certificate*</li>
-              <li>Residential Proof</li>
-              <li>Parent's Employment ID Card /Business Card</li>
-              <li>Community Certificate (mandatory for communities other than General)</li>
-              <li>Applicant Aadhaar Card</li>
-              <li>Recent Report card/Mark statement/Equivalence Certificate</li>
-              <li>Passport and Visa (For Foreign Nationals only)</li>
-              <li>OCI/PIO Card (For Foreign Nationals only)</li>
-              <li>Medical Certificate / Doctor's prescription (For medical ailments, if any)</li>
-            </ul>
-          </div>
-          <ul className="list-disc list-inside ml-6 mt-2">
-            <li>You may not be allowed to edit the Application after final submission. Print the Application Form for reference</li>
-            <li><strong>Note:</strong> Online Application Form is non-transferable, non-refundable and the unique Application number is not valid for any other current year or in future. Incomplete Application Form will not be processed.</li>
-          </ul>
-          <div className="mt-2">
-            <strong>Instructions to Compress Enclosures/Documents</strong>
-            <p className="text-xs mt-1">To compress all pictures of Enclosures/Documents of size less than 200KB, Open Microsoft Office Picture Manager &gt; Select Picture &gt; Compress Pictures &gt; Select compress for Web pages and click OK. Save the file.</p>
-          </div>
-        </li>
-      </ol>
+          <li>The entrance test will be conducted in <span className="font-semibold">Languages and Mathematics</span> for those seeking admission to Standards III-IX and <span className="font-semibold">merit is the ONLY CRITERION</span> for admission.</li>
+        </ul>
+      </div>
+
+      {/* Online Admission Button */}
+      <div className="flex flex-col items-center gap-2">
+        <a
+          href="/admissions/online-admission"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold text-xl px-10 py-4 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-sky-200 text-center"
+        >
+          Online Admission
+        </a>
+        <span className="text-sm text-blue-700 mt-1 flex items-center gap-1"><Mail className="h-4 w-4 inline-block" /> For queries: <a href="mailto:admin@stbrittosacademy.edu.in" className="underline hover:text-blue-900">admin@stbrittosacademy.edu.in</a></span>
+      </div>
     </div>
   );
 };

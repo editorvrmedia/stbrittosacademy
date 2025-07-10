@@ -16,7 +16,6 @@ const Footer = () => {
 
   const resources = [
     { name: 'Gallery', href: '/gallery' },
-    { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
     { name: 'Login', href: '/login' }
   ];

@@ -132,7 +132,6 @@ const Header = () => {
       href: '/blog',
       hasDropdown: true,
       subPages: [
-        { name: 'All Posts', href: '/blog' },
         { name: 'Student Blog', href: '/blog/student' }
       ]
     },
@@ -164,7 +163,7 @@ const Header = () => {
   const isAdmissionsActive = () => location.pathname.startsWith('/admissions');
   const isGalleryActive = () => location.pathname.startsWith('/gallery');
   const isCareersActive = () => location.pathname.startsWith('/careers');
-  const isBlogActive = () => location.pathname.startsWith('/blog');
+  const isBlogActive = () => location.pathname.startsWith('/blog/student');
   const isMandatoryActive = () => location.pathname.startsWith('/about/mandatory-disclosure');
 
   const handleStudentLogin = () => {

@@ -68,6 +68,8 @@ import YoungForum2023Page from './components/events/YoungForum2023Page';
 import ArrayOfSumptuousness2023Page from './components/events/ArrayOfSumptuousness2023Page';
 import InvestitureCeremony2023Page from './components/events/InvestitureCeremony2023Page';
 import ZestRegalia2023Page from './components/events/ZestRegalia2023Page';
+import OnlineAdmissionProcedure from './components/admissions/OnlineAdmissionProcedure';
+import OnlineApplicationForm from './components/admissions/OnlineApplicationForm';
 
 function ScrollProgressBar() {
   const [scroll, setScroll] = useState(0);
@@ -264,7 +266,7 @@ function App() {
   const location = useLocation();
 
   // Paths where header/footer should be hidden
-  const standalonePaths = ['/teacher-login', '/student-login'];
+  const standalonePaths = ['/teacher-login', '/student-login', '/admissions/online-admission'];
   const isStandalone = standalonePaths.includes(location.pathname);
 
   useEffect(() => {
@@ -324,6 +326,8 @@ function App() {
               <Route path="/admissions" element={<Admissions />} />
               <Route path="/admissions/procedure" element={<AdmissionsProcedure />} />
               <Route path="/admissions/code-of-conduct" element={<CodeOfConduct />} />
+              <Route path="/admissions/online-admission" element={<OnlineAdmissionProcedure />} />
+              <Route path="/admissions/online-application-form" element={<OnlineApplicationForm />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/gallery/photos" element={<Photos />} />
               <Route path="/gallery/videos" element={<GalleryMain />} />

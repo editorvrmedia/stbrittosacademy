@@ -1,52 +1,47 @@
-const express = require('express');
-const nodemailer = require('nodemailer');
-const cors = require('cors');
-const dotenv = require('dotenv');
-
-dotenv.config();
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import { google } from 'googleapis';
+import fs from 'fs';
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+
+// Load your service account credentials
+const credentials = JSON.parse(fs.readFileSync('credentials.json'));
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+const auth = new google.auth.GoogleAuth({
+  credentials,
+  scopes: SCOPES,
+});
+const sheets = google.sheets({ version: 'v4', auth });
+
+// Your Google Sheet ID and range
+const SPREADSHEET_ID = '1J_1Aw1II7dwqQnqCmcKM5WNsJz0z0Bwquj4hstYBcEU';
+const SHEET_NAME = 'Form Responses 1'; // Make sure this matches your tab name exactly
 
 app.post('/api/admission', async (req, res) => {
-  const { name, email, phone, message } = req.body;
-
-  if (!name || !email || !phone || !message) {
-    return res.status(400).json({ error: 'All fields are required.' });
+  const { name, number, classVal } = req.body;
+  if (!name || !number || !classVal) {
+    return res.status(400).json({ success: false, message: 'Missing required fields.' });
   }
-
   try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
+    // Append the new row to the sheet
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: SPREADSHEET_ID,
+      range: `${SHEET_NAME}!A:C`,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [[name, number, classVal]],
       },
     });
-
-    const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, // recipient is also facelessmangopi@gmail.com
-      subject: 'New Admission Enquiry',
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
-      html: `<h2>New Admission Enquiry</h2>
-             <p><strong>Name:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Phone:</strong> ${phone}</p>
-             <p><strong>Message:</strong> ${message}</p>`
-    };
-
-    await transporter.sendMail(mailOptions);
-    res.json({ success: true });
+    res.json({ success: true, message: 'Admission received and saved to Google Sheets!' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ error: 'Failed to send email.' });
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Failed to save to Google Sheets.' });
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-}); 
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 

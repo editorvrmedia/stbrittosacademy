@@ -20,13 +20,13 @@ const UpcomingEvents = () => {
   const upcomingEvents = [
     {
       id: 1,
-      title: 'Young Forum (KG & Primary) / Royal Gridlock',
+      title: 'Young Forum /Royal Gridlock (KG & Primary)',
       description: 'Young Forum event for Kindergarten and Primary students along with Royal Gridlock activities.',
       date: '2025-07-25',
       time: '09:00 AM - 03:00 PM',
       location: 'School Ground & Classrooms',
       categories: ['competition'],
-      image: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+      image: '/BYC/RGL.png', // Use RGL image
       organizer: 'School Administration',
       expectedAttendance: 'KG & Primary students',
       registrationDeadline: '2025-07-20',
@@ -34,13 +34,13 @@ const UpcomingEvents = () => {
     },
     {
       id: 2,
-      title: 'Young Forum (Middle, Secondary & Senior Secondary) / Royal Gridlock',
+      title: 'Young Forum / Royal Gridlock (Middle, Secondary & Senior Secondary)',
       description: 'Young Forum event for Middle, Secondary and Senior Secondary students along with Royal Gridlock activities.',
       date: '2025-07-26',
       time: '09:00 AM - 03:00 PM',
       location: 'School Ground & Classrooms',
       categories: ['competition'],
-      image: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+      image: '/BYC/RGL.png', // Use RGL image
       organizer: 'School Administration',
       expectedAttendance: 'Middle, Secondary & Senior Secondary students',
       registrationDeadline: '2025-07-21',
@@ -54,7 +54,7 @@ const UpcomingEvents = () => {
       time: '09:00 AM - 12:00 PM',
       location: 'School Classrooms',
       categories: ['competition', 'sports'],
-      image: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+      image: '/BYC/Asset.png', // Use local Asset image
       organizer: 'Academic Department',
       expectedAttendance: 'Female students',
       registrationDeadline: '2025-08-20',
@@ -68,7 +68,7 @@ const UpcomingEvents = () => {
       time: '09:00 AM - 12:00 PM',
       location: 'School Classrooms',
       categories: ['competition', 'sports'],
-      image: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+      image: '/BYC/Asset.png', // Use local Asset image
       organizer: 'Academic Department',
       expectedAttendance: 'Male students',
       registrationDeadline: '2025-08-27',
@@ -82,7 +82,7 @@ const UpcomingEvents = () => {
       time: '09:00 AM - 04:00 PM',
       location: 'School Swimming Pool',
       categories: ['competition', 'sports'],
-      image: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop',
+      image: '/BYC/Splash.png', // Use local Splash image
       organizer: 'Physical Education Department',
       expectedAttendance: 'All students',
       registrationDeadline: '2025-10-20',
@@ -203,7 +203,7 @@ const UpcomingEvents = () => {
                       <img
                         src={event.image}
                         alt={event.title}
-                        className="w-full h-48 object-cover"
+                        className="w-80 h-80 object-contain mx-auto mb-4 rounded shadow"
                       />
                       <div className="absolute top-4 left-4">
                         <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${getCategoryColor(event.categories[0])}`}>
@@ -233,11 +233,6 @@ const UpcomingEvents = () => {
                         </div>
                         
                         <div className="flex items-center text-sm text-gray-600">
-                          <Clock className="h-4 w-4 mr-2 text-purple-600" />
-                          <span>{event.time}</span>
-                        </div>
-                        
-                        <div className="flex items-center text-sm text-gray-600">
                           <MapPin className="h-4 w-4 mr-2 text-purple-600" />
                           <span>{event.location}</span>
                         </div>
@@ -255,9 +250,14 @@ const UpcomingEvents = () => {
                       </div>
                       
                       <div className="mt-4 flex gap-2">
-                        <button className="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-300">
+                        <a
+                          href="https://drive.google.com/file/d/1bxpR5PmPImzSTYO70LnwpC5AZXPH-FxD/view?usp=sharing"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-300 text-center"
+                        >
                           View Details
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>

@@ -19,6 +19,8 @@ const HomePage = () => {
   const [isUpcomingEventsAsideOpen, setIsUpcomingEventsAsideOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [marqueeDuration, setMarqueeDuration] = useState(20); // seconds
+  const [hasTypedInAdmission, setHasTypedInAdmission] = useState(false);
+  const autoCloseTimerRef = useRef<NodeJS.Timeout | null>(null);
   
   // Refs for GSAP animations - now only for simple animations, not pinning
   const quickAccessRef = useRef<HTMLElement>(null);
@@ -32,32 +34,28 @@ const HomePage = () => {
     }, 10000); // 10 seconds
     return () => clearTimeout(timer);
   }, []);
-  
-  // Close admission popup 5 seconds after any user activity
+
+  // Auto-close AdmissionPopup if user doesn't type in 10s after open
   useEffect(() => {
-    if (!isAdmissionPopupOpen) return;
-    let closeTimer: ReturnType<typeof setTimeout> | null = null;
-    const closeAfterDelay = () => {
-      if (closeTimer) clearTimeout(closeTimer);
-      closeTimer = setTimeout(() => setIsAdmissionPopupOpen(false), 5000);
-    };
-    window.addEventListener('mousemove', closeAfterDelay);
-    window.addEventListener('keydown', closeAfterDelay);
-    window.addEventListener('scroll', closeAfterDelay);
-    window.addEventListener('click', closeAfterDelay);
+    if (isAdmissionPopupOpen && !hasTypedInAdmission) {
+      autoCloseTimerRef.current = setTimeout(() => {
+        setIsAdmissionPopupOpen(false);
+      }, 10000);
+    }
     return () => {
-      if (closeTimer) clearTimeout(closeTimer);
-      window.removeEventListener('mousemove', closeAfterDelay);
-      window.removeEventListener('keydown', closeAfterDelay);
-      window.removeEventListener('scroll', closeAfterDelay);
-      window.removeEventListener('click', closeAfterDelay);
+      if (autoCloseTimerRef.current) clearTimeout(autoCloseTimerRef.current);
     };
-  }, [isAdmissionPopupOpen]);
-  
+  }, [isAdmissionPopupOpen, hasTypedInAdmission]);
+
   const handleAdmissionPopupClose = () => {
     setIsAdmissionPopupOpen(false);
     setIsUpcomingEventsAsideOpen(true);
     setIsNotificationOpen(true);
+  };
+
+  const handleAdmissionPopupUserTyped = () => {
+    setHasTypedInAdmission(true);
+    if (autoCloseTimerRef.current) clearTimeout(autoCloseTimerRef.current);
   };
 
   const handleUpcomingEventsAsideClose = () => {
@@ -598,6 +596,7 @@ const HomePage = () => {
       <AdmissionPopup 
         isOpen={isAdmissionPopupOpen} 
         onClose={handleAdmissionPopupClose} 
+        onUserTyped={handleAdmissionPopupUserTyped}
       />
       
       <UpcomingEventsAside 

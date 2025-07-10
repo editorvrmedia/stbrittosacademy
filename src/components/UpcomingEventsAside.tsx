@@ -11,8 +11,8 @@ const UpcomingEventsAside = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     { date: '25.06.2025', description: 'Care', classInfo: 'UKG A' },
     { date: '26.06.2025', description: 'Class Assembly-Self-Motivation-DRIVE', classInfo: 'X C' },
     { date: '27.06.2025', description: 'Responsible', classInfo: 'UKG B' },
-    { date: '25.07.2025', description: 'Young Forum (KG & Primary) / Royal Gridlock', classInfo: '' },
-    { date: '26.07.2025', description: 'Young Forum (Middle, Secondary & Senior Secondary) / Royal Gridlock', classInfo: '' },
+    { date: '25.07.2025', description: 'Young Forum /Royal Gridlock (KG & Primary)', classInfo: '' },
+    { date: '26.07.2025', description: 'Young Forum / Royal Gridlock (Middle, Secondary & Senior Secondary)', classInfo: '' },
     { date: '23.08.2025', description: 'Asset (Girls)', classInfo: '' },
     { date: '30.08.2025', description: 'Asset (Boys)', classInfo: '' },
     { date: '25.10.2025', description: 'Asset - Splash (Swimming Meet)', classInfo: '' },
@@ -78,7 +78,17 @@ const UpcomingEventsAside = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                 {filteredSortedEvents.map((event, index) => (
                   <tr key={index} className={index % 2 === 0 ? 'bg-sky-50' : 'bg-white'}>
                     <td className="px-1 py-1 whitespace-nowrap font-medium text-blue-900 align-top">{event.date}</td>
-                    <td className="px-1 py-1 break-words text-blue-800 align-top leading-snug max-w-[110px] sm:max-w-[160px]">{event.description}</td>
+                    <td className="px-1 py-1 break-words text-blue-800 align-top leading-snug max-w-[110px] sm:max-w-[160px]">
+                      {event.description}
+                      {event.date === '25.07.2025' && event.description.includes('Young Forum /Royal Gridlock (KG & Primary)') && (
+                        <img
+                          src="/BYC/Young Forum.png"
+                          alt="Young Forum"
+                          className="inline-block ml-1 w-8 h-8 object-contain align-middle"
+                          style={{ verticalAlign: 'middle' }}
+                        />
+                      )}
+                    </td>
                     <td className="px-0 py-1 whitespace-nowrap text-blue-700 align-top text-[9px] sm:text-xs w-[45px] sm:w-[60px] truncate" title={event.classInfo}>{event.classInfo}</td>
                   </tr>
                 ))}

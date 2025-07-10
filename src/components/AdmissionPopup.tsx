@@ -1,93 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const [selectedGrade, setSelectedGrade] = useState('Pre School');
-  const [hasTyped, setHasTyped] = useState(false);
-  const navigate = useNavigate();
+const classOptions = [
+  'LKG', 'UKG', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'XI'
+];
+
+const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onClose: () => void; onUserTyped?: () => void }) => {
   const [submitting, setSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose();
-      }
-    };
-
-    let timer: ReturnType<typeof setTimeout> | undefined;
-
-    try {
-      window.addEventListener('keydown', handleKeyDown);
-      
-      if (!hasTyped) {
-        timer = setTimeout(() => {
-          onClose();
-        }, 10000);
-      }
-    } catch (error) {
-      console.error('AdmissionPopup event listener error:', error);
-    }
-
-    return () => {
-      try {
-        window.removeEventListener('keydown', handleKeyDown);
-        if (timer) clearTimeout(timer);
-      } catch (error) {
-        console.error('AdmissionPopup cleanup error:', error);
-      }
-    };
-  }, [isOpen, onClose, hasTyped]);
+  const navigate = useNavigate();
 
   const handleInput = () => {
-    setHasTyped(true);
+    if (onUserTyped) onUserTyped();
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     setSubmitMessage(null);
-    const form = e.target as any;
-    const name = form.name.value;
-    const contactNo = form.contactNo.value;
-    const grade = form.grade.value;
-
-    try {
-      const res = await fetch('http://localhost:5000/api/admission', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          email: '', // No email field in form, can add if needed
-          phone: contactNo,
-          message: `Grade: ${grade}`
-        })
-      });
-      if (res.ok) {
-        setSubmitMessage('Admission inquiry submitted successfully!');
-        setTimeout(() => {
-          setSubmitMessage(null);
-          setSubmitting(false);
-          onClose();
-        }, 2000);
-      } else {
-        setSubmitMessage('Failed to submit. Please try again.');
-        setSubmitting(false);
-      }
-    } catch (err) {
-      setSubmitMessage('Failed to submit. Please try again.');
+    // Remove Google Form logic, just show thank you message
+    setTimeout(() => {
+      setSubmitMessage('Thank you for your inquiry! We will contact you soon.');
       setSubmitting(false);
-    }
+      setTimeout(() => {
+        setSubmitMessage(null);
+        onClose();
+      }, 2000);
+    }, 1000);
   };
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-xs sm:max-w-md md:max-w-2xl flex flex-col md:flex-row overflow-hidden md:max-h-[90vh] overflow-hidden">
+      <div className="bg-white rounded-lg shadow-xl w-full max-w-xs sm:max-w-md md:max-w-2xl flex flex-col md:flex-row overflow-hidden md:max-h-[90vh]">
         {/* Left Section - Image and Info */}
         <div className="md:w-1/2 bg-blue-500 text-white p-3 sm:p-4 flex flex-col items-center justify-center relative">
           <img 
@@ -109,9 +56,9 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
           </div>
         </div>
 
-        {/* Right Section - Admission Form */}
-        <div className="md:w-1/2 bg-blue-600 p-3 sm:p-4 text-white flex flex-col justify-center">
-          <div className="flex items-center justify-between mb-4">
+        {/* Right Section - Admission Info Only */}
+        <div className="md:w-1/2 bg-blue-600 p-3 sm:p-4 text-white flex flex-col justify-center items-center">
+          <div className="flex items-center justify-between mb-4 w-full">
             <h2 className="text-lg font-bold text-left whitespace-nowrap">Admission Open for 2025-26</h2>
             <button
               onClick={onClose}
@@ -121,18 +68,57 @@ const AdmissionPopup = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
               <X className="h-6 w-6" />
             </button>
           </div>
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSezQNOc9en-cUWn73ePppMlfmnH7X_0Ygn7D32cuK1zWRaUFQ/viewform?embedded=true"
-            width="100%"
-            height="600"
-            frameBorder="0"
-            marginHeight={0}
-            marginWidth={0}
-            title="Admission Form"
-            style={{ background: 'white', borderRadius: '8px' }}
-          >
-            Loading…
-          </iframe>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-sm font-medium text-white mb-1">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required
+                onInput={handleInput}
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="number" className="block text-sm font-medium text-white mb-1">Number:</label>
+              <input
+                type="text"
+                id="number"
+                name="number"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required
+                onInput={handleInput}
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="classVal" className="block text-sm font-medium text-white mb-1">CLASS:</label>
+              <select
+                id="classVal"
+                name="classVal"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required
+                onInput={handleInput}
+              >
+                <option value="">Select CLASS</option>
+                {classOptions.map((option) => (
+                  <option key={option} value={option}>{option}</option>
+                ))}
+              </select>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors duration-200"
+              disabled={submitting}
+            >
+              {submitting ? 'Submitting...' : 'Submit Admission Inquiry'}
+            </button>
+          </form>
+          {submitMessage && (
+            <div className="mt-4 text-center text-lg font-semibold text-green-600">
+              {submitMessage}
+            </div>
+          )}
         </div>
       </div>
     </div>
