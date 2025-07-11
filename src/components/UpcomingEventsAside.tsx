@@ -80,14 +80,6 @@ const UpcomingEventsAside = ({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                     <td className="px-1 py-1 whitespace-nowrap font-medium text-blue-900 align-top">{event.date}</td>
                     <td className="px-1 py-1 break-words text-blue-800 align-top leading-snug max-w-[110px] sm:max-w-[160px]">
                       {event.description}
-                      {event.date === '25.07.2025' && event.description.includes('Young Forum /Royal Gridlock (KG & Primary)') && (
-                        <img
-                          src="/BYC/Young Forum.png"
-                          alt="Young Forum"
-                          className="inline-block ml-1 w-8 h-8 object-contain align-middle"
-                          style={{ verticalAlign: 'middle' }}
-                        />
-                      )}
                     </td>
                     <td className="px-0 py-1 whitespace-nowrap text-blue-700 align-top text-[9px] sm:text-xs w-[45px] sm:w-[60px] truncate" title={event.classInfo}>{event.classInfo}</td>
                   </tr>
