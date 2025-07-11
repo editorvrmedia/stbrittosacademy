@@ -7,16 +7,9 @@ const classOptions = [
 ];
 
 const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onClose: () => void; onUserTyped?: () => void }) => {
-  const [submitting, setSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleInput = () => {
-    if (onUserTyped) onUserTyped();
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    // Let the form submit naturally to Formsubmit
     if (onUserTyped) onUserTyped();
   };
 
@@ -72,10 +65,11 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
             Admission Open for 2025–26
           </h3>
 
-          <form action="https://formsubmit.co/el/noyana" method="POST" onSubmit={handleSubmit}>
+          <form action="https://formsubmit.co/facelessmangopi@gmail.com" method="POST">
             {/* Formsubmit settings */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="New Admission Inquiry - Website" />
+            <input type="hidden" name="_subject" value="New Admission Form" />
+            <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_next" value="https://stbrittosacademy.edu.in/thank-you.html" />
 
             {/* Name Field */}
@@ -97,9 +91,9 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
             />
 
             {/* Phone Number Field */}
-            <label htmlFor="number" className="block text-sm font-medium text-gray-700 mb-1">Phone Number:</label>
+            <label htmlFor="number" className="block text-sm font-medium text-gray-700 mb-1">Phone:</label>
             <input
-              type="tel"
+              type="text"
               id="number"
               name="number"
               required
@@ -115,8 +109,9 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
             />
 
             {/* Class Field */}
-            <label htmlFor="class" className="block text-sm font-medium text-gray-700 mb-1">Class Applying For:</label>
-            <select
+            <label htmlFor="class" className="block text-sm font-medium text-gray-700 mb-1">Class:</label>
+            <input
+              type="text"
               id="class"
               name="class"
               required
@@ -129,12 +124,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
                 marginBottom: '10px', 
                 border: '1px solid #ccc' 
               }}
-            >
-              <option value="">Select Class</option>
-              {classOptions.map((option) => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </select>
+            />
 
             {/* Email Field */}
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email:</label>
@@ -157,7 +147,6 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={submitting}
               className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200"
               style={{ 
                 backgroundColor: '#28a745', 
@@ -168,15 +157,9 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
                 cursor: 'pointer' 
               }}
             >
-              {submitting ? 'Submitting...' : 'Submit Admission Form'}
+              Submit
             </button>
           </form>
-
-          {submitMessage && (
-            <div className="mt-4 text-center text-sm font-semibold text-green-600">
-              {submitMessage}
-            </div>
-          )}
         </div>
       </div>
     </div>
