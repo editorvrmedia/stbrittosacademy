@@ -27,7 +27,8 @@ const Results = () => {
       year: '2024-25',
       displayYear: '2024–2025',
       images: [
-        { src: '/results/2024-25 10th.jpg', caption: '2024-25 10th', filename: '2024-25 10th.jpg' }
+        { src: '/results/2024-25 10th.jpg', caption: '2024-25 10th', filename: '2024-25 10th.jpg' },
+        { src: '/results/2024-25  XII.jpg', caption: '2024-25 XII', filename: '2024-25  XII.jpg' }
       ]
     },
     {
@@ -218,7 +219,7 @@ const Results = () => {
                         <img
                           src={image.src}
                           alt={image.caption}
-                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                          className={`w-full object-cover transition-transform duration-300 group-hover:scale-110 ${image.filename === '2024-25  XII.jpg' ? 'h-24' : 'h-48'}`}
                           loading="lazy"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
@@ -290,7 +291,7 @@ const Results = () => {
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.caption}
-                  className="w-full h-auto max-h-[80vh] object-contain"
+                  className={`w-full h-auto object-contain ${selectedImage.filename === '2024-25  XII.jpg' ? 'max-h-96 mx-auto' : 'max-h-[80vh]'}`}
                   loading="lazy"
                 />
                 <div className="p-4 bg-white">

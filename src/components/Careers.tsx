@@ -130,66 +130,66 @@ const Careers = () => {
               There are currently no open positions. Please check back later.
             </div>
           ) : (
-            <div className="space-y-6">
-              {filteredPositions.map((position) => (
-                <div key={position.id} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center mb-3">
-                        <h3 className="text-2xl font-bold text-gray-900 mr-4">{position.title}</h3>
-                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                          position.department === 'teaching' ? 'bg-blue-100 text-blue-800' :
-                          position.department === 'administration' ? 'bg-purple-100 text-purple-800' :
-                          position.department === 'support' ? 'bg-green-100 text-green-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
-                          {departments.find(dept => dept.id === position.department)?.name}
-                        </span>
+          <div className="space-y-6">
+            {filteredPositions.map((position) => (
+              <div key={position.id} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center mb-3">
+                      <h3 className="text-2xl font-bold text-gray-900 mr-4">{position.title}</h3>
+                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                        position.department === 'teaching' ? 'bg-blue-100 text-blue-800' :
+                        position.department === 'administration' ? 'bg-purple-100 text-purple-800' :
+                        position.department === 'support' ? 'bg-green-100 text-green-800' :
+                        'bg-gray-100 text-gray-800'
+                      }`}>
+                        {departments.find(dept => dept.id === position.department)?.name}
+                      </span>
+                    </div>
+                    
+                    <div className="flex flex-wrap items-center gap-4 mb-4 text-gray-600">
+                      <div className="flex items-center">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        <span>{position.location}</span>
                       </div>
-                      
-                      <div className="flex flex-wrap items-center gap-4 mb-4 text-gray-600">
-                        <div className="flex items-center">
-                          <MapPin className="h-4 w-4 mr-1" />
-                          <span>{position.location}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          <span>{position.type}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Briefcase className="h-4 w-4 mr-1" />
-                          <span>{position.experience}</span>
-                        </div>
-                        <div className="text-sm text-gray-500">
-                          Posted: {formatDate(position.posted)}
-                        </div>
+                      <div className="flex items-center">
+                        <Clock className="h-4 w-4 mr-1" />
+                        <span>{position.type}</span>
                       </div>
-                      
-                      <p className="text-gray-700 mb-4">{position.description}</p>
-                      
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
-                        <ul className="list-disc list-inside text-gray-600 space-y-1">
-                          {position.requirements.map((req: string, index: number) => (
-                            <li key={index}>{req}</li>
-                          ))}
-                        </ul>
+                      <div className="flex items-center">
+                        <Briefcase className="h-4 w-4 mr-1" />
+                        <span>{position.experience}</span>
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        Posted: {formatDate(position.posted)}
                       </div>
                     </div>
                     
-                    <div className="lg:ml-6">
-                      <Link
-                        to="/careers/apply"
-                        className="w-full lg:w-auto bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center justify-center"
-                      >
-                        Apply Now
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
+                    <p className="text-gray-700 mb-4">{position.description}</p>
+                    
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
+                      <ul className="list-disc list-inside text-gray-600 space-y-1">
+                          {position.requirements.map((req: string, index: number) => (
+                          <li key={index}>{req}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
+                  
+                  <div className="lg:ml-6">
+                    <Link
+                      to="/careers/apply"
+                      className="w-full lg:w-auto bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center justify-center"
+                    >
+                      Apply Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
           )}
         </div>
       </section>
