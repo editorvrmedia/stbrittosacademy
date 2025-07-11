@@ -12,12 +12,12 @@ const Activities = () => {
         {
           name: 'Football',
           description: 'Inter-school competitions and district championships',
-          image: '/students activites/ARU07726.jpg'
+          image: '/students activites page/ARU07726.jpg'
         },
         {
           name: 'Swimming',
           description: 'Swimming meets, training, and inter-school competitions',
-          image: '/BYC/Splash.png'
+          image: '/students activites page/swimming.jpg'
         },
         {
           name: 'Kho Kho',
@@ -51,12 +51,12 @@ const Activities = () => {
         {
           name: 'Sports Club',
           description: 'Team games, fitness activities, and inter-school sports events',
-          image: '/students activites/ARU07726.jpg'
+          image: '/students activites page/ARU07726.jpg'
         },
         {
           name: 'Photography Club',
           description: 'Workshops, photo walks, and student photography exhibitions',
-          image: '/students activites/photographyclub.jpg'
+          image: '/students activites page/photographyclub.jpg'
         }
       ]
     },
@@ -66,19 +66,19 @@ const Activities = () => {
       color: 'red',
       items: [
         {
-          name: 'Scouts & Guides',
-          description: 'Leadership, outdoor skills, and community service through scouting activities',
-          image: '/students activites/scouts&guides.JPG'
-        },
-        {
           name: 'Cubs & Bulbuls',
           description: 'Character building, teamwork, and service for younger students',
-          image: '/students activites/cub&bulbuls.JPG'
+          image: '/students activites page/cub&bulbuls.JPG'
+        },
+        {
+          name: 'Scouts & Guides',
+          description: 'Leadership, outdoor skills, and community service through scouting activities',
+          image: '/students activites page/scouts&guides.JPG'
         },
         {
           name: 'Road Safety Patrol (RSP)',
           description: 'Promoting road safety awareness and discipline among students',
-          image: '/LOGOS/RSP.png'
+          image: '/students activites page/RSP.jpg'
         }
       ]
     }
@@ -106,7 +106,7 @@ const Activities = () => {
       title: 'Asset (Girls)',
       description: 'Asset assessment and competition for female students.',
       time: '09:00 AM - 12:00 PM',
-      location: 'School Classrooms',
+      location: 'AM Jain Ground',
       image: '/BYC/Asset.png'
     },
     {
@@ -114,7 +114,7 @@ const Activities = () => {
       title: 'Asset (Boys)',
       description: 'Asset assessment and competition for male students.',
       time: '09:00 AM - 12:00 PM',
-      location: 'School Classrooms',
+      location: 'AM Jain Ground',
       image: '/BYC/Asset.png'
     },
     {
@@ -145,6 +145,15 @@ const Activities = () => {
       features: ['Self-Confidence Building', 'Goal Setting', 'Resilience Training', 'Success Mindset']
     }
   ];
+
+  // Format date as DD-MM-YYYY
+  const formatDateDMY = (dateString: string) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  };
 
   return (
     <div className="pt-20">
@@ -250,8 +259,8 @@ const Activities = () => {
                   alt={event.title}
                   className="w-full h-32 object-contain mb-4 bg-white rounded"
                 />
-                <div className="text-sm text-emerald-600 font-semibold mb-1">{event.date}</div>
-                <div className="text-xs text-gray-500 mb-2">{event.time} | {event.location}</div>
+                <div className="text-sm text-emerald-600 font-semibold mb-1">{formatDateDMY(event.date)}</div>
+                <div className="text-xs text-gray-500 mb-2">{event.location}</div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{event.title}</h3>
                 <p className="text-gray-600 text-sm mb-3 flex-1">{event.description}</p>
               </div>
