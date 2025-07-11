@@ -86,7 +86,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
           <form onSubmit={handleSubmit}>
             {/* Formsubmit settings */}
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="New Admission Inquiry - Website Trial" />
+            <input type="hidden" name="_subject" value="New Admission Inquiry - Website" />
             <input type="hidden" name="_next" value="https://stbrittosacademy.edu.in/thank-you.html" />
 
             {/* Name Field */}
@@ -107,10 +107,10 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
               }}
             />
 
-            {/* Number Field */}
-            <label htmlFor="number" className="block text-sm font-medium text-gray-700 mb-1">Number:</label>
+            {/* Phone Number Field */}
+            <label htmlFor="number" className="block text-sm font-medium text-gray-700 mb-1">Phone Number:</label>
             <input
-              type="text"
+              type="tel"
               id="number"
               name="number"
               required
@@ -126,10 +126,33 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
             />
 
             {/* Class Field */}
-            <label htmlFor="class" className="block text-sm font-medium text-gray-700 mb-1">Class:</label>
+            <label htmlFor="class" className="block text-sm font-medium text-gray-700 mb-1">Class Applying For:</label>
             <select
               id="class"
               name="class"
+              required
+              onInput={handleInput}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 mb-3"
+              style={{ 
+                width: '100%', 
+                padding: '10px', 
+                borderRadius: '6px', 
+                marginBottom: '10px', 
+                border: '1px solid #ccc' 
+              }}
+            >
+              <option value="">Select Class</option>
+              {classOptions.map((option) => (
+                <option key={option} value={option}>{option}</option>
+              ))}
+            </select>
+
+            {/* Email Field */}
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
               required
               onInput={handleInput}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 mb-5"
@@ -140,12 +163,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
                 marginBottom: '20px', 
                 border: '1px solid #ccc' 
               }}
-            >
-              <option value="">Select Class</option>
-              {classOptions.map((option) => (
-                <option key={option} value={option}>{option}</option>
-              ))}
-            </select>
+            />
 
             {/* Submit Button */}
             <button
@@ -161,7 +179,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
                 cursor: 'pointer' 
               }}
             >
-              {submitting ? 'Submitting...' : 'Submit Admission Inquiry'}
+              {submitting ? 'Submitting...' : 'Submit Admission Form'}
             </button>
           </form>
 
