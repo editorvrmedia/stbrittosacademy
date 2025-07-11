@@ -49,13 +49,13 @@ const UpcomingEvents = () => {
     {
       id: 3,
       title: 'Asset (Girls)',
-      description: 'Asset assessment and competition for female students.',
+      description: 'Asset assessment and competition for female students.\n\nNote: The venue for this event has been changed to A M Jain College Ground, Meenambakkam.',
       date: '2025-08-23',
       time: '09:00 AM - 12:00 PM',
-      location: 'School Classrooms',
+      location: 'A M Jain College Ground, Meenambakkam',
       categories: ['competition', 'sports'],
       image: '/BYC/Asset.png', // Use local Asset image
-      organizer: 'Academic Department',
+      organizer: 'Sports Department',
       expectedAttendance: 'Female students',
       registrationDeadline: '2025-08-20',
       isFree: true
@@ -63,13 +63,13 @@ const UpcomingEvents = () => {
     {
       id: 4,
       title: 'Asset (Boys)',
-      description: 'Asset assessment and competition for male students.',
+      description: 'Asset assessment and competition for male students.\n\nNote: The venue for this event has been changed to A M Jain College Ground, Meenambakkam.',
       date: '2025-08-30',
       time: '09:00 AM - 12:00 PM',
-      location: 'School Classrooms',
+      location: 'A M Jain College Ground, Meenambakkam',
       categories: ['competition', 'sports'],
       image: '/BYC/Asset.png', // Use local Asset image
-      organizer: 'Academic Department',
+      organizer: 'Sports Department',
       expectedAttendance: 'Male students',
       registrationDeadline: '2025-08-27',
       isFree: true
