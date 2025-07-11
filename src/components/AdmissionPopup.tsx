@@ -16,19 +16,8 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setSubmitMessage(null);
-    
-    // Form submission logic
-    setTimeout(() => {
-      setSubmitMessage('Thank you for your inquiry! We will contact you soon.');
-      setSubmitting(false);
-      setTimeout(() => {
-        setSubmitMessage(null);
-        onClose();
-      }, 2000);
-    }, 1000);
+    // Let the form submit naturally to Formsubmit
+    if (onUserTyped) onUserTyped();
   };
 
   if (!isOpen) return null;
@@ -83,7 +72,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
             Admission Open for 2025–26
           </h3>
 
-          <form onSubmit={handleSubmit}>
+          <form action="https://formsubmit.co/el/noyana" method="POST" onSubmit={handleSubmit}>
             {/* Formsubmit settings */}
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_subject" value="New Admission Inquiry - Website" />
