@@ -4,12 +4,34 @@ import { Camera, Calendar, Users, ArrowRight, Play, Image, Video } from 'lucide-
 import RecentVideos from './RecentVideos';
 import RecentShorts from './RecentShorts';
 
+const API_KEY = 'AIzaSyB5qQW6EwPGpbGQ1zDXn8gWZ2b1lpl4NN4';
+const CHANNEL_ID = 'UCfKsJCTgNrc06FI8i9Z9gpg';
+
 const GalleryMain = () => {
   const [selectedType, setSelectedType] = useState('all');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxVideoUrl, setLightboxVideoUrl] = useState('');
   const [recentLightboxOpen, setRecentLightboxOpen] = useState(false);
   const [recentLightboxVideoUrl, setRecentLightboxVideoUrl] = useState("");
+  const [videoCount, setVideoCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Fetch the number of videos from the YouTube channel
+    const fetchVideoCount = async () => {
+      try {
+        const res = await fetch(
+          `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`
+        );
+        const data = await res.json();
+        if (data.items && data.items[0] && data.items[0].statistics) {
+          setVideoCount(Number(data.items[0].statistics.videoCount));
+        }
+      } catch (err) {
+        setVideoCount(null);
+      }
+    };
+    fetchVideoCount();
+  }, []);
 
   const galleryTypes = [
     { id: 'all', name: 'All Media' },
@@ -18,6 +40,16 @@ const GalleryMain = () => {
   ];
 
   const featuredGalleries = [
+    {
+      id: 'intramurals2025',
+      title: 'Intramurals 2025',
+      type: 'video',
+      description: "St. Britto’s Academy presents Intramurals 2025! A vibrant display of strength, spirit, and sportsmanship as students competed in exciting athletic events and team games—celebrating unity and the true Britto spirit! 💪🎽",
+      thumbnail: 'https://img.youtube.com/vi/Nhy-kODyp7A/hqdefault.jpg',
+      date: 'Jul 8, 2025',
+      category: 'Sports',
+      videoUrl: 'https://www.youtube.com/embed/Nhy-kODyp7A?autoplay=1'
+    },
     {
       id: 1,
       title: 'Investiture Ceremony 2025 - 2026',
@@ -67,16 +99,6 @@ const GalleryMain = () => {
       date: 'Feb 17, 2025',
       category: 'Sports',
       videoUrl: 'https://www.youtube.com/embed/Jns7hZ5UJic?autoplay=1'
-    },
-    {
-      id: 6,
-      title: 'BELIEVE YOU CAN 24 🌊SPLASH 24',
-      type: 'video',
-      description: 'Get ready to make a splash at BYC-SPLASH 24! 🏊‍♂️ An inter-school swimming competition filled with energy, passion, and unforgettable moments of triumph. 💪🎉',
-      thumbnail: 'https://img.youtube.com/vi/XTQXTD2IWoc/hqdefault.jpg',
-      date: 'Nov 11, 2024',
-      category: 'Sports',
-      videoUrl: 'https://www.youtube.com/embed/XTQXTD2IWoc?autoplay=1'
     }
   ];
 
@@ -185,6 +207,82 @@ const GalleryMain = () => {
     });
   };
 
+  // Define album categories at the top level
+  const albumCategories = [
+    {
+      title: 'Events',
+      description: 'Music, dance, drama, and artistic performances',
+      image: 'https://i.ytimg.com/vi/nwaUHWy68HE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDt4XN1f6gGqn3khkkwHKxzPcqD5A',
+      count: 95,
+      link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34G7VOxx-5tFpN07_Z-KGkxA',
+      playlistId: 'PLB3deUTwz34G7VOxx-5tFpN07_Z-KGkxA'
+    },
+    {
+      title: 'Assemblies',
+      description: 'School assemblies and group gatherings',
+      image: 'https://i.ytimg.com/vi/LFQvm3NDRTw/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAXsXFXIb_8udpfClWoKACbUGQhIQ',
+      count: 514,
+      link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34EbliB8qsYG_LTPAVkg0sKG',
+      playlistId: 'PLB3deUTwz34EbliB8qsYG_LTPAVkg0sKG'
+    },
+    {
+      title: 'Believe You Can',
+      description: 'Motivational and inspirational events',
+      image: 'https://i.ytimg.com/vi/jbPxQOTY_zM/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBPJ8htWxLaO9re0bgEbDvnYwcXhQ',
+      count: 0,
+      link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34GqfxER8ZXpaD-OQS8mTiPd',
+      playlistId: 'PLB3deUTwz34GqfxER8ZXpaD-OQS8mTiPd'
+    },
+    {
+      title: "Parent's Review",
+      description: 'Feedback and testimonials from parents',
+      image: 'https://i.ytimg.com/vi/OSg1jrsr_jE/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAP7dQ7clJg9fFvtD-u6w2rwEtzlA',
+      count: 0,
+      link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34EE3Ht_HtsDM5U9srwWOMwo',
+      playlistId: 'PLB3deUTwz34EE3Ht_HtsDM5U9srwWOMwo'
+    },
+    {
+      title: 'Our Quotients',
+      description: 'Showcasing our unique quotients and values',
+      image: '/8%20QUOTIENTS/thumbnail.jpg',
+      count: 514,
+      link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34EyBHO14oEv12852V-EbdgV',
+      playlistId: 'PLB3deUTwz34EyBHO14oEv12852V-EbdgV'
+    },
+    {
+      title: "FEFDY STARS AT ST.BRITTO'S ACADEMY",
+      description: 'Special Fefdy events and highlights',
+      image: 'https://i.ytimg.com/vi/GNJgW24cbJI/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCZ08xMXoYK3LxC5aaJvjxD1dm5pw',
+      count: 0,
+      link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34Fc5zJ5wZR_BYuoJ0fxEouV',
+      playlistId: 'PLB3deUTwz34Fc5zJ5wZR_BYuoJ0fxEouV'
+    }
+  ];
+
+  const [albumCounts, setAlbumCounts] = useState<Record<string, number>>(() => {
+    const initial: Record<string, number> = {};
+    albumCategories.forEach(cat => { initial[cat.playlistId] = cat.count; });
+    return initial;
+  });
+
+  useEffect(() => {
+    albumCategories.forEach(category => {
+      if (category.playlistId) {
+        fetch(`https://www.googleapis.com/youtube/v3/playlists?part=contentDetails&id=${category.playlistId}&key=${API_KEY}`)
+          .then(res => res.json())
+          .then(data => {
+            if (data.items && data.items[0] && data.items[0].contentDetails) {
+              setAlbumCounts(prev => ({
+                ...prev,
+                [category.playlistId]: data.items[0].contentDetails.itemCount
+              }));
+            }
+          })
+          .catch(() => {});
+      }
+    });
+  }, []);
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -202,14 +300,14 @@ const GalleryMain = () => {
             <div className="flex items-center justify-center">
               <Video className="h-8 w-8 text-indigo-600 mr-3" />
               <div>
-                <div className="text-2xl font-bold text-gray-900">514</div>
+                <div className="text-2xl font-bold text-gray-900">{videoCount !== null ? videoCount : '...'}</div>
                 <div className="text-gray-600">Videos</div>
               </div>
             </div>
             <div className="flex items-center justify-center">
               <Camera className="h-8 w-8 text-indigo-600 mr-3" />
               <div>
-                <div className="text-2xl font-bold text-gray-900">50+</div>
+                <div className="text-2xl font-bold text-gray-900">{albumCategories.length}</div>
                 <div className="text-gray-600">Albums</div>
               </div>
             </div>
@@ -245,220 +343,254 @@ const GalleryMain = () => {
         </div>
       </section>
 
-      {/* Featured Galleries */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Collections</h2>
-            <p className="text-xl text-gray-600">Discover our most popular and recent video collections</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredGalleries.map((gallery, idx) => (
-              <div
-                key={gallery.id}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
-                onClick={() => {
-                  if (gallery.type === 'video' && gallery.videoUrl) {
-                    setLightboxVideoUrl(gallery.videoUrl);
-                    setLightboxOpen(true);
-                  }
-                }}
-              >
-                <div className="relative group">
-                  <img
-                    src={gallery.thumbnail}
-                    alt={gallery.title}
-                    className="w-full h-48 object-cover group-hover:brightness-75 transition duration-300"
-                  />
-                  {gallery.type === 'video' && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-black bg-opacity-50 rounded-full p-4">
-                        <Play className="h-8 w-8 text-white" />
+      {/* Conditional Rendering for Videos/Albums */}
+      {selectedType === 'videos' && (
+        <>
+          {/* Featured Collections */}
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Collections</h2>
+                <p className="text-xl text-gray-600">Discover our most popular and recent video collections</p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {featuredGalleries.filter(g => g.type === 'video').map((gallery, idx) => (
+                  <div
+                    key={gallery.id}
+                    className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                    onClick={() => {
+                      if (gallery.type === 'video' && gallery.videoUrl) {
+                        setLightboxVideoUrl(gallery.videoUrl);
+                        setLightboxOpen(true);
+                      }
+                    }}
+                  >
+                    <div className="relative group">
+                      <img
+                        src={gallery.thumbnail}
+                        alt={gallery.title}
+                        className="w-full h-48 object-cover group-hover:brightness-75 transition duration-300"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-black bg-opacity-50 rounded-full p-4">
+                          <Play className="h-8 w-8 text-white" />
+                        </div>
                       </div>
                     </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                      gallery.category === 'Events' ? 'bg-purple-100 text-purple-800' :
-                      gallery.category === 'Academic' ? 'bg-blue-100 text-blue-800' :
-                      gallery.category === 'Sports' ? 'bg-green-100 text-green-800' :
-                      gallery.category === 'Cultural' ? 'bg-orange-100 text-orange-800' :
-                      'bg-gray-100 text-gray-800'
-                    }`}>
-                      {gallery.category}
-                    </span>
-                    <span className="text-gray-500 text-sm">{formatDate(gallery.date)}</span>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className={`px-2 py-1 rounded text-xs font-semibold ${
+                          gallery.category === 'Events' ? 'bg-purple-100 text-purple-800' :
+                          gallery.category === 'Academic' ? 'bg-blue-100 text-blue-800' :
+                          gallery.category === 'Sports' ? 'bg-green-100 text-green-800' :
+                          gallery.category === 'Cultural' ? 'bg-orange-100 text-orange-800' :
+                          'bg-gray-100 text-gray-800'
+                        }`}>
+                          {gallery.category}
+                        </span>
+                        <span className="text-gray-500 text-sm">{formatDate(gallery.date)}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{gallery.title}</h3>
+                      <p className="text-gray-600 mb-4">{gallery.description}</p>
+                    </div>
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{gallery.title}</h3>
-                  <p className="text-gray-600 mb-4">{gallery.description}</p>
+                ))}
+              </div>
+            </div>
+            {/* Lightbox for video */}
+            {lightboxOpen && (
+              <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
+                <div className="relative w-full max-w-3xl aspect-video bg-black rounded-lg overflow-hidden">
+                  <button
+                    className="absolute top-2 right-2 z-10 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full"
+                    onClick={() => setLightboxOpen(false)}
+                  >
+                    <span className="text-2xl">&times;</span>
+                  </button>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={lightboxVideoUrl}
+                    title="Video Player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-        {/* Lightbox for video */}
-        {lightboxOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
-            <div className="relative w-full max-w-3xl aspect-video bg-black rounded-lg overflow-hidden">
-              <button
-                className="absolute top-2 right-2 z-10 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full"
-                onClick={() => setLightboxOpen(false)}
-              >
-                <span className="text-2xl">&times;</span>
-              </button>
-              <iframe
-                width="100%"
-                height="100%"
-                src={lightboxVideoUrl}
-                title="Investiture Ceremony 2025 - 2026"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+            )}
+          </section>
+          {/* Recent Videos from YouTube */}
+          <RecentVideos />
+        </>
+      )}
+      {selectedType === 'albums' && (
+        <>
+          {/* Only show albums section (Browse by Category) */}
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Browse by Category</h2>
+                <p className="text-xl text-gray-600">Explore our video collections by category</p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {albumCategories.map((category, index) => (
+                  <a
+                    key={index}
+                    href={category.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="relative h-48">
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-xl font-bold text-white mb-1">{category.title}</h3>
+                        <div className="flex items-center text-white text-sm">
+                          <Camera className="h-4 w-4 mr-1" />
+                          <span>{albumCounts[category.playlistId] || category.count} videos</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <p className="text-gray-600 text-sm">{category.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
-      </section>
-
-      {/* Recent Videos from YouTube */}
-      <RecentVideos />
-
-      {/* Recent Shorts from YouTube */}
-      <RecentShorts />
-
-      {/* Gallery Categories */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Browse by Category</h2>
-            <p className="text-xl text-gray-600">Explore our video collections by category</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Events',
-                description: 'Music, dance, drama, and artistic performances',
-                image: 'https://i.ytimg.com/vi/nwaUHWy68HE/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDt4XN1f6gGqn3khkkwHKxzPcqD5A',
-                count: 95,
-                link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34G7VOxx-5tFpN07_Z-KGkxA',
-                playlistId: 'PLB3deUTwz34G7VOxx-5tFpN07_Z-KGkxA'
-              },
-              {
-                title: 'Assemblies',
-                description: 'School assemblies and group gatherings',
-                image: 'https://i.ytimg.com/vi/LFQvm3NDRTw/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAXsXFXIb_8udpfClWoKACbUGQhIQ',
-                count: 514,
-                link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34EbliB8qsYG_LTPAVkg0sKG',
-                playlistId: 'PLB3deUTwz34EbliB8qsYG_LTPAVkg0sKG'
-              },
-              {
-                title: 'Believe You Can',
-                description: 'Motivational and inspirational events',
-                image: 'https://i.ytimg.com/vi/jbPxQOTY_zM/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBPJ8htWxLaO9re0bgEbDvnYwcXhQ',
-                count: 0,
-                link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34GqfxER8ZXpaD-OQS8mTiPd',
-                playlistId: 'PLB3deUTwz34GqfxER8ZXpaD-OQS8mTiPd'
-              },
-              {
-                title: "Parent's Review",
-                description: 'Feedback and testimonials from parents',
-                image: 'https://i.ytimg.com/vi/OSg1jrsr_jE/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAP7dQ7clJg9fFvtD-u6w2rwEtzlA',
-                count: 0,
-                link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34EE3Ht_HtsDM5U9srwWOMwo',
-                playlistId: 'PLB3deUTwz34EE3Ht_HtsDM5U9srwWOMwo'
-              },
-              {
-                title: 'Our Quotients',
-                description: 'Showcasing our unique quotients and values',
-                image: '/8%20QUOTIENTS/thumbnail.jpg',
-                count: 514,
-                link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34EyBHO14oEv12852V-EbdgV',
-                playlistId: 'PLB3deUTwz34EyBHO14oEv12852V-EbdgV'
-              },
-              {
-                title: "FEFDY STARS AT ST.BRITTO'S ACADEMY",
-                description: 'Special Fefdy events and highlights',
-                image: 'https://i.ytimg.com/vi/GNJgW24cbJI/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCZ08xMXoYK3LxC5aaJvjxD1dm5pw',
-                count: 0,
-                link: 'https://www.youtube.com/playlist?list=PLB3deUTwz34Fc5zJ5wZR_BYuoJ0fxEouV',
-                playlistId: 'PLB3deUTwz34Fc5zJ5wZR_BYuoJ0fxEouV'
-              }
-            ].map((category, index) => {
-              const [videoCount, setVideoCount] = useState(category.count);
-              useEffect(() => {
-                if (category.playlistId) {
-                  // Replace YOUR_API_KEY with your actual YouTube Data API key
-                  fetch(`https://www.googleapis.com/youtube/v3/playlists?part=contentDetails&id=${category.playlistId}&key=AIzaSyB5qQW6EwPGpbGQ1zDXn8gWZ2b1lpl4NN4`)
-                    .then(res => res.json())
-                    .then(data => {
-                      if (data.items && data.items[0] && data.items[0].contentDetails) {
-                        setVideoCount(data.items[0].contentDetails.itemCount);
+          </section>
+        </>
+      )}
+      {selectedType === 'all' && (
+        <>
+          {/* Show everything as before */}
+          {/* Featured Galleries */}
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Collections</h2>
+                <p className="text-xl text-gray-600">Discover our most popular and recent video collections</p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredGalleries.map((gallery, idx) => (
+                  <div
+                    key={gallery.id}
+                    className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                    onClick={() => {
+                      if (gallery.type === 'video' && gallery.videoUrl) {
+                        setLightboxVideoUrl(gallery.videoUrl);
+                        setLightboxOpen(true);
                       }
-                    })
-                    .catch(() => {});
-                }
-              }, [category.playlistId]);
-              return category.link ? (
-                <a
-                  key={index}
-                  href={category.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="relative h-48">
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-1">{category.title}</h3>
-                      <div className="flex items-center text-white text-sm">
-                        <Camera className="h-4 w-4 mr-1" />
-                        <span>{videoCount} videos</span>
+                    }}
+                  >
+                    <div className="relative group">
+                      <img
+                        src={gallery.thumbnail}
+                        alt={gallery.title}
+                        className="w-full h-48 object-cover group-hover:brightness-75 transition duration-300"
+                      />
+                      {gallery.type === 'video' && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="bg-black bg-opacity-50 rounded-full p-4">
+                            <Play className="h-8 w-8 text-white" />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className={`px-2 py-1 rounded text-xs font-semibold ${
+                          gallery.category === 'Events' ? 'bg-purple-100 text-purple-800' :
+                          gallery.category === 'Academic' ? 'bg-blue-100 text-blue-800' :
+                          gallery.category === 'Sports' ? 'bg-green-100 text-green-800' :
+                          gallery.category === 'Cultural' ? 'bg-orange-100 text-orange-800' :
+                          'bg-gray-100 text-gray-800'
+                        }`}>
+                          {gallery.category}
+                        </span>
+                        <span className="text-gray-500 text-sm">{formatDate(gallery.date)}</span>
                       </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{gallery.title}</h3>
+                      <p className="text-gray-600 mb-4">{gallery.description}</p>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <p className="text-gray-600 text-sm">{category.description}</p>
-                  </div>
-                </a>
-              ) : (
-                <div
-                  key={index}
-                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-default"
-                >
-                  <div className="relative h-48">
-                    <img
-                      src={category.image}
-                      alt={category.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-1">{category.title}</h3>
-                      <div className="flex items-center text-white text-sm">
-                        <Camera className="h-4 w-4 mr-1" />
-                        <span>{category.count} items</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-gray-600 text-sm">{category.description}</p>
-                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Lightbox for video */}
+            {lightboxOpen && (
+              <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
+                <div className="relative w-full max-w-3xl aspect-video bg-black rounded-lg overflow-hidden">
+                  <button
+                    className="absolute top-2 right-2 z-10 bg-white bg-opacity-20 hover:bg-opacity-40 text-white p-2 rounded-full"
+                    onClick={() => setLightboxOpen(false)}
+                  >
+                    <span className="text-2xl">&times;</span>
+                  </button>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={lightboxVideoUrl}
+                    title="Video Player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+              </div>
+            )}
+          </section>
+          {/* Recent Videos from YouTube */}
+          <RecentVideos />
+          {/* Recent Shorts from YouTube */}
+          <RecentShorts />
+          {/* Albums section (Browse by Category) */}
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Browse by Category</h2>
+                <p className="text-xl text-gray-600">Explore our video collections by category</p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {albumCategories.map((category, index) => (
+                  <a
+                    key={index}
+                    href={category.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <div className="relative h-48">
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-xl font-bold text-white mb-1">{category.title}</h3>
+                        <div className="flex items-center text-white text-sm">
+                          <Camera className="h-4 w-4 mr-1" />
+                          <span>{albumCounts[category.playlistId] || category.count} videos</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <p className="text-gray-600 text-sm">{category.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Call to Action */}
       <section className="py-16 bg-indigo-700 text-white">

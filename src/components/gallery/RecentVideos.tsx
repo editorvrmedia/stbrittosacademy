@@ -22,15 +22,17 @@ const RecentVideos = () => {
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    const manualVideo = {
-      id: 'Nhy-kODyp7A',
-      title: 'Battle of the Best | St. Britto’s Intramurals 2025 – Boys & Girls Showdown',
-      thumbnail: 'https://i.ytimg.com/vi/Nhy-kODyp7A/hqdefault.jpg',
-      publishedAt: new Date(Date.now() - 23 * 60 * 60 * 1000).toISOString(),
-      duration: 'PT56S',
-      videoUrl: 'https://www.youtube.com/watch?v=Nhy-kODyp7A',
-      isShort: false,
-    };
+    const manualVideos = [
+      {
+        id: '5ZtcFVzjThw',
+        title: 'Battle of the Best | St. Britto’s Intramurals 2025 – Boys & Girls Showdown',
+        thumbnail: 'https://i.ytimg.com/vi/5ZtcFVzjThw/hqdefault.jpg',
+        publishedAt: '2025-07-08T12:00:00.000Z',
+        duration: 'PT56S',
+        videoUrl: 'https://www.youtube.com/watch?v=5ZtcFVzjThw',
+        isShort: false,
+      }
+    ];
     const fetchVideos = async () => {
       try {
         setLoading(true);
@@ -97,7 +99,10 @@ const RecentVideos = () => {
             duration: video.contentDetails.duration
           }));
 
-        setVideos([manualVideo, ...formattedVideos]);
+        // Remove duplicates (by id) from manualVideos
+        const manualIds = manualVideos.map(v => v.id);
+        const filteredFetched = formattedVideos.filter(v => !manualIds.includes(v.id));
+        setVideos([...manualVideos, ...filteredFetched]);
       } catch (err) {
         console.error('Error fetching videos:', err);
         setError('Failed to load recent videos. Please try again later.');
