@@ -20,9 +20,9 @@ const Activities = () => {
           image: '/BYC/Splash.png'
         },
         {
-          name: 'Badminton',
-          description: 'Badminton coaching, tournaments, and skill development',
-          image: 'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Kho Kho',
+          description: 'Kho Kho training, inter-house matches, and state-level competitions',
+          image: '/students activites page/khokho.JPG'
         }
       ]
     },
@@ -32,32 +32,22 @@ const Activities = () => {
       color: 'purple',
       items: [
         {
-          name: 'Visual Arts',
+          name: 'Arts',
           description: 'Painting, sculpture, and digital art workshops',
-          image: 'https://images.pexels.com/photos/1784578/pexels-photo-1784578.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/students activites page/ARTS.jpeg'
         },
         {
           name: 'Music & Dance',
           description: 'Orchestra, choir, and traditional dance performances',
-          image: 'https://images.pexels.com/photos/7520391/pexels-photo-7520391.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
-        },
-        {
-          name: 'Drama & Theatre',
-          description: 'Annual plays, storytelling, and public speaking',
-          image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/students activites page/dance.png'
         }
       ]
     },
     {
-      category: 'Academic Clubs',
+      category: 'Clubs',
       icon: Microscope,
       color: 'blue',
       items: [
-        {
-          name: 'Science Club',
-          description: 'Research projects, science fairs, and laboratory experiments',
-          image: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
-        },
         {
           name: 'Sports Club',
           description: 'Team games, fitness activities, and inter-school sports events',
@@ -88,7 +78,7 @@ const Activities = () => {
         {
           name: 'Road Safety Patrol (RSP)',
           description: 'Promoting road safety awareness and discipline among students',
-          image: 'https://images.pexels.com/photos/6647019/pexels-photo-6647019.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/LOGOS/RSP.png'
         }
       ]
     }
@@ -224,9 +214,9 @@ const Activities = () => {
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">{category.category}</h3>
               </div>
               
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="flex flex-wrap justify-center gap-8">
                 {category.items.map((activity, index) => (
-                  <div key={index} className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                  <div key={index} className="bg-white rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300 w-full max-w-xs">
                     <img
                       src={activity.image}
                       alt={activity.name}
