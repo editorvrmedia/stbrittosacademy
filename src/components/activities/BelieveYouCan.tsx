@@ -58,21 +58,21 @@ const BelieveYouCan = () => {
       description: 'An intellectual event that challenges students to showcase their academic and cognitive abilities',
       icon: Lightbulb,
       color: 'blue',
-      image: '/LOGOS/Young Forum.png'
+      image: '/BYC/Young Forum.png'
     },
     {
       name: 'Royal Gridlock',
       description: 'A cultural fest that provides a platform for students to display their artistic and creative talents',
       icon: Star,
       color: 'purple',
-      image: '/Royal Gridlock.png'
+      image: '/BYC/Royal Gridlock.png'
     },
     {
       name: 'ASSET',
       description: 'A sports event that encourages physical fitness, teamwork, and athletic excellence',
       icon: Target,
       color: 'green',
-      image: '/LOGOS/Asset.png'
+      image: '/BYC/Asset.png'
     }
   ];
 
@@ -118,7 +118,7 @@ const BelieveYouCan = () => {
             </div>
             <div className="flex flex-col items-center">
               <img
-                src="/LOGOS/BYC NAME.jpg"
+                src="/BYC/BYC NAME.jpg"
                 alt="Believe You Can Logo"
                 className="rounded-xl shadow-lg w-full h-auto"
               />

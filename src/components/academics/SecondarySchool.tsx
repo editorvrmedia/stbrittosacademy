@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Microscope, Calculator, Globe, Users, Award, Target, Lightbulb, CheckCircle } from 'lucide-react';
+import { BookOpen, Microscope, Calculator, Globe, Users, Award, Target, Lightbulb, GraduationCap, Users as UsersIcon, Book, Star, ArrowRightCircle, CheckCircle } from 'lucide-react';
 
 const SecondarySchool = () => {
   const features = [
@@ -106,20 +106,20 @@ const SecondarySchool = () => {
     {
       stream: 'Science Stream',
       description: 'For students interested in engineering, medicine, and research',
-      subjects: ['Physics', 'Chemistry', 'Mathematics/Biology'],
+      subjects: ['Physics', 'Chemistry', 'Biology', 'Mathematics/Psychology'],
       careers: ['Engineering', 'Medicine', 'Research', 'Technology']
+    },
+    {
+      stream: 'Computer Science Stream',
+      description: 'For students interested in computer science and engineering',
+      subjects: ['Computer Science', 'Physics', 'Chemistry', 'Mathematics'],
+      careers: ['Technology', 'IT', 'Engineering']
     },
     {
       stream: 'Commerce Stream',
       description: 'For students interested in business, finance, and economics',
-      subjects: ['Accountancy', 'Business Studies', 'Economics'],
+      subjects: ['Accountancy', 'Business Studies', 'Economics', 'Applied Mathematics'],
       careers: ['Business', 'Finance', 'Banking', 'Entrepreneurship']
-    },
-    {
-      stream: 'Humanities Stream',
-      description: 'For students interested in arts, literature, and social sciences',
-      subjects: ['History', 'Political Science', 'Psychology'],
-      careers: ['Law', 'Journalism', 'Social Work', 'Civil Services']
     }
   ];
 
@@ -131,30 +131,32 @@ const SecondarySchool = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-gradient-to-br from-blue-50 via-white to-red-50 min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Secondary School (Grades 9-10)</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            Preparing for board examinations and future success. Our secondary school program provides rigorous academic preparation, career guidance, and comprehensive support for CBSE board examinations.
-          </p>
+          <GraduationCap className="mx-auto mb-4 h-14 w-14 text-yellow-300 drop-shadow-lg" />
+          <h1 className="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Secondary School (Grades 9-10)</h1>
+          <p className="text-xl max-w-3xl mx-auto mb-2">Preparing for board examinations and future success. Our secondary school program provides rigorous academic preparation, career guidance, and comprehensive support for CBSE board examinations.</p>
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
+
       {/* Program Features */}
-      <section className="py-8 bg-transparent">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Secondary School Excellence</h2>
+            <Star className="mx-auto mb-2 h-10 w-10 text-red-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Secondary School Excellence</h2>
             <p className="text-xl text-gray-600">Comprehensive preparation for board exams and beyond</p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="text-center p-6 bg-red-50 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                <feature.icon className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+              <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-t-4 border-blue-200">
+                <feature.icon className="h-14 w-14 text-blue-700 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -162,17 +164,20 @@ const SecondarySchool = () => {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
+
       {/* Grade Structure */}
-      <section className="py-8 bg-transparent">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Grade Structure</h2>
+            <Book className="mx-auto mb-2 h-10 w-10 text-blue-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Grade Structure</h2>
             <p className="text-xl text-gray-600">Focused preparation for board examinations</p>
           </div>
-          
           <div className="grid lg:grid-cols-2 gap-8">
             {gradeStructure.map((grade, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-t-4 border-red-200">
                 <div className="text-center mb-6">
                   <h3 className="text-3xl font-bold text-red-700 mb-2">{grade.grade}</h3>
                   <p className="text-lg text-gray-600 font-semibold">{grade.age}</p>
@@ -181,7 +186,7 @@ const SecondarySchool = () => {
                 <div className="grid md:grid-cols-2 gap-3">
                   {grade.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-center">
-                      <Award className="h-5 w-5 text-red-600 mr-3" />
+                      <Award className="h-5 w-5 text-blue-600 mr-3" />
                       <span className="text-gray-700">{highlight}</span>
                     </div>
                   ))}
@@ -192,21 +197,28 @@ const SecondarySchool = () => {
         </div>
       </section>
 
-      {/* Subjects */}
-      <section className="py-8 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Secondary School at St. Britto's Academy – CBSE Curriculum for Academic Excellence
-          </h2>
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
+      {/* Subjects, Teaching Methods, Beyond Academics */}
+      <section className="py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <UsersIcon className="mx-auto mb-2 h-10 w-10 text-red-400" />
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+              Secondary School at St. Britto's Academy – CBSE Curriculum for Academic Excellence
+            </h2>
+          </div>
           <div className="text-lg text-gray-700 leading-relaxed mb-8">
             <p className="mb-6">
               The Secondary School Programme (Grades IX & X) at St. Britto's Academy follows NCERT textbooks as per CBSE guidelines, ensuring a strong academic foundation and skill-based learning.
             </p>
-
             <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <p className="mb-4 font-bold">Subjects of Study</p>
+              <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-blue-200">
+                <div className="flex items-center mb-4">
+                  <BookOpen className="h-7 w-7 text-blue-600 mr-2" />
+                  <p className="font-bold text-blue-800 text-xl mb-0">Subjects of Study</p>
+                </div>
                 <ul className="list-none space-y-2 mb-4">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
@@ -229,11 +241,13 @@ const SecondarySchool = () => {
                     <span>Internal Assessments – Health & Physical Education, Work Experience, Art Education</span>
                   </li>
                 </ul>
-          </div>
-          
-              <div className="space-y-8">
+              </div>
+              <div className="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-red-200 flex flex-col justify-between">
                 <div>
-                  <p className="mb-4 font-bold">Innovative Teaching Methodology</p>
+                  <div className="flex items-center mb-4">
+                    <Lightbulb className="h-7 w-7 text-red-500 mr-2" />
+                    <p className="font-bold text-red-800 text-xl mb-0">Innovative Teaching Methodology</p>
+                  </div>
                   <ul className="list-none space-y-2 mb-4">
                     <li className="flex items-start">
                       <span className="text-green-500 mr-2"><CheckCircle className="h-5 w-5" /></span>
@@ -261,27 +275,30 @@ const SecondarySchool = () => {
                     </li>
                   </ul>
                 </div>
-
-                <div>
-                  <p className="mb-4 font-bold">Beyond Academics – Leadership & Community Engagement</p>
-                  <ul className="list-none space-y-2 mb-4">
-                    <li className="flex items-start">
-                      <span className="mr-2" role="img" aria-label="medal">🏅</span>
-                      <span>Certifications in Leadership – Cultivating leadership qualities</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2" role="img" aria-label="handshake">🤝</span>
-                      <span>Community Outreach Programs – Encouraging social responsibility</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2" role="img" aria-label="scroll">📜</span>
-                      <span>Academic Excellence Certifications – Recognizing top achievers</span>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
-
+            <div className="mt-8 max-w-2xl mx-auto">
+              <div className="bg-yellow-50 rounded-2xl shadow-lg p-8 border-t-4 border-yellow-400">
+                <div className="flex items-center mb-4">
+                  <Star className="h-7 w-7 text-yellow-500 mr-2" />
+                  <p className="font-bold text-yellow-700 text-xl mb-0">Beyond Academics – Leadership & Community Engagement</p>
+                </div>
+                <ul className="list-none space-y-2 mb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2" role="img" aria-label="medal">🏅</span>
+                    <span>Certifications in Leadership – Cultivating leadership qualities</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2" role="img" aria-label="handshake">🤝</span>
+                    <span>Community Outreach Programs – Encouraging social responsibility</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2" role="img" aria-label="scroll">📜</span>
+                    <span>Academic Excellence Certifications – Recognizing top achievers</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <p className="mt-8">
               The CBSE Secondary Curriculum at St. Britto's Academy ensures intellectual growth, critical thinking, and career readiness, preparing students for higher education and future success.
             </p>
@@ -289,19 +306,22 @@ const SecondarySchool = () => {
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
+
       {/* Exam Preparation */}
-      <section className="py-8 bg-transparent">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Board Exam Preparation</h2>
+            <Target className="mx-auto mb-2 h-10 w-10 text-blue-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Board Exam Preparation</h2>
             <p className="text-xl text-gray-600">Comprehensive support for CBSE board examination success</p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {examPreparation.map((prep, index) => (
-              <div key={index} className="bg-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-                <prep.icon className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{prep.title}</h3>
+              <div key={index} className="bg-blue-50 p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center border-t-4 border-blue-200">
+                <prep.icon className="h-14 w-14 text-red-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{prep.title}</h3>
                 <p className="text-gray-600">{prep.description}</p>
               </div>
             ))}
@@ -309,76 +329,40 @@ const SecondarySchool = () => {
         </div>
       </section>
 
-      {/* Career Guidance */}
-      <section className="py-8 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Stream Selection Guidance</h2>
-            <p className="text-xl text-gray-600">Professional counseling for choosing the right academic path</p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            {careerGuidance.map((stream, index) => (
-              <div key={index} className="bg-red-50 p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{stream.stream}</h3>
-                <p className="text-gray-700 mb-6">{stream.description}</p>
-                
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Core Subjects:</h4>
-                  <ul className="space-y-2">
-                    {stream.subjects.map((subject, idx) => (
-                      <li key={idx} className="flex items-center">
-                        <BookOpen className="h-4 w-4 text-red-600 mr-2" />
-                        <span className="text-gray-700">{subject}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Career Options:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {stream.careers.map((career, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
-                        {career}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Achievements */}
-      <section className="py-8 bg-transparent">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Our Track Record</h2>
-            <p className="text-xl">Consistent excellence in board examinations and student outcomes</p>
+            <Star className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
+            <h2 className="text-4xl font-bold mb-2 text-gray-900">Our Track Record</h2>
+            <p className="text-xl text-gray-600">Consistent excellence in board examinations and student outcomes</p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {achievements.map((achievement, index) => (
-              <div key={index} className="bg-white bg-opacity-10 p-6 rounded-lg hover:bg-opacity-20 transition-all duration-300">
-                <div className="text-4xl font-bold mb-2">{achievement.metric}</div>
+              <div key={index} className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-t-4 border-yellow-200">
+                <div className="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full font-bold text-2xl mb-2 shadow">{achievement.metric}</div>
                 <div className="text-xl font-semibold mb-2">{achievement.label}</div>
-                <div className="text-red-100 text-sm">{achievement.description}</div>
+                <div className="text-gray-500 text-sm">{achievement.description}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
+
       {/* Support Services */}
-      <section className="py-8 bg-transparent">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Student Support Services</h2>
+            <UsersIcon className="mx-auto mb-2 h-10 w-10 text-blue-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Student Support Services</h2>
             <p className="text-xl text-gray-600">Comprehensive support for academic and personal success</p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -398,8 +382,9 @@ const SecondarySchool = () => {
                 description: 'Regular communication and involvement in student progress'
               }
             ].map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+              <div key={index} className="bg-blue-50 p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center border-t-4 border-blue-200">
+                <UsersIcon className="h-10 w-10 text-blue-600 mx-auto mb-2" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </div>
             ))}
@@ -408,28 +393,12 @@ const SecondarySchool = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-8 bg-transparent">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Excel in Board Examinations</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Prepare your child for board exam success and future academic achievements with our comprehensive secondary school program.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/admissions"
-              className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
-            >
-              Apply for Admission
-            </a>
-            <a
-              href="/academics/results"
-              className="border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
-            >
-              View Results
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="flex justify-center mt-12 mb-20">
+        <a href="/contact" className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-700 to-red-500 text-white text-xl font-bold rounded-full shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300">
+          Learn More or Contact Us
+          <ArrowRightCircle className="ml-3 h-7 w-7" />
+        </a>
+      </div>
     </div>
   );
 };

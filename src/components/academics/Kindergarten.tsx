@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Palette, Music, Users, Star, BookOpen, Play, Smile } from 'lucide-react';
+import { Heart, Palette, Music, Users, Star, BookOpen, Play, Smile, CheckCircle, Award } from 'lucide-react';
 
 const Kindergarten = () => {
   const features = [
@@ -108,30 +108,31 @@ const Kindergarten = () => {
   ];
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-gradient-to-br from-blue-50 via-white to-red-50 min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Kindergarten (Pre-KG to UKG)</h1>
-          <p className="text-xl max-w-3xl mx-auto">
-            The foundation of lifelong learning begins here. Our kindergarten program nurtures curiosity, creativity, and confidence in young learners through play-based learning and structured activities.
-          </p>
+          <h1 className="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Kindergarten (Pre-KG to UKG)</h1>
+          <p className="text-xl max-w-3xl mx-auto mb-2">The foundation of lifelong learning begins here. Our kindergarten program nurtures curiosity, creativity, and confidence in young learners through play-based learning and structured activities.</p>
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
+
       {/* Program Features */}
-      <section className="py-16 bg-white">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Our Kindergarten?</h2>
+            <Star className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Why Choose Our Kindergarten?</h2>
             <p className="text-xl text-gray-600">Creating the perfect foundation for lifelong learning</p>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="text-center p-6 bg-pink-50 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                <feature.icon className="h-12 w-12 text-pink-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+              <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-t-4 border-pink-200">
+                <feature.icon className="h-14 w-14 text-pink-600 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -139,110 +140,95 @@ const Kindergarten = () => {
         </div>
       </section>
 
-      {/* New Content: SUBJECTS OF STUDY */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
-            SUBJECTS OF STUDY
-          </h1>
-          <p className="text-xl text-gray-700 mb-8 text-center">
-            Kindergarten at St. Britto's Academy – A Joyful Learning Experience
-          </p>
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
 
-          <div className="text-lg text-gray-700 leading-relaxed mb-8">
-            <p className="mb-4">
-              At St. Britto's Academy, our Kindergarten programme (Pre-KG, LKG & UKG) follows the internationally accredited FEFDY Curriculum (IAO & CIAA), fostering holistic early childhood development.
-            </p>
-            <p className="mb-4">
-              Through a play-way and activity-oriented approach, we nurture literacy, numeracy, sensory exploration, scientific thinking, and creative expression. Our engaging curriculum enhances:
-            </p>
-            <ul className="list-none space-y-2 mb-4">
-              <li className="flex items-start">
-                <span className="text-green-500 mr-2">✔</span>
-                <span>Language Skills – Listening, Speaking, Reading, Writing & Viewing</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-500 mr-2">✔</span>
-                <span>Numeracy – Numbers, Patterns, Shapes & Logical Reasoning</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-500 mr-2">✔</span>
-                <span>Scientific Inquiry – Observation, Investigation & Problem-Solving</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-500 mr-2">✔</span>
-                <span>Creative Expression – Art, Music, Dance & Drama</span>
-                    </li>
-            </ul>
-            <p className="mb-8">
-              Our experiential learning methods focus on developing fine motor skills, hand-eye coordination, self-awareness, confidence, and a love for learning, making education a joyful and enriching journey.
-            </p>
-
-            <ul className="list-disc list-inside space-y-2">
-              <li>English Reading and Conversation</li>
-              <li>English Writing</li>
-              <li>English Dictation</li>
-              <li>Number work</li>
-              <li>Environmental Science (EVS )-UKG</li>
-              <li>General Awareness-LKG</li>
-              <li>Story Telling</li>
-              <li>Recitation</li>
-              <li>Physical Education</li>
-              <li>Language-Tamil ( Compulsory for LKG )</li>
-              <li>Hindi and Tamil (Compulsory for UKG )</li>
-              <li>Drawing and Colouring</li>
-              <li>Music</li>
-              <li>Craft</li>
-                </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Daily Schedule */}
-      <section className="py-16 bg-white">
+      {/* Subjects of Study */}
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">A Day in Kindergarten</h2>
-            <p className="text-xl text-gray-600">Structured yet flexible schedule that balances learning and play</p>
+            <BookOpen className="mx-auto mb-2 h-10 w-10 text-blue-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Subjects of Study</h2>
+            <p className="text-xl text-gray-600">A joyful, holistic learning experience</p>
           </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
-              {dailySchedule.map((item, index) => (
-                <div key={index} className="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center">
-                    <div className="md:w-1/4 mb-2 md:mb-0">
-                      <span className="text-lg font-bold text-purple-700">{item.time}</span>
-                    </div>
-                    <div className="md:w-1/3 mb-2 md:mb-0">
-                      <h4 className="text-xl font-semibold text-gray-900">{item.activity}</h4>
-                    </div>
-                    <div className="md:w-5/12">
-                      <p className="text-gray-600">{item.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-t-4 border-blue-200">
+              <p className="mb-4 font-bold text-blue-800 text-lg">Key Learning Areas:</p>
+              <ul className="list-none space-y-2 mb-4">
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-blue-600 mr-2" /> <span>Language Skills – Listening, Speaking, Reading, Writing & Viewing</span></li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-blue-600 mr-2" /> <span>Numeracy – Numbers, Patterns, Shapes & Logical Reasoning</span></li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-blue-600 mr-2" /> <span>Scientific Inquiry – Observation, Investigation & Problem-Solving</span></li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-blue-600 mr-2" /> <span>Creative Expression – Art, Music, Dance & Drama</span></li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-blue-600 mr-2" /> <span>Physical Education</span></li>
+                <li className="flex items-start"><CheckCircle className="h-5 w-5 text-blue-600 mr-2" /> <span>General Awareness & Environmental Science</span></li>
+              </ul>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-t-4 border-pink-200">
+              <p className="mb-4 font-bold text-pink-700 text-lg">Creative & Experiential Learning:</p>
+              <ul className="list-disc list-inside space-y-2 text-left">
+                <li>Story Telling, Recitation</li>
+                <li>Drawing, Colouring, Craft</li>
+                <li>Music, Dance, Drama</li>
+                <li>Outdoor Play, Games</li>
+                <li>Hands-on Activities</li>
+                <li>Field Trips & Celebrations</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
+
+      {/* Daily Schedule */}
+      <section className="py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Star className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">A Day in Kindergarten</h2>
+            <p className="text-xl text-gray-600">Balanced routine for joyful learning and growth</p>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white rounded-2xl shadow-xl border-t-4 border-yellow-200">
+              <thead>
+                <tr>
+                  <th className="py-3 px-4 text-left text-lg font-bold text-blue-700">Time</th>
+                  <th className="py-3 px-4 text-left text-lg font-bold text-blue-700">Activity</th>
+                  <th className="py-3 px-4 text-left text-lg font-bold text-blue-700">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dailySchedule.map((item, idx) => (
+                  <tr key={idx} className="border-b last:border-b-0">
+                    <td className="py-2 px-4 text-blue-900 font-semibold">{item.time}</td>
+                    <td className="py-2 px-4 text-pink-700 font-semibold">{item.activity}</td>
+                    <td className="py-2 px-4 text-gray-700">{item.description}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Divider */}
+      <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
+
       {/* Facilities */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Child-Friendly Facilities</h2>
-            <p className="text-xl text-gray-600">Specially designed spaces for young learners</p>
+            <Award className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Facilities</h2>
+            <p className="text-xl text-gray-600">Safe, creative, and inspiring spaces for young learners</p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {facilities.map((facility, index) => (
-              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{facility.name}</h3>
-                  <p className="text-gray-600">{facility.description}</p>
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {facilities.map((facility, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center border-t-4 border-yellow-200">
+                <Star className="h-10 w-10 text-pink-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{facility.name}</h3>
+                <p className="text-gray-600">{facility.description}</p>
               </div>
             ))}
           </div>

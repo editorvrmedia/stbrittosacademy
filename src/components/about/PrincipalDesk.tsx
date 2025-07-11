@@ -103,7 +103,7 @@ const PrincipalDesk = () => {
                 </div>
                 <div className="flex flex-col items-center bg-blue-50 rounded-lg p-4">
                   <span className="text-3xl mb-2">🧭</span>
-                  <span className="font-semibold text-gray-900">Career Guidance Expert</span>
+                  <span className="font-semibold text-gray-900 text-center">Career Guidance Expert</span>
                 </div>
               </div>
             </div>
