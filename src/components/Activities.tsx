@@ -34,7 +34,7 @@ const Activities = () => {
         {
           name: 'Arts',
           description: 'Painting, sculpture, and digital art workshops',
-          image: '/students activites page/ARTS.jpeg'
+          image: '/students activites page/ARTS.jpg'
         },
         {
           name: 'Music & Dance',
