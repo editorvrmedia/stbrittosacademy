@@ -12,17 +12,17 @@ const Activities = () => {
         {
           name: 'Football',
           description: 'Inter-school competitions and district championships',
-          image: 'https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          image: '/students activites/ARU07726.jpg'
         },
         {
-          name: 'Basketball',
-          description: 'State-level tournaments and skill development',
-          image: 'https://images.pexels.com/photos/1752757/pexels-photo-1752757.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Swimming',
+          description: 'Swimming meets, training, and inter-school competitions',
+          image: '/BYC/Splash.png'
         },
         {
-          name: 'Athletics',
-          description: 'Track and field events, marathons, and fitness programs',
-          image: 'https://images.pexels.com/photos/2402777/pexels-photo-2402777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Badminton',
+          description: 'Badminton coaching, tournaments, and skill development',
+          image: 'https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
         }
       ]
     },
@@ -59,14 +59,14 @@ const Activities = () => {
           image: 'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
         },
         {
-          name: 'Mathematics Olympiad',
-          description: 'Problem-solving competitions and mathematical research',
-          image: 'https://images.pexels.com/photos/6238003/pexels-photo-6238003.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Sports Club',
+          description: 'Team games, fitness activities, and inter-school sports events',
+          image: '/students activites/ARU07726.jpg'
         },
         {
-          name: 'Debate Society',
-          description: 'Public speaking, debates, and model UN conferences',
-          image: 'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Photography Club',
+          description: 'Workshops, photo walks, and student photography exhibitions',
+          image: '/students activites/photographyclub.jpg'
         }
       ]
     },
@@ -76,18 +76,18 @@ const Activities = () => {
       color: 'red',
       items: [
         {
-          name: 'Environmental Club',
-          description: 'Tree plantation, waste management, and sustainability projects',
-          image: 'https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Scouts & Guides',
+          description: 'Leadership, outdoor skills, and community service through scouting activities',
+          image: '/students activites/scouts&guides.JPG'
         },
         {
-          name: 'Social Service',
-          description: 'Community outreach, elderly care, and charity drives',
-          image: 'https://images.pexels.com/photos/6646919/pexels-photo-6646919.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
+          name: 'Cubs & Bulbuls',
+          description: 'Character building, teamwork, and service for younger students',
+          image: '/students activites/cub&bulbuls.JPG'
         },
         {
-          name: 'Health Awareness',
-          description: 'Health camps, awareness programs, and first aid training',
+          name: 'Road Safety Patrol (RSP)',
+          description: 'Promoting road safety awareness and discipline among students',
           image: 'https://images.pexels.com/photos/6647019/pexels-photo-6647019.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
         }
       ]
@@ -96,34 +96,50 @@ const Activities = () => {
 
   const upcomingEvents = [
     {
-      date: '2024-02-20',
-      title: 'Annual Sports Day',
-      description: 'Inter-house competitions and athletic events',
-      category: 'Sports'
+      date: '2025-07-25',
+      title: 'Young Forum /Royal Gridlock (KG & Primary)',
+      description: 'Young Forum event for Kindergarten and Primary students along with Royal Gridlock activities.',
+      time: '09:00 AM - 03:00 PM',
+      location: 'School Ground & Classrooms',
+      image: '/BYC/RGL.png'
     },
     {
-      date: '2024-02-25',
-      title: 'Cultural Festival',
-      description: 'Music, dance, and drama performances',
-      category: 'Arts'
+      date: '2025-07-26',
+      title: 'Young Forum / Royal Gridlock (Middle, Secondary & Senior Secondary)',
+      description: 'Young Forum event for Middle, Secondary and Senior Secondary students along with Royal Gridlock activities.',
+      time: '09:00 AM - 03:00 PM',
+      location: 'School Ground & Classrooms',
+      image: '/BYC/RGL.png'
     },
     {
-      date: '2024-03-05',
-      title: 'Science Exhibition',
-      description: 'Student research projects and innovations',
-      category: 'Academic'
+      date: '2025-08-23',
+      title: 'Asset (Girls)',
+      description: 'Asset assessment and competition for female students.',
+      time: '09:00 AM - 12:00 PM',
+      location: 'School Classrooms',
+      image: '/BYC/Asset.png'
     },
     {
-      date: '2024-03-12',
-      title: 'Community Service Week',
-      description: 'Environmental and social service activities',
-      category: 'Service'
+      date: '2025-08-30',
+      title: 'Asset (Boys)',
+      description: 'Asset assessment and competition for male students.',
+      time: '09:00 AM - 12:00 PM',
+      location: 'School Classrooms',
+      image: '/BYC/Asset.png'
+    },
+    {
+      date: '2025-10-25',
+      title: 'Asset - Splash (Swimming Meet)',
+      description: 'Asset swimming competition and meet for students.',
+      time: '09:00 AM - 04:00 PM',
+      location: 'School Swimming Pool',
+      image: '/BYC/Splash.png'
     }
   ];
 
   const specialPrograms = [
     {
-      title: '8 Quotients Program',
+      title: '8 Quotients',
       description: 'Recognizing and nurturing the eight different types of intelligence in every student',
       icon: Brain,
       color: 'indigo',
@@ -131,7 +147,7 @@ const Activities = () => {
       features: ['Multiple Intelligence Theory', 'Personalized Learning', 'Talent Recognition', 'Holistic Development']
     },
     {
-      title: 'Believe You Can Program',
+      title: 'Believe You Can event',
       description: 'Empowering students to believe in themselves and achieve their dreams',
       icon: Star,
       color: 'amber',
@@ -238,18 +254,16 @@ const Activities = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {upcomingEvents.map((event, index) => (
-              <div key={index} className="bg-emerald-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="text-sm text-emerald-600 font-semibold mb-2">{event.date}</div>
+              <div key={index} className="bg-emerald-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="w-full h-32 object-contain mb-4 bg-white rounded"
+                />
+                <div className="text-sm text-emerald-600 font-semibold mb-1">{event.date}</div>
+                <div className="text-xs text-gray-500 mb-2">{event.time} | {event.location}</div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{event.title}</h3>
-                <p className="text-gray-600 text-sm mb-3">{event.description}</p>
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                  event.category === 'Sports' ? 'bg-green-100 text-green-800' :
-                  event.category === 'Arts' ? 'bg-purple-100 text-purple-800' :
-                  event.category === 'Academic' ? 'bg-blue-100 text-blue-800' :
-                  'bg-red-100 text-red-800'
-                }`}>
-                  {event.category}
-                </span>
+                <p className="text-gray-600 text-sm mb-3 flex-1">{event.description}</p>
               </div>
             ))}
           </div>

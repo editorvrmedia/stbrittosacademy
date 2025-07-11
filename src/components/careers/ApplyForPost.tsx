@@ -81,7 +81,7 @@ const ApplyForPost = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Apply for a Position</h1>
           <p className="text-xl max-w-3xl mx-auto">
-            Complete the application form below to be considered for available positions.
+            There are currently no open positions. You may still submit your application for future consideration.
           </p>
         </div>
       </section>

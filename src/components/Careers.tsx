@@ -13,110 +13,19 @@ const Careers = () => {
     { id: 'technology', name: 'Technology' }
   ];
 
-  const openPositions = [
-    {
-      id: 1,
-      title: 'Mathematics Teacher',
-      department: 'teaching',
-      location: 'Chennai',
-      type: 'Full-time',
-      experience: '3-5 years',
-      description: 'We are seeking a passionate Mathematics teacher for grades 9-12 with strong subject knowledge and innovative teaching methods.',
-      requirements: [
-        'Master\'s degree in Mathematics or related field',
-        'B.Ed qualification required',
-        'Minimum 3 years teaching experience',
-        'Excellent communication skills',
-        'Proficiency in digital teaching tools'
-      ],
-      posted: '2024-01-15'
-    },
-    {
-      id: 2,
-      title: 'Science Laboratory Assistant',
-      department: 'support',
-      location: 'Chennai',
-      type: 'Full-time',
-      experience: '2-3 years',
-      description: 'Support science teachers in laboratory activities and maintain laboratory equipment and safety protocols.',
-      requirements: [
-        'Bachelor\'s degree in Science',
-        'Laboratory experience preferred',
-        'Knowledge of safety protocols',
-        'Organizational skills',
-        'Ability to work with students'
-      ],
-      posted: '2024-01-12'
-    },
-    {
-      id: 3,
-      title: 'IT Support Specialist',
-      department: 'technology',
-      location: 'Chennai',
-      type: 'Full-time',
-      experience: '2-4 years',
-      description: 'Manage school IT infrastructure, provide technical support, and assist with digital learning initiatives.',
-      requirements: [
-        'Bachelor\'s degree in Computer Science or IT',
-        'Network administration experience',
-        'Hardware troubleshooting skills',
-        'Experience with educational technology',
-        'Strong problem-solving abilities'
-      ],
-      posted: '2024-01-10'
-    },
-    {
-      id: 4,
-      title: 'Admissions Counselor',
-      department: 'administration',
-      location: 'Chennai',
-      type: 'Full-time',
-      experience: '1-3 years',
-      description: 'Guide prospective families through the admission process and represent the school at various events.',
-      requirements: [
-        'Bachelor\'s degree in any field',
-        'Excellent communication skills',
-        'Customer service experience',
-        'Organizational abilities',
-        'Passion for education'
-      ],
-      posted: '2024-01-08'
-    },
-    {
-      id: 5,
-      title: 'English Teacher',
-      department: 'teaching',
-      location: 'Chennai',
-      type: 'Full-time',
-      experience: '4-6 years',
-      description: 'Teach English Language and Literature to middle and high school students with focus on creative writing and critical thinking.',
-      requirements: [
-        'Master\'s degree in English Literature',
-        'B.Ed qualification required',
-        'Minimum 4 years teaching experience',
-        'Creative teaching methodologies',
-        'Experience with curriculum development'
-      ],
-      posted: '2024-01-05'
-    },
-    {
-      id: 6,
-      title: 'School Counselor',
-      department: 'support',
-      location: 'Chennai',
-      type: 'Full-time',
-      experience: '3-5 years',
-      description: 'Provide academic and personal counseling to students, support their emotional well-being and career guidance.',
-      requirements: [
-        'Master\'s degree in Psychology or Counseling',
-        'Licensed counselor preferred',
-        'Experience working with adolescents',
-        'Strong interpersonal skills',
-        'Crisis intervention training'
-      ],
-      posted: '2024-01-03'
-    }
-  ];
+  type Position = {
+    id: number;
+    title: string;
+    department: string;
+    location: string;
+    type: string;
+    experience: string;
+    description: string;
+    requirements: string[];
+    posted: string;
+  };
+
+  const openPositions: Position[] = [];
 
   const benefits = [
     {
@@ -216,66 +125,72 @@ const Careers = () => {
             <p className="text-xl text-gray-600">Explore current opportunities to join our team</p>
           </div>
           
-          <div className="space-y-6">
-            {filteredPositions.map((position) => (
-              <div key={position.id} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-3">
-                      <h3 className="text-2xl font-bold text-gray-900 mr-4">{position.title}</h3>
-                      <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                        position.department === 'teaching' ? 'bg-blue-100 text-blue-800' :
-                        position.department === 'administration' ? 'bg-purple-100 text-purple-800' :
-                        position.department === 'support' ? 'bg-green-100 text-green-800' :
-                        'bg-gray-100 text-gray-800'
-                      }`}>
-                        {departments.find(dept => dept.id === position.department)?.name}
-                      </span>
+          {filteredPositions.length === 0 ? (
+            <div className="text-center text-gray-500 text-xl py-12">
+              There are currently no open positions. Please check back later.
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {filteredPositions.map((position) => (
+                <div key={position.id} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center mb-3">
+                        <h3 className="text-2xl font-bold text-gray-900 mr-4">{position.title}</h3>
+                        <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
+                          position.department === 'teaching' ? 'bg-blue-100 text-blue-800' :
+                          position.department === 'administration' ? 'bg-purple-100 text-purple-800' :
+                          position.department === 'support' ? 'bg-green-100 text-green-800' :
+                          'bg-gray-100 text-gray-800'
+                        }`}>
+                          {departments.find(dept => dept.id === position.department)?.name}
+                        </span>
+                      </div>
+                      
+                      <div className="flex flex-wrap items-center gap-4 mb-4 text-gray-600">
+                        <div className="flex items-center">
+                          <MapPin className="h-4 w-4 mr-1" />
+                          <span>{position.location}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Clock className="h-4 w-4 mr-1" />
+                          <span>{position.type}</span>
+                        </div>
+                        <div className="flex items-center">
+                          <Briefcase className="h-4 w-4 mr-1" />
+                          <span>{position.experience}</span>
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          Posted: {formatDate(position.posted)}
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-700 mb-4">{position.description}</p>
+                      
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
+                        <ul className="list-disc list-inside text-gray-600 space-y-1">
+                          {position.requirements.map((req: string, index: number) => (
+                            <li key={index}>{req}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                     
-                    <div className="flex flex-wrap items-center gap-4 mb-4 text-gray-600">
-                      <div className="flex items-center">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        <span>{position.location}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Clock className="h-4 w-4 mr-1" />
-                        <span>{position.type}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Briefcase className="h-4 w-4 mr-1" />
-                        <span>{position.experience}</span>
-                      </div>
-                      <div className="text-sm text-gray-500">
-                        Posted: {formatDate(position.posted)}
-                      </div>
+                    <div className="lg:ml-6">
+                      <Link
+                        to="/careers/apply"
+                        className="w-full lg:w-auto bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center justify-center"
+                      >
+                        Apply Now
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </div>
-                    
-                    <p className="text-gray-700 mb-4">{position.description}</p>
-                    
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
-                      <ul className="list-disc list-inside text-gray-600 space-y-1">
-                        {position.requirements.map((req, index) => (
-                          <li key={index}>{req}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div className="lg:ml-6">
-                    <Link
-                      to="/careers/apply"
-                      className="w-full lg:w-auto bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300 inline-flex items-center justify-center"
-                    >
-                      Apply Now
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
