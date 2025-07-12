@@ -404,7 +404,7 @@ const Gallery = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="/admissions"
+              href="/admissions/procedure"
               className="bg-white text-indigo-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300"
             >
               Apply Now
