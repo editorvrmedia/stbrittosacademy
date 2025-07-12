@@ -7,27 +7,10 @@ const classOptions = [
 ];
 
 const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onClose: () => void; onUserTyped?: () => void }) => {
-  const [submitting, setSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleInput = () => {
     if (onUserTyped) onUserTyped();
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setSubmitMessage(null);
-    // Simulate form submission and show thank you message
-    setTimeout(() => {
-      setSubmitMessage('Thank you for your inquiry! We will contact you soon.');
-      setSubmitting(false);
-      setTimeout(() => {
-        setSubmitMessage(null);
-        onClose();
-      }, 2000);
-    }, 1000);
   };
 
   if (!isOpen) return null;
@@ -68,7 +51,13 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
               <X className="h-6 w-6" />
             </button>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form action="https://formsubmit.co/facelessmangopi@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New Admission Form" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value={window.location.href} />
+
+            
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium text-white mb-1">Name:</label>
               <input
@@ -81,7 +70,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="number" className="block text-sm font-medium text-white mb-1">Number:</label>
+              <label htmlFor="number" className="block text-sm font-medium text-white mb-1">Phone:</label>
               <input
                 type="text"
                 id="number"
@@ -92,33 +81,39 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="classVal" className="block text-sm font-medium text-white mb-1">CLASS:</label>
+              <label htmlFor="class" className="block text-sm font-medium text-white mb-1">Class:</label>
               <select
-                id="classVal"
-                name="classVal"
+                id="class"
+                name="class"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 required
                 onInput={handleInput}
               >
-                <option value="">Select CLASS</option>
+                <option value="">Select Class</option>
                 {classOptions.map((option) => (
                   <option key={option} value={option}>{option}</option>
                 ))}
               </select>
             </div>
+            <div className="mb-4">
+              <label htmlFor="email" className="block text-sm font-medium text-white mb-1">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                required
+                onInput={handleInput}
+              />
+            </div>
             <button
               type="submit"
               className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors duration-200"
-              disabled={submitting}
             >
-              {submitting ? 'Submitting...' : 'Submit Admission Inquiry'}
+              Submit
             </button>
           </form>
-          {submitMessage && (
-            <div className="mt-4 text-center text-lg font-semibold text-green-600">
-              {submitMessage}
-            </div>
-          )}
+
         </div>
       </div>
     </div>
