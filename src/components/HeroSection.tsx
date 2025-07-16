@@ -67,15 +67,15 @@ const HeroSection = () => {
                 loop
                 muted
                 playsInline
-                className="absolute top-0 left-0 w-full h-full object-cover bg-black transition-transform duration-300"
+                className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300"
                 style={{
                   border: 0,
-                  background: 'black',
                   minWidth: '100vw',
                   minHeight: '100%',
                   maxHeight: '100%',
                   maxWidth: '100%',
                 }}
+                poster="/LOGOS/SBA.png"
                 onError={(e) => {
                   console.error('Video failed to load:', e);
                   // Fallback to a static image or background
