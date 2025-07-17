@@ -1,5 +1,6 @@
 import React from 'react';
 import { Eye, Target, Heart, Star, Users, BookOpen, Award, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const VisionMission = () => {
   const coreValues = [
@@ -49,15 +50,21 @@ const VisionMission = () => {
         }
       `}</style>
 
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      {/* Hero/Intro Section */}
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6 inter-font">Vision & Mission</h1>
           <p className="text-xl max-w-3xl mx-auto inter-font">
             Our vision and mission guide every aspect of our educational journey, shaping the future leaders of tomorrow through excellence, integrity, and innovation.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Vision Section */}
       <section className="py-16 bg-white">

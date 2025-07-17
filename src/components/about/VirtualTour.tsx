@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Play, Pause, RotateCcw, ZoomIn, ZoomOut, MapPin, Camera } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const VirtualTour = () => {
   const [currentLocation, setCurrentLocation] = useState(0);
@@ -82,15 +83,21 @@ const VirtualTour = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      {/* Hero/Intro Section */}
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Virtual Tour</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Experience our campus virtually and discover the world-class facilities, vibrant learning spaces, and nurturing environment that makes St. Britto's Academy special.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Virtual Tour Interface */}
       <section className="py-16 bg-gray-50">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const logbooks = [
   {
@@ -45,9 +46,18 @@ const logbooks = [
 
 const AnnualReport = () => (
   <div className="min-h-screen flex flex-col items-center bg-white">
-    <div className="bg-blue-900 py-6 px-4 w-full">
-      <h1 className="text-3xl sm:text-4xl font-bold text-white text-center" style={{fontFamily: 'sans-serif'}}>Annual Report | St.Britto's Academy.</h1>
-    </div>
+    {/* Hero/Intro Section */}
+    <motion.section
+      className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
+      <div className="bg-blue-900 py-6 px-4 w-full">
+        <h1 className="text-3xl sm:text-4xl font-bold text-white text-center" style={{fontFamily: 'sans-serif'}}>Annual Report | St.Britto's Academy.</h1>
+      </div>
+    </motion.section>
     <div className="flex-1 flex flex-col items-center justify-center w-full">
       <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-md w-full mx-4 mt-10 mb-10 border border-blue-200">
         <ul className="space-y-5">

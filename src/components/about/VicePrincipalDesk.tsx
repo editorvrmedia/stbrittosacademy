@@ -27,15 +27,29 @@ const VicePrincipalDesk = () => {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
         className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Vice Principal's Desk</h1>
-          <p className="text-xl max-w-3xl mx-auto">
+          <motion.h1
+            className="text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            Vice Principal's Desk
+          </motion.h1>
+          <motion.p
+            className="text-xl max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             A message from our Vice Principal, Mrs. Joan Rajesh, on our educational philosophy and commitment to student success.
-          </p>
+          </motion.p>
         </div>
       </motion.section>
 

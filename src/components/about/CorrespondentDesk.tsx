@@ -1,25 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { Quote, BookOpen, Users, Target, Lightbulb, Heart, Award, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-// Register ScrollTrigger plugin only on client side
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const CorrespondentDesk = () => {
-  // Refs for GSAP animations - now only for simple animations, not pinning
-  const heroRef = useRef<HTMLElement>(null);
-  const profileRef = useRef<HTMLElement>(null);
-  const messageRef = useRef<HTMLElement>(null);
-  const philosophyRef = useRef<HTMLElement>(null);
-  const focusRef = useRef<HTMLElement>(null);
-  const successRef = useRef<HTMLElement>(null);
-  const legacyRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLElement>(null);
-
   const educationalFocus = [
     {
       icon: Heart,
@@ -75,254 +58,10 @@ const CorrespondentDesk = () => {
     'The wisdom and integrity you show in your decisions'
   ];
 
-  // GSAP Animations Setup - Refactored to use static wrappers and simple animations only
-  useEffect(() => {
-    // Guard against SSR and missing refs
-    if (typeof window === 'undefined' || !heroRef.current || !messageRef.current || !philosophyRef.current || !focusRef.current || !successRef.current || !ctaRef.current) {
-      return;
-    }
-
-    const scrollTriggers: ScrollTrigger[] = [];
-
-    try {
-      // Hero Section Animation - Simple fade/slide only
-      if (heroRef.current) {
-        const trigger = ScrollTrigger.create({
-          trigger: heroRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            const elements = heroRef.current?.querySelectorAll('*');
-            if (elements && elements.length > 0) {
-              gsap.fromTo(elements,
-                {
-                  opacity: 0,
-                  y: 50,
-                  scale: 0.9
-                },
-                {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  duration: 1,
-                  stagger: 0.1,
-                  ease: 'power2.out'
-                }
-              );
-            }
-          }
-        });
-        scrollTriggers.push(trigger);
-      }
-
-      // Message Section Animation - Simple fade/slide only
-      if (messageRef.current) {
-        const trigger = ScrollTrigger.create({
-          trigger: messageRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            const tl = gsap.timeline();
-            const h2Element = messageRef.current?.querySelector('h2');
-            const pElements = messageRef.current?.querySelectorAll('p');
-            
-            if (h2Element) {
-              tl.fromTo(h2Element,
-                { opacity: 0, y: 60 },
-                { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
-              );
-            }
-            
-            if (pElements && pElements.length > 0) {
-              tl.fromTo(pElements,
-                { opacity: 0, x: -50 },
-                { opacity: 1, x: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' },
-                '-=0.4'
-              );
-            }
-          }
-        });
-        scrollTriggers.push(trigger);
-      }
-
-      // Philosophy Section Animation - Simple fade/slide only
-      if (philosophyRef.current) {
-        const trigger = ScrollTrigger.create({
-          trigger: philosophyRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            const elements = philosophyRef.current?.querySelectorAll('.philosophy-item');
-            if (elements && elements.length > 0) {
-              gsap.fromTo(elements,
-                {
-                  opacity: 0,
-                  y: 40,
-                  scale: 0.9
-                },
-                {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  duration: 0.8,
-                  stagger: 0.15,
-                  ease: 'power2.out'
-                }
-              );
-            }
-          }
-        });
-        scrollTriggers.push(trigger);
-      }
-
-      // Focus Areas Animation - Simple fade/slide only
-      if (focusRef.current) {
-        const trigger = ScrollTrigger.create({
-          trigger: focusRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            const elements = focusRef.current?.querySelectorAll('.focus-item');
-            if (elements && elements.length > 0) {
-              gsap.fromTo(elements,
-                {
-                  opacity: 0,
-                  y: 30,
-                  scale: 0.8
-                },
-                {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  duration: 0.6,
-                  stagger: 0.1,
-                  ease: 'power2.out'
-                }
-              );
-            }
-          }
-        });
-        scrollTriggers.push(trigger);
-      }
-
-      // Success Stories Animation - Simple fade/slide only
-      if (successRef.current) {
-        const trigger = ScrollTrigger.create({
-          trigger: successRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            const elements = successRef.current?.querySelectorAll('.success-item');
-            if (elements && elements.length > 0) {
-              gsap.fromTo(elements,
-                {
-                  opacity: 0,
-                  y: 40,
-                  scale: 0.9
-                },
-                {
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  duration: 0.8,
-                  stagger: 0.2,
-                  ease: 'power2.out'
-                }
-              );
-            }
-          }
-        });
-        scrollTriggers.push(trigger);
-      }
-
-      // Image Animation - Simple fade/slide only
-      if (legacyRef.current) {
-        const trigger = ScrollTrigger.create({
-          trigger: legacyRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            const tl = gsap.timeline();
-            const imgElement = legacyRef.current?.querySelector('img');
-            const contentElements = legacyRef.current?.querySelectorAll('.legacy-content > *');
-            
-            if (imgElement) {
-              tl.fromTo(imgElement,
-                { opacity: 0, x: 100, scale: 0.8 },
-                { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: 'power2.out' }
-              );
-            }
-            
-            if (contentElements && contentElements.length > 0) {
-              tl.fromTo(contentElements,
-                { opacity: 0, x: -50 },
-                { opacity: 1, x: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' },
-                '-=0.4'
-              );
-            }
-          }
-        });
-        scrollTriggers.push(trigger);
-      }
-
-      // CTA Section Animation - Simple fade/slide only
-      if (ctaRef.current) {
-        const trigger = ScrollTrigger.create({
-          trigger: ctaRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
-          onEnter: () => {
-            const elements = ctaRef.current?.querySelectorAll('*');
-            if (elements && elements.length > 0) {
-              gsap.fromTo(elements,
-                {
-                  opacity: 0,
-                  y: 40
-                },
-                {
-                  opacity: 1,
-                  y: 0,
-                  duration: 0.8,
-                  stagger: 0.1,
-                  ease: 'power2.out'
-                }
-              );
-            }
-          }
-        });
-        scrollTriggers.push(trigger);
-      }
-    } catch (error) {
-      console.error('CorrespondentDesk GSAP error:', error);
-    }
-
-    // Cleanup function
-    return () => {
-      try {
-        scrollTriggers.forEach(trigger => trigger.kill());
-        ScrollTrigger.getAll().forEach(trigger => {
-          if (scrollTriggers.includes(trigger)) {
-            trigger.kill();
-          }
-        });
-      } catch (error) {
-        console.error('CorrespondentDesk GSAP cleanup error:', error);
-      }
-    };
-  }, []);
-
   return (
     <div className="pt-20">
       {/* Hero Section */}
       <motion.section
-        ref={heroRef}
         className="py-16 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -330,16 +69,29 @@ const CorrespondentDesk = () => {
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Correspondent's Desk</h1>
-          <p className="text-xl max-w-3xl mx-auto">
+          <motion.h1
+            className="text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            Correspondent's Desk
+          </motion.h1>
+          <motion.p
+            className="text-xl max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             Insights from our Correspondent on character formation, innovative education, and creating meaningful learning experiences at St. Britto's Academy.
-          </p>
+          </motion.p>
         </div>
       </motion.section>
 
       {/* Correspondent's Profile */}
       <motion.section
-        ref={profileRef}
         className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -405,7 +157,6 @@ const CorrespondentDesk = () => {
 
       {/* Correspondent's Message */}
       <motion.section
-        ref={messageRef}
         className="py-16 bg-gray-50"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -462,7 +213,6 @@ const CorrespondentDesk = () => {
 
       {/* Educational Philosophy */}
       <motion.section
-        ref={philosophyRef}
         className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -487,7 +237,7 @@ const CorrespondentDesk = () => {
       </motion.section>
 
       {/* Educational Focus Areas */}
-      <section ref={focusRef} className="py-16 bg-sky-50">
+      <section className="py-16 bg-sky-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Educational Focus</h2>
@@ -507,7 +257,7 @@ const CorrespondentDesk = () => {
       </section>
 
       {/* Success Redefined */}
-      <section ref={successRef} className="py-16 bg-indigo-700 text-white">
+      <section className="py-16 bg-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">How We Measure Success</h2>
@@ -560,7 +310,7 @@ const CorrespondentDesk = () => {
                 </div>
               </div>
             </div>
-            <div ref={legacyRef} className="legacy-content">
+            <div className="legacy-content">
               <img
                 src="/correspondant.png"
                 alt="Dr. Vimala Rani Britto - Educational Visionary"
@@ -573,7 +323,6 @@ const CorrespondentDesk = () => {
 
       {/* Call to Action */}
       <motion.section
-        ref={ctaRef}
         className="py-16 bg-indigo-900 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

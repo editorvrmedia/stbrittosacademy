@@ -146,15 +146,21 @@ const Infrastructure = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      {/* Hero/Intro Section */}
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">School Infrastructure</h1>
           <p className="text-xl max-w-3xl mx-auto">
             State-of-the-art facilities designed to provide the best learning environment for our students, supporting both academic excellence and holistic development.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Campus Overview */}
       <section className="py-16 bg-white">

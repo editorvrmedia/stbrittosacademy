@@ -47,25 +47,41 @@ const PrincipalDesk = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <motion.section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <motion.section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             className="text-5xl font-bold mb-6"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
             viewport={{ once: true, amount: 0.7 }}
           >
             Principal's Desk
           </motion.h1>
-          <p className="text-xl max-w-3xl mx-auto">
+          <motion.p
+            className="text-xl max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             A message from our Principal, Mrs. Mary Vasantha Kumari, on our commitment to excellence in education and holistic development.
-          </p>
+          </motion.p>
         </div>
       </motion.section>
 
       {/* Principal's Profile */}
-      <motion.section className="py-16 bg-white">
+      <motion.section className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
@@ -158,7 +174,12 @@ const PrincipalDesk = () => {
       </section>
 
       {/* Prestigious Achievements */}
-      <motion.section className="py-16 bg-white">
+      <motion.section className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2
@@ -194,7 +215,12 @@ const PrincipalDesk = () => {
       </motion.section>
 
       {/* Innovative Features */}
-      <motion.section className="py-16 bg-gray-50">
+      <motion.section className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2
@@ -230,7 +256,12 @@ const PrincipalDesk = () => {
       </motion.section>
 
       {/* Educational Philosophy */}
-      <motion.section className="py-16 bg-blue-700 text-white">
+      <motion.section className="py-16 bg-blue-700 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2
@@ -297,7 +328,12 @@ const PrincipalDesk = () => {
       </motion.section>
 
       {/* 28 Years of Excellence */}
-      <motion.section className="py-16 bg-white">
+      <motion.section className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2
@@ -338,7 +374,12 @@ const PrincipalDesk = () => {
       </motion.section>
 
       {/* Call to Action */}
-      <motion.section className="py-16 bg-gray-50">
+      <motion.section className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-4xl font-bold text-gray-900 mb-6"

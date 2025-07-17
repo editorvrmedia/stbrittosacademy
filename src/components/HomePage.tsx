@@ -284,10 +284,10 @@ const HomePage = () => {
       <motion.section
         ref={quickAccessRef}
         className="section pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden"
-        initial={false}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.1 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
@@ -352,10 +352,10 @@ const HomePage = () => {
       <motion.section 
         ref={yearsSectionRef}
         className="section py-12 sm:py-16 lg:py-20 bg-[#f5f8ff] max-w-full overflow-x-hidden"
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <motion.h2 
@@ -491,10 +491,10 @@ const HomePage = () => {
       {/* Stats Bar and Vision & Mission Section */}
       <motion.section 
         className="section w-full"
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
       >
         {/* Stats Bar */}
         <motion.div 
@@ -565,10 +565,10 @@ const HomePage = () => {
       <motion.section
         ref={ctaSectionRef}
         className="section py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white max-w-full overflow-x-hidden"
-        initial={{ opacity: 0, y: 60 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center">
           <motion.div

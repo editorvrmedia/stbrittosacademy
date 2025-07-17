@@ -103,13 +103,19 @@ const Curriculum = () => {
 
   return (
     <div className="pt-20 bg-gradient-to-br from-blue-50 via-white to-red-50 min-h-screen">
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg">
+      {/* Hero/Intro Section */}
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedHeading as="h1" className="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Our Curriculum</AnimatedHeading>
           <p className="text-xl max-w-3xl mx-auto mb-2">A comprehensive, well-rounded curriculum designed to nurture academic excellence, character development, and lifelong learning skills.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />

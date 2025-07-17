@@ -1,17 +1,24 @@
 import React from 'react';
 import { Users, Shield, Award, Target, Heart, BookOpen, Star, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Governance = () => (
   <div className="pt-36 pb-16 bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
-    {/* Hero Section */}
-    <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white shadow-lg rounded-b-3xl mb-12">
+    {/* Hero/Intro Section */}
+    <motion.section
+      className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 className="text-5xl font-bold mb-6 drop-shadow">School Governance</h1>
         <p className="text-xl max-w-3xl mx-auto opacity-90">
           Our governance structure ensures transparency, accountability, and excellence in all aspects of school management and educational delivery.
         </p>
       </div>
-    </section>
+    </motion.section>
     <section className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 mt-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
         {/* Visionary Leadership */}

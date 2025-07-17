@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, BookOpen, Globe, Heart, Star, Target, Shield, Lightbulb, Trophy } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const WhyStBrittos = () => {
   const reasons = [
@@ -129,8 +130,14 @@ const WhyStBrittos = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-emerald-700 to-emerald-900 text-white">
+      {/* Hero/Intro Section */}
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Why Choose St. Britto's Academy?</h1>
           <p className="text-xl max-w-4xl mx-auto mb-8">
@@ -141,7 +148,7 @@ const WhyStBrittos = () => {
             <h2 className="text-2xl font-bold mb-4">St. Britto's Academy – Excellence in Education, Leadership & Global Awareness</h2>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Excellence & Heritage */}
       <section className="py-8 bg-transparent">
