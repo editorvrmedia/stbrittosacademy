@@ -8,6 +8,7 @@ import { motion, useInView, animate } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ErrorBoundary from './ErrorBoundary';
+import AnimatedCounter from './animated/AnimatedCounter';
 
 // Register ScrollTrigger plugin only on client side
 if (typeof window !== 'undefined') {
@@ -623,65 +624,6 @@ const HomePage = () => {
         </motion.div>
       )}
     </div>
-  );
-};
-
-// Animated Counter Component
-const AnimatedCounter = ({ target, suffix = '', duration = 1000, className = '', textColor = '' }: { target: number, suffix?: string, duration?: number, className?: string, textColor?: string }) => {
-  const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const elementRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            animateCount();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
-    };
-  }, [hasAnimated]);
-
-  const animateCount = () => {
-    let startTime: number | null = null;
-    const startCount = 0;
-
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const current = Math.floor(startCount + (target - startCount) * progress);
-      setCount(current);
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        setCount(target);
-      }
-    };
-
-    requestAnimationFrame(step);
-  };
-
-  const formatNumber = (num: number) => num.toLocaleString();
-
-  return (
-    <span ref={elementRef} className={`font-bold ${className} ${textColor}`}>
-      {formatNumber(count)}{suffix}
-    </span>
   );
 };
 

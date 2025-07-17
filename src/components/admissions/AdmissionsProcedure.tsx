@@ -1,6 +1,7 @@
 import React from 'react';
 import { FileText, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import AnimatedHeading from '../animated/AnimatedHeading';
 
 const AdmissionsProcedure = () => {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ const AdmissionsProcedure = () => {
     <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-sky-100 py-16 px-2 flex flex-col items-center">
       {/* Header Section */}
       <div className="w-full max-w-3xl text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 drop-shadow-sm">Admission Procedure</h1>
+        <AnimatedHeading as="h1" className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 drop-shadow-sm">Admission Procedure</AnimatedHeading>
         <p className="text-lg md:text-xl text-blue-800 font-medium mb-2">St.Britto’s Academy welcomes all deserving and meritorious students, irrespective of caste and creed. The Management is not particular about the qualifications and background of the parent. We stand proud stepping into the 25th year, seeking inspiration from our achievement and continuing the quest for excellence.</p>
       </div>
 
@@ -16,7 +17,7 @@ const AdmissionsProcedure = () => {
       <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 mb-10 border border-blue-100">
         <div className="flex items-center mb-4">
           <FileText className="h-7 w-7 text-sky-500 mr-2" />
-          <h2 className="text-2xl font-bold text-blue-800">Offline Admission</h2>
+          <AnimatedHeading as="h2" className="text-2xl font-bold text-blue-800">Offline Admission</AnimatedHeading>
         </div>
         <ul className="list-disc pl-6 text-gray-700 space-y-3 text-base">
           <li>The student should satisfy the age rule: <span className="font-semibold">3 yrs</span> for Pre-Kg, <span className="font-semibold">4 yrs</span> for LKG, <span className="font-semibold">5 yrs</span> for UKG, <span className="font-semibold">5+</span> for I Std as on <span className="font-semibold">31st May</span> of the year of admission.</li>

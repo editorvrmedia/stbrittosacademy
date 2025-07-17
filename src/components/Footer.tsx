@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
+import LottieIcon from './animated/LottieIcon';
+import phoneLottie from '../assets/phone.json';
+import locationLottie from '../assets/location.json';
+import emailLottie from '../assets/email.json';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -117,15 +121,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
+                <LottieIcon animationData={locationLottie} width={24} height={24} className="mt-1 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">R 3/3, Netaji Road, Velachery, Chennai - 600 042</span>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
+                <LottieIcon animationData={phoneLottie} width={24} height={24} className="mt-1 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">For Admissions: 9840866053, 044-22447514</span>
               </div>
               <div className="flex items-start gap-3">
-                <Mail className="h-5 w-5 text-blue-400 mt-1 flex-shrink-0" />
+                <LottieIcon animationData={emailLottie} width={24} height={24} className="mt-1 flex-shrink-0" />
                 <a href="mailto:admin@stbrittosacademy.edu.in" className="text-gray-300 text-sm hover:text-blue-400 transition-colors">admin@stbrittosacademy.edu.in</a>
               </div>
             </div>

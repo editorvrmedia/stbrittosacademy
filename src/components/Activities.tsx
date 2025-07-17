@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Music, Palette, Trophy, Users, Camera, Microscope, Globe, Heart, Brain, Star, ArrowRight } from 'lucide-react';
+import AnimatedHeading from './animated/AnimatedHeading';
 
 const Activities = () => {
   const activities = [
@@ -160,7 +161,7 @@ const Activities = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Student Activities</h1>
+          <AnimatedHeading as="h1" className="text-5xl font-bold mb-6">Student Activities</AnimatedHeading>
           <p className="text-xl max-w-3xl mx-auto">
             Beyond academics, we offer a wide range of activities that develop creativity, leadership, teamwork, and character. Discover the opportunities that await your child.
           </p>
@@ -171,7 +172,7 @@ const Activities = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Signature Programs</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-4">Our Signature Programs</AnimatedHeading>
             <p className="text-xl text-gray-600">Innovative programs designed to unlock every student's potential</p>
           </div>
           
@@ -210,7 +211,7 @@ const Activities = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Activity Categories</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-4">Activity Categories</AnimatedHeading>
             <p className="text-xl text-gray-600">Explore our wide range of extracurricular activities</p>
           </div>
           
@@ -247,7 +248,7 @@ const Activities = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Upcoming Activity Events</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-4">Upcoming Activity Events</AnimatedHeading>
             <p className="text-xl text-gray-600">Don't miss these exciting upcoming activities</p>
           </div>
           
@@ -272,7 +273,7 @@ const Activities = () => {
       {/* Join Activities CTA */}
       <section className="py-16 bg-emerald-700 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Involved?</h2>
+          <AnimatedHeading as="h2" className="text-4xl font-bold mb-6">Ready to Get Involved?</AnimatedHeading>
           <p className="text-xl mb-8">
             Join our vibrant community of learners and discover your passion through our diverse activities and innovative programs.
           </p>

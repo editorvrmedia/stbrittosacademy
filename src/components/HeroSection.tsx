@@ -59,7 +59,7 @@ const HeroSection = () => {
             viewport={{ once: true, amount: 0.1 }}
           >
             {/* Responsive Banner Video Background */}
-            <div className="relative w-full bg-black overflow-hidden" style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}>
+            <div className="relative w-full overflow-hidden" style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}>
               <video
                 ref={videoRef}
                 src="/videointro.mp4"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, Sun, Moon, Bell, Search, User } from 'lucide-react';
@@ -20,6 +20,8 @@ const Header = () => {
   const [isDark, setIsDark] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -51,6 +53,22 @@ const Header = () => {
       }
     }
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 50) {
+        setShowHeader(true);
+      } else if (currentScrollY > lastScrollY.current) {
+        setShowHeader(false); // scrolling down
+      } else {
+        setShowHeader(true); // scrolling up
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
     { name: 'Home', href: '/' },

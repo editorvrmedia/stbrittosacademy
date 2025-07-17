@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, BookOpen, Trophy, Users, Star, ArrowRight } from 'lucide-react';
 import ErrorBoundary from './ErrorBoundary';
+import AnimatedHeading from './animated/AnimatedHeading';
 
 const Academics = () => {
   const programs = [
@@ -70,7 +71,7 @@ const Academics = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Academic Excellence</h1>
+          <AnimatedHeading as="h1" className="text-5xl font-bold mb-6">Academic Excellence</AnimatedHeading>
           <p className="text-xl max-w-3xl mx-auto">
             Our comprehensive curriculum is designed to challenge every student and prepare them for success in college, career, and life.
           </p>
@@ -81,7 +82,7 @@ const Academics = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-blue-900 mb-4">Our Academic Programs</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-blue-900 mb-4">Our Academic Programs</AnimatedHeading>
             <p className="text-xl text-blue-700">Tailored education for every stage of development</p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8">

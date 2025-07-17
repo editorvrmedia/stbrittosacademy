@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, X, ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedHeading from '../animated/AnimatedHeading';
+import AnimatedImage from '../animated/AnimatedImage';
 
 interface ResultImage {
   src: string;
@@ -216,7 +218,7 @@ const Results = () => {
                   >
                     <div className="bg-gray-50 rounded-lg p-4 shadow-md hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                       <div className="relative overflow-hidden rounded-lg mb-3">
-                        <img
+                        <AnimatedImage
                           src={image.src}
                           alt={image.caption}
                           className={`w-full object-cover transition-transform duration-300 group-hover:scale-110 ${image.filename === '2024-25  XII.jpg' ? 'h-24' : 'h-48'}`}
@@ -288,7 +290,7 @@ const Results = () => {
                 transition={{ duration: 0.3 }}
                 className="bg-white rounded-lg overflow-hidden shadow-2xl"
               >
-                <img
+                <AnimatedImage
                   src={selectedImage.src}
                   alt={selectedImage.caption}
                   className={`w-full h-auto object-contain ${selectedImage.filename === '2024-25  XII.jpg' ? 'max-h-96 mx-auto' : 'max-h-[80vh]'}`}

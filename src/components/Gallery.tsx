@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ChevronLeft, ChevronRight, Camera, Video, Image, ArrowRight, Calendar } from 'lucide-react';
+import AnimatedHeading from './animated/AnimatedHeading';
+import GalleryImage from './animated/GalleryImage';
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -108,7 +110,7 @@ const Gallery = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Media Gallery</h1>
+          <AnimatedHeading as="h1" className="text-5xl font-bold mb-6">Media Gallery</AnimatedHeading>
           <p className="text-xl max-w-3xl mx-auto mb-8">
             Explore the vibrant life at St. Britto's Academy through our collection of photos, videos, and galleries showcasing student achievements, campus events, and daily activities.
           </p>
@@ -144,7 +146,7 @@ const Gallery = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Media</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-4">Featured Media</AnimatedHeading>
             <p className="text-xl text-gray-600">Highlights from our recent events and activities</p>
           </div>
           
@@ -250,7 +252,7 @@ const Gallery = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Recent Photos</h2>
+            <AnimatedHeading as="h2" className="text-3xl font-bold text-gray-900">Recent Photos</AnimatedHeading>
             <Link
               to="/gallery/photos"
               className="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center"
@@ -259,27 +261,19 @@ const Gallery = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {photos.slice(0, 8).map((photo) => (
               <div
                 key={photo.id}
-                className="group cursor-pointer"
+                className="cursor-pointer"
                 onClick={() => openLightbox(photo.id)}
               >
-                <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-                  <img
-                    src={photo.src}
-                    alt={photo.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-end">
-                    <div className="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="font-bold text-lg">{photo.title}</h3>
-                      <p className="text-sm opacity-90">{photo.description}</p>
-                    </div>
-                  </div>
-                </div>
+                <GalleryImage
+                  src={photo.src}
+                  alt={photo.title}
+                  caption={photo.title}
+                  className="h-48 w-full"
+                />
               </div>
             ))}
           </div>
@@ -329,7 +323,7 @@ const Gallery = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Browse by Category</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-4">Browse by Category</AnimatedHeading>
             <p className="text-xl text-gray-600">Explore our media collections by category</p>
           </div>
           
@@ -398,7 +392,7 @@ const Gallery = () => {
       {/* CTA Section */}
       <section className="py-16 bg-indigo-700 text-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-6">Want to Be Featured?</h2>
+          <AnimatedHeading as="h2" className="text-4xl font-bold mb-6">Want to Be Featured?</AnimatedHeading>
           <p className="text-xl mb-8">
             Join our vibrant school community and become part of our story. Your achievements and moments could be featured in our next gallery update.
           </p>

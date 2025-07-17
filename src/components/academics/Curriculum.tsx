@@ -1,6 +1,7 @@
 import React from 'react';
 import { BookOpen, Target, Users, Award, CheckCircle, Star, Lightbulb } from 'lucide-react';
 import { motion } from 'framer-motion';
+import AnimatedHeading from '../animated/AnimatedHeading';
 
 const Curriculum = () => {
   const curriculumFeatures = [
@@ -105,7 +106,7 @@ const Curriculum = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Our Curriculum</h1>
+          <AnimatedHeading as="h1" className="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Our Curriculum</AnimatedHeading>
           <p className="text-xl max-w-3xl mx-auto mb-2">A comprehensive, well-rounded curriculum designed to nurture academic excellence, character development, and lifelong learning skills.</p>
         </div>
       </section>
@@ -118,7 +119,7 @@ const Curriculum = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Star className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">Curriculum Highlights</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-2">Curriculum Highlights</AnimatedHeading>
             <p className="text-xl text-gray-600">A holistic approach to 21st-century learning</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -141,7 +142,7 @@ const Curriculum = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <BookOpen className="mx-auto mb-2 h-10 w-10 text-blue-400" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">Subject Areas</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-2">Subject Areas</AnimatedHeading>
             <p className="text-xl text-gray-600">Comprehensive coverage across all essential learning domains</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -167,7 +168,7 @@ const Curriculum = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Lightbulb className="mx-auto mb-2 h-10 w-10 text-red-400" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-2">Teaching Methodologies</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-2">Teaching Methodologies</AnimatedHeading>
             <p className="text-xl text-gray-600">Innovative, interactive, and student-centered approaches</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -186,7 +187,7 @@ const Curriculum = () => {
       <section className="py-16 bg-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Assessment & Evaluation</h2>
+            <AnimatedHeading as="h2" className="text-4xl font-bold mb-4">Assessment & Evaluation</AnimatedHeading>
             <p className="text-xl">Comprehensive evaluation methods to track student progress</p>
           </div>
           
@@ -221,7 +222,7 @@ const Curriculum = () => {
       {/* Call to Action */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Experience Our Curriculum</h2>
+          <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-6">Experience Our Curriculum</AnimatedHeading>
           <p className="text-xl text-gray-600 mb-8">
             Discover how our comprehensive curriculum can help your child reach their full potential and prepare for future success.
           </p>

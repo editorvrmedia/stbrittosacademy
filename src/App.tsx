@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
@@ -70,6 +70,19 @@ import InvestitureCeremony2023Page from './components/events/InvestitureCeremony
 import ZestRegalia2023Page from './components/events/ZestRegalia2023Page';
 import OnlineAdmissionProcedure from './components/admissions/OnlineAdmissionProcedure';
 import OnlineApplicationForm from './components/admissions/OnlineApplicationForm';
+
+// PageFade wrapper for transitions
+const PageFade = ({ children }: { children: React.ReactNode }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5, ease: 'easeInOut' }}
+    style={{ minHeight: '100%' }}
+  >
+    {children}
+  </motion.div>
+);
 
 function ScrollProgressBar() {
   const [scroll, setScroll] = useState(0);
@@ -294,72 +307,76 @@ function App() {
           {/* Show video after both headers, only on homepage */}
           {!isStandalone && location.pathname === '/' && <HeroSection />}
           <main className="flex-1 w-full">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/about/governance" element={<Governance />} />
-              <Route path="/about/vision-mission" element={<VisionMission />} />
-              <Route path="/about/why-stbrittos" element={<WhyStBrittos />} />
-              <Route path="/about/chairmans-desk" element={<ChairmanDesk />} />
-              <Route path="/about/correspondents-desk" element={<CorrespondentDesk />} />
-              <Route path="/about/principals-desk" element={<PrincipalDesk />} />
-              <Route path="/about/vice-principals-desk" element={<VicePrincipalDesk />} />
-              <Route path="/about/infrastructure" element={<Infrastructure />} />
-              <Route path="/about/virtual-tour" element={<VirtualTour />} />
-              <Route path="/about/mandatory-disclosure" element={<MandatoryDisclosure />} />
-              <Route path="/about/annual-report" element={<AnnualReport />} />
-              <Route path="/academics" element={<Academics />} />
-              <Route path="/academics/curriculum" element={<Curriculum />} />
-              <Route path="/academics/kindergarten" element={<Kindergarten />} />
-              <Route path="/academics/lower-primary" element={<LowerPrimary />} />
-              <Route path="/academics/upper-primary" element={<UpperPrimary />} />
-              <Route path="/academics/middle-school" element={<MiddleSchool />} />
-              <Route path="/academics/secondary-school" element={<SecondarySchool />} />
-              <Route path="/academics/senior-secondary" element={<SeniorSecondary />} />
-              <Route path="/academics/results" element={<Results />} />
-              <Route path="/activities" element={<Activities />} />
-              <Route path="/activities/8-quotients" element={<EightQuotients />} />
-              <Route path="/activities/believe-you-can" element={<BelieveYouCan />} />
-              <Route path="/achievements" element={<Achievements />} />
-              <Route path="/achievements/school" element={<SchoolAchievements />} />
-              <Route path="/achievements/students" element={<StudentAchievements />} />
-              <Route path="/admissions" element={<Admissions />} />
-              <Route path="/admissions/procedure" element={<AdmissionsProcedure />} />
-              <Route path="/admissions/code-of-conduct" element={<CodeOfConduct />} />
-              <Route path="/admissions/online-admission" element={<OnlineAdmissionProcedure />} />
-              <Route path="/admissions/online-application-form" element={<OnlineApplicationForm />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/gallery/photos" element={<Photos />} />
-              <Route path="/gallery/videos" element={<GalleryMain />} />
-              <Route path="/gallery/upcoming-events" element={<UpcomingEvents />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/student" element={<StudentBlog />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/careers/apply" element={<ApplyForPost />} />
-              <Route path="/login/teacher-erp" element={<TeacherERPLogin />} />
-              <Route path="/login/student-erp" element={<StudentERPLogin />} />
-              <Route path="/student-login" element={<StudentERPLogin />} />
-              <Route path="/teacher-login" element={<TeacherLoginPage />} />
-              <Route path="/events/investiture-ceremony-2025-26" element={<InvestitureCeremony2025Page />} />
-              <Route path="/events/pongal-celebration-2025" element={<PongalCelebration2025Page />} />
-              <Route path="/events/christmas-celebration-2024" element={<ChristmasCelebration2024Page />} />
-              <Route path="/events/childrens-day-2024" element={<ChildrensDayCelebration2024Page />} />
-              <Route path="/events/diwali-celebration-2024" element={<DiwaliCelebration2024Page />} />
-              <Route path="/events/byc-royal-gridlock-2024" element={<RoyalGridlock2024Page />} />
-              <Route path="/events/young-forum-2024" element={<YoungForum2024Page />} />
-              <Route path="/events/grandparents-day-2024" element={<GrandparentsDay2024Page />} />
-              <Route path="/events/zest-regalia-2024" element={<ZestRegalia2024Page />} />
-              <Route path="/events/investiture-ceremony-2024" element={<InvestitureCeremony2024Page />} />
-              <Route path="/events/kg-graduation-day-2024" element={<KGGraduationDay2024Page />} />
-              <Route path="/events/diwali-celebration-nov-2023" element={<DiwaliCelebrationNov2023Page />} />
-              <Route path="/events/asset-2023" element={<Asset2023Page />} />
-              <Route path="/events/royal-gridlock-2023" element={<RoyalGridlock2023Page />} />
-              <Route path="/events/young-forum-2023" element={<YoungForum2023Page />} />
-              <Route path="/events/array-of-sumptuousness-2023" element={<ArrayOfSumptuousness2023Page />} />
-              <Route path="/events/investiture-ceremony-2023" element={<InvestitureCeremony2023Page />} />
-              <Route path="/events/zest-regalia-2023" element={<ZestRegalia2023Page />} />
-              <Route path="/events/:eventId" element={<EventDetails />} />
-            </Routes>
+            <AnimatePresence mode="wait" initial={false}>
+              <Routes location={location} key={location.pathname}>
+                {[
+                  <Route key="/" path="/" element={<PageFade><HomePage /></PageFade>} />,
+                  <Route key="/about" path="/about" element={<PageFade><AboutUs /></PageFade>} />,
+                  <Route key="/about/governance" path="/about/governance" element={<PageFade><Governance /></PageFade>} />,
+                  <Route key="/about/vision-mission" path="/about/vision-mission" element={<PageFade><VisionMission /></PageFade>} />,
+                  <Route key="/about/why-stbrittos" path="/about/why-stbrittos" element={<PageFade><WhyStBrittos /></PageFade>} />,
+                  <Route key="/about/chairmans-desk" path="/about/chairmans-desk" element={<PageFade><ChairmanDesk /></PageFade>} />,
+                  <Route key="/about/correspondents-desk" path="/about/correspondents-desk" element={<PageFade><CorrespondentDesk /></PageFade>} />,
+                  <Route key="/about/principals-desk" path="/about/principals-desk" element={<PageFade><PrincipalDesk /></PageFade>} />,
+                  <Route key="/about/vice-principals-desk" path="/about/vice-principals-desk" element={<PageFade><VicePrincipalDesk /></PageFade>} />,
+                  <Route key="/about/infrastructure" path="/about/infrastructure" element={<PageFade><Infrastructure /></PageFade>} />,
+                  <Route key="/about/virtual-tour" path="/about/virtual-tour" element={<PageFade><VirtualTour /></PageFade>} />,
+                  <Route key="/about/mandatory-disclosure" path="/about/mandatory-disclosure" element={<PageFade><MandatoryDisclosure /></PageFade>} />,
+                  <Route key="/about/annual-report" path="/about/annual-report" element={<PageFade><AnnualReport /></PageFade>} />,
+                  <Route key="/academics" path="/academics" element={<PageFade><Academics /></PageFade>} />,
+                  <Route key="/academics/curriculum" path="/academics/curriculum" element={<PageFade><Curriculum /></PageFade>} />,
+                  <Route key="/academics/kindergarten" path="/academics/kindergarten" element={<PageFade><Kindergarten /></PageFade>} />,
+                  <Route key="/academics/lower-primary" path="/academics/lower-primary" element={<PageFade><LowerPrimary /></PageFade>} />,
+                  <Route key="/academics/upper-primary" path="/academics/upper-primary" element={<PageFade><UpperPrimary /></PageFade>} />,
+                  <Route key="/academics/middle-school" path="/academics/middle-school" element={<PageFade><MiddleSchool /></PageFade>} />,
+                  <Route key="/academics/secondary-school" path="/academics/secondary-school" element={<PageFade><SecondarySchool /></PageFade>} />,
+                  <Route key="/academics/senior-secondary" path="/academics/senior-secondary" element={<PageFade><SeniorSecondary /></PageFade>} />,
+                  <Route key="/academics/results" path="/academics/results" element={<PageFade><Results /></PageFade>} />,
+                  <Route key="/activities" path="/activities" element={<PageFade><Activities /></PageFade>} />,
+                  <Route key="/activities/8-quotients" path="/activities/8-quotients" element={<PageFade><EightQuotients /></PageFade>} />,
+                  <Route key="/activities/believe-you-can" path="/activities/believe-you-can" element={<PageFade><BelieveYouCan /></PageFade>} />,
+                  <Route key="/achievements" path="/achievements" element={<PageFade><Achievements /></PageFade>} />,
+                  <Route key="/achievements/school" path="/achievements/school" element={<PageFade><SchoolAchievements /></PageFade>} />,
+                  <Route key="/achievements/students" path="/achievements/students" element={<PageFade><StudentAchievements /></PageFade>} />,
+                  <Route key="/admissions" path="/admissions" element={<PageFade><Admissions /></PageFade>} />,
+                  <Route key="/admissions/procedure" path="/admissions/procedure" element={<PageFade><AdmissionsProcedure /></PageFade>} />,
+                  <Route key="/admissions/code-of-conduct" path="/admissions/code-of-conduct" element={<PageFade><CodeOfConduct /></PageFade>} />,
+                  <Route key="/admissions/online-admission" path="/admissions/online-admission" element={<PageFade><OnlineAdmissionProcedure /></PageFade>} />,
+                  <Route key="/admissions/online-application-form" path="/admissions/online-application-form" element={<PageFade><OnlineApplicationForm /></PageFade>} />,
+                  <Route key="/gallery" path="/gallery" element={<PageFade><Gallery /></PageFade>} />,
+                  <Route key="/gallery/photos" path="/gallery/photos" element={<PageFade><Photos /></PageFade>} />,
+                  <Route key="/gallery/videos" path="/gallery/videos" element={<PageFade><GalleryMain /></PageFade>} />,
+                  <Route key="/gallery/upcoming-events" path="/gallery/upcoming-events" element={<PageFade><UpcomingEvents /></PageFade>} />,
+                  <Route key="/blog" path="/blog" element={<PageFade><Blog /></PageFade>} />,
+                  <Route key="/blog/student" path="/blog/student" element={<PageFade><StudentBlog /></PageFade>} />,
+                  <Route key="/careers" path="/careers" element={<PageFade><Careers /></PageFade>} />,
+                  <Route key="/careers/apply" path="/careers/apply" element={<PageFade><ApplyForPost /></PageFade>} />,
+                  <Route key="/login/teacher-erp" path="/login/teacher-erp" element={<PageFade><TeacherERPLogin /></PageFade>} />,
+                  <Route key="/login/student-erp" path="/login/student-erp" element={<PageFade><StudentERPLogin /></PageFade>} />,
+                  <Route key="/student-login" path="/student-login" element={<PageFade><StudentERPLogin /></PageFade>} />,
+                  <Route key="/teacher-login" path="/teacher-login" element={<PageFade><TeacherLoginPage /></PageFade>} />,
+                  <Route key="/events/investiture-ceremony-2025-26" path="/events/investiture-ceremony-2025-26" element={<PageFade><InvestitureCeremony2025Page /></PageFade>} />,
+                  <Route key="/events/pongal-celebration-2025" path="/events/pongal-celebration-2025" element={<PageFade><PongalCelebration2025Page /></PageFade>} />,
+                  <Route key="/events/christmas-celebration-2024" path="/events/christmas-celebration-2024" element={<PageFade><ChristmasCelebration2024Page /></PageFade>} />,
+                  <Route key="/events/childrens-day-2024" path="/events/childrens-day-2024" element={<PageFade><ChildrensDayCelebration2024Page /></PageFade>} />,
+                  <Route key="/events/diwali-celebration-2024" path="/events/diwali-celebration-2024" element={<PageFade><DiwaliCelebration2024Page /></PageFade>} />,
+                  <Route key="/events/byc-royal-gridlock-2024" path="/events/byc-royal-gridlock-2024" element={<PageFade><RoyalGridlock2024Page /></PageFade>} />,
+                  <Route key="/events/young-forum-2024" path="/events/young-forum-2024" element={<PageFade><YoungForum2024Page /></PageFade>} />,
+                  <Route key="/events/grandparents-day-2024" path="/events/grandparents-day-2024" element={<PageFade><GrandparentsDay2024Page /></PageFade>} />,
+                  <Route key="/events/zest-regalia-2024" path="/events/zest-regalia-2024" element={<PageFade><ZestRegalia2024Page /></PageFade>} />,
+                  <Route key="/events/investiture-ceremony-2024" path="/events/investiture-ceremony-2024" element={<PageFade><InvestitureCeremony2024Page /></PageFade>} />,
+                  <Route key="/events/kg-graduation-day-2024" path="/events/kg-graduation-day-2024" element={<PageFade><KGGraduationDay2024Page /></PageFade>} />,
+                  <Route key="/events/diwali-celebration-nov-2023" path="/events/diwali-celebration-nov-2023" element={<PageFade><DiwaliCelebrationNov2023Page /></PageFade>} />,
+                  <Route key="/events/asset-2023" path="/events/asset-2023" element={<PageFade><Asset2023Page /></PageFade>} />,
+                  <Route key="/events/royal-gridlock-2023" path="/events/royal-gridlock-2023" element={<PageFade><RoyalGridlock2023Page /></PageFade>} />,
+                  <Route key="/events/young-forum-2023" path="/events/young-forum-2023" element={<PageFade><YoungForum2023Page /></PageFade>} />,
+                  <Route key="/events/array-of-sumptuousness-2023" path="/events/array-of-sumptuousness-2023" element={<PageFade><ArrayOfSumptuousness2023Page /></PageFade>} />,
+                  <Route key="/events/investiture-ceremony-2023" path="/events/investiture-ceremony-2023" element={<PageFade><InvestitureCeremony2023Page /></PageFade>} />,
+                  <Route key="/events/zest-regalia-2023" path="/events/zest-regalia-2023" element={<PageFade><ZestRegalia2023Page /></PageFade>} />,
+                  <Route key="/events/:eventId" path="/events/:eventId" element={<PageFade><EventDetails /></PageFade>} />
+                ]}
+              </Routes>
+            </AnimatePresence>
           </main>
           {!isStandalone && <Footer />}
         </div>

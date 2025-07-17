@@ -1,9 +1,10 @@
 import React from 'react';
+import AnimatedHeading from '../animated/AnimatedHeading';
 
 const CodeOfConduct = () => (
   <div className="min-h-screen bg-white">
     <div className="bg-blue-900 py-6 px-4">
-      <h1 className="text-3xl sm:text-4xl font-bold text-white text-center" style={{fontFamily: 'sans-serif'}}>Code of Conduct - St.Britto's Academy.</h1>
+      <AnimatedHeading as="h1" className="text-3xl sm:text-4xl font-bold text-white text-center" style={{fontFamily: 'sans-serif'}}>Code of Conduct - St.Britto's Academy.</AnimatedHeading>
     </div>
     <div className="max-w-4xl mx-auto mt-16 px-4">
       <div className="flex items-center mb-8">
