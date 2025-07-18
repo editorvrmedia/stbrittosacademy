@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Camera, Calendar, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Photos = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -239,15 +240,27 @@ const Photos = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-purple-800 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-purple-600 to-purple-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Photo Gallery</h1>
           <p className="text-xl text-white/90 mb-8">Capturing the vibrant moments and memories of life at St. Britto's Academy.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Gallery Stats */}
-      <section className="py-12 bg-white border-b">
+      <motion.section
+        className="py-12 bg-white border-b"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="flex items-center justify-center">
@@ -273,10 +286,15 @@ const Photos = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-gray-50 border-b">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
@@ -294,10 +312,15 @@ const Photos = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Photo Grid */}
-      <section className="py-16 bg-gray-50">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -326,11 +349,17 @@ const Photos = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Intramurals – Sports Fest Highlights */}
       {selectedCategory === 'sports' && (
-        <section className="mb-12">
+        <motion.section
+          className="mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <h2 className="text-3xl font-bold text-[#03045e] text-center mb-6">Intramurals – Sports Fest Highlights</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {intramuralsImages.map((img, idx) => (
@@ -350,12 +379,18 @@ const Photos = () => {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* ZEST – Talent, Art & Culinary Carnival */}
       {selectedCategory === 'events' && (
-        <section className="mb-12">
+        <motion.section
+          className="mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <h2 className="text-3xl font-bold text-[#03045e] text-center mb-6">ZEST – Talent, Art & Culinary Carnival</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {zestImages.map((img, idx) => (
@@ -375,12 +410,18 @@ const Photos = () => {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* Academic Activities: Young Forum 2024 Section */}
       {selectedCategory === 'academics' && (
-        <section className="mb-12 animate-fade-in-up">
+        <motion.section
+          className="mb-12 animate-fade-in-up"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.7 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <h2 className="text-3xl font-bold text-[#03045e] text-center mb-6">YOUNG FORUM 2024 – Inter-school Intellectual Symposium</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {photos.filter(p => p.category === 'academics').map((img, idx) => (
@@ -401,7 +442,7 @@ const Photos = () => {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* Modal/Lightbox */}
@@ -450,7 +491,13 @@ const Photos = () => {
       )}
 
       {/* Call to Action */}
-      <section className="py-16 bg-purple-700 text-white">
+      <motion.section
+        className="py-16 bg-purple-700 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">Share Your Moments</h2>
           <p className="text-xl mb-8">
@@ -472,7 +519,7 @@ const Photos = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

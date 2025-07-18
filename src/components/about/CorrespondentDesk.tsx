@@ -65,7 +65,7 @@ const CorrespondentDesk = () => {
         className="py-16 bg-gradient-to-r from-indigo-700 to-indigo-900 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -95,7 +95,7 @@ const CorrespondentDesk = () => {
         className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,7 +160,7 @@ const CorrespondentDesk = () => {
         className="py-16 bg-gray-50"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,7 +216,7 @@ const CorrespondentDesk = () => {
         className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -326,7 +326,7 @@ const CorrespondentDesk = () => {
         className="py-16 bg-indigo-900 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Users, Target, Award, Lightbulb, Globe, Microscope, Calculator, CheckCircle, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const MiddleSchool = () => {
   const features = [
@@ -130,18 +131,30 @@ const MiddleSchool = () => {
   return (
     <div className="pt-20 bg-gradient-to-br from-blue-50 via-white to-red-50 min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Middle School (Grades 6-8)</h1>
           <p className="text-xl max-w-3xl mx-auto mb-2">A transformative period of growth and discovery. Our middle school program bridges the gap between primary and secondary education, fostering independence, critical thinking, and academic excellence.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Program Features */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Star className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
@@ -158,13 +171,19 @@ const MiddleSchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
 
       {/* Subjects */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <BookOpen className="mx-auto mb-2 h-10 w-10 text-blue-400" />
@@ -186,13 +205,19 @@ const MiddleSchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Grade Structure */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Award className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
@@ -219,13 +244,19 @@ const MiddleSchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
 
       {/* Extracurriculars */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Lightbulb className="mx-auto mb-2 h-10 w-10 text-red-400" />
@@ -246,13 +277,19 @@ const MiddleSchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Support Services */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Users className="mx-auto mb-2 h-10 w-10 text-blue-400" />
@@ -269,7 +306,7 @@ const MiddleSchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

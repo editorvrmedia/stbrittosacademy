@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle, User, Mail, Phone, Calendar, BookOpen, Briefcase, Upload } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ApplyForPost = () => {
   const [formData, setFormData] = useState({
@@ -57,7 +58,12 @@ const ApplyForPost = () => {
 
   if (isSubmitted) {
     return (
-      <div className="pt-20 min-h-screen bg-gray-50 flex items-center justify-center">
+      <motion.div
+        className="pt-20 min-h-screen bg-gray-50 flex items-center justify-center"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      >
         <div className="max-w-md mx-auto text-center bg-white p-8 rounded-xl shadow-lg">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="h-8 w-8 text-green-600" />
@@ -70,24 +76,36 @@ const ApplyForPost = () => {
             You will receive a confirmation email shortly, and we will contact you within 5-7 business days regarding the next steps.
           </p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-teal-700 to-teal-900 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-teal-700 to-teal-900 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Apply for a Position</h1>
           <p className="text-xl max-w-3xl mx-auto">
             There are currently no open positions. You may still submit your application for future consideration.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Application Form */}
-      <section className="py-16 bg-gray-50">
+      <motion.section
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="bg-teal-50 px-8 py-6 border-b">
@@ -270,7 +288,7 @@ const ApplyForPost = () => {
             </form>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

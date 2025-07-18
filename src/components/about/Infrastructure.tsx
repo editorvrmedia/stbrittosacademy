@@ -151,7 +151,7 @@ const Infrastructure = () => {
         className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -163,7 +163,13 @@ const Infrastructure = () => {
       </motion.section>
 
       {/* Campus Overview */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -193,10 +199,16 @@ const Infrastructure = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Premium State-of-the-Art Facilities Section (after Campus Overview) */}
-      <section className="relative w-full py-8 px-2 sm:px-6 lg:px-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-100 overflow-x-hidden">
+      <motion.section
+        className="relative w-full py-8 px-2 sm:px-6 lg:px-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-100 overflow-x-hidden"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         {/* Hero Banner */}
         <div className="relative flex flex-col items-center justify-center text-center mb-12">
           <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-700/80 to-blue-400/60 blur-2xl opacity-80 -z-10" style={{backgroundImage: 'url(/SBA%20Building.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'multiply'}}></div>
@@ -209,7 +221,7 @@ const Infrastructure = () => {
             className="text-gray-700 text-lg sm:text-xl max-w-4xl leading-loose text-justify bg-white/80 rounded-xl shadow p-6"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            transition={{ duration: 0.8, ease: 'easeInOut', delay: 0.4 }}
             viewport={{ once: true, amount: 0.3 }}
           >
             At St. Britto's Academy, we are dedicated to providing a world-class learning environment that nurtures academic excellence, creativity, and holistic development. Situated on a 1.5-acre campus in the heart of the city, our school is equipped with cutting-edge infrastructure and advanced technology, ensuring that students are prepared for a dynamic and competitive future. Our state-of-the-art infrastructure ensures that students thrive in academics, sports, arts, and life skills, making them future-ready global citizens.
@@ -338,11 +350,18 @@ const Infrastructure = () => {
             <div className="flex items-center gap-2"><Monitor className="w-6 h-6 text-blue-50" /><span>Updates on class and home assignments</span></div>
           </div>
         </motion.div>
-      </section>
+      </motion.section>
 
       {/* Facilities by Category */}
       {facilities.map((cat, cidx) => (
-        <section key={cat.category} className={`py-8 bg-transparent`}>
+        <motion.section
+          key={cat.category}
+          className={`py-8 bg-transparent`}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.8 + cidx * 0.1 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className={`inline-flex items-center justify-center w-16 h-16 bg-${cat.color}-100 rounded-full mb-4`}>
@@ -413,30 +432,17 @@ const Infrastructure = () => {
             </div>
             )}
           </div>
-        </section>
+        </motion.section>
       ))}
 
-      {/* Additional Facilities */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Additional Facilities</h2>
-            <p className="text-xl">Supporting infrastructure for a complete educational experience</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {additionalFacilities.map((facility, index) => (
-              <div key={index} className="text-center p-6 bg-white bg-opacity-10 rounded-xl hover:bg-opacity-20 transition-all duration-300">
-                <facility.icon className="h-12 w-12 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">{facility.title}</h3>
-                <p className="text-gray-300">{facility.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Campus Specifications */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.0 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Campus Specifications</h2>
@@ -444,17 +450,30 @@ const Infrastructure = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {specifications.map((spec, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow duration-300">
+              <motion.div
+                key={index}
+                className="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow duration-300"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 1.0 + index * 0.05 }}
+                viewport={{ once: true, amount: 0.7 }}
+              >
                 <div className="text-3xl font-bold text-gray-900 mb-2">{spec.value}</div>
                 <div className="text-lg text-gray-600">{spec.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Safety & Security */}
-      <section className="py-16 bg-gray-50">
+      <motion.section
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Safety & Security</h2>
@@ -487,17 +506,30 @@ const Infrastructure = () => {
                 description: 'GPS-enabled buses with trained drivers and attendants'
               }
             ].map((safety, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <motion.div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 1.1 + index * 0.05 }}
+                viewport={{ once: true, amount: 0.7 }}
+              >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{safety.title}</h3>
                 <p className="text-gray-600">{safety.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gray-900 text-white">
+      <motion.section
+        className="py-16 bg-gray-900 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">Experience Our Campus</h2>
           <p className="text-xl mb-8">
@@ -518,7 +550,7 @@ const Infrastructure = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Modal/Lightbox */}
       <AnimatePresence>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookOpen, Microscope, Calculator, Globe, Users, Award, Target, Lightbulb, GraduationCap, Users as UsersIcon, Book, Star, ArrowRightCircle, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const SecondarySchool = () => {
   const features = [
@@ -133,19 +134,31 @@ const SecondarySchool = () => {
   return (
     <div className="pt-20 bg-gradient-to-br from-blue-50 via-white to-red-50 min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-b-3xl shadow-lg"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <GraduationCap className="mx-auto mb-4 h-14 w-14 text-yellow-300 drop-shadow-lg" />
           <h1 className="text-5xl font-extrabold mb-4 tracking-tight drop-shadow-lg">Secondary School (Grades 9-10)</h1>
           <p className="text-xl max-w-3xl mx-auto mb-2">Preparing for board examinations and future success. Our secondary school program provides rigorous academic preparation, career guidance, and comprehensive support for CBSE board examinations.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Program Features */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Star className="mx-auto mb-2 h-10 w-10 text-red-400" />
@@ -162,13 +175,19 @@ const SecondarySchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
 
       {/* Grade Structure */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Book className="mx-auto mb-2 h-10 w-10 text-blue-400" />
@@ -195,13 +214,19 @@ const SecondarySchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Subjects, Teaching Methods, Beyond Academics */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <UsersIcon className="mx-auto mb-2 h-10 w-10 text-red-400" />
@@ -304,13 +329,19 @@ const SecondarySchool = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
 
       {/* Exam Preparation */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Target className="mx-auto mb-2 h-10 w-10 text-blue-400" />
@@ -327,13 +358,19 @@ const SecondarySchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Achievements */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Star className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
@@ -350,13 +387,19 @@ const SecondarySchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Support Services */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.7 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <UsersIcon className="mx-auto mb-2 h-10 w-10 text-blue-400" />
@@ -390,7 +433,7 @@ const SecondarySchool = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to Action */}
       <div className="flex justify-center mt-12 mb-20">

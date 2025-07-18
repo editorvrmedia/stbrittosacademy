@@ -2,19 +2,32 @@ import React from 'react';
 import { FileText, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AnimatedHeading from '../animated/AnimatedHeading';
+import { motion } from 'framer-motion';
 
 const AdmissionsProcedure = () => {
   const navigate = useNavigate();
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-sky-100 py-16 px-2 flex flex-col items-center">
-      {/* Header Section */}
-      <div className="w-full max-w-3xl text-center mb-10">
+      <motion.div
+        className="w-full max-w-3xl text-center mb-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
+        {/* Header Section */}
         <AnimatedHeading as="h1" className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 drop-shadow-sm">Admission Procedure</AnimatedHeading>
         <p className="text-lg md:text-xl text-blue-800 font-medium mb-2">St.Britto’s Academy welcomes all deserving and meritorious students, irrespective of caste and creed. The Management is not particular about the qualifications and background of the parent. We stand proud stepping into the 25th year, seeking inspiration from our achievement and continuing the quest for excellence.</p>
-      </div>
+      </motion.div>
 
       {/* Card Section */}
-      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 mb-10 border border-blue-100">
+      <motion.div
+        className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 mb-10 border border-blue-100"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="flex items-center mb-4">
           <FileText className="h-7 w-7 text-sky-500 mr-2" />
           <AnimatedHeading as="h2" className="text-2xl font-bold text-blue-800">Offline Admission</AnimatedHeading>
@@ -31,10 +44,16 @@ const AdmissionsProcedure = () => {
           </ul>
           <li>The entrance test will be conducted in <span className="font-semibold">Languages and Mathematics</span> for those seeking admission to Standards III-IX and <span className="font-semibold">merit is the ONLY CRITERION</span> for admission.</li>
         </ul>
-      </div>
+      </motion.div>
 
       {/* Online Admission Button */}
-      <div className="flex flex-col items-center gap-2">
+      <motion.div
+        className="flex flex-col items-center gap-2"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <a
           href="/admissions/online-admission"
           target="_blank"
@@ -44,7 +63,7 @@ const AdmissionsProcedure = () => {
           Online Admission
         </a>
         <span className="text-sm text-blue-700 mt-1 flex items-center gap-1"><Mail className="h-4 w-4 inline-block" /> For queries: <a href="mailto:admin@stbrittosacademy.edu.in" className="underline hover:text-blue-900">admin@stbrittosacademy.edu.in</a></span>
-      </div>
+      </motion.div>
     </div>
   );
 };

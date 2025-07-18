@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const OnlineAdmissionProcedure = () => (
   <div className="min-h-screen bg-gradient-to-br from-yellow-50 to-yellow-100 flex flex-col items-center py-12 px-2">
     {/* Card Container */}
-    <div className="w-full max-w-5xl rounded-3xl shadow-2xl bg-white border border-yellow-200 overflow-hidden">
+    <motion.div
+      className="w-full max-w-5xl rounded-3xl shadow-2xl bg-white border border-yellow-200 overflow-hidden"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
       {/* Header Bar */}
       <div className="bg-gradient-to-r from-blue-900 to-blue-700 px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4">
@@ -31,9 +38,21 @@ const OnlineAdmissionProcedure = () => (
         </div>
       </div>
       {/* Divider */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparent mb-8" />
+      <motion.div
+        className="w-full h-px bg-gradient-to-r from-transparent via-yellow-300 to-transparent mb-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      />
       {/* Steps Box */}
-      <div className="px-8 pb-10">
+      <motion.div
+        className="px-8 pb-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <h2 className="text-xl font-semibold mb-4 text-blue-800">Steps to procure Online Application Form:</h2>
         <ol className="list-decimal list-inside mb-4 space-y-6 text-gray-900">
           <li>
@@ -105,8 +124,8 @@ const OnlineAdmissionProcedure = () => (
             </div>
           </li>
         </ol>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   </div>
 );
 

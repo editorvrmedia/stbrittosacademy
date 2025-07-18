@@ -50,7 +50,7 @@ const PrincipalDesk = () => {
       <motion.section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -79,7 +79,7 @@ const PrincipalDesk = () => {
       <motion.section className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,7 +97,7 @@ const PrincipalDesk = () => {
                 className="text-4xl font-bold text-gray-900 mb-2"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
                 viewport={{ once: true, amount: 0.7 }}
               >
                 Mary Vasantha Kumari. J
@@ -132,25 +132,57 @@ const PrincipalDesk = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Quote className="h-16 w-16 text-blue-600 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Message from Principal</h2>
+            <motion.h2
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+              viewport={{ once: true, amount: 0.7 }}
+            >
+              Message from Principal
+            </motion.h2>
           </div>
           <div className="bg-white p-8 lg:p-12 rounded-xl shadow-lg">
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p className="font-bold text-xl text-blue-900 mb-2">Welcome to the 28th Year of Excellence at St. Britto’s Academy!</p>
+              <motion.p
+                className="font-bold text-xl text-blue-900 mb-2"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+                viewport={{ once: true, amount: 0.7 }}
+              >
+                Welcome to the 28th Year of Excellence at St. Britto’s Academy!
+              </motion.p>
               <p>We are immensely delighted to step into our 28th year of academic brilliance at St. Britto’s Academy—a school where opportunities thrive, innovation flourishes, and excellence is a tradition. Our unwavering commitment to holistic education has made us a leading institution, shaping young minds into future-ready, responsible global citizens.</p>
               <p>With immense gratitude, we acknowledge the support of our dedicated faculty, involved parents, and ambitious students, whose contributions have helped us earn prestigious accolades. Ranked among the top CBSE schools in India by the Centre for Educational Development, New Delhi, St. Britto’s Academy is recognised for its cutting-edge curriculum, aligned with NCERT guidelines. Our emphasis on real-world learning has also earned us the following honours:</p>
               <ul className="list-disc list-inside ml-4">
                 <li>The ISA Award (2017-2020) by the British Council, for integrating global education within an Indian perspective.</li>
                 <li>Asia Book of Records & Guinness World Record, for our “Reaching Out to Society” initiative, which extends education beyond the classroom and into the community.</li>
               </ul>
-              <h3 className="font-semibold text-lg text-blue-800 mt-6">Transformational Learning & Innovation</h3>
+              <motion.h3
+                className="font-semibold text-lg text-blue-800 mt-6"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+                viewport={{ once: true, amount: 0.7 }}
+              >
+                Transformational Learning & Innovation
+              </motion.h3>
               <p>At St. Britto’s Academy, education is more than textbooks—it is about nurturing curiosity, fostering leadership, and developing critical thinking. We integrate mind mapping, concept mapping, and memory techniques to enhance comprehension and retention. Our regular curriculum reviews ensure that our teaching methodologies remain innovative, engaging, and tailored to the evolving needs of students.</p>
               <p>To further enrich learning, we have introduced:</p>
               <ul className="list-disc list-inside ml-4">
                 <li>The St. Britto’s 8 Quotients Framework, incorporating 100+ innovative pedagogical practices to ensure holistic development.</li>
                 <li>Advanced reference materials, remedial classes, and specialised education services, ensuring that every student receives individualised academic support.</li>
               </ul>
-              <h3 className="font-semibold text-lg text-blue-800 mt-6">A Commitment to Holistic Development</h3>
+              <motion.h3
+                className="font-semibold text-lg text-blue-800 mt-6"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.7 }}
+                viewport={{ once: true, amount: 0.7 }}
+              >
+                A Commitment to Holistic Development
+              </motion.h3>
               <p>Our mission is to shape students into critical thinkers, problem solvers, and ethical leaders. We create opportunities through:</p>
               <ul className="list-disc list-inside ml-4">
                 <li>Talent Hunt competitions, diverse clubs, and a dynamic sports programme to encourage participation and skill development.</li>
@@ -158,13 +190,37 @@ const PrincipalDesk = () => {
                 <li>A child-centric approach, where every learner’s unique strength and passion are recognised and nurtured.</li>
               </ul>
               <p>As Margaret Mead once said, “Children must be taught how to think, not what to think.” At St. Britto’s Academy, we foster a culture of inquiry, imagination, and innovation, allowing students the freedom to question, explore, and discover. We believe in nurturing both heart and mind, as Aristotle rightly stated, “Educating the mind without educating the heart is no education at all.”</p>
-              <p className="font-bold text-lg text-blue-900 mt-6">A Future of Possibilities Awaits!</p>
+              <motion.p
+                className="font-bold text-lg text-blue-900 mt-6"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.8 }}
+                viewport={{ once: true, amount: 0.7 }}
+              >
+                A Future of Possibilities Awaits!
+              </motion.p>
               <p>As we embark on this new academic year, we reaffirm our commitment to excellence, inclusivity, and innovation. Our students are the scientists, engineers, researchers, and changemakers of tomorrow—individuals who will not only enhance the quality of life but also contribute to an ethically refined society.</p>
               <p>We invite you to be a part of this journey—to learn, explore, and grow together at St. Britto’s Academy.</p>
               <p className="italic">Let’s shape the future, one child at a time!</p>
               <div className="pt-8 border-t border-gray-200">
-                <p className="font-bold text-blue-700 text-xl mb-0">Warm Regards,</p>
-                <p className="font-bold text-blue-700 text-lg mb-0">Mary Vasantha Kumari,</p>
+                <motion.p
+                  className="font-bold text-blue-700 text-xl mb-0"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: 0.9 }}
+                  viewport={{ once: true, amount: 0.7 }}
+                >
+                  Warm Regards,
+                </motion.p>
+                <motion.p
+                  className="font-bold text-blue-700 text-lg mb-0"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: 1.0 }}
+                  viewport={{ once: true, amount: 0.7 }}
+                >
+                  Mary Vasantha Kumari,
+                </motion.p>
                 <p className="text-blue-600">Principal,</p>
                 <p className="text-blue-600">St. Britto’s Academy.</p>
               </div>
@@ -177,7 +233,7 @@ const PrincipalDesk = () => {
       <motion.section className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.1 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,7 +242,7 @@ const PrincipalDesk = () => {
               className="text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 1.2 }}
               viewport={{ once: true, amount: 0.7 }}
             >
               Prestigious Achievements
@@ -202,7 +258,7 @@ const PrincipalDesk = () => {
                   className="text-xl font-bold text-gray-900 mb-4"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.2 }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: 1.3 + index * 0.2 }}
                   viewport={{ once: true, amount: 0.7 }}
                 >
                   {achievement.title}
@@ -218,7 +274,7 @@ const PrincipalDesk = () => {
       <motion.section className="py-16 bg-gray-50"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.4 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +283,7 @@ const PrincipalDesk = () => {
               className="text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 1.5 }}
               viewport={{ once: true, amount: 0.7 }}
             >
               Transformational Learning & Innovation
@@ -243,7 +299,7 @@ const PrincipalDesk = () => {
                   className="text-lg font-bold text-gray-900 mb-3"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.2 }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: 1.6 + index * 0.2 }}
                   viewport={{ once: true, amount: 0.7 }}
                 >
                   {feature.title}
@@ -259,7 +315,7 @@ const PrincipalDesk = () => {
       <motion.section className="py-16 bg-blue-700 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.7 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,7 +324,7 @@ const PrincipalDesk = () => {
               className="text-4xl font-bold mb-4"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 1.8 }}
               viewport={{ once: true, amount: 0.7 }}
             >
               Our Educational Philosophy
@@ -315,7 +371,7 @@ const PrincipalDesk = () => {
                   className="text-xl font-bold mb-3"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.2 }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: 1.9 + index * 0.2 }}
                   viewport={{ once: true, amount: 0.7 }}
                 >
                   {philosophy.title}
@@ -331,7 +387,7 @@ const PrincipalDesk = () => {
       <motion.section className="py-16 bg-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 2.0 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -340,7 +396,7 @@ const PrincipalDesk = () => {
               className="text-4xl font-bold text-gray-900 mb-4"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 2.1 }}
               viewport={{ once: true, amount: 0.7 }}
             >
               28 Years of Academic Brilliance
@@ -361,7 +417,7 @@ const PrincipalDesk = () => {
                   className="text-xl font-semibold text-gray-900 mb-2"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, ease: 'easeOut', delay: index * 0.2 }}
+                  transition={{ duration: 0.7, ease: 'easeOut', delay: 2.2 + index * 0.2 }}
                   viewport={{ once: true, amount: 0.7 }}
                 >
                   {stat.label}
@@ -377,7 +433,7 @@ const PrincipalDesk = () => {
       <motion.section className="py-16 bg-gray-50"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 2.3 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -385,7 +441,7 @@ const PrincipalDesk = () => {
             className="text-4xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 2.4 }}
             viewport={{ once: true, amount: 0.7 }}
           >
             Join Our Journey of Excellence

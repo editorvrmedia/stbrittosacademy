@@ -1,10 +1,31 @@
 import React from 'react';
 import { FileText, Download, CheckCircle, Calendar, Users, Building, BookOpen, Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const CBSEMandatory = () => (
-  <div className="max-w-4xl mx-auto py-8 px-2 sm:px-4 mt-8">
-    <h1 className="text-2xl font-bold text-blue-900 mb-6 text-center">CBSE MANDATORY</h1>
-    <div className="overflow-x-auto mb-8">
+  <motion.div
+    className="max-w-4xl mx-auto py-8 px-2 sm:px-4 mt-8"
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+    viewport={{ once: true, amount: 0.7 }}
+  >
+    <motion.h1
+      className="text-2xl font-bold text-blue-900 mb-6 text-center"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
+      CBSE MANDATORY
+    </motion.h1>
+    <motion.div
+      className="overflow-x-auto mb-8"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
       <table className="min-w-full rounded-xl shadow-lg bg-white/90 text-sm">
         <thead>
           <tr className="bg-blue-100 text-blue-900">
@@ -24,8 +45,14 @@ const CBSEMandatory = () => (
           <tr className="even:bg-blue-50"><td className="p-3 border-r border-blue-200">8</td><td className="p-3 border-r border-blue-200">CONTACT DETAILS (LANDLINE/MOBILE)</td><td className="p-3">4422447514 / 9840866053</td></tr>
         </tbody>
       </table>
-    </div>
-    <div className="overflow-x-auto">
+    </motion.div>
+    <motion.div
+      className="overflow-x-auto"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
       <table className="min-w-full rounded-xl shadow-lg bg-white/90 text-sm">
         <thead>
           <tr className="bg-blue-100 text-blue-900">
@@ -145,8 +172,8 @@ const CBSEMandatory = () => (
             </td></tr>
         </tbody>
       </table>
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 export default CBSEMandatory;

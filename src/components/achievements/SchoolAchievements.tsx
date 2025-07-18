@@ -284,17 +284,29 @@ const SchoolAchievements = () => {
       />
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">School Achievements</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Celebrating 28 years of excellence, innovation, and recognition. Our achievements reflect our commitment to providing world-class education and fostering holistic development.
           </p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Statistics */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {statistics.map((stat, index) => (
@@ -306,10 +318,16 @@ const SchoolAchievements = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-gray-50 border-b">
+      <motion.section
+        className="py-8 bg-gray-50 border-b"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
@@ -327,11 +345,17 @@ const SchoolAchievements = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Featured Award - Guinness World Record */}
       {(selectedCategory === 'all' || selectedCategory === 'records') && (
-        <section className="py-16 bg-gray-50">
+        <motion.section
+          className="py-16 bg-gray-50"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Achievement</h2>
@@ -391,12 +415,18 @@ const SchoolAchievements = () => {
               </div>
               </motion.div>
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* India Book of Records - Multilingual Singing */}
       {(selectedCategory === 'all' || selectedCategory === 'records') && (
-        <section className="py-16 bg-white">
+        <motion.section
+          className="py-16 bg-white"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-900 mb-4">India Book of Records Achievement</h2>
@@ -456,11 +486,17 @@ const SchoolAchievements = () => {
               </div>
               </motion.div>
           </div>
-        </section>
+        </motion.section>
       )}
 
       {/* Major Awards */}
-      <section className="py-16 bg-gray-50">
+      <motion.section
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Major Awards & Recognitions</h2>
@@ -511,10 +547,16 @@ const SchoolAchievements = () => {
               })}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Additional Achievements */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.7 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Additional Achievements</h2>
@@ -540,10 +582,16 @@ const SchoolAchievements = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Impact & Recognition */}
-      <section className="py-16 bg-blue-700 text-white">
+      <motion.section
+        className="py-16 bg-blue-700 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.8 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Our Impact</h2>
@@ -565,10 +613,16 @@ const SchoolAchievements = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.9 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Join Our Success Story</h2>
           <p className="text-xl text-gray-600 mb-8">Be part of St. Britto's Academy and help us continue our legacy of excellence, innovation, and achievement.</p>
@@ -587,7 +641,7 @@ const SchoolAchievements = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
     </>
   );

@@ -1,12 +1,25 @@
 import React from 'react';
 import AnimatedHeading from '../animated/AnimatedHeading';
+import { motion } from 'framer-motion';
 
 const CodeOfConduct = () => (
   <div className="min-h-screen bg-white">
-    <div className="bg-blue-900 py-6 px-4">
+    <motion.div
+      className="bg-blue-900 py-6 px-4"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
       <AnimatedHeading as="h1" className="text-3xl sm:text-4xl font-bold text-white text-center" style={{fontFamily: 'sans-serif'}}>Code of Conduct - St.Britto's Academy.</AnimatedHeading>
-    </div>
-    <div className="max-w-4xl mx-auto mt-16 px-4">
+    </motion.div>
+    <motion.div
+      className="max-w-4xl mx-auto mt-16 px-4"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
       <div className="flex items-center mb-8">
         <div className="flex-grow border-t border-blue-300"></div>
         <span className="mx-4 font-bold text-blue-800 text-lg" style={{fontFamily: 'sans-serif'}}>CODE OF CONDUCT</span>
@@ -33,15 +46,21 @@ const CodeOfConduct = () => (
           <li>For further details visit: www.stbrittosacademy.edu.in</li>
         </ul>
       </div>
-      <div className="mt-12 text-center">
-        <div className="font-bold text-blue-700 text-lg mb-2" style={{fontFamily: 'sans-serif'}}>
-          For further clarifications, feel free to mail us : Mail id: admin@stbrittosacademy.edu.in
-        </div>
-        <div className="font-bold text-blue-800 text-lg" style={{fontFamily: 'sans-serif'}}>
-          Visit stbrittosacademy.edu.in for updates on events, news and school activities.
-        </div>
+    </motion.div>
+    <motion.div
+      className="mt-12 text-center"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
+      <div className="font-bold text-blue-700 text-lg mb-2" style={{fontFamily: 'sans-serif'}}>
+        For further clarifications, feel free to mail us : Mail id: admin@stbrittosacademy.edu.in
       </div>
-    </div>
+      <div className="font-bold text-blue-800 text-lg" style={{fontFamily: 'sans-serif'}}>
+        Visit stbrittosacademy.edu.in for updates on events, news and school activities.
+      </div>
+    </motion.div>
   </div>
 );
 

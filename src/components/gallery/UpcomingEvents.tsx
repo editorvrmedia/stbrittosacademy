@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Users, ArrowRight, Filter, Search } from 'lucide-react';
 import ErrorBoundary from '../ErrorBoundary';
+import { motion } from 'framer-motion';
 
 const UpcomingEvents = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -128,8 +129,13 @@ const UpcomingEvents = () => {
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-600 to-purple-800 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Upcoming Events</h1>
           <p className="text-xl max-w-3xl mx-auto mb-8">
@@ -148,10 +154,15 @@ const UpcomingEvents = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Search and Filter */}
-      <section className="py-8 bg-white border-b">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
             {/* Search Bar */}
@@ -184,10 +195,15 @@ const UpcomingEvents = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Events Grid */}
-      <section className="py-16 bg-gray-50">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filteredEvents.length === 0 ? (
             <div className="text-center py-12">
@@ -266,10 +282,15 @@ const UpcomingEvents = () => {
             </div>
           )}
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Stay Connected</h2>
           <p className="text-lg text-gray-600 mb-8">
@@ -287,7 +308,7 @@ const UpcomingEvents = () => {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

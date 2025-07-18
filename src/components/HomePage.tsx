@@ -11,6 +11,7 @@ import ErrorBoundary from './ErrorBoundary';
 import AnimatedCounter from './animated/AnimatedCounter';
 import { ParallaxElement, LayeredParallax } from './parallax';
 import { AOSElement, StaggeredAOS } from './aos';
+import ChairmanDesk from './about/ChairmanDesk';
 
 // Register ScrollTrigger plugin only on client side
 if (typeof window !== 'undefined') {
@@ -57,7 +58,7 @@ const HomePage = () => {
       });
     };
   }, []);
-
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAdmissionPopupOpen(true);
@@ -310,29 +311,42 @@ const HomePage = () => {
       {/* Hero Section is rendered in App.tsx */}
 
       {/* Quick Access Section */}
-      <section
+      <motion.section
         ref={quickAccessRef}
         className="section pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden"
-        data-scroll
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center">
-          <AOSElement animation="fade-down" delay={0}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4" data-scroll>
-              QUICK ACCESS
-            </h2>
-          </AOSElement>
-          <AOSElement animation="fade-up" delay={100}>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 lg:mb-12" data-scroll>
-              Find what you're looking for
-            </p>
-          </AOSElement>
-          <StaggeredAOS staggerDelay={150} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            QUICK ACCESS
+          </motion.h2>
+          <motion.p
+            className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 lg:mb-12"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            Find what you're looking for
+          </motion.p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[0,1,2,3].map((i) => (
-              <div
+              <motion.div
                 key={i}
                 className={`quick-access-item`}
-                data-scroll
-                data-scroll-speed={i % 2 === 0 ? 1 : -1}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 + i * 0.1 }}
+                viewport={{ once: true, amount: 0.7 }}
               >
                 {i === 0 && (
                   <Link to="/admissions/procedure" className="bg-blue-50 hover:bg-blue-100 p-4 sm:p-6 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex flex-col items-center justify-center h-32 sm:h-40 lg:h-48">
@@ -358,32 +372,41 @@ const HomePage = () => {
                     <p className="text-sm sm:text-base text-yellow-600 text-center">Get in touch</p>
                   </Link>
                 )}
-              </div>
+              </motion.div>
             ))}
-          </StaggeredAOS>
+          </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 28 Years of Excellence Section (Pinned) */}
-      <section
+      <>
+      <motion.section 
         ref={pinSectionRef}
         className="section py-12 sm:py-16 lg:py-20 bg-[#f5f8ff] max-w-full overflow-x-hidden"
-        data-scroll
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-          <ParallaxElement speed={0.4} direction="up">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 mt-2" data-scroll data-scroll-speed="2">
-              Celebrating <AnimatedCounter target={28} className="text-3xl sm:text-4xl lg:text-5xl" textColor="text-sky-500" /> Years of Educational Excellence
-            </h2>
-          </ParallaxElement>
-          
-          <LayeredParallax speeds={[0.2, 0.4, 0.6]} direction="up">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
-              {/* Left: Text Content */}
-              <AOSElement delay={200} className="flex-1 max-w-xl years-content" data-scroll data-scroll-speed="-1">
-              <section
-                className="bg-gradient-to-br from-[#f4faff] to-[#ffffff] rounded-xl shadow-md px-6 py-10 max-w-4xl mx-auto mb-6 font-[Inter,sans-serif] flex flex-col gap-6"
-              >
+          <motion.h2 
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 mt-2"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            Celebrating <AnimatedCounter target={28} className="text-3xl sm:text-4xl lg:text-5xl" textColor="text-sky-500" /> Years of Educational Excellence
+          </motion.h2>
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
+            <motion.section
+              className="flex-1 max-w-xl years-content"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <section className="bg-gradient-to-br from-[#f4faff] to-[#ffffff] rounded-xl shadow-md px-6 py-10 max-w-4xl mx-auto mb-6 font-[Inter,sans-serif] flex flex-col gap-6">
                 <p className="text-lg text-[#03045e] leading-relaxed mb-4">
                   Established in 1997, St. Britto's Academy has been at the forefront of <span className="font-semibold text-[#0077b6]">academic excellence</span> for over 28 years. Our commitment to <span className="font-semibold text-[#0077b6]">holistic development</span>, academic rigor, and character formation has made us one of Chennai's most trusted educational institutions.
                 </p>
@@ -404,9 +427,14 @@ const HomePage = () => {
                   <span className="px-4 py-1 rounded-full bg-purple-100 text-purple-800 font-semibold text-sm hover:scale-105 transition-transform duration-200">Character Building</span>
                 </div>
               </section>
-            </AOSElement>
-            {/* Right: Trophy Image and Badge */}
-            <AOSElement delay={400} className="flex-1 flex flex-col items-center relative max-w-md w-full years-image" data-scroll data-scroll-speed="1">
+            </motion.section>
+            <motion.div 
+              className="flex-1 flex flex-col items-center relative max-w-md w-full years-image"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
               <img
                 src="/AWARDS/school-excellence-award-2018.jpg"
                 alt="School Excellence Leadership Award 2018"
@@ -424,20 +452,20 @@ const HomePage = () => {
                   28
                   <div className="text-xs font-normal">Years Strong</div>
                 </div>
-                            </motion.div>
-            </AOSElement>
+              </motion.div>
+            </motion.div>
           </div>
-        </LayeredParallax>
-
+        </div>
+      </motion.section>
           {/* Event Highlights Marquee - now below the image */}
-          <ParallaxElement speed={0.3} direction="up">
-            <motion.div 
-              className="mt-8 mb-8 overflow-x-hidden bg-white bg-opacity-20 rounded-lg py-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
-              viewport={{ once: true, amount: 0.1 }}
-            >
+      <ParallaxElement speed={0.3} direction="up">
+          <motion.div 
+            className="mt-8 mb-8 overflow-x-hidden bg-white bg-opacity-20 rounded-lg py-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <div
               className="flex whitespace-nowrap"
               style={{
@@ -485,9 +513,8 @@ const HomePage = () => {
               </div>
             </div>
           </motion.div>
-          </ParallaxElement>
-        </div>
-      </section>
+      </ParallaxElement>
+      </>
 
       {/* Stats Bar and Vision & Mission Section */}
       <motion.section 
@@ -504,90 +531,72 @@ const HomePage = () => {
           delay={0}
           className="bg-blue-900 w-full py-10 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16"
         >
+          {[0,1,2,3].map((i) => (
           <motion.div 
+              key={i}
             className="flex flex-col items-center text-white stat-item"
-            initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 + i * 0.1 }}
+              viewport={{ once: true, amount: 0.7 }}
           >
             <div className="flex items-center justify-center gap-3 mb-1">
-              <Users className="w-10 h-10" />
-              <AnimatedCounter target={1200} suffix="+" duration={1200} className="text-3xl" />
+                {i === 0 && <Users className="w-10 h-10" />}
+                {i === 1 && <Gem className="w-10 h-10" />}
+                {i === 2 && <Star className="w-10 h-10" />}
+                {i === 3 && <Trophy className="w-10 h-10" />}
+                <AnimatedCounter target={i === 0 ? 1200 : i === 1 ? 50 : i === 2 ? 28 : 100} suffix={i === 2 ? "" : "+"} duration={1200} className="text-3xl" />
             </div>
             <span className="text-sm">Students</span>
           </motion.div>
-          <motion.div 
-            className="flex flex-col items-center text-white stat-item"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="flex items-center justify-center gap-3 mb-1">
-              <Gem className="w-10 h-10" />
-              <AnimatedCounter target={50} suffix="+" duration={1200} className="text-3xl" />
-            </div>
-            <span className="text-sm">Expert Teachers</span>
-          </motion.div>
-          <motion.div 
-            className="flex flex-col items-center text-white stat-item"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="flex items-center justify-center gap-3 mb-1">
-              <Star className="w-10 h-10" />
-              <AnimatedCounter target={28} duration={1200} className="text-3xl" />
-            </div>
-            <span className="text-sm">Years of Excellence</span>
-          </motion.div>
-          <motion.div 
-            className="flex flex-col items-center text-white stat-item"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            <div className="flex items-center justify-center gap-3 mb-1">
-              <Trophy className="w-10 h-10" />
-              <AnimatedCounter target={100} suffix="+" duration={1200} className="text-3xl" />
-            </div>
-            <span className="text-sm">Awards Won</span>
-          </motion.div>
+          ))}
         </AOSElement>
 
       </motion.section>
 
       {/* Call to Action Section */}
-      <AOSElement
-        animation="zoom-in"
-        delay={0}
-        className="section py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white max-w-full overflow-x-hidden slide-up"
-        data-scroll
+      <motion.section
+        className="section py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white max-w-full overflow-x-hidden"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center">
-          <AOSElement animation="fade-up" delay={200}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 fade-in" data-scroll>Ready to Join Our Community?</h2>
-          </AOSElement>
-          <AOSElement animation="fade-up" delay={400}>
-            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto slide-up" data-scroll>
-              Discover the difference that quality education makes in shaping tomorrow's leaders
-            </p>
-          </AOSElement>
-          <AOSElement animation="fade-up" delay={600}>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center zoom-in" data-scroll>
+          <motion.h2
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 fade-in"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            Ready to Join Our Community?
+          </motion.h2>
+          <motion.p
+            className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto slide-up"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
+            Discover the difference that quality education makes in shaping tomorrow's leaders
+          </motion.p>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center zoom-in"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
               <Link
                 to="/admissions/procedure"
                 className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
               >
-                Apply Now
-              </Link>
-            </div>
-          </AOSElement>
+            Apply Now
+          </Link>
+          </motion.div>
         </div>
-      </AOSElement>
+      </motion.section>
 
       {/* Popups and Notifications */}
       <AdmissionPopup 

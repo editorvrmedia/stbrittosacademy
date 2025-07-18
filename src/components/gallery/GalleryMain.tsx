@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Camera, Calendar, Users, ArrowRight, Play, Image, Video } from 'lucide-react';
 import RecentVideos from './RecentVideos';
 import RecentShorts from './RecentShorts';
+import { motion } from 'framer-motion';
 
 const API_KEY = 'AIzaSyB5qQW6EwPGpbGQ1zDXn8gWZ2b1lpl4NN4';
 const CHANNEL_ID = 'UCfKsJCTgNrc06FI8i9Z9gpg';
@@ -286,15 +287,27 @@ const GalleryMain = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-indigo-600 to-purple-700 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Video Collection</h1>
           <p className="text-xl text-white/90 mb-8">Explore our diverse collection of photos and memorable moments at St. Britto's Academy.</p>
         </div>
-      </section>
+      </motion.section>
 
       {/* Gallery Stats */}
-      <section className="py-12 bg-white border-b">
+      <motion.section
+        className="py-12 bg-white border-b"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="flex items-center justify-center">
@@ -320,10 +333,16 @@ const GalleryMain = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Type Filter */}
-      <section className="py-8 bg-gray-50 border-b">
+      <motion.section
+        className="py-8 bg-gray-50 border-b"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {galleryTypes.map((type) => (
@@ -341,13 +360,19 @@ const GalleryMain = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Conditional Rendering for Videos/Albums */}
       {selectedType === 'videos' && (
         <>
           {/* Featured Collections */}
-          <section className="py-16 bg-gray-50">
+          <motion.section
+            className="py-16 bg-gray-50"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Collections</h2>
@@ -419,7 +444,7 @@ const GalleryMain = () => {
                 </div>
               </div>
             )}
-          </section>
+          </motion.section>
           {/* Recent Videos from YouTube */}
           <RecentVideos />
         </>
@@ -427,7 +452,13 @@ const GalleryMain = () => {
       {selectedType === 'albums' && (
         <>
           {/* Only show albums section (Browse by Category) */}
-          <section className="py-16 bg-gray-50">
+          <motion.section
+            className="py-16 bg-gray-50"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">Browse by Category</h2>
@@ -464,14 +495,20 @@ const GalleryMain = () => {
                 ))}
               </div>
             </div>
-          </section>
+          </motion.section>
         </>
       )}
       {selectedType === 'all' && (
         <>
           {/* Show everything as before */}
           {/* Featured Galleries */}
-          <section className="py-16 bg-gray-50">
+          <motion.section
+            className="py-16 bg-gray-50"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Collections</h2>
@@ -545,13 +582,19 @@ const GalleryMain = () => {
                 </div>
               </div>
             )}
-          </section>
+          </motion.section>
           {/* Recent Videos from YouTube */}
           <RecentVideos />
           {/* Recent Shorts from YouTube */}
           <RecentShorts />
           {/* Albums section (Browse by Category) */}
-          <section className="py-16 bg-gray-50">
+          <motion.section
+            className="py-16 bg-gray-50"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.7 }}
+            viewport={{ once: true, amount: 0.7 }}
+          >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">Browse by Category</h2>
@@ -588,12 +631,18 @@ const GalleryMain = () => {
                 ))}
               </div>
             </div>
-          </section>
+          </motion.section>
         </>
       )}
 
       {/* Call to Action */}
-      <section className="py-16 bg-indigo-700 text-white">
+      <motion.section
+        className="py-16 bg-indigo-700 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">Contribute to Our Gallery</h2>
           <p className="text-xl mb-8">
@@ -614,7 +663,7 @@ const GalleryMain = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

@@ -10,16 +10,21 @@ interface AnimatedCounterProps {
 
 const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ target, duration = 1000, className = '', suffix = '', textColor = '' }) => {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLSpanElement>(null);
+  const animationRef = useRef<number | null>(null);
+  const lastTriggerRef = useRef<number>(0);
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            animateCount();
+          if (entry.isIntersecting) {
+            // Debounce: only trigger if at least 300ms since last trigger
+            const now = Date.now();
+            if (now - lastTriggerRef.current > 300) {
+              lastTriggerRef.current = now;
+              animateCount();
+            }
           }
         });
       },
@@ -32,9 +37,12 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ target, duration = 10
       if (elementRef.current) {
         observer.unobserve(elementRef.current);
       }
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
     // eslint-disable-next-line
-  }, [hasAnimated]);
+  }, [target, duration]);
 
   const animateCount = () => {
     let startTime: number | null = null;
@@ -45,12 +53,15 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ target, duration = 10
       const current = Math.floor(startCount + (target - startCount) * progress);
       setCount(current);
       if (progress < 1) {
-        requestAnimationFrame(step);
+        animationRef.current = requestAnimationFrame(step);
       } else {
         setCount(target);
       }
     };
-    requestAnimationFrame(step);
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+    animationRef.current = requestAnimationFrame(step);
   };
 
   const formatNumber = (num: number) => num.toLocaleString();

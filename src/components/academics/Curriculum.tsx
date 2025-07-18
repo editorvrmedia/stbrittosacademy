@@ -108,7 +108,7 @@ const Curriculum = () => {
         className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
         viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -121,7 +121,12 @@ const Curriculum = () => {
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Curriculum Features */}
-      <section className="py-8">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Star className="mx-auto mb-2 h-10 w-10 text-yellow-400" />
@@ -138,13 +143,19 @@ const Curriculum = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
-      <div className="w-full h-2 bg-gradient-to-r from-red-200 via-white to-blue-200 my-8 rounded-full" />
+      <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Subject Areas */}
-      <section className="py-8">
+      <motion.section
+        className="py-8"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <BookOpen className="mx-auto mb-2 h-10 w-10 text-blue-400" />
@@ -164,13 +175,18 @@ const Curriculum = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section Divider */}
       <div className="w-full h-2 bg-gradient-to-r from-blue-200 via-white to-red-200 my-8 rounded-full" />
 
       {/* Teaching Methodologies */}
-      <section className="py-8">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <Lightbulb className="mx-auto mb-2 h-10 w-10 text-red-400" />
@@ -187,7 +203,7 @@ const Curriculum = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Assessment & Evaluation */}
       <section className="py-16 bg-blue-700 text-white">
@@ -226,7 +242,13 @@ const Curriculum = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gray-50">
+      <motion.section
+        className="py-16 bg-gray-50"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <AnimatedHeading as="h2" className="text-4xl font-bold text-gray-900 mb-6">Experience Our Curriculum</AnimatedHeading>
           <p className="text-xl text-gray-600 mb-8">
@@ -247,7 +269,7 @@ const Curriculum = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, Target, Heart, Users, Lightbulb, Award, CheckCircle, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const BelieveYouCan = () => {
   const principles = [
@@ -79,7 +80,13 @@ const BelieveYouCan = () => {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-amber-500 to-orange-600 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-amber-500 to-orange-600 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Believe You Can Program</h1>
           <p className="text-xl max-w-3xl mx-auto mb-8">
@@ -90,10 +97,15 @@ const BelieveYouCan = () => {
             <p className="text-lg">- Theodore Roosevelt</p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* SEEK Foundation Introduction */}
-      <section className="py-16 bg-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -133,10 +145,15 @@ const BelieveYouCan = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* BYC Events */}
-      <section className="py-16 bg-sky-50">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-blue-900 mb-4">Three Dimensions of Excellence</h2>
@@ -178,10 +195,15 @@ const BelieveYouCan = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Core Principles */}
-      <section className="py-16 bg-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Core Principles</h2>
@@ -206,10 +228,15 @@ const BelieveYouCan = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Expected Outcomes */}
-      <section className="py-16 bg-amber-600 text-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Expected Outcomes</h2>
@@ -227,10 +254,15 @@ const BelieveYouCan = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Start Your Child's Journey to Success</h2>
           <p className="text-xl text-gray-600 mb-8">
@@ -251,7 +283,7 @@ const BelieveYouCan = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

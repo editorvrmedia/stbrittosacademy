@@ -13,19 +13,11 @@ const HeroSection = () => {
   const scrollArrowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Simple scroll-based animations without GSAP pinning
+    // Only animate newsBar and scrollArrow, not video
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const video = videoRef.current;
       const newsBar = newsBarRef.current;
       const scrollArrow = scrollArrowRef.current;
-
-      if (video) {
-        // Simple zoom effect based on scroll
-        const progress = Math.min(scrollY / 500, 1);
-        const scale = 1 + (progress * 0.15);
-        video.style.transform = `scale(${scale})`;
-      }
 
       if (newsBar && scrollY > 100) {
         newsBar.style.opacity = Math.max(0, 1 - (scrollY - 100) / 200).toString();
@@ -44,9 +36,6 @@ const HeroSection = () => {
 
   return (
     <>
-      {/* Visible line separator between header and video */}
-      <div className="w-full h-1 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-600"></div>
-      
       <div ref={heroRef}>
         <AnimatePresence mode="wait">
           <motion.section
@@ -64,12 +53,12 @@ const HeroSection = () => {
               videoSrc="/videointro.mp4"
               speed={0.3}
               direction="up"
-              scale={true}
+              scale={false} // Disable parallax scaling
               overlay={true}
               overlayColor="rgba(0, 0, 0, 0.2)"
               overlayOpacity={0.2}
               className="relative w-full overflow-hidden"
-              style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}
+              style={{ aspectRatio: '16/9', width: '100%', maxHeight: '80vh', minHeight: '40vw' }}
             >
               {/* Scroll Arrow with Parallax */}
               <div 

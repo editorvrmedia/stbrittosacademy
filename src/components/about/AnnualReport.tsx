@@ -51,7 +51,7 @@ const AnnualReport = () => (
       className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
       viewport={{ once: true, amount: 0.7 }}
     >
       <div className="bg-blue-900 py-6 px-4 w-full">

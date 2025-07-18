@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
 import AnimatedHeading from '../animated/AnimatedHeading';
+import { motion } from 'framer-motion';
 
 const Admissions = () => {
   return (
     <div>
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedHeading as="h1" className="text-5xl font-bold mb-6">Admissions</AnimatedHeading>
           <p className="text-xl max-w-3xl mx-auto">
             Join the St. Britto's Academy family. Discover our admission process, requirements, and how to begin your child's educational journey with us.
           </p>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-16 bg-gray-100">
+      <motion.section
+        className="py-16 bg-gray-100"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="bg-white p-8 rounded-lg shadow-md">
             <AnimatedHeading as="h2" className="text-3xl font-bold mb-4">Admission Requirements</AnimatedHeading>
@@ -43,9 +56,15 @@ const Admissions = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedHeading as="h2" className="text-4xl font-bold mb-6">Ready to Apply?</AnimatedHeading>
           <p className="text-xl max-w-3xl mx-auto">
@@ -55,7 +74,7 @@ const Admissions = () => {
             Apply Now
           </button>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

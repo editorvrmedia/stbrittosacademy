@@ -9,7 +9,7 @@ const Governance = () => (
       className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
       viewport={{ once: true, amount: 0.7 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -22,7 +22,13 @@ const Governance = () => (
     <section className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 mt-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
         {/* Visionary Leadership */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100">
+        <motion.div
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <div className="flex items-center gap-3 mb-2">
             <Star className="h-8 w-8 text-yellow-500" />
             <h2 className="text-2xl font-bold text-blue-800">Visionary Leadership</h2>
@@ -30,9 +36,15 @@ const Governance = () => (
           <p className="text-gray-700">
             Dr. Xavier Britto, the visionary Chairman of INDEV Group of Companies, and Dr. Vimala Rani Britto, the Author of FEFDY Curriculum, Managing Director of Esthell Hotels & Resorts, Founder of SEEK Foundation, an NGO, share a deep passion for educational excellence. Their unwavering commitment has led to the establishment of a world-class institution that focuses on academic brilliance, character building, and global readiness. Inspired by their late parents, they have shaped St. Britto's Academy into a school that empowers young minds with knowledge, leadership skills, and ethical values.
           </p>
-        </div>
+        </motion.div>
         {/* Legacy of Quality Education */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100">
+        <motion.div
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <div className="flex items-center gap-3 mb-2">
             <Award className="h-8 w-8 text-amber-500" />
             <h2 className="text-2xl font-bold text-blue-800">A Legacy of Quality Education</h2>
@@ -48,9 +60,15 @@ const Governance = () => (
           <p className="text-gray-700">
             Through innovative teaching methodologies, student-centric learning, and value-based education, St. Britto's Academy continues to shape future leaders and responsible global citizens.
           </p>
-        </div>
+        </motion.div>
         {/* Management & Administration */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100">
+        <motion.div
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <div className="flex items-center gap-3 mb-2">
             <Users className="h-8 w-8 text-blue-600" />
             <h2 className="text-2xl font-bold text-blue-800">Management & Administration</h2>
@@ -62,9 +80,15 @@ const Governance = () => (
             <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-green-500 mt-1" />The Principal, appointed by the Correspondent, manages day-to-day operations, academic policies, and student welfare.</li>
             <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-green-500 mt-1" />Vice-Principals & Coordinators oversee academic and extracurricular development, ensuring student-centric learning.</li>
           </ul>
-        </div>
+        </motion.div>
         {/* Dedicated Faculty & Professional Excellence */}
-        <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100">
+        <motion.div
+          className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 flex flex-col gap-6 border border-blue-100"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+          viewport={{ once: true, amount: 0.7 }}
+        >
           <div className="flex items-center gap-3 mb-2">
             <BookOpen className="h-8 w-8 text-indigo-500" />
             <h2 className="text-2xl font-bold text-blue-800">Dedicated Faculty & Professional Excellence</h2>
@@ -75,12 +99,18 @@ const Governance = () => (
             <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-green-500 mt-1" />A student-centric approach, ensuring inclusivity and personal growth</li>
             <li className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-green-500 mt-1" />Personalised attention for academic and emotional well-being</li>
           </ul>
-        </div>
+        </motion.div>
       </div>
       {/* Divider */}
       <div className="w-full border-t border-blue-200 my-12"></div>
       {/* Transformational Learning */}
-      <div className="mt-16">
+      <motion.div
+        className="mt-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.6 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="bg-gradient-to-r from-blue-700/80 to-blue-500/80 backdrop-blur-2xl rounded-3xl shadow-2xl p-12 text-white text-center border border-blue-200">
           <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-2"><Target className="h-8 w-8 text-yellow-300" />Transformational Learning for Future Leaders</h2>
           <ul className="list-none space-y-2 mb-6">
@@ -96,7 +126,7 @@ const Governance = () => (
             <span className="block mt-4 text-2xl font-bold text-yellow-200">St. Britto's Academy: Where Learning Transforms Lives!</span>
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   </div>
 );

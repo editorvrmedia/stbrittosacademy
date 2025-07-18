@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const OnlineApplicationForm = () => {
   const [form, setForm] = useState({
@@ -32,7 +33,14 @@ const OnlineApplicationForm = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[url('/public/bg-pattern.png')] bg-repeat bg-[#f9e7c2] py-8 px-2">
-      <form onSubmit={handleSubmit} className="w-full max-w-3xl bg-white rounded-2xl shadow-2xl p-10 flex flex-col items-center">
+      <motion.form
+        onSubmit={handleSubmit}
+        className="w-full max-w-3xl bg-white rounded-2xl shadow-2xl p-10 flex flex-col items-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="w-full flex justify-center items-center mb-4">
           <img src="/LOGOS/SBA.png" alt="St. Britto's Academy Logo" className="h-36" />
         </div>
@@ -75,7 +83,7 @@ const OnlineApplicationForm = () => {
           <button type="button" className="bg-blue-900 text-white px-8 py-2 rounded font-bold" onClick={handleReset}>Reset</button>
           <button type="button" className="bg-blue-900 text-white px-8 py-2 rounded font-bold" onClick={() => window.history.back()}>Back</button>
         </div>
-      </form>
+      </motion.form>
     </div>
   );
 };

@@ -1,19 +1,32 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const UpperPrimary = () => {
   return (
     <div className="pt-20 bg-white min-h-screen">
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <motion.section
+        className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">Upper Primary (Grades 4-5)</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Building upon strong foundations. Our upper primary program deepens subject knowledge while developing critical thinking, problem-solving skills, and preparing students for the challenges of middle school.
           </p>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-green-50 text-center">
+      <motion.section
+        className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-green-50 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        viewport={{ once: true, amount: 0.7 }}
+      >
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
           Higher Primary at St. Britto's Academy – A Cambridge-Aligned Learning Experience
         </h1>
@@ -113,7 +126,7 @@ const UpperPrimary = () => {
             With a dynamic and engaging learning environment, we nurture confident, inquisitive, and capable learners prepared for future academic success.
           </p>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
