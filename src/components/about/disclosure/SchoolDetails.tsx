@@ -266,7 +266,7 @@ const SchoolDetails = () => (
           </ul>
           <div className="font-bold text-blue-900 mb-2">ANTI DRUG CLUB COMMITTEE MEMBERS</div>
           <ul className="list-disc pl-6 mb-4 text-gray-700">
-            <li>Mary Vasantha Kumari</li>
+            <li>Ms.Mary Vasantha Kumari</li>
             <li>Mrs. Jayanthi Arulmani</li>
             <li>Mr. Venkatesh</li>
             <li>Mr. Sriram</li>
