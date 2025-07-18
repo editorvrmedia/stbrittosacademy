@@ -221,7 +221,7 @@ const Header = () => {
   return (
     <>
       <TopHeader />
-      <header className={`w-full z-[2002] transition-all duration-200 ${isDark ? 'bg-blue-900/90' : 'bg-transparent'} backdrop-blur-md`}>
+      <header className={`w-full z-[1050] bg-white transition-all duration-200 backdrop-blur-md`}>
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2 sm:py-3 min-h-[56px] w-full">
             {/* Logo: Centered on mobile, left on desktop */}

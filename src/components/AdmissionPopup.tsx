@@ -16,7 +16,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+    <div className="fixed left-0 right-0 top-[80px] bottom-0 bg-black bg-opacity-75 flex items-center justify-center z-30 p-4">
       <div className="bg-white rounded-lg shadow-xl w-full max-w-xs sm:max-w-md md:max-w-2xl flex flex-col md:flex-row overflow-hidden md:max-h-[90vh]">
         {/* Left Section - Image and Info */}
         <div className="md:w-1/2 bg-blue-500 text-white p-3 sm:p-4 flex flex-col items-center justify-center relative">
