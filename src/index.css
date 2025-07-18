@@ -36,6 +36,8 @@
 }
 
 html {
+  -webkit-text-size-adjust: 100%; /* For Safari/iOS/old Android */
+  text-size-adjust: 100%;         /* For modern browsers */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: y mandatory;

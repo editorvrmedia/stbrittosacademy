@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Building, Microscope, BookOpen, Monitor, Palette, Music, Trophy, Utensils, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+// Removed: import { motion, AnimatePresence } from 'framer-motion';
 
 const Infrastructure = () => {
   const facilities = [
@@ -147,12 +147,12 @@ const Infrastructure = () => {
   return (
     <div className="pt-20">
       {/* Hero/Intro Section */}
-      <motion.section
+      <section
         className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-        viewport={{ once: true, amount: 0.7 }}
+        // Removed: initial={{ opacity: 0, y: 40 }}
+        // Removed: whileInView={{ opacity: 1, y: 0 }}
+        // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+        // Removed: viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-6">School Infrastructure</h1>
@@ -160,15 +160,15 @@ const Infrastructure = () => {
             State-of-the-art facilities designed to provide the best learning environment for our students, supporting both academic excellence and holistic development.
           </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Campus Overview */}
-      <motion.section
+      <section
         className="py-16 bg-white"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-        viewport={{ once: true, amount: 0.7 }}
+        // Removed: initial={{ opacity: 0, y: 40 }}
+        // Removed: whileInView={{ opacity: 1, y: 0 }}
+        // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+        // Removed: viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -199,15 +199,15 @@ const Infrastructure = () => {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Premium State-of-the-Art Facilities Section (after Campus Overview) */}
-      <motion.section
+      <section
         className="relative w-full py-8 px-2 sm:px-6 lg:px-12 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-100 overflow-x-hidden"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
-        viewport={{ once: true, amount: 0.7 }}
+        // Removed: initial={{ opacity: 0, y: 40 }}
+        // Removed: whileInView={{ opacity: 1, y: 0 }}
+        // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+        // Removed: viewport={{ once: true, amount: 0.7 }}
       >
         {/* Hero Banner */}
         <div className="relative flex flex-col items-center justify-center text-center mb-12">
@@ -217,20 +217,20 @@ const Infrastructure = () => {
         </div>
         {/* Intro Paragraph */}
         <div className="flex justify-center mb-12">
-          <motion.p
+          <p
             className="text-gray-700 text-lg sm:text-xl max-w-4xl leading-loose text-justify bg-white/80 rounded-xl shadow p-6"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeInOut', delay: 0.4 }}
-            viewport={{ once: true, amount: 0.3 }}
+            // Removed: initial={{ opacity: 0, y: 40 }}
+            // Removed: whileInView={{ opacity: 1, y: 0 }}
+            // Removed: transition={{ duration: 0.8, ease: 'easeInOut', delay: 0.4 }}
+            // Removed: viewport={{ once: true, amount: 0.3 }}
           >
             At St. Britto's Academy, we are dedicated to providing a world-class learning environment that nurtures academic excellence, creativity, and holistic development. Situated on a 1.5-acre campus in the heart of the city, our school is equipped with cutting-edge infrastructure and advanced technology, ensuring that students are prepared for a dynamic and competitive future. Our state-of-the-art infrastructure ensures that students thrive in academics, sports, arts, and life skills, making them future-ready global citizens.
-          </motion.p>
+          </p>
         </div>
         {/* Subsection Cards Grid */}
         <div className="grid md:grid-cols-2 gap-10 mb-8">
           {/* Academic Excellence */}
-          <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-blue-500" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-blue-500">
             <div className="flex items-center gap-3 mb-2">
               <BookOpen className="w-8 h-8 text-blue-600" />
               <h3 className="text-2xl font-bold text-blue-900 underline underline-offset-4">ACADEMIC EXCELLENCE</h3>
@@ -241,9 +241,9 @@ const Infrastructure = () => {
               <li className="flex items-start gap-2"><BookOpen className="w-5 h-5 text-yellow-500 mt-1" /> <span><b>Library & E-Resource Centre:</b> Books, journals, digital resources.</span></li>
               <li className="flex items-start gap-2"><Palette className="w-5 h-5 text-purple-500 mt-1" /> <span><b>Language & Multimedia Labs:</b> Audio-visual, pronunciation, digital storytelling.</span></li>
             </ul>
-          </motion.div>
+          </div>
           {/* Skill Development & Creative Spaces */}
-          <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-yellow-400" initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-yellow-400">
             <div className="flex items-center gap-3 mb-2">
               <Utensils className="w-8 h-8 text-yellow-500" />
               <h3 className="text-2xl font-bold text-yellow-700 underline underline-offset-4">SKILL DEVELOPMENT & CREATIVE SPACES</h3>
@@ -270,11 +270,11 @@ const Infrastructure = () => {
                 <div className="text-sm text-gray-700 text-center">Professional space, wooden flooring, mirrors, diverse dance forms.</div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         {/* Sports & Fitness Facilities and SMR Auditorium */}
         <div className="flex justify-center gap-10 mb-8">
-          <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-green-500" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-green-500">
             <div className="flex items-center gap-3 mb-2">
               <Trophy className="w-8 h-8 text-green-600" />
               <h3 className="text-2xl font-bold text-green-900 underline underline-offset-4">SPORTS & FITNESS FACILITIES</h3>
@@ -284,8 +284,8 @@ const Infrastructure = () => {
               <li className="flex items-start gap-2"><Trophy className="w-5 h-5 text-green-500 mt-1" /> <span>Special coaching programmes for excelling students</span></li>
               <li className="flex items-start gap-2"><Trophy className="w-5 h-5 text-blue-500 mt-1" /> <span>Indoor Swimming Pool with professional coaching</span></li>
             </ul>
-          </motion.div>
-          <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-pink-400" initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.4, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
+          </div>
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-pink-400">
             <div className="flex items-center gap-3 mb-2">
               <Microscope className="w-8 h-8 text-pink-500" />
               <h3 className="text-2xl font-bold text-pink-700 underline underline-offset-4">SMR AUDITORIUM</h3>
@@ -303,11 +303,11 @@ const Infrastructure = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         {/* Safety & Security and Digital Integration */}
         <div className="grid md:grid-cols-2 gap-10 mb-8">
-          <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-green-400" initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.5, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-green-400">
             <div className="flex items-center gap-3 mb-2">
               <Monitor className="w-8 h-8 text-green-600" />
               <h3 className="text-2xl font-bold text-green-900 underline underline-offset-4">SAFETY & SECURITY</h3>
@@ -318,8 +318,8 @@ const Infrastructure = () => {
               <div className="flex items-center gap-2"><Monitor className="w-6 h-6 text-green-400" /><span>Comprehensive Security System</span></div>
               <div className="flex items-center gap-2"><Monitor className="w-6 h-6 text-green-400" /><span>Real-time Tracking & Alerts</span></div>
             </div>
-          </motion.div>
-          <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-blue-400" initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.6, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
+          </div>
+          <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-blue-400">
             <div className="flex items-center gap-3 mb-2">
               <Monitor className="w-8 h-8 text-blue-600" />
               <h3 className="text-2xl font-bold text-blue-900 underline underline-offset-4">DIGITAL INTEGRATION</h3>
@@ -330,10 +330,10 @@ const Infrastructure = () => {
               <div className="flex items-center gap-2"><Monitor className="w-6 h-6 text-blue-300" /><span>Google Drive for resources</span></div>
               <div className="flex items-center gap-2"><Monitor className="w-6 h-6 text-blue-200" /><span>ERP for communication, attendance, results</span></div>
             </div>
-          </motion.div>
+          </div>
         </div>
         {/* ERP Features Table/Grid */}
-        <motion.div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-blue-500 max-w-5xl mx-auto" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7, ease: 'easeInOut' }} viewport={{ once: true, amount: 0.3 }}>
+        <div className="bg-white rounded-2xl shadow-xl p-8 flex flex-col gap-4 border-l-8 border-blue-500 max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-2">
             <Monitor className="w-8 h-8 text-blue-600" />
             <h3 className="text-2xl font-bold text-blue-900 underline underline-offset-4">ERP FEATURES</h3>
@@ -349,18 +349,18 @@ const Infrastructure = () => {
             <div className="flex items-center gap-2"><Monitor className="w-6 h-6 text-blue-50" /><span>Schedule of Assessments/Activities</span></div>
             <div className="flex items-center gap-2"><Monitor className="w-6 h-6 text-blue-50" /><span>Updates on class and home assignments</span></div>
           </div>
-        </motion.div>
-      </motion.section>
+        </div>
+      </section>
 
       {/* Facilities by Category */}
       {facilities.map((cat, cidx) => (
-        <motion.section
+        <section
           key={cat.category}
           className={`py-8 bg-transparent`}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.8 + cidx * 0.1 }}
-          viewport={{ once: true, amount: 0.7 }}
+          // Removed: initial={{ opacity: 0, y: 40 }}
+          // Removed: whileInView={{ opacity: 1, y: 0 }}
+          // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 0.8 + cidx * 0.1 }}
+          // Removed: viewport={{ once: true, amount: 0.7 }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -373,13 +373,13 @@ const Infrastructure = () => {
             {['Technology Infrastructure', 'Sports & Recreation', 'Arts & Culture'].includes(cat.category) ? (
               <div className="flex justify-center gap-8 flex-wrap">
                 {cat.items.map((facility, idx) => (
-                  <motion.div
+                  <div
                     key={facility.name}
                     className="relative rounded-2xl overflow-hidden shadow-xl group cursor-pointer bg-white w-64 mb-4 flex flex-col items-center"
-                    whileHover="hover"
-                    initial="rest"
-                    animate="rest"
-                    variants={{}}
+                    // Removed: whileHover="hover"
+                    // Removed: initial="rest"
+                    // Removed: animate="rest"
+                    // Removed: variants={{}}
                     onClick={() => setModal({ open: true, facility })}
                   >
                     <img src={facility.image} alt={facility.name} className="w-full h-56 object-cover" />
@@ -388,28 +388,26 @@ const Infrastructure = () => {
                       {facility.name}
                     </div>
                     {/* Overlay */}
-                    <motion.div
-                      variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
-                      transition={{ duration: 0.3 }}
+                    <div
                       className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100"
                       style={{ pointerEvents: 'none' }}
                     >
                       <span className="text-white text-xl font-bold mb-2 drop-shadow-lg">{facility.name}</span>
                       <span className="text-white text-sm drop-shadow-lg">{facility.description.split('.')[0]}</span>
-                    </motion.div>
-                  </motion.div>
+                    </div>
+                  </div>
                 ))}
                   </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {cat.items.map((facility, idx) => (
-                  <motion.div
+                  <div
                     key={facility.name}
                     className="relative rounded-2xl overflow-hidden shadow-xl group cursor-pointer bg-white flex flex-col items-center"
-                    whileHover="hover"
-                    initial="rest"
-                    animate="rest"
-                    variants={{}}
+                    // Removed: whileHover="hover"
+                    // Removed: initial="rest"
+                    // Removed: animate="rest"
+                    // Removed: variants={{}}
                     onClick={() => setModal({ open: true, facility })}
                   >
                     <img src={facility.image} alt={facility.name} className="w-full h-56 object-cover" />
@@ -418,30 +416,28 @@ const Infrastructure = () => {
                       {facility.name}
                 </div>
                     {/* Overlay */}
-                    <motion.div
-                      variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
-                      transition={{ duration: 0.3 }}
+                    <div
                       className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center px-4 opacity-0 group-hover:opacity-100"
                       style={{ pointerEvents: 'none' }}
                     >
                       <span className="text-white text-xl font-bold mb-2 drop-shadow-lg">{facility.name}</span>
                       <span className="text-white text-sm drop-shadow-lg">{facility.description.split('.')[0]}</span>
-                    </motion.div>
-                  </motion.div>
+                    </div>
+                  </div>
               ))}
             </div>
             )}
           </div>
-        </motion.section>
+        </section>
       ))}
 
       {/* Campus Specifications */}
-      <motion.section
+      <section
         className="py-16 bg-white"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.0 }}
-        viewport={{ once: true, amount: 0.7 }}
+        // Removed: initial={{ opacity: 0, y: 40 }}
+        // Removed: whileInView={{ opacity: 1, y: 0 }}
+        // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 1.0 }}
+        // Removed: viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -450,29 +446,29 @@ const Infrastructure = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {specifications.map((spec, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow duration-300"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: 'easeOut', delay: 1.0 + index * 0.05 }}
-                viewport={{ once: true, amount: 0.7 }}
+                // Removed: initial={{ opacity: 0, y: 40 }}
+                // Removed: whileInView={{ opacity: 1, y: 0 }}
+                // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 1.0 + index * 0.05 }}
+                // Removed: viewport={{ once: true, amount: 0.7 }}
               >
                 <div className="text-3xl font-bold text-gray-900 mb-2">{spec.value}</div>
                 <div className="text-lg text-gray-600">{spec.label}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Safety & Security */}
-      <motion.section
+      <section
         className="py-16 bg-gray-50"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.1 }}
-        viewport={{ once: true, amount: 0.7 }}
+        // Removed: initial={{ opacity: 0, y: 40 }}
+        // Removed: whileInView={{ opacity: 1, y: 0 }}
+        // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 1.1 }}
+        // Removed: viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -506,29 +502,29 @@ const Infrastructure = () => {
                 description: 'GPS-enabled buses with trained drivers and attendants'
               }
             ].map((safety, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, ease: 'easeOut', delay: 1.1 + index * 0.05 }}
-                viewport={{ once: true, amount: 0.7 }}
+                // Removed: initial={{ opacity: 0, y: 40 }}
+                // Removed: whileInView={{ opacity: 1, y: 0 }}
+                // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 1.1 + index * 0.05 }}
+                // Removed: viewport={{ once: true, amount: 0.7 }}
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{safety.title}</h3>
                 <p className="text-gray-600">{safety.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Call to Action */}
-      <motion.section
+      <section
         className="py-16 bg-gray-900 text-white"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 1.2 }}
-        viewport={{ once: true, amount: 0.7 }}
+        // Removed: initial={{ opacity: 0, y: 40 }}
+        // Removed: whileInView={{ opacity: 1, y: 0 }}
+        // Removed: transition={{ duration: 0.7, ease: 'easeOut', delay: 1.2 }}
+        // Removed: viewport={{ once: true, amount: 0.7 }}
       >
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-6">Experience Our Campus</h2>
@@ -550,38 +546,36 @@ const Infrastructure = () => {
             </a>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Modal/Lightbox */}
-      <AnimatePresence>
-        {modal.open && modal.facility && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+      {modal.open && modal.facility && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+          // Removed: initial={{ opacity: 0 }}
+          // Removed: animate={{ opacity: 1 }}
+          // Removed: exit={{ opacity: 0 }}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative flex flex-col items-center"
+            // Removed: initial={{ scale: 0.8, opacity: 0 }}
+            // Removed: animate={{ scale: 1, opacity: 1 }}
+            // Removed: exit={{ scale: 0.8, opacity: 0 }}
+            // Removed: transition={{ type: 'spring', stiffness: 200, damping: 20 }}
           >
-            <motion.div
-              className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative flex flex-col items-center"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+            <button
+              className="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl"
+              onClick={() => setModal({ open: false, facility: null })}
+              aria-label="Close"
             >
-              <button
-                className="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl"
-                onClick={() => setModal({ open: false, facility: null })}
-                aria-label="Close"
-              >
-                <X />
-              </button>
-              <img src={modal.facility.image} alt={modal.facility.name} className="w-full h-64 object-cover rounded-xl mb-4" />
-              <h3 className="text-2xl font-bold text-blue-900 mb-2">{modal.facility.name}</h3>
-              <p className="text-gray-700 text-center text-lg">{modal.facility.description}</p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <X />
+            </button>
+            <img src={modal.facility.image} alt={modal.facility.name} className="w-full h-64 object-cover rounded-xl mb-4" />
+            <h3 className="text-2xl font-bold text-blue-900 mb-2">{modal.facility.name}</h3>
+            <p className="text-gray-700 text-center text-lg">{modal.facility.description}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
