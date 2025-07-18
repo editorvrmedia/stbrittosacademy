@@ -25,6 +25,7 @@ const AdmissionPopup = ({ isOpen, onClose, onUserTyped }: { isOpen: boolean; onC
             alt="St. Britto's Academy Logo" 
             className="h-[140px] sm:h-[180px] md:h-[220px] lg:h-[260px] w-auto object-contain mb-0 cursor-pointer"
             onClick={() => { onClose(); navigate('/'); }}
+            aria-label="Close admission popup"
           />
           <div className="w-full overflow-x-auto">
             <h3

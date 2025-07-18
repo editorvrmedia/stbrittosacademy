@@ -312,25 +312,25 @@ const HomePage = () => {
       {/* Quick Access Section */}
       <section
         ref={quickAccessRef}
-        className="section pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden fade-in"
+        className="section pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 bg-transparent max-w-full overflow-x-hidden"
         data-scroll
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 text-center">
           <AOSElement animation="fade-down" delay={0}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4 fade-in" data-scroll>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-4" data-scroll>
               QUICK ACCESS
             </h2>
           </AOSElement>
           <AOSElement animation="fade-up" delay={100}>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 lg:mb-12 slide-up" data-scroll>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 lg:mb-12" data-scroll>
               Find what you're looking for
             </p>
           </AOSElement>
-          <StaggeredAOS animation="zoom-in" staggerDelay={150} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <StaggeredAOS staggerDelay={150} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[0,1,2,3].map((i) => (
               <div
                 key={i}
-                className={`quick-access-item zoom-in`}
+                className={`quick-access-item`}
                 data-scroll
                 data-scroll-speed={i % 2 === 0 ? 1 : -1}
               >
@@ -367,12 +367,12 @@ const HomePage = () => {
       {/* 28 Years of Excellence Section (Pinned) */}
       <section
         ref={pinSectionRef}
-        className="section py-12 sm:py-16 lg:py-20 bg-[#f5f8ff] max-w-full overflow-x-hidden slide-up"
+        className="section py-12 sm:py-16 lg:py-20 bg-[#f5f8ff] max-w-full overflow-x-hidden"
         data-scroll
       >
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <ParallaxElement speed={0.4} direction="up">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 mt-2 fade-in" data-scroll data-scroll-speed="2">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 mt-2" data-scroll data-scroll-speed="2">
               Celebrating <AnimatedCounter target={28} className="text-3xl sm:text-4xl lg:text-5xl" textColor="text-sky-500" /> Years of Educational Excellence
             </h2>
           </ParallaxElement>
@@ -380,7 +380,7 @@ const HomePage = () => {
           <LayeredParallax speeds={[0.2, 0.4, 0.6]} direction="up">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
               {/* Left: Text Content */}
-              <AOSElement animation="fade-right" delay={200} className="flex-1 max-w-xl years-content slide-left" data-scroll data-scroll-speed="-1">
+              <AOSElement delay={200} className="flex-1 max-w-xl years-content" data-scroll data-scroll-speed="-1">
               <section
                 className="bg-gradient-to-br from-[#f4faff] to-[#ffffff] rounded-xl shadow-md px-6 py-10 max-w-4xl mx-auto mb-6 font-[Inter,sans-serif] flex flex-col gap-6"
               >
@@ -406,7 +406,7 @@ const HomePage = () => {
               </section>
             </AOSElement>
             {/* Right: Trophy Image and Badge */}
-            <AOSElement animation="fade-left" delay={400} className="flex-1 flex flex-col items-center relative max-w-md w-full years-image zoom-in" data-scroll data-scroll-speed="1">
+            <AOSElement delay={400} className="flex-1 flex flex-col items-center relative max-w-md w-full years-image" data-scroll data-scroll-speed="1">
               <img
                 src="/AWARDS/school-excellence-award-2018.jpg"
                 alt="School Excellence Leadership Award 2018"

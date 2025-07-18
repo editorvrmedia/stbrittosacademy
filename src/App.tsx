@@ -167,7 +167,7 @@ function Chatbot() {
         <div className="fixed bottom-0 left-0 w-full max-w-sm sm:max-w-md md:max-w-lg h-[70vh] sm:h-[70vh] bg-white shadow-2xl rounded-tr-2xl z-[9999] flex flex-col border border-green-500 animate-fadeInUp" style={{ maxHeight: '90vh' }}>
           <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-green-500 rounded-tr-2xl">
             <span className="text-white font-bold text-base sm:text-lg">BrittoBot – Ask Me Anything</span>
-            <button onClick={() => setOpen(false)} className="text-white text-xl sm:text-2xl font-bold focus:outline-none hover:text-green-100 transition-colors">×</button>
+            <button onClick={() => setOpen(false)} className="text-white text-xl sm:text-2xl font-bold focus:outline-none hover:text-green-100 transition-colors" aria-label="Close chatbot">×</button>
           </div>
           <div className="flex-1 overflow-hidden px-3 sm:px-4 py-2 sm:py-3 space-y-2 bg-green-50">
             {messages.map((msg, idx) => (
