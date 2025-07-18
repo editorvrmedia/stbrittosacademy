@@ -264,9 +264,6 @@ const SchoolDetails = () => (
             <li>VINITH S – XII</li>
             <li>K LEKHANA – XII</li>
           </ul>
-        </div>
-        {/* Anti Drug Club Committee Members Section */}
-        <div className="bg-white/90 rounded-lg shadow p-4">
           <div className="font-bold text-blue-900 mb-2">ANTI DRUG CLUB COMMITTEE MEMBERS</div>
           <ul className="list-disc pl-6 mb-4 text-gray-700">
             <li>Mary Vasantha Kumari</li>
