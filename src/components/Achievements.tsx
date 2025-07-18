@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Award, Users, BookOpen, Globe, Heart, Star, Target, Shield, Lightbulb, Trophy } from 'lucide-react';
 import ErrorBoundary from './ErrorBoundary';
+import { motion } from 'framer-motion';
 
 const ParallaxBackground = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -76,8 +77,19 @@ const ParallaxBackground = () => {
 };
 
 const Achievements = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timeout);
+  }, []);
   return (
-    <div className="pt-20 min-h-screen bg-gradient-to-br from-amber-50 via-white to-blue-50 relative overflow-x-clip">
+    <motion.section
+      className="pt-20 min-h-screen bg-gradient-to-br from-amber-50 via-white to-blue-50 relative overflow-x-clip"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.7 }}
+    >
       {/* Decorative Accent */}
       <div className="absolute left-1/2 -translate-x-1/2 top-8 z-0 opacity-10 pointer-events-none select-none">
         <Star className="w-40 h-40 text-amber-300 animate-pulse" />
@@ -85,11 +97,33 @@ const Achievements = () => {
       <section className="py-16 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight drop-shadow-lg">Explore Our Achievements</h2>
-            <p className="text-2xl text-gray-600 mb-2">Discover the many ways St. Britto's Academy excels</p>
-            <div className="flex justify-center mt-4">
+            <motion.h2
+              className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight drop-shadow-lg"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+              viewport={{ once: true, amount: 0.7 }}
+            >
+              Explore Our Achievements
+            </motion.h2>
+            <motion.p
+              className="text-2xl text-gray-600 mb-2"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+              viewport={{ once: true, amount: 0.7 }}
+            >
+              Discover the many ways St. Britto's Academy excels
+            </motion.p>
+            <motion.div
+              className="flex justify-center mt-4"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+              viewport={{ once: true, amount: 0.7 }}
+            >
               <Award className="h-10 w-10 text-amber-500" />
-            </div>
+            </motion.div>
           </div>
           <div className="grid md:grid-cols-2 gap-10">
             <Link to="/achievements/school" className="group bg-gradient-to-br from-blue-100 to-blue-50 rounded-3xl overflow-hidden shadow-2xl hover:shadow-amber-200/60 transition-all duration-300 border border-blue-200 hover:scale-105">
@@ -139,7 +173,7 @@ const Achievements = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.section>
   );
 };
 

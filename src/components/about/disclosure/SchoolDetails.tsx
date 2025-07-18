@@ -291,7 +291,7 @@ const SchoolDetails = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.7 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         <div className="max-w-4xl mx-auto px-4">
           <motion.h2
@@ -299,7 +299,7 @@ const SchoolDetails = () => {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-            viewport={{ once: true, amount: 0.7 }}
+            viewport={{ once: false, amount: 0.2 }}
           >
             Mode of Payment of Salary
           </motion.h2>
@@ -443,12 +443,12 @@ const SchoolDetails = () => {
                 </ul>
                 <div className="font-bold text-blue-900 mb-2">ANTI DRUG CLUB COMMITTEE MEMBERS</div>
                 <ul className="list-disc pl-6 mb-4 text-gray-700">
-                  <li>Ms.Mary Vasantha Kumari</li>
-                  <li>Mrs. Jayanthi Arulmani</li>
-                  <li>Mr. Venkatesh</li>
-                  <li>Mr. Sriram</li>
-                  <li>Ms. Karpagalakshmi</li>
-                  <li>Mr. Rajaraman</li>
+                  <li>Ms. MARY VASANTHA KUMARI</li>
+                  <li>Ms. JAYANTHI ARULMANI</li>
+                  <li>Mr. VENKATESH</li>
+                  <li>Mr. SRIRAM</li>
+                  <li>Ms. KARPAGALAKSHMI</li>
+                  <li>Mr. RAJARAMAN</li>
                 </ul>
               </motion.div>
               <motion.div

@@ -499,17 +499,36 @@ const SchoolAchievements = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Major Awards & Recognitions</h2>
-            <p className="text-xl text-gray-600">Prestigious honors that highlight our commitment to excellence</p>
+            <motion.h2
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+              viewport={{ once: true, amount: 0.7 }}
+            >
+              Major Awards & Recognitions
+            </motion.h2>
+            <motion.p
+              className="text-xl text-gray-600"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+              viewport={{ once: true, amount: 0.7 }}
+            >
+              Prestigious honors that highlight our commitment to excellence
+            </motion.p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredAwards.filter(award => award.id !== 1 && award.id !== 2 && award.id !== 3).map((award, idx) => {
-                return (
-                  <div
-                    key={award.id}
-                    className="bg-white rounded-xl overflow-hidden shadow-lg transition-shadow duration-300 flex flex-col"
-                  >
+            {filteredAwards.filter(award => award.id !== 1 && award.id !== 2 && award.id !== 3).map((award, idx) => (
+              <motion.div
+                key={award.id}
+                className="bg-white rounded-xl overflow-hidden shadow-lg transition-shadow duration-300 flex flex-col"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 * idx }}
+                viewport={{ once: true, amount: 0.5 }}
+              >
                 <div className="p-6 flex-grow">
                   <div className="mb-4">
                     <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
@@ -526,15 +545,12 @@ const SchoolAchievements = () => {
                     </span>
                     <span className="text-gray-500 text-sm ml-3">{award.year}</span>
                   </div>
-                  
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{award.title}</h3>
                   <p className="text-gray-600 mb-4">{award.description}</p>
-                  
                   <div className="bg-blue-50 p-3 rounded-lg mb-6">
                     <p className="text-blue-800 font-semibold text-sm">Impact: {award.impact}</p>
                   </div>
                 </div>
-                
                 <div className="flex justify-center p-4 bg-gray-50">
                   <img 
                     src={award.image} 
@@ -542,9 +558,8 @@ const SchoolAchievements = () => {
                     className="h-48 object-contain rounded-lg"
                   />
                 </div>
-                  </div>
-                );
-              })}
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.section>
