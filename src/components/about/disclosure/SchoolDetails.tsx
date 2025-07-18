@@ -265,6 +265,18 @@ const SchoolDetails = () => (
             <li>K LEKHANA – XII</li>
           </ul>
         </div>
+        {/* Anti Drug Club Committee Members Section */}
+        <div className="bg-white/90 rounded-lg shadow p-4">
+          <div className="font-bold text-blue-900 mb-2">ANTI DRUG CLUB COMMITTEE MEMBERS</div>
+          <ul className="list-disc pl-6 mb-4 text-gray-700">
+            <li>Mary Vasantha Kumari</li>
+            <li>Mrs. Jayanthi Arulmani</li>
+            <li>Mr. Venkatesh</li>
+            <li>Mr. Sriram</li>
+            <li>Ms. Karpagalakshmi</li>
+            <li>Mr. Rajaraman</li>
+          </ul>
+        </div>
         <div className="bg-white/90 rounded-lg shadow p-4">
           <div className="font-bold text-blue-900 mb-2">Details of the Contact person in case Emergency</div>
           <div className="mb-4 text-gray-700">Mr. Gokul Raj : Cell No 8939868940</div>

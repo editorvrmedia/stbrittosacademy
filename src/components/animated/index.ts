@@ -1,0 +1,9 @@
+export { default as FadeIn } from './FadeIn';
+export { default as FadeInContainer } from './FadeInContainer';
+export { default as SlideIn } from './SlideIn';
+export { default as SlideInContainer } from './SlideInContainer';
+export { default as AnimatedCounter } from './AnimatedCounter';
+export { default as AnimatedHeading } from './AnimatedHeading';
+export { default as AnimatedImage } from './AnimatedImage';
+export { default as LottieIcon } from './LottieIcon';
+export { default as GalleryImage } from './GalleryImage'; 

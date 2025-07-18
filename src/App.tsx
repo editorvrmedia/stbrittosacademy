@@ -1,9 +1,13 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { initGlobalFadeInAnimation, cleanupGlobalFadeInAnimation } from './utils/fadeInAnimation';
+import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
+import { ParallaxProvider } from './components/parallax';
+import { AOSProvider } from './components/aos';
 import AboutUs from './components/AboutUs';
 import Governance from './components/about/Governance';
 import VisionMission from './components/about/VisionMission';
@@ -276,6 +280,8 @@ const LoadingSpinner = () => (
 function App() {
   const [isAdmissionPopupOpen, setIsAdmissionPopupOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [isInitialPageLoaded, setIsInitialPageLoaded] = useState(false);
+  const [hasShownInitialLoading, setHasShownInitialLoading] = useState(false);
   const location = useLocation();
 
   // Paths where header/footer should be hidden
@@ -285,7 +291,27 @@ function App() {
   useEffect(() => {
     setIsClient(true);
     console.log('App component mounted');
+    
+    // Initialize global fade-in animation system
+    initGlobalFadeInAnimation({
+      delay: 150,
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    // Cleanup on unmount
+    return () => {
+      cleanupGlobalFadeInAnimation();
+    };
   }, []);
+
+  // Only show loading on initial page load, not on route changes
+  const shouldShowLoading = !hasShownInitialLoading && !isInitialPageLoaded;
+
+  const handleLoadingComplete = () => {
+    setIsInitialPageLoaded(true);
+    setHasShownInitialLoading(true);
+  };
 
   // Prevent hydration issues by not rendering until client-side
   if (!isClient) {
@@ -295,9 +321,16 @@ function App() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<LoadingSpinner />}>
+        {/* Loading Screen - Only show on initial page load */}
+        {shouldShowLoading && (
+          <LoadingScreen onLoadingComplete={handleLoadingComplete} />
+        )}
+        
         <ScrollProgressBar />
         <Chatbot />
         <ScrollToTop />
+        <ParallaxProvider>
+          <AOSProvider>
         <div className="min-h-screen bg-transparent flex flex-col">
           <AdmissionPopup 
             isOpen={isAdmissionPopupOpen} 
@@ -380,6 +413,8 @@ function App() {
           </main>
           {!isStandalone && <Footer />}
         </div>
+        </AOSProvider>
+        </ParallaxProvider>
       </Suspense>
     </ErrorBoundary>
   );

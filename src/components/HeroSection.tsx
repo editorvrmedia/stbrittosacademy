@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown } from 'react-icons/fi';
+import { ParallaxBackground, ParallaxElement } from './parallax';
 
 const HEADER_HEIGHT = 76; // 28px TopHeader + ~48px Header
 
@@ -58,34 +59,20 @@ const HeroSection = () => {
             transition={{ duration: 0.8, ease: 'easeInOut' }}
             viewport={{ once: true, amount: 0.1 }}
           >
-            {/* Responsive Banner Video Background */}
-            <div className="relative w-full overflow-hidden" style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}>
-              <video
-                ref={videoRef}
-                src="/videointro.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300"
-                style={{
-                  border: 0,
-                  minWidth: '100vw',
-                  minHeight: '100%',
-                  maxHeight: '100%',
-                  maxWidth: '100%',
-                }}
-                poster="/LOGOS/SBA.png"
-                onError={(e) => {
-                  console.error('Video failed to load:', e);
-                  // Fallback to a static image or background
-                  const videoElement = e.target as HTMLVideoElement;
-                  videoElement.style.display = 'none';
-                }}
-              />
-              {/* Scroll Arrow */}
+            {/* Responsive Banner Video Background with Parallax */}
+            <ParallaxBackground
+              videoSrc="/videointro.mp4"
+              speed={0.3}
+              direction="up"
+              scale={true}
+              overlay={true}
+              overlayColor="rgba(0, 0, 0, 0.2)"
+              overlayOpacity={0.2}
+              className="relative w-full overflow-hidden"
+              style={{ minHeight: '40vw', height: '40vw', maxHeight: '80vh' }}
+            >
+              {/* Scroll Arrow with Parallax */}
               <div 
-                ref={scrollArrowRef}
                 className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer z-10 transition-all duration-300"
                 onClick={() => {
                   try {
@@ -103,9 +90,11 @@ const HeroSection = () => {
                   }
                 }}
               >
+                <ParallaxElement speed={0.8} direction="down">
                 <FiChevronDown className="w-8 h-8" />
+                </ParallaxElement>
               </div>
-            </div>
+            </ParallaxBackground>
           </motion.section>
         </AnimatePresence>
         {/* Scrolling Marquee News Bar (below the video) */}

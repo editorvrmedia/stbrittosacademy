@@ -68,3 +68,409 @@ html, body {
   scroll-snap-stop: always;
   transition: scroll-snap-type 0.3s;
 }
+
+/* Fade-in Animation System */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Base fade-in class - initially hidden */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation classes */
+.fade-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-down.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scale.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered animations for multiple elements */
+.fade-in-stagger-1 { transition-delay: 0.1s; }
+.fade-in-stagger-2 { transition-delay: 0.2s; }
+.fade-in-stagger-3 { transition-delay: 0.3s; }
+.fade-in-stagger-4 { transition-delay: 0.4s; }
+.fade-in-stagger-5 { transition-delay: 0.5s; }
+.fade-in-stagger-6 { transition-delay: 0.6s; }
+.fade-in-stagger-7 { transition-delay: 0.7s; }
+.fade-in-stagger-8 { transition-delay: 0.8s; }
+.fade-in-stagger-9 { transition-delay: 0.9s; }
+.fade-in-stagger-10 { transition-delay: 1.0s; }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in-up,
+  .fade-in-down,
+  .fade-in-left,
+  .fade-in-right,
+  .fade-in-scale {
+    transition: none;
+    animation: none;
+  }
+  
+  .fade-in.animate,
+  .fade-in-up.animate,
+  .fade-in-down.animate,
+  .fade-in-left.animate,
+  .fade-in-right.animate,
+  .fade-in-scale.animate {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Slide-in Animation System */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide-in classes - initially hidden, animate on page load */
+.slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.slide-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDown 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideLeft 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideRight 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+/* Staggered slide-in animations */
+.slide-up-stagger-1 { animation-delay: 0.1s; }
+.slide-up-stagger-2 { animation-delay: 0.2s; }
+.slide-up-stagger-3 { animation-delay: 0.3s; }
+.slide-up-stagger-4 { animation-delay: 0.4s; }
+.slide-up-stagger-5 { animation-delay: 0.5s; }
+.slide-up-stagger-6 { animation-delay: 0.6s; }
+.slide-up-stagger-7 { animation-delay: 0.7s; }
+.slide-up-stagger-8 { animation-delay: 0.8s; }
+.slide-up-stagger-9 { animation-delay: 0.9s; }
+.slide-up-stagger-10 { animation-delay: 1.0s; }
+
+.slide-down-stagger-1 { animation-delay: 0.1s; }
+.slide-down-stagger-2 { animation-delay: 0.2s; }
+.slide-down-stagger-3 { animation-delay: 0.3s; }
+.slide-down-stagger-4 { animation-delay: 0.4s; }
+.slide-down-stagger-5 { animation-delay: 0.5s; }
+.slide-down-stagger-6 { animation-delay: 0.6s; }
+.slide-down-stagger-7 { animation-delay: 0.7s; }
+.slide-down-stagger-8 { animation-delay: 0.8s; }
+.slide-down-stagger-9 { animation-delay: 0.9s; }
+.slide-down-stagger-10 { animation-delay: 1.0s; }
+
+.slide-left-stagger-1 { animation-delay: 0.1s; }
+.slide-left-stagger-2 { animation-delay: 0.2s; }
+.slide-left-stagger-3 { animation-delay: 0.3s; }
+.slide-left-stagger-4 { animation-delay: 0.4s; }
+.slide-left-stagger-5 { animation-delay: 0.5s; }
+.slide-left-stagger-6 { animation-delay: 0.6s; }
+.slide-left-stagger-7 { animation-delay: 0.7s; }
+.slide-left-stagger-8 { animation-delay: 0.8s; }
+.slide-left-stagger-9 { animation-delay: 0.9s; }
+.slide-left-stagger-10 { animation-delay: 1.0s; }
+
+.slide-right-stagger-1 { animation-delay: 0.1s; }
+.slide-right-stagger-2 { animation-delay: 0.2s; }
+.slide-right-stagger-3 { animation-delay: 0.3s; }
+.slide-right-stagger-4 { animation-delay: 0.4s; }
+.slide-right-stagger-5 { animation-delay: 0.5s; }
+.slide-right-stagger-6 { animation-delay: 0.6s; }
+.slide-right-stagger-7 { animation-delay: 0.7s; }
+.slide-right-stagger-8 { animation-delay: 0.8s; }
+.slide-right-stagger-9 { animation-delay: 0.9s; }
+.slide-right-stagger-10 { animation-delay: 1.0s; }
+
+/* Reduced motion support for slide-in animations */
+@media (prefers-reduced-motion: reduce) {
+  .slide-up,
+  .slide-down,
+  .slide-left,
+  .slide-right {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Loading Screen Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Loading screen specific classes */
+.loading-fade-in {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loading-bounce {
+  animation: bounce 2s infinite;
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Smooth fade out for loading screen */
+.loading-screen-fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+  pointer-events: none;
+}
+
+/* Progress bar animation */
+.progress-bar-fill {
+  transition: width 0.3s ease-out;
+}
+
+/* Spinning logo with custom timing */
+.spinning-logo {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion support for loading animations */
+@media (prefers-reduced-motion: reduce) {
+  .loading-fade-in,
+  .loading-pulse,
+  .loading-bounce,
+  .loading-shimmer,
+  .spinning-logo {
+    animation: none;
+  }
+  
+  .loading-screen-fade-out {
+    transition: none;
+  }
+}
