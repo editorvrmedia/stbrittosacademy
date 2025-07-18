@@ -2,7 +2,6 @@ import React, { useEffect, useState, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { initGlobalFadeInAnimation, cleanupGlobalFadeInAnimation } from './utils/fadeInAnimation';
-import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
@@ -280,8 +279,6 @@ const LoadingSpinner = () => (
 function App() {
   const [isAdmissionPopupOpen, setIsAdmissionPopupOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const [isInitialPageLoaded, setIsInitialPageLoaded] = useState(false);
-  const [hasShownInitialLoading, setHasShownInitialLoading] = useState(false);
   const location = useLocation();
 
   // Paths where header/footer should be hidden
@@ -305,14 +302,6 @@ function App() {
     };
   }, []);
 
-  // Only show loading on initial page load, not on route changes
-  const shouldShowLoading = !hasShownInitialLoading && !isInitialPageLoaded;
-
-  const handleLoadingComplete = () => {
-    setIsInitialPageLoaded(true);
-    setHasShownInitialLoading(true);
-  };
-
   // Prevent hydration issues by not rendering until client-side
   if (!isClient) {
     return <LoadingSpinner />;
@@ -321,10 +310,6 @@ function App() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<LoadingSpinner />}>
-        {/* Loading Screen - Only show on initial page load */}
-        {shouldShowLoading && (
-          <LoadingScreen onLoadingComplete={handleLoadingComplete} />
-        )}
         
         <ScrollProgressBar />
         <Chatbot />
